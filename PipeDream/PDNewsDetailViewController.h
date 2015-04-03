@@ -20,9 +20,10 @@
 
 
 @property (strong, nonatomic) IBOutlet UIScrollView *newsScrollView;
-@property (weak, nonatomic) IBOutlet UILabel *newsDetailTitle;
+@property (weak, nonatomic) IBOutlet UITextView *newsDetailTitle;
 @property (weak, nonatomic) IBOutlet UILabel *newsDetailAuthor;
 @property (weak, nonatomic) IBOutlet UITextView *newsDetailsArticle;
+@property (weak, nonatomic) IBOutlet UILabel *newsDetailDate;
 @property (weak, nonatomic) IBOutlet UIImageView *newsDetailImage;
 
 

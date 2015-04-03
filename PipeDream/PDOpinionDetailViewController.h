@@ -27,8 +27,9 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *opinionScrollView;
 @property (weak, nonatomic) IBOutlet UILabel *authorLabel;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UITextView *titleLabel;
 @property (weak, nonatomic) IBOutlet UITextView *articleBody;
 @property (weak, nonatomic) IBOutlet UIImageView *articleImage;
+@property (weak, nonatomic) IBOutlet UILabel *articleDate;
 
 @end

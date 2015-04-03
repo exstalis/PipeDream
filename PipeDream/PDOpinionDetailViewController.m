@@ -15,7 +15,9 @@
 @interface PDOpinionDetailViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *barBackButton;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bodyHeightConstraint;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleHeightConstraint;
 
 @end
 
@@ -58,14 +60,24 @@
     [self scrollViewDidChange:self.opinionScrollView];
     
     self.titleLabel.text = [self.contentArticle.articleTitle decodeHTML];
-    self.articleBody.text = [self.contentArticle.articleBody decodeHTML];
+    [self setTextFieldHeight:_titleHeightConstraint forView:self.titleLabel];
     
-    CGSize sizeThatShouldFitTheContent = [self.articleBody sizeThatFits:self.articleBody.frame.size];
-    _heightConstraint.constant = sizeThatShouldFitTheContent.height;
+    self.articleBody.text = [self.contentArticle.articleBody decodeHTML];
+    [self setTextFieldHeight:_bodyHeightConstraint forView:self.articleBody];
+    
+    self.authorLabel.text = self.contentArticle.authorName;
+    
 
     NSURL *imageURL=[NSURL URLWithString:self.contentAttachment.fullImage[@"url"]];
     [self.articleImage setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"Logo.png"]];
 
+    
+}
+
+-(void)setTextFieldHeight:(NSLayoutConstraint *)constraint forView:(UITextView *)textView {
+    CGSize sizeThatShouldFitTheContent = [textView sizeThatFits:textView.frame.size];
+    
+    constraint.constant = sizeThatShouldFitTheContent.height;
     
 }
 
