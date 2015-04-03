@@ -19,6 +19,8 @@
 #import "PDNewsViewController.h"
 #import "NSString+HTMLDecoder.h"
 
+
+
 @interface PDNewsDetailViewController ()<FBSDKSharingDelegate,FBSDKSharingDialog>
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *backButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
@@ -39,6 +41,7 @@
     
     
   
+    [self contentView];
     
     
     
