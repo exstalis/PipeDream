@@ -89,7 +89,7 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
 
 
 
--(void)notifyUserShareDidCompletePopUp{
+-(void)notifyUserShareDidCompletePopUp:(NSString*)notification{
     
     UIView *sharedPopUpView=[[UIView alloc]init];
     sharedPopUpView.translatesAutoresizingMaskIntoConstraints=NO;
@@ -99,7 +99,8 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
     UILabel *popUpSharedLabel=[[UILabel alloc]init];
     
     [popUpSharedLabel setTag:1];
-    [popUpSharedLabel setText:@"Shared on Facebook"];
+//    [popUpSharedLabel setText:@"Shared on Facebook"];
+    [popUpSharedLabel setText:notification];
     
     popUpSharedLabel.translatesAutoresizingMaskIntoConstraints=NO;
     popUpSharedLabel.backgroundColor=[UIColor clearColor];
@@ -152,7 +153,7 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
     popUpView.backgroundColor=[UIColor clearColor];
 
 
-    UIImageView *popupImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Popup"]];
+    UIImageView *popupImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"share_popup_view_background"]];
 
     
     [popupImageView setContentMode:UIViewContentModeScaleAspectFill];
@@ -185,12 +186,14 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
 //    _twitterShareButton.layer.cornerRadius = 6.0;
     
     
-    [_fbShareButton addTarget:self action:@selector(shareOnFaceBook:) forControlEvents:UIControlEventTouchUpInside];
+//    [_fbShareButton addTarget:self action:@selector(shareOnFaceBook:) forControlEvents:UIControlEventTouchUpInside];
     _fbShareButton = [PDShareButton buttonWithType:UIButtonTypeCustom];
     _fbShareButton.translatesAutoresizingMaskIntoConstraints = NO;
     _fbShareButton.contentEdgeInsets =UIEdgeInsetsMake(10, 25, 10, 20);
+    [_fbShareButton setTag:3];
+    
     _fbShareButton.backgroundColor = [UIColor clearColor];
-//    [_fbShareButton setTitleColor:[UIColor clearColor] forState:UIControlStateNormal];
+    [_fbShareButton setTitleColor:[UIColor clearColor] forState:UIControlStateNormal];
     [_fbShareButton setTitleColor:[[_fbShareButton titleColorForState:UIControlStateNormal] colorWithAlphaComponent:0.5] forState:UIControlStateHighlighted];
 //    _fbShareButton.titleLabel.font = [UIFont fontWithName:@"Lato-Semibold" size:16.0];
 //    [_fbShareButton setTitle:@"Share on Facebook" forState:UIControlStateNormal];
@@ -301,6 +304,8 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
     //    FBSDKShareDialog *facebookShareDialog=[utility getShareDialogWithContentURL:fbsharedArticle.sharedArticle.articleURL];
     //    facebookShareDialog.delegate=self;
     
+    
+    
     self.shareUtility=utility;
     utility.delegate=self;
     [utility startSharing];
@@ -356,7 +361,8 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
 
 
 
-#pragma mark - mail operations
+#pragma mark - mailcomposer delegate
+
 
 
 - (void)sendArticleViaMail:(NSString *)articleURL{
@@ -383,14 +389,13 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
 
 
 
-
-
 #pragma mark - PDShare Delegate
 
 -(void)shareUtilityDidCompleteShareOnFacebook{
     
-
-    [self notifyUserShareDidCompletePopUp];
+NSString *succesfullShare=@"Shared on Facebook";
+    
+    [self notifyUserShareDidCompletePopUp:succesfullShare];
     
 
     

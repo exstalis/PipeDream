@@ -166,15 +166,27 @@
     [newsCell.newsThumbnailImage setImageWithURL:url placeholderImage:[UIImage imageNamed: @"menu.png"]];
     
     
-  
+    
+    
+    
+    if ((self.fbShareButton.tag=3)) {
+        [self.shareUtility.shareDialog canShow];
+        
+            
+//            [self facebookShare];
+        [self.fbShareButton addTarget:self action:@selector(facebookShare) forControlEvents:UIControlEventTouchUpInside];
+        
+    }
+
+    
 
 
-    if ([self.fbShareButton.titleLabel.text isEqualToString:@"Share on Facebook"] ){
+
         
 
-        [self facebookShare];
     
-    }
+    
+ 
     if ([self.mailButton.titleLabel.text isEqualToString:@"Mail"]) {
         
         [self sendwithMail:self.mailButton];
