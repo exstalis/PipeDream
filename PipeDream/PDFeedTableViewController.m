@@ -153,8 +153,9 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
     popUpView.backgroundColor=[UIColor clearColor];
 
 
-    UIImageView *popupImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"share_popup_view_background"]];
-
+    UIImageView *popupImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sharePopupView"]];
+ 
+    
     
     [popupImageView setContentMode:UIViewContentModeScaleAspectFill];
     [popupImageView setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -198,7 +199,7 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
 //    _fbShareButton.titleLabel.font = [UIFont fontWithName:@"Lato-Semibold" size:16.0];
 //    [_fbShareButton setTitle:@"Share on Facebook" forState:UIControlStateNormal];
 //    _fbShareButton.layer.cornerRadius = 6.0;
-    [_fbShareButton addTarget:self action:@selector(shareOnFaceBook:) forControlEvents:UIControlEventTouchUpInside];
+//    [_fbShareButton addTarget:self action:@selector(shareOnFaceBook:) forControlEvents:UIControlEventTouchUpInside];
     
     _mailButton = [PDShareButton buttonWithType:UIButtonTypeCustom];
     

@@ -170,16 +170,16 @@
         [newsCell.newsShareButton addTarget:self.tableView.indexPathForSelectedRow action:@selector(showSharingOptionsPopU:) forControlEvents:UIControlEventTouchUpInside];
     
     
-    if ((self.fbShareButton.tag=3)) {
-        [self.shareUtility.shareDialog canShow];
-        
-            
-//            [self facebookShare];
-        [self.fbShareButton addTarget:self action:@selector(facebookShare) forControlEvents:UIControlEventTouchUpInside];
-        
-    }
-
-    
+//    if ((self.fbShareButton.tag=3)) {
+//        [self.shareUtility.shareDialog canShow];
+//        
+//            
+////            [self facebookShare];
+//        [self.fbShareButton addTarget:self action:@selector(facebookShare) forControlEvents:UIControlEventTouchUpInside];
+//        
+//    }
+//
+//    
 
 
 

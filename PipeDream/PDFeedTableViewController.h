@@ -22,6 +22,18 @@
 #import <objc/runtime.h>
 #import "RequestOperationConfig.h"
 
+
+
+typedef NS_ENUM (NSInteger, PDShareButtonItem){
+   PDShareButtonItemTwitter,
+    PDShareButtonItemFacebook,
+    PDShareButtonItemMail,
+    PDShareButtonItemDismiss,
+    PDShareButtonItem_COUNT,
+    
+};
+
+
 @interface PDFeedTableViewController : UITableViewController<UIPopoverControllerDelegate,PDShareUtilityDelegate,UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIPopoverController* popover;
