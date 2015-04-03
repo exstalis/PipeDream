@@ -89,12 +89,12 @@ static NSString * const kPDDrawerCellReuseIdentifier = @"PDDrawerCellReuseIdenti
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PDDrawerMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:kPDDrawerCellReuseIdentifier forIndexPath:indexPath];
     
-    
     switch ((PDMenuViewControllerItem)indexPath.row) {
             
             
         case PDMenuViewControllerItemRecent:{
             cell.sectionTitle=@"Recent";
+            
             break;
             
         }
@@ -102,38 +102,36 @@ static NSString * const kPDDrawerCellReuseIdentifier = @"PDDrawerCellReuseIdenti
             
             cell.sectionTitle=@"News";
             
-            //            put an image
+
+            
             break;
         }
             
         case PDMenuViewControllerItemOpinion:{
             cell.sectionTitle=@"Opinion";
-            //            put an image
+            cell.iconImage=[UIImage imageNamed:@"opinion_menu_icon"];
+            
             break;
         }
         case PDMenuViewControllerItemRelease:{
             cell.sectionTitle= @"Release";
-            //            put an image
+            cell.iconImage=[UIImage imageNamed:@"release_menu_icon"];
+            
             break;
         }
             
         case PDMenuViewControllerItemSports:{
             cell.sectionTitle=@"Sports";
-            //            put an image
+            cell.iconImage=[UIImage imageNamed:@"sports_icon"];
             break;
         }
         case PDMenuViewControllerItemContact:{
             cell.sectionTitle=@"Contact";
-         
-            //            put an image
+            cell.iconImage=[UIImage imageNamed:@"contact_icon"];
+
             break;
         }
-//        case PDMenuViewControllerItemSettings:{
-//            cell.sectionTitle=@"Settings";
-//    
-//            //            put an image
-//            break;
-//        }
+
         case PDMenuViewControllerItem_COUNT:
         default:
             return nil;

@@ -40,7 +40,7 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
 
 
 @interface UIColor (PipeDream)
-+ (UIColor*)kpdLightGreenColor;
++ (UIColor*)kpdBackgroundColor;
 + (UIColor*)kpdGreenColor;
 @end
 
@@ -98,20 +98,19 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
     
     UIView *sharedPopUpView=[[UIView alloc]init];
     sharedPopUpView.translatesAutoresizingMaskIntoConstraints=NO;
-    sharedPopUpView.backgroundColor=[UIColor grayColor];
+    sharedPopUpView.backgroundColor=[UIColor kpdBackgroundColor];
     //    burasini sonra duzel renkleri
-    sharedPopUpView.layer.cornerRadius=5.0;
+    sharedPopUpView.layer.cornerRadius=12.0;
     UILabel *popUpSharedLabel=[[UILabel alloc]init];
     
-    [popUpSharedLabel setTag:1];
-//    [popUpSharedLabel setText:@"Shared on Facebook"];
     [popUpSharedLabel setText:notification];
     
     popUpSharedLabel.translatesAutoresizingMaskIntoConstraints=NO;
     popUpSharedLabel.backgroundColor=[UIColor clearColor];
-    popUpSharedLabel.textColor=[UIColor whiteColor];
-    popUpSharedLabel.font=[UIFont fontWithName:@"Lato-Semibold" size:28.0];
     
+    popUpSharedLabel.textColor=[UIColor kpdGreenColor];
+    
+    popUpSharedLabel.font=[UIFont fontWithName:@"OpenSans-Semibold" size:50.0];
     
     [sharedPopUpView addSubview:popUpSharedLabel];
     
@@ -119,18 +118,18 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
     NSDictionary* views = NSDictionaryOfVariableBindings(sharedPopUpView,popUpSharedLabel);
     
     [sharedPopUpView addConstraints:
-     [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(10)-[popUpSharedLabel]-(10)-|"
+     [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(15)-[popUpSharedLabel]-(15)-|"
                                              options:NSLayoutFormatAlignAllCenterX
                                              metrics:nil
                                                views:views]];
     
     [sharedPopUpView addConstraints:
-     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(10)-[popUpSharedLabel]-(10)-|"
+     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(15)-[popUpSharedLabel]-(15)-|"
                                              options:0
                                              metrics:nil
                                                views:views]];
     KLCPopupLayout layout =KLCPopupLayoutMake(KLCPopupHorizontalLayoutCenter , KLCPopupVerticalLayoutCenter);
-    KLCPopup * popupSuccess=[KLCPopup popupWithContentView:sharedPopUpView showType:KLCPopupShowTypeSlideInFromRight dismissType:KLCPopupDismissTypeSlideOutToTop maskType:KLCPopupMaskTypeDimmed dismissOnBackgroundTouch:YES dismissOnContentTouch:YES];
+    KLCPopup * popupSuccess=[KLCPopup popupWithContentView:sharedPopUpView showType:KLCPopupShowTypeSlideInFromTop dismissType:KLCPopupDismissTypeSlideOutToBottom maskType:KLCPopupMaskTypeDimmed dismissOnBackgroundTouch:YES dismissOnContentTouch:YES];
     
     if (_shouldDismissAfterDelay) {
         [popupSuccess showWithLayout:layout duration:0.5];
@@ -359,12 +358,12 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
             [self notifyUserShareDidCompletePopUp:notifyuser];
             break;
         case MFMailComposeResultSaved:
-            notifyuser= @"Result: Mail saved";
+            notifyuser= @"Mail saved";
             [self notifyUserShareDidCompletePopUp:notifyuser];
 
             break;
         case MFMailComposeResultSent:
-            notifyuser= @"Result: Mail sent";
+            notifyuser= @"Mail sent";
             [self notifyUserShareDidCompletePopUp:notifyuser];
 
             break;
@@ -374,14 +373,13 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
 
             break;
         default:
-            notifyuser = @"Result: Mail not sent";
+            notifyuser = @"Mail not sent";
             [self notifyUserShareDidCompletePopUp:notifyuser];
             break;
     }
     
     [controller dismissViewControllerAnimated:YES completion:NULL];
     
-    NSLog(@"ne dusuyo buraya tam olarak succes mi?");
     
 }
 
@@ -396,7 +394,6 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
 
     [self notifyUserShareDidCompletePopUp:succesfullShare];
 
-    
 }
 
 
@@ -426,12 +423,12 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
 
 @implementation UIColor (PipeDream)
 
-+ (UIColor*)kpdLightGreenColor {
-    return [UIColor colorWithRed:(184.0/255.0) green:(233.0/255.0) blue:(122.0/255.0) alpha:1.0];
++ (UIColor*)kpdBackgroundColor {
+    return [UIColor colorWithRed:(227/255.0) green:(226/255.0) blue:(227/255.0) alpha:0.8];
 }
 
 + (UIColor*)kpdGreenColor {
-    return [UIColor colorWithRed:(0.0/255.0) green:(204.0/255.0) blue:(134.0/255.0) alpha:1.0];
+    return [UIColor colorWithRed:(67.0/255.0) green:(83.0/255.0) blue:(51.0/255.0) alpha:1.0];
 }
 
 
