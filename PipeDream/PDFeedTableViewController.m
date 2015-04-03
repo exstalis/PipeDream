@@ -89,6 +89,11 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
 
 
 
+
+
+
+
+
 -(void)notifyUserShareDidCompletePopUp:(NSString*)notification{
     
     UIView *sharedPopUpView=[[UIView alloc]init];
@@ -159,61 +164,56 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
     
     [popupImageView setContentMode:UIViewContentModeScaleAspectFill];
     [popupImageView setTranslatesAutoresizingMaskIntoConstraints:NO];
-    popupImageView.contentMode = UIViewContentModeRedraw;
+//    popupImageView.contentMode = UIViewContentModeRedraw;
+    
 
     _cancelButton=[PDShareButton buttonWithType:UIButtonTypeCustom];
-
+    [_cancelButton setTag:PDShareButtonItemDismiss];
     _cancelButton.translatesAutoresizingMaskIntoConstraints = NO;
     _cancelButton.contentEdgeInsets =UIEdgeInsetsMake(10, 50, 10, 50);
-
     _cancelButton.backgroundColor = [UIColor clearColor];
     [_cancelButton setTitleColor:[UIColor clearColor] forState:UIControlStateNormal];
-//    [_cancelButton setTitleColor:[[_cancelButton titleColorForState:UIControlStateNormal] colorWithAlphaComponent:0.5] forState:UIControlStateHighlighted];
-//    _cancelButton.titleLabel.font = [UIFont fontWithName:@"Lato-Semibold" size:16.0];
-//    [_cancelButton setTitle:@"cancel" forState:UIControlStateNormal];
-//    _cancelButton.layer.cornerRadius = 6.0;
-    
-    
     [_cancelButton addTarget:self action:@selector(cancelButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     
+    
     _twitterShareButton = [PDShareButton buttonWithType:UIButtonTypeCustom];
+    [_twitterShareButton setTag:PDShareButtonItemTwitter];
+    
     _twitterShareButton.translatesAutoresizingMaskIntoConstraints = NO;
     _twitterShareButton.contentEdgeInsets =UIEdgeInsetsMake(10, 20, 10, 20);
     _twitterShareButton.backgroundColor = [UIColor clearColor];
-//    [_twitterShareButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//    [_twitterShareButton setTitleColor:[[_twitterShareButton titleColorForState:UIControlStateNormal] colorWithAlphaComponent:0.5] forState:UIControlStateHighlighted];
-//    _twitterShareButton.titleLabel.font = [UIFont fontWithName:@"Lato-Semibold" size:16.0];
-//    [_twitterShareButton setTitle:@"twitter" forState:UIControlStateNormal];
-//    _twitterShareButton.layer.cornerRadius = 6.0;
+//  [_fbShareButton addTarget:self action:@selector(shareOnFaceBook:) forControlEvents:UIControlEventTouchUpInside];
     
     
-//    [_fbShareButton addTarget:self action:@selector(shareOnFaceBook:) forControlEvents:UIControlEventTouchUpInside];
+    
     _fbShareButton = [PDShareButton buttonWithType:UIButtonTypeCustom];
+    [_fbShareButton setTag:PDShareButtonItemFacebook];
     _fbShareButton.translatesAutoresizingMaskIntoConstraints = NO;
     _fbShareButton.contentEdgeInsets =UIEdgeInsetsMake(10, 25, 10, 20);
-    [_fbShareButton setTag:3];
-    
     _fbShareButton.backgroundColor = [UIColor clearColor];
     [_fbShareButton setTitleColor:[UIColor clearColor] forState:UIControlStateNormal];
     [_fbShareButton setTitleColor:[[_fbShareButton titleColorForState:UIControlStateNormal] colorWithAlphaComponent:0.5] forState:UIControlStateHighlighted];
-//    _fbShareButton.titleLabel.font = [UIFont fontWithName:@"Lato-Semibold" size:16.0];
-//    [_fbShareButton setTitle:@"Share on Facebook" forState:UIControlStateNormal];
-//    _fbShareButton.layer.cornerRadius = 6.0;
-//    [_fbShareButton addTarget:self action:@selector(shareOnFaceBook:) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    
     
     _mailButton = [PDShareButton buttonWithType:UIButtonTypeCustom];
-    
+    [_mailButton setTag:PDShareButtonItemMail];
     _mailButton.translatesAutoresizingMaskIntoConstraints = NO;
     _mailButton.contentEdgeInsets =UIEdgeInsetsMake(10, 30, 10, 30);
     _mailButton.backgroundColor = [UIColor clearColor];
     [_mailButton setTitleColor:[UIColor clearColor] forState:UIControlStateNormal];
     [_mailButton setTitleColor:[[_mailButton titleColorForState:UIControlStateNormal] colorWithAlphaComponent:0.5] forState:UIControlStateHighlighted];
-//    _mailButton.titleLabel.font = [UIFont fontWithName:@"Lato-Semibold" size:16.0];
-//    [_mailButton setTitle:@"Mail" forState:UIControlStateNormal];
-//    _mailButton.layer.cornerRadius = 6.0;
+    
     [_mailButton addTarget:self action:@selector(sendwithMail:) forControlEvents:UIControlEventTouchUpInside];
     
     //    facebook share targeti ekle
+    
+    
+    
+    
+    
+    
     
 
     [popUpView insertSubview:_mailButton aboveSubview:popupImageView];
@@ -225,7 +225,7 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
     
     
     NSDictionary* views = NSDictionaryOfVariableBindings(popUpView,_mailButton, _cancelButton,_fbShareButton
-                                                         ,_twitterShareButton);
+                                ,_twitterShareButton);
 
     [popUpView addConstraints:
      [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[_twitterShareButton]-(5)-[_fbShareButton]-(5)-[_mailButton]-(5)-[_cancelButton]-|"
