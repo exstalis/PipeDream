@@ -154,6 +154,7 @@
     [newsCell.newsThumbnailImage cancelImageRequestOperation];
 
 
+    
     for (Attachments *att in self.feedArticle.articleAttachments) {
             self.feedAttachments=att;
 
@@ -166,7 +167,7 @@
     [newsCell.newsThumbnailImage setImageWithURL:url placeholderImage:[UIImage imageNamed: @"menu.png"]];
     
     
-    
+        [newsCell.newsShareButton addTarget:self.tableView.indexPathForSelectedRow action:@selector(showSharingOptionsPopU:) forControlEvents:UIControlEventTouchUpInside];
     
     
     if ((self.fbShareButton.tag=3)) {

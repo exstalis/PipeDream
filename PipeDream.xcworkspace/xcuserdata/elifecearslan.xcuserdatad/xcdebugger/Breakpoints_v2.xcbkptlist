@@ -246,7 +246,7 @@
                   moduleName = "PipeDream"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/elifecearslan/Developer/PipeDream/pipedream/PipeDream/PDReleaseViewController.m"
-                  timestampString = "449728837.861763"
+                  timestampString = "449730228.398689"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "83"
@@ -261,7 +261,7 @@
                   moduleName = "PipeDream"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/elifecearslan/Developer/PipeDream/pipedream/PipeDream/PDReleaseViewController.m"
-                  timestampString = "449728837.861985"
+                  timestampString = "449730228.399017"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "83"
@@ -326,11 +326,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PipeDream/PDNewsViewController.m"
-            timestampString = "449728835.677558"
+            timestampString = "449729201.185636"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -358,11 +358,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PipeDream/PDNewsViewController.m"
-            timestampString = "449728835.677558"
+            timestampString = "449729201.185636"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -374,11 +374,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PipeDream/PDNewsViewController.m"
-            timestampString = "449728835.677558"
+            timestampString = "449729201.185636"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -390,23 +390,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PipeDream/PDNewsViewController.m"
-            timestampString = "449728837.764445"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PipeDream/PDNewsViewController.m"
-            timestampString = "449728838.85436"
+            timestampString = "449729201.185636"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "173"
@@ -422,11 +406,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PipeDream/PDNewsViewController.m"
-            timestampString = "449728839.63332"
+            timestampString = "449729201.185636"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PipeDream/PDNewsViewController.m"
+            timestampString = "449729201.185636"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PipeDream/PDNewsViewController.m"
+            timestampString = "449729203.434135"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
