@@ -137,6 +137,10 @@
 
     PDNewsTableviewCell *newsCell=[tableView dequeueReusableCellWithIdentifier:@"newsCell"];
     
+    for(UIView * cellSubviews in newsCell.subviews)
+    {
+        cellSubviews.userInteractionEnabled = NO;
+    }
     
    self.feedArticle=[self.newsArticleArray objectAtIndex:indexPath.row] ;
 

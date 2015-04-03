@@ -11,7 +11,6 @@
 
 
 
-@interface PDRecentViewController : PDFeedTableViewController
-
+@interface PDRecentViewController : PDFeedTableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
 
 @end

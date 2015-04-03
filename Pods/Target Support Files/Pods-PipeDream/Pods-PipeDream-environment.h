@@ -75,37 +75,37 @@
 // Facebook-iOS-SDK
 #define COCOAPODS_POD_AVAILABLE_Facebook_iOS_SDK
 #define COCOAPODS_VERSION_MAJOR_Facebook_iOS_SDK 4
-#define COCOAPODS_VERSION_MINOR_Facebook_iOS_SDK 0
-#define COCOAPODS_VERSION_PATCH_Facebook_iOS_SDK 1
+#define COCOAPODS_VERSION_MINOR_Facebook_iOS_SDK 1
+#define COCOAPODS_VERSION_PATCH_Facebook_iOS_SDK 0
 
 // Facebook-iOS-SDK/CoreKit
 #define COCOAPODS_POD_AVAILABLE_Facebook_iOS_SDK_CoreKit
 #define COCOAPODS_VERSION_MAJOR_Facebook_iOS_SDK_CoreKit 4
-#define COCOAPODS_VERSION_MINOR_Facebook_iOS_SDK_CoreKit 0
-#define COCOAPODS_VERSION_PATCH_Facebook_iOS_SDK_CoreKit 1
+#define COCOAPODS_VERSION_MINOR_Facebook_iOS_SDK_CoreKit 1
+#define COCOAPODS_VERSION_PATCH_Facebook_iOS_SDK_CoreKit 0
 
 // Facebook-iOS-SDK/CoreKit/no-arc
 #define COCOAPODS_POD_AVAILABLE_Facebook_iOS_SDK_CoreKit_no_arc
 #define COCOAPODS_VERSION_MAJOR_Facebook_iOS_SDK_CoreKit_no_arc 4
-#define COCOAPODS_VERSION_MINOR_Facebook_iOS_SDK_CoreKit_no_arc 0
-#define COCOAPODS_VERSION_PATCH_Facebook_iOS_SDK_CoreKit_no_arc 1
+#define COCOAPODS_VERSION_MINOR_Facebook_iOS_SDK_CoreKit_no_arc 1
+#define COCOAPODS_VERSION_PATCH_Facebook_iOS_SDK_CoreKit_no_arc 0
 
 // Facebook-iOS-SDK/LoginKit
 #define COCOAPODS_POD_AVAILABLE_Facebook_iOS_SDK_LoginKit
 #define COCOAPODS_VERSION_MAJOR_Facebook_iOS_SDK_LoginKit 4
-#define COCOAPODS_VERSION_MINOR_Facebook_iOS_SDK_LoginKit 0
-#define COCOAPODS_VERSION_PATCH_Facebook_iOS_SDK_LoginKit 1
+#define COCOAPODS_VERSION_MINOR_Facebook_iOS_SDK_LoginKit 1
+#define COCOAPODS_VERSION_PATCH_Facebook_iOS_SDK_LoginKit 0
 
 // Facebook-iOS-SDK/ShareKit
 #define COCOAPODS_POD_AVAILABLE_Facebook_iOS_SDK_ShareKit
 #define COCOAPODS_VERSION_MAJOR_Facebook_iOS_SDK_ShareKit 4
-#define COCOAPODS_VERSION_MINOR_Facebook_iOS_SDK_ShareKit 0
-#define COCOAPODS_VERSION_PATCH_Facebook_iOS_SDK_ShareKit 1
+#define COCOAPODS_VERSION_MINOR_Facebook_iOS_SDK_ShareKit 1
+#define COCOAPODS_VERSION_PATCH_Facebook_iOS_SDK_ShareKit 0
 
 // FontAwesomeIconFactory
 #define COCOAPODS_POD_AVAILABLE_FontAwesomeIconFactory
-#define COCOAPODS_VERSION_MAJOR_FontAwesomeIconFactory 1
-#define COCOAPODS_VERSION_MINOR_FontAwesomeIconFactory 4
+#define COCOAPODS_VERSION_MAJOR_FontAwesomeIconFactory 2
+#define COCOAPODS_VERSION_MINOR_FontAwesomeIconFactory 0
 #define COCOAPODS_VERSION_PATCH_FontAwesomeIconFactory 0
 
 // JVFloatingDrawer
@@ -131,10 +131,4 @@
 #define COCOAPODS_VERSION_MAJOR_ORStackView 2
 #define COCOAPODS_VERSION_MINOR_ORStackView 0
 #define COCOAPODS_VERSION_PATCH_ORStackView 0
-
-// RNBlurModalView
-#define COCOAPODS_POD_AVAILABLE_RNBlurModalView
-#define COCOAPODS_VERSION_MAJOR_RNBlurModalView 0
-#define COCOAPODS_VERSION_MINOR_RNBlurModalView 1
-#define COCOAPODS_VERSION_PATCH_RNBlurModalView 0
 

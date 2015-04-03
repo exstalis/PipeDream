@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
 
 
+
 @property(nonatomic)PDArticleContentView *articleContents;
 
 
@@ -53,16 +54,6 @@
     [super didReceiveMemoryWarning];
   
 }
-//- (id)initWithCoder:(NSCoder *)aDecoder
-//{
-//    self = [super initWithCoder:aDecoder];
-//    if (self) {
-//        self.newsDetailArticleArray= [[NSMutableArray alloc] init];
-//        self.newsDetailAttachments=[[NSMutableArray alloc]init];
-//        
-//    }
-//    return self;
-//}
 
 
 -(void)contentView{
@@ -78,7 +69,7 @@
     
     NSURL *imageURL=[NSURL URLWithString:self.contentAttachment.fullImage[@"url"]];
     
-    [self.newsDetailImage setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"Logo.png"]];
+    [self.newsDetailImage setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"full_logo"]];
     
     
     

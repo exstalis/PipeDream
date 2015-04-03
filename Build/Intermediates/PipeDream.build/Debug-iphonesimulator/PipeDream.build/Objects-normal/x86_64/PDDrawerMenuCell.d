@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDDrawerMenuCell.m \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDDrawerMenuCell.h
+  /Users/elifecearslan/Developer/repos/pipedream/PipeDream/PDDrawerMenuCell.m \
+  /Users/elifecearslan/Developer/repos/pipedream/PipeDream/PDDrawerMenuCell.h

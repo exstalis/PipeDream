@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/KLCPopup/KLCPopup.m \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/KLCPopup/KLCPopup.h
+  /Users/elifecearslan/Developer/repos/pipedream/PipeDream/KLCPopup/KLCPopup.m \
+  /Users/elifecearslan/Developer/repos/pipedream/PipeDream/KLCPopup/KLCPopup.h

@@ -1,4 +1,4 @@
 dependencies: \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDFeedTableViewCell.m \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDFeedTableViewCell.h \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDShareButton.h
+  /Users/elifecearslan/Developer/repos/pipedream/PipeDream/PDFeedTableViewCell.m \
+  /Users/elifecearslan/Developer/repos/pipedream/PipeDream/PDFeedTableViewCell.h \
+  /Users/elifecearslan/Developer/repos/pipedream/PipeDream/PDShareButton.h

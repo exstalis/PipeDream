@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDShareUtility.m \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDShareUtility.h
+  /Users/elifecearslan/Developer/repos/pipedream/PipeDream/PDShareUtility.m \
+  /Users/elifecearslan/Developer/repos/pipedream/PipeDream/PDShareUtility.h

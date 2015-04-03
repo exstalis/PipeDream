@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDShareButton.m \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDShareButton.h
+  /Users/elifecearslan/Developer/repos/pipedream/PipeDream/PDShareButton.m \
+  /Users/elifecearslan/Developer/repos/pipedream/PipeDream/PDShareButton.h

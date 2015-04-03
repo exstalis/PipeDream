@@ -26,31 +26,30 @@ PODS:
   - Bolts/AppLinks (1.1.5):
     - Bolts/Tasks
   - Bolts/Tasks (1.1.5)
-  - Facebook-iOS-SDK (4.0.1):
-    - Bolts (~> 1.0)
-    - Facebook-iOS-SDK/CoreKit (= 4.0.1)
-    - Facebook-iOS-SDK/LoginKit (= 4.0.1)
-    - Facebook-iOS-SDK/ShareKit (= 4.0.1)
-  - Facebook-iOS-SDK/CoreKit (4.0.1):
-    - Bolts (~> 1.0)
-    - Facebook-iOS-SDK/CoreKit/no-arc (= 4.0.1)
-  - Facebook-iOS-SDK/CoreKit/no-arc (4.0.1):
-    - Bolts (~> 1.0)
-  - Facebook-iOS-SDK/LoginKit (4.0.1):
-    - Bolts (~> 1.0)
+  - Facebook-iOS-SDK (4.1.0):
+    - Bolts (~> 1.1)
+    - Facebook-iOS-SDK/CoreKit (= 4.1.0)
+    - Facebook-iOS-SDK/LoginKit (= 4.1.0)
+    - Facebook-iOS-SDK/ShareKit (= 4.1.0)
+  - Facebook-iOS-SDK/CoreKit (4.1.0):
+    - Bolts (~> 1.1)
+    - Facebook-iOS-SDK/CoreKit/no-arc (= 4.1.0)
+  - Facebook-iOS-SDK/CoreKit/no-arc (4.1.0):
+    - Bolts (~> 1.1)
+  - Facebook-iOS-SDK/LoginKit (4.1.0):
+    - Bolts (~> 1.1)
     - Facebook-iOS-SDK/CoreKit
-  - Facebook-iOS-SDK/ShareKit (4.0.1):
-    - Bolts (~> 1.0)
+  - Facebook-iOS-SDK/ShareKit (4.1.0):
+    - Bolts (~> 1.1)
     - Facebook-iOS-SDK/CoreKit
   - FLKAutoLayout (0.2.1)
-  - FontAwesomeIconFactory (1.4)
+  - FontAwesomeIconFactory (2.0)
   - JVFloatingDrawer (0.1.0)
   - Mantle (2.0):
     - Mantle/extobjc (= 2.0)
   - Mantle/extobjc (2.0)
   - ORStackView (2.0.0):
     - FLKAutoLayout (~> 0.1)
-  - RNBlurModalView (0.1.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5)
@@ -59,17 +58,15 @@ DEPENDENCIES:
   - JVFloatingDrawer
   - Mantle (~> 2.0)
   - ORStackView (~> 2.0)
-  - RNBlurModalView (~> 0.1.0)
 
 SPEC CHECKSUMS:
   AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
   Bolts: aac24961496d504aa56fc267cde95162a71bac39
-  Facebook-iOS-SDK: 6d05532c97e9c542f8d87f94b7f6ee217493d00b
+  Facebook-iOS-SDK: f42dfb27283bf5f05e3a9edc88459a75b9892d99
   FLKAutoLayout: 9db6b30c2008d230da608e62c607b11c23b942e6
-  FontAwesomeIconFactory: 4b6d0a8d90b2604a2518e34d15bbc100af99f11c
+  FontAwesomeIconFactory: d161a1832f8220d764033e0fcc4f4a8388495ab7
   JVFloatingDrawer: 4782b1df21411aef2c1818f3b346cace02cc2e24
   Mantle: 17de73ef929db2234d76fde2aacfb89ab11c61e8
   ORStackView: 5df6b1b990b0648d8ef6f69f89361ea8648e8f64
-  RNBlurModalView: 0f3fc721d4d1cdb79b39760bc74eb148cf5f5e52
 
 COCOAPODS: 0.37.0.beta.1

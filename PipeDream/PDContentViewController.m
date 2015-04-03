@@ -19,7 +19,7 @@
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = YES;
 
-    PDSingleton *sharedContent=[[PDSingleton alloc]initWithArticle:self.contentArticle];
+//    PDSingleton *sharedContent=[[PDSingleton alloc]initWithArticle:self.contentArticle];
     
 
 }

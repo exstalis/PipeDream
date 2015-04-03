@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/NSString_stripHtml.m \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/NSString_stripHtml.h
+  /Users/elifecearslan/Developer/repos/pipedream/PipeDream/NSString_stripHtml.m \
+  /Users/elifecearslan/Developer/repos/pipedream/PipeDream/NSString_stripHtml.h

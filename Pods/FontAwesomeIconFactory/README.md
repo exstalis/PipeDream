@@ -11,6 +11,10 @@ FontAwesomeIconFactory was created by Nikolaj Schumacher.
 
 [![Build Status](https://travis-ci.org/nschum/FontAwesomeIconFactory.png?branch=master)](https://travis-ci.org/nschum/FontAwesomeIconFactory)
 
+![screenshot Interface Builder](https://nschum.github.io/FontAwesomeIconFactory/screenshot-IB@2x.png)
+![screenshot OS X](https://nschum.github.io/FontAwesomeIconFactory/screenshot-OSX@2x.png)
+![screenshot iOS](https://nschum.github.io/FontAwesomeIconFactory/screenshot-iOS@2x.png)
+
 Setup
 -----
 
@@ -22,15 +26,18 @@ Add the following to your Podfile:
 
 Then run `pod install` as usual.
 
-### Manual Installation ###
-
-If you don't use CocoaPods, copy the *.m and *.h files from the repository root
-level, and FontAwesome.otf into your project.
-
-The font is included as a submodule. So remember to run `git submodule update --init` if you clone this repository.
-
 Changes
 -------
+
+### 2.0 ###
+
+- Updates Font Awesome to version 4.3.0 for new and changed icons.
+- Annotated for nicer use in Swift.
+- Support for adding icons to iOS controls in Interface Builder.
+
+### 1.4 ###
+
+- Updates Font Awesome to version 4.2.0 for new and changed icons.
 
 ### 1.3 ###
 

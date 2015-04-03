@@ -12,6 +12,7 @@
 #import <MapKit/MapKit.h>
 #import "ArticleCategory.h"
 #import "Attachments.h"
+#import <Mantle/MTLValueTransformer.h>
 
 
 @implementation Article
@@ -49,14 +50,14 @@
     return outputFormatter;
 }
 
-//transforms the URL
-+ (NSValueTransformer *) articleURLJSONTransformer {
-    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
-}
-
 //transform attachments with a Attachments object
 +(NSValueTransformer *) articleAttachmentsJSONTransformer {
     return [MTLJSONAdapter arrayTransformerWithModelClass:[Attachments class]];
+}
+
+//transforms the URL
++ (NSValueTransformer *) articleURLJSONTransformer {
+    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
 }
 
 //transform attachments with a ArticleCategory object

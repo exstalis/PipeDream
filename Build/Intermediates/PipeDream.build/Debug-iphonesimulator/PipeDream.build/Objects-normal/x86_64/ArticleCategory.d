@@ -1,4 +1,4 @@
 dependencies: \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/ArticleCategory.m \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/ArticleCategory.h \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/Article.h
+  /Users/elifecearslan/Developer/repos/pipedream/PipeDream/ArticleCategory.m \
+  /Users/elifecearslan/Developer/repos/pipedream/PipeDream/ArticleCategory.h \
+  /Users/elifecearslan/Developer/repos/pipedream/PipeDream/Article.h

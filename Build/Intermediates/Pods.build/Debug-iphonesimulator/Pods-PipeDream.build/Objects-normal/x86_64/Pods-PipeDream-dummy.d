@@ -1,2 +1,2 @@
 dependencies: \
-  /Users/elifecearslan/Developer/PipeDream/Pods/Target\ Support\ Files/Pods-PipeDream/Pods-PipeDream-dummy.m
+  /Users/elifecearslan/Developer/repos/pipedream/Pods/Target\ Support\ Files/Pods-PipeDream/Pods-PipeDream-dummy.m

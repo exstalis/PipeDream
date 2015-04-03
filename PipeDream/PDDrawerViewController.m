@@ -89,12 +89,16 @@ static NSString * const kPDDrawerCellReuseIdentifier = @"PDDrawerCellReuseIdenti
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PDDrawerMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:kPDDrawerCellReuseIdentifier forIndexPath:indexPath];
     
+
+    UIImage *icon=[[UIImage alloc]init];;
+
     
     switch ((PDMenuViewControllerItem)indexPath.row) {
             
             
         case PDMenuViewControllerItemRecent:{
             cell.sectionTitle=@"Recent";
+
             break;
             
         }
@@ -108,23 +112,38 @@ static NSString * const kPDDrawerCellReuseIdentifier = @"PDDrawerCellReuseIdenti
             
         case PDMenuViewControllerItemOpinion:{
             cell.sectionTitle=@"Opinion";
+            
+            icon=[UIImage imageNamed:@"opinionicon"];
+            [cell.iconImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+
             //            put an image
             break;
         }
         case PDMenuViewControllerItemRelease:{
             cell.sectionTitle= @"Release";
+        
+            
+            icon=[UIImage imageNamed:@"release"];
+            [cell.iconImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+
             //            put an image
             break;
         }
             
         case PDMenuViewControllerItemSports:{
             cell.sectionTitle=@"Sports";
-            //            put an image
+           icon=[UIImage imageNamed:@"sportsicon"];
+            [cell.iconImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+            
+
+
             break;
         }
         case PDMenuViewControllerItemContact:{
             cell.sectionTitle=@"Contact";
-         
+            
+            
+            
             //            put an image
             break;
         }

@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/RequestOperationConfig.m \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/RequestOperationConfig.h
+  /Users/elifecearslan/Developer/repos/pipedream/PipeDream/RequestOperationConfig.m \
+  /Users/elifecearslan/Developer/repos/pipedream/PipeDream/RequestOperationConfig.h

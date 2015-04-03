@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "40B995785AECEA8E621DCA8F"
+               BlueprintIdentifier = "9AD1A0757C78B0233655BDD0"
                BuildableName = "libPods-PipeDream-Facebook-iOS-SDK.a"
                BlueprintName = "Pods-PipeDream-Facebook-iOS-SDK"
                ReferencedContainer = "container:Pods.xcodeproj">

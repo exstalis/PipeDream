@@ -45,7 +45,6 @@
 		2D5E8E211AD9F2AE00FB533F /* PDOpinionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E8E201AD9F2AE00FB533F /* PDOpinionViewController.m */; };
 		2D5E8E241AD9F32500FB533F /* PDOpinionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E8E231AD9F32500FB533F /* PDOpinionDetailViewController.m */; };
 		2D5FDB331AEA1046004187BB /* libPods-PipeDream-FontAwesomeIconFactory.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5FDB2D1AEA1046004187BB /* libPods-PipeDream-FontAwesomeIconFactory.a */; };
-		2D5FDB351AEA1046004187BB /* libPods-PipeDream-Mantle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5FDB2F1AEA1046004187BB /* libPods-PipeDream-Mantle.a */; };
 		2D5FDB361AEA1046004187BB /* libPods-PipeDream-ORStackView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5FDB301AEA1046004187BB /* libPods-PipeDream-ORStackView.a */; };
 		2D5FDB381AEA1230004187BB /* libPods-PipeDream-AFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5FDB371AEA1230004187BB /* libPods-PipeDream-AFNetworking.a */; };
 		2D5FDB3A1AEA1336004187BB /* libPods-PipeDream-JVFloatingDrawer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5FDB391AEA1336004187BB /* libPods-PipeDream-JVFloatingDrawer.a */; };
@@ -90,6 +89,9 @@
 		2BE2650F1AF1B56F00CF5009 /* NSString+HTMLDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTMLDecoder.m"; sourceTree = "<group>"; };
 		2BE265111AF1C4C300CF5009 /* NSString_stripHtml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSString_stripHtml.h; sourceTree = "<group>"; };
 		2BE265121AF1C4C300CF5009 /* NSString_stripHtml.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSString_stripHtml.m; sourceTree = "<group>"; };
+		2D0FCCE01AF587E1005C2FC9 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		2D0FCCE21AF58CA1005C2FC9 /* libPods-PipeDream-Mantle.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-PipeDream-Mantle.a"; path = "Pods/../build/Debug-iphoneos/libPods-PipeDream-Mantle.a"; sourceTree = "<group>"; };
+		2D0FCCE41AF58D3C005C2FC9 /* libPods-PipeDream-Mantle.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-PipeDream-Mantle.a"; path = "Build/Products/Debug-iphonesimulator/libPods-PipeDream-Mantle.a"; sourceTree = "<group>"; };
 		2D271A691ABE1AE300A71464 /* PipeDream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PipeDream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D271A6D1ABE1AE300A71464 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D271A6E1ABE1AE300A71464 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -212,7 +214,6 @@
 				2D5FDB3A1AEA1336004187BB /* libPods-PipeDream-JVFloatingDrawer.a in Frameworks */,
 				2D5FDB381AEA1230004187BB /* libPods-PipeDream-AFNetworking.a in Frameworks */,
 				2D5FDB331AEA1046004187BB /* libPods-PipeDream-FontAwesomeIconFactory.a in Frameworks */,
-				2D5FDB351AEA1046004187BB /* libPods-PipeDream-Mantle.a in Frameworks */,
 				2D5FDB361AEA1046004187BB /* libPods-PipeDream-ORStackView.a in Frameworks */,
 				2D85F5121AE8CA0D00A0C832 /* Accounts.framework in Frameworks */,
 				2D4FC8651AE8C8000044ACEF /* SafariServices.framework in Frameworks */,
@@ -529,6 +530,9 @@
 		794F173DADAE86E716A67057 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2D0FCCE41AF58D3C005C2FC9 /* libPods-PipeDream-Mantle.a */,
+				2D0FCCE21AF58CA1005C2FC9 /* libPods-PipeDream-Mantle.a */,
+				2D0FCCE01AF587E1005C2FC9 /* CoreImage.framework */,
 				2D5FDB451AEB159D004187BB /* libPods-PipeDream-RNBlurModalView.a */,
 				2D5FDB411AEAEB68004187BB /* libPods-PipeDream-Bolts.a */,
 				2D5FDB421AEAEB68004187BB /* libPods-PipeDream-Facebook-iOS-SDK.a */,
@@ -877,11 +881,13 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = PipeDream/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 					"$(SDKROOT)/usr/lib/system",
+					"$(PROJECT_DIR)/Build/Products/Debug-iphonesimulator",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -894,6 +900,7 @@
 					"-l\"Pods-PipeDream-JVFloatingDrawer\"",
 					"-l\"Pods-PipeDream-Mantle\"",
 					"-l\"Pods-PipeDream-ORStackView\"",
+					"-ObjC",
 					"-l\"Pods-PipeDream-RNBlurModalView\"",
 					"-framework",
 					"\"Accelerate\"",

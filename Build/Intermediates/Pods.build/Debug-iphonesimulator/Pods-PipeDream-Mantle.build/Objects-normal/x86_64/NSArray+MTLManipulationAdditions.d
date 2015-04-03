@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/elifecearslan/Developer/PipeDream/Pods/Mantle/Mantle/NSArray+MTLManipulationAdditions.m \
-  /Users/elifecearslan/Developer/PipeDream/Pods/Target\ Support\ Files/Pods-PipeDream-Mantle/Pods-PipeDream-Mantle-prefix.pch \
-  /Users/elifecearslan/Developer/PipeDream/Pods/Target\ Support\ Files/Pods-PipeDream/Pods-PipeDream-environment.h \
-  /Users/elifecearslan/Developer/PipeDream/Pods/Mantle/Mantle/NSArray+MTLManipulationAdditions.h
+  /Users/elifecearslan/Developer/repos/pipedream/Pods/Mantle/Mantle/NSArray+MTLManipulationAdditions.m \
+  /Users/elifecearslan/Developer/repos/pipedream/Pods/Target\ Support\ Files/Pods-PipeDream-Mantle/Pods-PipeDream-Mantle-prefix.pch \
+  /Users/elifecearslan/Developer/repos/pipedream/Pods/Target\ Support\ Files/Pods-PipeDream/Pods-PipeDream-environment.h \
+  /Users/elifecearslan/Developer/repos/pipedream/Pods/Mantle/Mantle/NSArray+MTLManipulationAdditions.h

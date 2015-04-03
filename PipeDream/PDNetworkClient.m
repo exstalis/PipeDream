@@ -39,6 +39,8 @@ static NSString * const kPDClientJSONSportsPostsString = @"http://www.bupipedrea
 
 static NSString * const kPDClientJSONNewsPostsString = @"http://www.bupipedream.com/api/get_category_posts/?slug=news/";
 
+static NSString * const kPDClientJSONSearchPostsString = @"http://www.bupipedream.com/api/get_search_results/?search='binghamton'";
+
 
 
 -(id) translateFromJSONDictionary:(NSDictionary *)articleJSON withClassName:(NSString*)className{
@@ -158,7 +160,7 @@ static NSString * const kPDClientJSONNewsPostsString = @"http://www.bupipedream.
             return;
         }
         
-        NSArray *releaseArticles = [self translateFromJSONArray:[responseObject objectForKey:@"posts"] withClassName:@"Article"];;
+        NSArray *releaseArticles = [self translateFromJSONArray:[responseObject objectForKey:@"posts"] withClassName:@"Article"];
         
         completion(releaseArticles, nil);
         
@@ -186,7 +188,7 @@ static NSString * const kPDClientJSONNewsPostsString = @"http://www.bupipedream.
             return;
         }
         
-        NSArray *sportsArticles = [self translateFromJSONArray:[responseObject objectForKey:@"posts"] withClassName:@"Article"];;
+        NSArray *sportsArticles = [self translateFromJSONArray:[responseObject objectForKey:@"posts"] withClassName:@"Article"];
         
         completion(sportsArticles, nil);
         
@@ -214,7 +216,7 @@ static NSString * const kPDClientJSONNewsPostsString = @"http://www.bupipedream.
             return;
         }
         
-        NSArray *newsArticles = [self translateFromJSONArray:[responseObject objectForKey:@"posts"] withClassName:@"Article"];;
+        NSArray *newsArticles = [self translateFromJSONArray:[responseObject objectForKey:@"posts"] withClassName:@"Article"];
         
         completion(newsArticles, nil);
         
@@ -228,8 +230,29 @@ static NSString * const kPDClientJSONNewsPostsString = @"http://www.bupipedream.
     [operation start];
     
     
+}
+
+-(void)getFilteredContent:(ArrayCompletionBlock)completion {
     
+    AFHTTPRequestOperation *operation = [PDNetworkClient createHTTPRequestOperationWithConfiguration:^(RequestOperationConfig *config) {
+        config.URL = [NSURL URLWithString:kPDClientJSONSearchPostsString];
+        config.responseSerializer = [AFJSONResponseSerializer serializer];
+    }];
     
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if(completion == nil) {
+            return;
+        }
+        
+        _searchResults = [self translateFromJSONArray:[responseObject objectForKey:@"posts"] withClassName:@"Article"];
+        completion(_searchResults, nil);
+        
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                if (completion) {
+                    completion(nil, error);
+                }
+            }];
+    [operation start];
     
 }
 

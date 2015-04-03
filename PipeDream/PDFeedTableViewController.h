@@ -31,7 +31,6 @@
 @property (nonatomic, strong) PDShareUtility *shareUtility;
 @property(nonatomic,assign) BOOL shouldDismissAfterDelay;
 @property (weak, nonatomic) PDShareButton *fbShareButton;
-
 @property (weak, nonatomic) PDShareButton *twitterShareButton;
 
 @property ( nonatomic,assign)  PDShareButton *mailButton;
