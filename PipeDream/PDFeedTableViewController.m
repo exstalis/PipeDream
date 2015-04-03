@@ -157,12 +157,14 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
     popUpView.translatesAutoresizingMaskIntoConstraints=NO;
     popUpView.backgroundColor=[UIColor clearColor];
 
-
-    UIImageView *popupImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sharePopupView"]];
+    UIImageView *popupImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"share_popup_view_background"]];
  
     
+  
     
-    [popupImageView setContentMode:UIViewContentModeScaleAspectFill];
+    [popupImageView
+     
+     setContentMode:UIViewContentModeScaleAspectFill];
     [popupImageView setTranslatesAutoresizingMaskIntoConstraints:NO];
 //    popupImageView.contentMode = UIViewContentModeRedraw;
     
@@ -182,7 +184,6 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
     _twitterShareButton.translatesAutoresizingMaskIntoConstraints = NO;
     _twitterShareButton.contentEdgeInsets =UIEdgeInsetsMake(10, 20, 10, 20);
     _twitterShareButton.backgroundColor = [UIColor clearColor];
-//  [_fbShareButton addTarget:self action:@selector(shareOnFaceBook:) forControlEvents:UIControlEventTouchUpInside];
     
     
     
@@ -193,8 +194,8 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
     _fbShareButton.backgroundColor = [UIColor clearColor];
     [_fbShareButton setTitleColor:[UIColor clearColor] forState:UIControlStateNormal];
     [_fbShareButton setTitleColor:[[_fbShareButton titleColorForState:UIControlStateNormal] colorWithAlphaComponent:0.5] forState:UIControlStateHighlighted];
-    
-    
+    [self.fbShareButton addTarget:self action:@selector(facebookShare) forControlEvents:UIControlEventTouchUpInside];
+
     
     
     _mailButton = [PDShareButton buttonWithType:UIButtonTypeCustom];
@@ -219,7 +220,6 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
     [popUpView insertSubview:_mailButton aboveSubview:popupImageView];
     [popUpView insertSubview:_fbShareButton aboveSubview:popupImageView];
     [popUpView insertSubview:_cancelButton aboveSubview:popupImageView];
-    
     [popUpView insertSubview:_twitterShareButton aboveSubview:popupImageView];
     [popUpView addSubview:popupImageView];
     
@@ -249,12 +249,12 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
     // Show in popup
     // Show in popup
     KLCPopupLayout layout =KLCPopupLayoutMake(KLCPopupHorizontalLayoutCenter , KLCPopupVerticalLayoutCenter);
-    KLCPopup * popup=[KLCPopup popupWithContentView:popUpView showType:KLCPopupShowTypeSlideInFromRight dismissType:KLCPopupDismissTypeSlideOutToTop maskType:KLCPopupMaskTypeDimmed dismissOnBackgroundTouch:YES dismissOnContentTouch:NO];
+    _sharepopup=[KLCPopup popupWithContentView:popUpView showType:KLCPopupShowTypeSlideInFromRight dismissType:KLCPopupDismissTypeSlideOutToTop maskType:KLCPopupMaskTypeDimmed dismissOnBackgroundTouch:YES dismissOnContentTouch:NO];
     
     if (_shouldDismissAfterDelay) {
-        [popup showWithLayout:layout duration:2.0];
+        [_sharepopup showWithLayout:layout duration:2.0];
     } else {
-        [popup showWithLayout:layout];
+        [_sharepopup showWithLayout:layout];
     }
 }
 
@@ -262,12 +262,9 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
 
 
 
-#pragma mark update and delete
 
 #pragma utility setter
-//facebook share lazy instantiation
-
-
+//facebook share lazy setting
 
 - (void)setShareUtility:(PDShareUtility *)shareUtility
 {
@@ -282,40 +279,22 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
 
 #pragma  mark - share on facebook action
 
-
-
-
 - (void)shareOnFaceBook:(id)sender{
-
-    if ([sender isKindOfClass:[PDShareButton class]]) {
-        [self facebookShare];
-
-        [(UIView*)sender dismissPresentingPopup];
-
-    }
-    
-    
+    [self facebookShare];
 }
 
 -(void)facebookShare{
     
-    
     PDShareUtility *utility=[[PDShareUtility alloc]initWithArticleURL:self.feedArticle.articleURL];
-    
-    //    FBSDKShareDialog *facebookShareDialog=[utility getShareDialogWithContentURL:fbsharedArticle.sharedArticle.articleURL];
-    //    facebookShareDialog.delegate=self;
-    
-    
-    
     self.shareUtility=utility;
     utility.delegate=self;
-    [utility startSharing];
-    
+    if ([utility.shareDialog canShow]) {
+        [_sharepopup dismissPresentingPopup];
+        [utility startSharing];
 
-
-    
+    }
+   
 }
-
 
 
 #pragma mark - mail
@@ -327,7 +306,6 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
         [(PDShareButton*)sender dismissPresentingPopup];
     }
     [self sendArticleViaMail:[self.feedArticle.articleURL absoluteString]];
-    
 //    NSLog(@"@mothh came!!!%@: ",[self.feedArticle.articleURL absoluteString]);
 
     
@@ -341,24 +319,15 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
     }
 }
 
-
-
-
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
     return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
     return 0;
 }
-
-
-
 
 
 
@@ -369,8 +338,6 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
 - (void)sendArticleViaMail:(NSString *)articleURL{
     
     MFMailComposeViewController *viewController = [[MFMailComposeViewController alloc] init];
-
-    
     viewController.mailComposeDelegate = self;
     [viewController setSubject:self.feedArticle.titlePlain];
     [viewController setMessageBody: articleURL isHTML:YES];
@@ -382,8 +349,39 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
           didFinishWithResult:(MFMailComposeResult)result
                         error:(NSError *)error
 {
+    NSString *notifyuser=[[NSString alloc]init];
+    
+    
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            notifyuser=@"Mail sending canceled";
+            [self notifyUserShareDidCompletePopUp:notifyuser];
+            break;
+        case MFMailComposeResultSaved:
+            notifyuser= @"Result: Mail saved";
+            [self notifyUserShareDidCompletePopUp:notifyuser];
+
+            break;
+        case MFMailComposeResultSent:
+            notifyuser= @"Result: Mail sent";
+            [self notifyUserShareDidCompletePopUp:notifyuser];
+
+            break;
+        case MFMailComposeResultFailed:
+            notifyuser= @"Mail sending failed";
+            [self notifyUserShareDidCompletePopUp:notifyuser];
+
+            break;
+        default:
+            notifyuser = @"Result: Mail not sent";
+            [self notifyUserShareDidCompletePopUp:notifyuser];
+            break;
+    }
+    
     [controller dismissViewControllerAnimated:YES completion:NULL];
     
+    NSLog(@"ne dusuyo buraya tam olarak succes mi?");
     
 }
 
@@ -394,12 +392,10 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
 
 -(void)shareUtilityDidCompleteShareOnFacebook{
     
-NSString *succesfullShare=@"Shared on Facebook";
-    
-    [self notifyUserShareDidCompletePopUp:succesfullShare];
-    
+    NSString *succesfullShare=@"Shared on Facebook";
 
-    
+    [self notifyUserShareDidCompletePopUp:succesfullShare];
+
     
 }
 
@@ -408,51 +404,18 @@ NSString *succesfullShare=@"Shared on Facebook";
 
 
 -(void)shareUtilityEndWithError{
-
     
-    UIView *alertView=[[UIView alloc]init];
-    UILabel *alertLabel=[[UILabel alloc]init];
-    
-    
-    [alertLabel setText:@"canceled sharing"];
-    
-    [alertView addSubview:alertLabel];
-    
-    NSDictionary* views = NSDictionaryOfVariableBindings(alertView,alertLabel);
-    
-    [alertView addConstraints:
-     [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(10)-[alertLabel]-(10)|"
-                                             options:NSLayoutFormatAlignAllCenterX
-                                             metrics:nil
-                                               views:views]];
-    [alertView addConstraints:
-     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(10)-[alertLabel]-(10)-|"
-                                             options:0
-                                             metrics:nil
-                                               views:views]];
-
-    KLCPopupLayout layout =KLCPopupLayoutMake(KLCPopupHorizontalLayoutCenter , KLCPopupVerticalLayoutCenter);
-    KLCPopup *alertPopup=[KLCPopup popupWithContentView:alertView showType:KLCPopupShowTypeBounceInFromTop dismissType:KLCPopupDismissTypeBounceOutToBottom maskType:KLCPopupMaskTypeDimmed dismissOnBackgroundTouch:YES dismissOnContentTouch:YES];
-    
-    
-    
-    if (_shouldDismissAfterDelay) {
-        [alertPopup showWithLayout:layout duration:2.0];
-    } else {
-        [alertPopup showWithLayout:layout];
-    }
+    [self notifyUserShareDidCompletePopUp:@"Facebook sharing canceled"];
     
    
 }
 
 -(void)shareUtilityDidFailShareOnFacebook:(NSError *)error{
     
-    
+    [self notifyUserShareDidCompletePopUp:@"Unexpected error when sharing"];
     NSLog(@"Unexpected error when sharing : %@", error);
-    
-    
-    
-    
+
+
 }
 
 @end

@@ -137,11 +137,11 @@
 
     PDNewsTableviewCell *newsCell=[tableView dequeueReusableCellWithIdentifier:@"newsCell"];
     
-    for(UIView * cellSubviews in newsCell.subviews)
-    {
-        cellSubviews.userInteractionEnabled = NO;
-    }
-    
+//    for(UIView * cellSubviews in newsCell.subviews)
+//    {
+//        cellSubviews.userInteractionEnabled = NO;
+//    }
+//    
    self.feedArticle=[self.newsArticleArray objectAtIndex:indexPath.row] ;
 
     
@@ -167,36 +167,48 @@
     [newsCell.newsThumbnailImage setImageWithURL:url placeholderImage:[UIImage imageNamed: @"menu.png"]];
     
     
-        [newsCell.newsShareButton addTarget:self.tableView.indexPathForSelectedRow action:@selector(showSharingOptionsPopU:) forControlEvents:UIControlEventTouchUpInside];
     
+    if ([newsCell.newsShareButton isTouchInside]) {
+        
+        
+        [newsCell.newsShareButton addTarget:self.tableView.indexPathForSelectedRow action:@selector(showSharingOptionsPopU:) forControlEvents:UIControlEventTouchUpInside];
+       
+        if ([self.fbShareButton isTouchInside]) {
+            
+    
+            [self.shareUtility.shareDialog canShow];
+            [self facebookShare];
+            
+            
+            
+
+        }
+        
+    }
     
 //    if ((self.fbShareButton.tag=3)) {
 //        [self.shareUtility.shareDialog canShow];
 //        
 //            
 ////            [self facebookShare];
-//        [self.fbShareButton addTarget:self action:@selector(facebookShare) forControlEvents:UIControlEventTouchUpInside];
+//
 //        
 //    }
 //
 //    
 
 
-
-        
-
-    
     
  
-    if ([self.mailButton.titleLabel.text isEqualToString:@"Mail"]) {
-        
-        [self sendwithMail:self.mailButton];
-        
-    
-        
-        
-    }
-    
+//    if ([self.mailButton.titleLabel.text isEqualToString:@"Mail"]) {
+//        
+//        [self sendwithMail:self.mailButton];
+//        
+//    
+//        
+//        
+//    }
+//    
     
         return newsCell;
     
