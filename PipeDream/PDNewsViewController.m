@@ -167,7 +167,7 @@
     
     NSURL* url=[NSURL URLWithString:self.feedAttachments.thumbnailImage [@"url"]];
         
-    [newsCell.newsThumbnailImage setImageWithURL:url placeholderImage:[UIImage imageNamed: @"menu.png"]];
+    [newsCell.newsThumbnailImage setImageWithURL:url placeholderImage:[UIImage imageNamed: @"placeholder"]];
     
     
     
