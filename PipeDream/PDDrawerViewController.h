@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import <FBSDKShareKit.h>
+#import <FBSDKLiking.h>
+#import <FBSDKLikeControl.h>
+#import <FBSDKShareLinkContent.h>
 
 
 typedef NS_ENUM (NSInteger, PDMenuViewControllerItem){
@@ -25,5 +29,11 @@ typedef NS_ENUM (NSInteger, PDMenuViewControllerItem){
 
 @interface PDDrawerViewController : UITableViewController
 @property (weak, nonatomic) IBOutlet UIView *drawerfooterView;
+
+
+@property (strong, nonatomic) IBOutlet UIButton *facebookLikeButton;
+@property (weak, nonatomic) IBOutlet UIButton *twitterFollowButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *instagramFollowButton;
 
 @end

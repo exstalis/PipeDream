@@ -11,6 +11,9 @@
 #import "JVFloatingDrawerViewController.h"
 #import "PDDrawerMenuCell.h"
 
+
+
+
 enum {
     kPDDrawerMenuIndex    = 0,
     kPDNewsPageIndex = 1,
@@ -29,13 +32,17 @@ static const CGFloat kPDTableViewTopInset = 80.0;
 static NSString * const kPDDrawerCellReuseIdentifier = @"PDDrawerCellReuseIdentifier";
 
 
-@interface PDDrawerViewController ()
+@interface PDDrawerViewController ()<FBSDKLiking>
 {
     UIImage *_drawerBackground;
+    FBSDKLikeButton *_fbLikeButton;
     
 
     
 }
+@property (weak, nonatomic) IBOutlet UIButton *followUsOnInstagram;
+- (IBAction)likeUsOnFaceBook:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *followUsOnTwitter;
 @end
 
 @implementation PDDrawerViewController
@@ -47,6 +54,7 @@ static NSString * const kPDDrawerCellReuseIdentifier = @"PDDrawerCellReuseIdenti
     self.tableView.contentInset = UIEdgeInsetsMake(kPDTableViewTopInset, 0.0, 0.0, 0.0);
     self.clearsSelectionOnViewWillAppear = NO;
     self.drawerfooterView.backgroundColor=[UIColor clearColor];
+    
     
 
     
@@ -179,5 +187,27 @@ static NSString * const kPDDrawerCellReuseIdentifier = @"PDDrawerCellReuseIdenti
     }
 
 
+#pragma button setters
+-(void)facebookLikeControl{
+    
+    FBSDKLikeButton *fbLikeButton=[[FBSDKLikeButton alloc]init];
+    fbLikeButton.objectType=FBSDKLikeObjectTypeUnknown;
+    FBSDKLikeControl * fblike=[[FBSDKLikeControl alloc]init];
+    fblike.likeControlStyle=FBSDKLikeControlAuxiliaryPositionBottom;
+    fblike.likeControlHorizontalAlignment = FBSDKLikeControlHorizontalAlignmentCenter;;
 
+    fblike.objectID=@"https://www.facebook.com/BUPipeDream";
+
+    
+}
+
+
+- (IBAction)likeUsOnFaceBook:(id)sender {
+    
+    
+    
+   
+    
+    
+}
 @end
