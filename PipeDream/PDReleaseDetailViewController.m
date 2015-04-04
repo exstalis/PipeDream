@@ -38,17 +38,6 @@
     return YES;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        self.releaseDetailArticleArray= [[NSMutableArray alloc] init];
-        self.releaseDetailAttachments=[[NSMutableArray alloc]init];
-    
-    }
-    return self;
-}
-
 //buradaki scrollari superclass'a yolla inherit et, method yaz... boyle olmaz :/
 
 
@@ -66,7 +55,6 @@
     
     self.releaseDate.text = self.contentArticle.date;
     
-
     
     NSURL *imageURL=[NSURL URLWithString:self.contentAttachment.fullImage[@"url"]];
 

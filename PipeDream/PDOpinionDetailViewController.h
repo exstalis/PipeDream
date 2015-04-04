@@ -14,16 +14,7 @@
 @class Attachments;
 
 
-
-
 @interface PDOpinionDetailViewController : PDContentViewController<MFMailComposeViewControllerDelegate,MFMessageComposeViewControllerDelegate>
-
-@property (nonatomic,strong) NSMutableArray *opinionDetailArticleArray;
-@property(nonatomic,strong)NSMutableArray *opinionDetailAttachments;
-//@property(nonatomic,strong,readwrite)Article *contentArticle;
-//
-//@property(nonatomic,strong)Attachments *contentAttachment;
-
 
 @property (weak, nonatomic) IBOutlet UIScrollView *opinionScrollView;
 @property (weak, nonatomic) IBOutlet UILabel *authorLabel;

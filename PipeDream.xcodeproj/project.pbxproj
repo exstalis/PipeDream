@@ -363,9 +363,9 @@
 			isa = PBXGroup;
 			children = (
 				2D29213F1ADA4C7100D622EC /* PDSportsViewController.h */,
+				2D2921401ADA4C7100D622EC /* PDSportsViewController.m */,
 				2D4FC84F1AE890970044ACEF /* PDSportsTableViewCell.h */,
 				2D4FC8501AE890970044ACEF /* PDSportsTableViewCell.m */,
-				2D2921401ADA4C7100D622EC /* PDSportsViewController.m */,
 				2D2921461ADA586E00D622EC /* PDSportsDetailViewController.h */,
 				2D2921471ADA586E00D622EC /* PDSportsDetailViewController.m */,
 			);

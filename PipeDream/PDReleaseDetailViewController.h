@@ -13,17 +13,10 @@
 
 @interface PDReleaseDetailViewController : PDContentViewController
 
-
-@property (nonatomic,strong) NSMutableArray *releaseDetailArticleArray;
-@property(nonatomic,strong)NSMutableArray *releaseDetailAttachments;
 @property (weak, nonatomic) IBOutlet UILabel *releaseAuthor;
-
 @property (weak, nonatomic) IBOutlet UILabel *releaseDate;
-
 @property (weak, nonatomic) IBOutlet UITextView *releaseTitle;
-
 @property (weak, nonatomic) IBOutlet UITextView *releaseArticle;
-
 @property (weak, nonatomic) IBOutlet UIImageView *releaseImage;
 @property (weak, nonatomic) IBOutlet UIScrollView *releaseScrollView;
 

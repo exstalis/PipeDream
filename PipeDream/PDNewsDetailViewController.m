@@ -22,17 +22,12 @@
 
 
 @interface PDNewsDetailViewController ()<FBSDKSharingDelegate,FBSDKSharingDialog>
+
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *backButton;
-
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
-
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleHeightConstraint;
 
-
-
-
 @property(nonatomic)PDArticleContentView *articleContents;
-
 
 
 @end
@@ -42,18 +37,7 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
-    
-  
     [self contentView];
-    
-    
-    
-//    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-//    loginButton.center = self.view.center;
-//    [self.view addSubview:loginButton];
-
-    
     
    }
 
@@ -61,16 +45,6 @@
     [super didReceiveMemoryWarning];
   
 }
-//- (id)initWithCoder:(NSCoder *)aDecoder
-//{
-//    self = [super initWithCoder:aDecoder];
-//    if (self) {
-//        self.newsDetailArticleArray= [[NSMutableArray alloc] init];
-//        self.newsDetailAttachments=[[NSMutableArray alloc]init];
-//        
-//    }
-//    return self;
-//}
 
 
 -(void)contentView{

@@ -13,10 +13,9 @@
 
 
 @interface PDOpinionDetailViewController ()
+
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *barBackButton;
-
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bodyHeightConstraint;
-
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleHeightConstraint;
 
 @end
@@ -33,16 +32,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        self.opinionDetailArticleArray= [[NSMutableArray alloc] init];
-        self.opinionDetailAttachments=[[NSMutableArray alloc]init];
-    }
-    return self;
-}
-
 
 
 -(BOOL)canBecomeFirstResponder
