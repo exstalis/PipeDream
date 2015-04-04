@@ -24,5 +24,6 @@ typedef NS_ENUM (NSInteger, PDMenuViewControllerItem){
 };
 
 @interface PDDrawerViewController : UITableViewController
+@property (weak, nonatomic) IBOutlet UIView *drawerfooterView;
 
 @end
