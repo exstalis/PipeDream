@@ -137,15 +137,18 @@
 
     PDNewsTableviewCell *newsCell=[tableView dequeueReusableCellWithIdentifier:@"newsCell"];
     
-//    for(UIView * cellSubviews in newsCell.subviews)
-//    {
-//        cellSubviews.userInteractionEnabled = NO;
-//    }
-//    
+    for(UIView * cellSubviews in newsCell.subviews)
+    {
+        cellSubviews.userInteractionEnabled = NO;
+    }
+    
    self.feedArticle=[self.newsArticleArray objectAtIndex:indexPath.row] ;
 
     
-
+    newsCell.newsTitle.userInteractionEnabled=NO;
+    newsCell.newsExcerptTextView.userInteractionEnabled=NO;
+    newsCell.newsThumbnailImage.userInteractionEnabled=NO;
+    
     newsCell.newsTitle.text = [self.feedArticle.articleTitle decodeHTML];
     newsCell.newsExcerptTextView.text = [self.feedArticle.articleExcerpt decodeHTML];
     newsCell.newsAuthorLabel.text = self.feedArticle.authorName;
@@ -185,30 +188,12 @@
         }
         
     }
-    
-//    if ((self.fbShareButton.tag=3)) {
-//        [self.shareUtility.shareDialog canShow];
-//        
-//            
-////            [self facebookShare];
-//
-//        
-//    }
-//
-//    
+ 
 
 
     
  
-//    if ([self.mailButton.titleLabel.text isEqualToString:@"Mail"]) {
-//        
-//        [self sendwithMail:self.mailButton];
-//        
-//    
-//        
-//        
-//    }
-//    
+ 
     
         return newsCell;
     

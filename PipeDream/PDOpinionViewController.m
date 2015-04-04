@@ -127,14 +127,13 @@
     
     
     PDOpinionTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"opinionCell" forIndexPath:indexPath];
-    
-    for(UIView * cellSubviews in cell.subviews)
-    {
-        cellSubviews.userInteractionEnabled = NO;
-    }
-    
+
     self.feedArticle=[_opinionArticlesArray objectAtIndex:indexPath.row];
+    cell.opinionThumnail.userInteractionEnabled=NO;
+    cell.opinionAuthor.userInteractionEnabled=NO;
+    cell.opinionExcerptTextview.userInteractionEnabled=NO;
     
+
     cell.opinionTitle.text = [self.feedArticle.articleTitle decodeHTML];
     cell.opinionExcerptTextview.text = [self.feedArticle.articleExcerpt decodeHTML];
     cell.opinionAuthor.text = self.feedArticle.authorName;
@@ -155,24 +154,34 @@
     [cell.opinionThumnail setImageWithURL:url placeholderImage:[UIImage imageNamed: @"menu.png"]];
   
     
-    if ([self.fbShareButton.titleLabel.text isEqualToString:@"Share on Facebook"] ){
-        
-        
-        [self facebookShare];
-        
-        
-    }
-
     
+    if ([cell.opinionShareButton isTouchInside]) {
+       [cell.opinionShareButton addTarget:self.tableView.indexPathForSelectedRow action:@selector(showShareOptionsPopup:) forControlEvents:UIControlEventTouchUpInside ];
+        
+        
+        
+        
+        if ([self.fbShareButton isTouchInside]) {
+            [self.shareUtility.shareDialog canShow];
+            [self facebookShare];
+            
+        }
+        
+        
+        if ([self.mailButton isTouchInside]) {
+            
+            [self sendwithMail:self.mailButton];
+            
+            
+            
+            
+            
+        }
+     }
+    
+   
 
-    if ([self.mailButton.titleLabel.text isEqualToString:@"Mail"]) {
-        
-        [self sendwithMail:self.mailButton];
-        
-        
-        
-        
-    }
+   
     
     
     return cell;
