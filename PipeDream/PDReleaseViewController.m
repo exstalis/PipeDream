@@ -113,17 +113,18 @@
   
     self.feedArticle=[_releaseArticleArray objectAtIndex:indexPath.row];
     
-    for(UIView * cellSubviews in cell.subviews)
-    {
-        cellSubviews.userInteractionEnabled = NO;
-    }
+    [cell.releaseThumbnail cancelImageRequestOperation];
+
     
     cell.releaseTitle.text = [self.feedArticle.articleTitle decodeHTML];
     cell.releaseAuthor.text = self.feedArticle.authorName;
     cell.releaseDate.text = self.feedArticle.date.description;
     cell.releaseExcerpt.text= [self.feedArticle.articleExcerpt decodeHTML];
+    cell.releaseAuthor.userInteractionEnabled=NO;
+    cell.releaseExcerpt.userInteractionEnabled=NO;
+    cell.releaseTitle.userInteractionEnabled=NO;
+    cell.releaseThumbnail.userInteractionEnabled=NO;
     
-    [cell.releaseThumbnail cancelImageRequestOperation];
 
     
     NSURL* url=[NSURL URLWithString:self.feedAttachments.thumbnailImage [@"url"]];
@@ -137,25 +138,26 @@
     [cell.releaseShareButton addTarget:self action:@selector(showShareOptions:) forControlEvents:UIControlEventTouchUpInside];
     
 
-    if ([self.fbShareButton.titleLabel.text isEqualToString:@"Share on Facebook"] ){
-        
-        
-        [self facebookShare];
-        self.shareUtility.delegate=nil;
-//        test delegate..
-        
-        
-    }
-    if ([self.mailButton.titleLabel.text isEqualToString:@"Mail"]) {
-        
-        [self sendwithMail:self.mailButton];
-        
-        
-        
-        
-    }
 
+    if ([cell.releaseShareButton isTouchInside]) {
+        
+        
+        [cell.releaseShareButton addTarget:self.tableView.indexPathForSelectedRow action:@selector(showShareOptions:) forControlEvents:UIControlEventTouchUpInside];
+        
+        if ([self.fbShareButton isTouchInside]) {
+            
+            
+            [self.shareUtility.shareDialog canShow];
+            [self facebookShare];
+            
+            
+            
+            
+        }
+        
+    }
     
+
     
     
     return cell;
@@ -189,7 +191,7 @@
 
 - (void)showShareOptions:(id)sender {
     
-    [self sharingOptionsButtonAction];
+    [self sharePopupView];
 
 }
 

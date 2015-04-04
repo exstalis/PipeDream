@@ -18,5 +18,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *sportsDate;
 @property (weak, nonatomic) IBOutlet UIImageView *sportsThumbnail;
+@property (weak, nonatomic) IBOutlet UIButton *shareButton;
 
 @end

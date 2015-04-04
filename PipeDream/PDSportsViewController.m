@@ -22,6 +22,7 @@
 @interface PDSportsViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 - (IBAction)showMenu:(UIBarButtonItem *)sender;
+- (IBAction)showSharePopupView:(id)sender;
 
 @property(nonatomic,strong)Article *sportsArticles;
 @property(nonatomic)Attachments *feedAttachments;
@@ -73,6 +74,12 @@
     
 }
 
+- (IBAction)showSharePopupView:(id)sender {
+    [self sharePopupView];
+    
+}
+
+
 
 #pragma Menu action method
 
@@ -106,10 +113,11 @@
     
     _sportsArticles=[_sportsArticlesArray objectAtIndex:indexPath.row];
     
-    for(UIView * cellSubviews in cell.subviews)
-    {
-        cellSubviews.userInteractionEnabled = NO;
-    }
+    cell.sportsTitle.userInteractionEnabled=NO;
+    cell.sportsThumbnail.userInteractionEnabled=NO;
+    cell.sportsExcerpt.userInteractionEnabled=NO;
+    cell.sportsAuthor.userInteractionEnabled=NO;
+    
     
     cell.sportsTitle.text = [_sportsArticles.articleTitle decodeHTML];
     cell.sportsExcerpt.text = [_sportsArticles.articleExcerpt decodeHTML];
@@ -125,6 +133,25 @@
     }
     
     [cell.sportsThumbnail setImageWithURL:url placeholderImage:[UIImage imageNamed: @"menu.png"]];
+    
+    
+    if ([cell.shareButton isTouchInside]) {
+        
+        
+        [cell.shareButton addTarget:self.tableView.indexPathForSelectedRow action:@selector(showSharePopupView::) forControlEvents:UIControlEventTouchUpInside];
+        
+        if ([self.fbShareButton isTouchInside]) {
+
+            
+            [self.shareUtility.shareDialog canShow];
+            [self facebookShare];
+            
+            
+            
+            
+        }
+        
+    }
     
     
     return cell;

@@ -829,6 +829,9 @@
                                             <state key="normal" backgroundImage="share_button">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="showShareOptions:" destination="baI-be-i4K" eventType="touchUpInside" id="BzM-cc-88I"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -886,7 +889,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HPD-cR-FZU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="675.5" y="568.5"/>
+            <point key="canvasLocation" x="675.5" y="600.5"/>
         </scene>
         <!--Sports-->
         <scene sceneID="OxO-7u-I2a">
@@ -947,6 +950,9 @@
                                             <state key="normal" backgroundImage="share_button">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="showSharePopupView:" destination="11Q-B2-HTC" eventType="touchUpInside" id="Hue-4j-e80"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -970,6 +976,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="shareButton" destination="kVj-IH-ZwK" id="9ZT-sY-boz"/>
                                     <outlet property="sportsAuthor" destination="E4F-p6-umu" id="xq0-oT-jn4"/>
                                     <outlet property="sportsDate" destination="bKX-CE-I9L" id="5o3-W5-i31"/>
                                     <outlet property="sportsExcerpt" destination="hrX-c8-MyP" id="cok-V5-RHL"/>

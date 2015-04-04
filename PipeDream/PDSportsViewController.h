@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PDFeedTableViewController.h"
 
-@interface PDSportsViewController : UITableViewController
+@interface PDSportsViewController : PDFeedTableViewController
 
 @end
