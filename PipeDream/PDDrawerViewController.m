@@ -196,13 +196,12 @@ static NSString * const kPDDrawerCellReuseIdentifier = @"PDDrawerCellReuseIdenti
 #pragma button setters
 -(void)facebookLikeControl{
     
-    FBSDKLikeButton *fbLikeButton=[[FBSDKLikeButton alloc]init];
-    fbLikeButton.objectType=FBSDKLikeObjectTypePage;
+    _fbLikeButton=[[FBSDKLikeButton alloc]init];
+    _fbLikeButton.objectType=FBSDKLikeObjectTypePage;
     
     FBSDKLikeControl * fblike=[[FBSDKLikeControl alloc]init];
-    fblike.likeControlStyle=FBSDKLikeControlAuxiliaryPositionBottom;
+    fblike.likeControlStyle=FBSDKLikeControlStyleStandard;
     fblike.likeControlHorizontalAlignment = FBSDKLikeControlHorizontalAlignmentCenter;;
-
     fblike.objectID=kPDFacebookBrowserURL;
     
     
@@ -231,5 +230,10 @@ static NSString * const kPDDrawerCellReuseIdentifier = @"PDDrawerCellReuseIdenti
     
 }
 - (IBAction)followPDOnInstagram:(id)sender {
+    
+    
+    
+    
+    
 }
 @end
