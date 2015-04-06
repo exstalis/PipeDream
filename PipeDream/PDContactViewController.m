@@ -81,6 +81,7 @@ PDFeedTableViewController *_notify;
     _fbLikeButton.objectType=FBSDKLikeObjectTypePage;
     
     _fbLikeButton.backgroundColor=[UIColor clearColor];
+    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithCustomView:_fbLikeButton];
     
     _fbLikeControl.likeControlStyle=FBSDKLikeControlStyleStandard;
     _fbLikeControl.likeControlHorizontalAlignment = FBSDKLikeControlHorizontalAlignmentCenter;;
