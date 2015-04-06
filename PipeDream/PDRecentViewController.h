@@ -12,5 +12,9 @@
 
 
 @interface PDRecentViewController : PDFeedTableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
+@property (nonatomic,strong) NSMutableArray *recentArticleArray;
+@property (nonatomic,strong) NSMutableArray *recentArticleImageArray;
+
+
 
 @end

@@ -50,7 +50,6 @@
 
 
 
-//    self.newsShareUtility.delegate=self;
     
 
     
@@ -69,7 +68,6 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    [self resignFirstResponder];
     [self loadNewsArticle];
 
     [super viewWillDisappear:animated];
