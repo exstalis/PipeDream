@@ -8,6 +8,7 @@
 
 #import "PDContactViewController.h"
 
+#import "PDFeedTableViewController.h"
 
 
 static NSString * const kPDTwitterAppURL=@"twitter://user?screen_name=bupipedream";
@@ -19,7 +20,14 @@ static NSString * const kPDInstagramBrowserURL = @"https://instagram.com/bupiped
 
 
 
-@interface PDContactViewController ()
+@interface PDContactViewController (){
+    
+FBSDKLikeButton *_fbLikeButton;
+PDFeedTableViewController *_notify;
+    
+    
+}
+
 @property (nonatomic, strong) CLGeocoder *geocoderForPDOffice;
 @property (nonatomic, strong) MKPlacemark *placemarkPDOffice;
 
@@ -63,13 +71,30 @@ static NSString * const kPDInstagramBrowserURL = @"https://instagram.com/bupiped
     
 }
 
+
+
+
+
+-(void)facebookLikeControl{
+    
+    _fbLikeButton=[[FBSDKLikeButton alloc]init];
+    _fbLikeButton.objectType=FBSDKLikeObjectTypePage;
+    
+    _fbLikeButton.backgroundColor=[UIColor clearColor];
+    
+    _fbLikeControl.likeControlStyle=FBSDKLikeControlStyleStandard;
+    _fbLikeControl.likeControlHorizontalAlignment = FBSDKLikeControlHorizontalAlignmentCenter;;
+    _fbLikeControl.objectID=kPDFacebookBrowserURL;
+    
+    
+    
+    
+}
+
 - (IBAction)likeUsOnFacebook:(id)sender {
     
-    if(![[UIApplication sharedApplication] openURL:[NSURL URLWithString:kPDFacebookAppURL]]) {
-        if (![[UIApplication sharedApplication] openURL:[NSURL URLWithString:kPDFacebookBrowserURL]]) {
-            NSLog(@"Nothing works");
-        }
-    }
+    [self facebookLikeControl];
+    
   
     
     

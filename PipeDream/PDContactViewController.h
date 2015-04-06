@@ -11,6 +11,7 @@
 #import "JVFloatingDrawerSpringAnimator.h"
 #import "AppDelegate.h"
 #import <MapKit/MapKit.h>
+#import <FBSDKShareKit/FBSDKShareKit.h>
 
 
 @interface PDContactViewController : UIViewController<MKMapViewDelegate>
@@ -26,8 +27,11 @@
 
 - (IBAction)followUsOnInstagram:(id)sender;
 
+@property (strong, nonatomic) IBOutlet FBSDKLikeControl *fbLikeControl;
 
 - (IBAction)followUsOnTwitter:(id)sender;
+
+
 
 
 @end

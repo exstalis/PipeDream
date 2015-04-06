@@ -196,16 +196,16 @@ static NSString * const kPDDrawerCellReuseIdentifier = @"PDDrawerCellReuseIdenti
 #pragma button setters
 -(void)facebookLikeControl{
     
-    _fbLikeButton=[[FBSDKLikeButton alloc]init];
-    _fbLikeButton.objectType=FBSDKLikeObjectTypePage;
-    
-    FBSDKLikeControl * fblike=[[FBSDKLikeControl alloc]init];
-    fblike.likeControlStyle=FBSDKLikeControlStyleStandard;
-    fblike.likeControlHorizontalAlignment = FBSDKLikeControlHorizontalAlignmentCenter;;
-    fblike.objectID=kPDFacebookBrowserURL;
     
     
-    [self.drawerfooterView addSubview:fblike];
+    
+    if(![[UIApplication sharedApplication] openURL:[NSURL URLWithString:kPDFacebookAppURL]]) {
+        if (![[UIApplication sharedApplication] openURL:[NSURL URLWithString:kPDFacebookBrowserURL]]) {
+            NSLog(@"Nothing works");
+        }
+    }
+    
+
     
     
 }
@@ -213,14 +213,18 @@ static NSString * const kPDDrawerCellReuseIdentifier = @"PDDrawerCellReuseIdenti
 
 - (IBAction)followPDOnTwitter:(id)sender {
     
-    if(![[UIApplication sharedApplication] openURL:[NSURL URLWithString:kPDFacebookAppURL]]) {
-        if (![[UIApplication sharedApplication] openURL:[NSURL URLWithString:kPDFacebookBrowserURL]]) {
-            _notify=[[PDFeedTableViewController alloc]init];
-            [_notify notifyUserShareDidCompletePopUp:@"an error occured!"];
+    if (![[UIApplication sharedApplication]openURL:[NSURL URLWithString:kPDTwitterAppURL]]) {
+        
+        if (![[UIApplication sharedApplication] openURL:[NSURL URLWithString:kPDTwitterBrowserURL]]) {
+            //            buraya bir alert pop upi dusur, ulasamadigini anlat!
             
-            
-                }
+            NSLog(@"Nothing works.");
+        }
+        
+        
     }
+
+   
 }
 
 - (IBAction)likePDOnFacebook:(id)sender {

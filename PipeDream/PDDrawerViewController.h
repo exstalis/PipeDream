@@ -8,10 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import <FBSDKShareKit.h>
-#import <FBSDKLiking.h>
-#import <FBSDKLikeControl.h>
-#import <FBSDKShareLinkContent.h>
+#import <FBSDKShareKit/FBSDKShareKit.h>
 
 
 typedef NS_ENUM (NSInteger, PDMenuViewControllerItem){
@@ -36,8 +33,6 @@ typedef NS_ENUM (NSInteger, PDMenuViewControllerItem){
 - (IBAction)followPDOnInstagram:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIButton *instagramFollowButton;
-
-
 
 
 - (IBAction)followPDOnTwitter:(id)sender;
