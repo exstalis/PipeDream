@@ -10,7 +10,14 @@
 #import "AppDelegate.h"
 #import "JVFloatingDrawerViewController.h"
 #import "PDDrawerMenuCell.h"
+#import "PDFeedTableViewController.h"
 
+static NSString * const kPDTwitterAppURL=@"twitter://user?screen_name=bupipedream";
+static NSString * const kPDTwitterBrowserURL=@"https://twitter.com/bupipedream/";
+static NSString * const kPDFacebookAppURL = @"fb://profile/bupipedream";
+static NSString * const kPDFacebookBrowserURL = @"https://www.facebook.com/BUPipeDream";
+static NSString * const kPDInstagramAppURL = @"instagram://user?username=bupipedream";
+static NSString * const kPDInstagramBrowserURL = @"https://instagram.com/bupipedream";
 
 
 
@@ -36,13 +43,12 @@ static NSString * const kPDDrawerCellReuseIdentifier = @"PDDrawerCellReuseIdenti
 {
     UIImage *_drawerBackground;
     FBSDKLikeButton *_fbLikeButton;
+    PDFeedTableViewController *_notify;
+    
     
 
     
 }
-@property (weak, nonatomic) IBOutlet UIButton *followUsOnInstagram;
-- (IBAction)likeUsOnFaceBook:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *followUsOnTwitter;
 @end
 
 @implementation PDDrawerViewController
@@ -191,23 +197,39 @@ static NSString * const kPDDrawerCellReuseIdentifier = @"PDDrawerCellReuseIdenti
 -(void)facebookLikeControl{
     
     FBSDKLikeButton *fbLikeButton=[[FBSDKLikeButton alloc]init];
-    fbLikeButton.objectType=FBSDKLikeObjectTypeUnknown;
+    fbLikeButton.objectType=FBSDKLikeObjectTypePage;
+    
     FBSDKLikeControl * fblike=[[FBSDKLikeControl alloc]init];
     fblike.likeControlStyle=FBSDKLikeControlAuxiliaryPositionBottom;
     fblike.likeControlHorizontalAlignment = FBSDKLikeControlHorizontalAlignmentCenter;;
 
-    fblike.objectID=@"https://www.facebook.com/BUPipeDream";
-
+    fblike.objectID=kPDFacebookBrowserURL;
+    
+    
+    [self.drawerfooterView addSubview:fblike];
+    
     
 }
 
 
-- (IBAction)likeUsOnFaceBook:(id)sender {
+- (IBAction)followPDOnTwitter:(id)sender {
+    
+    if(![[UIApplication sharedApplication] openURL:[NSURL URLWithString:kPDFacebookAppURL]]) {
+        if (![[UIApplication sharedApplication] openURL:[NSURL URLWithString:kPDFacebookBrowserURL]]) {
+            _notify=[[PDFeedTableViewController alloc]init];
+            [_notify notifyUserShareDidCompletePopUp:@"an error occured!"];
+            
+            
+                }
+    }
+}
+
+- (IBAction)likePDOnFacebook:(id)sender {
+    [self facebookLikeControl];
+
     
     
-    
-   
-    
-    
+}
+- (IBAction)followPDOnInstagram:(id)sender {
 }
 @end

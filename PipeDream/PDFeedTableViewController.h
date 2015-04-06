@@ -61,6 +61,7 @@ typedef NS_ENUM (NSInteger, PDShareButtonItem){
 
 - (void)shareOnFaceBook:(id)sender;
 
+-(void)notifyUserShareDidCompletePopUp:(NSString*)notification;
 
 -(void)sharingOptionsButtonAction;
 - (void)sendArticleViaMail:(NSString *)articleURL;

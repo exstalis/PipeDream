@@ -33,7 +33,14 @@ typedef NS_ENUM (NSInteger, PDMenuViewControllerItem){
 
 @property (strong, nonatomic) IBOutlet UIButton *facebookLikeButton;
 @property (weak, nonatomic) IBOutlet UIButton *twitterFollowButton;
+- (IBAction)followPDOnInstagram:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIButton *instagramFollowButton;
+
+
+
+
+- (IBAction)followPDOnTwitter:(id)sender;
+- (IBAction)likePDOnFacebook:(id)sender;
 
 @end
