@@ -2,16 +2,13 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "cloudssplash.png"
+      "scale" : "2x",
+      "filename" : "splash@2x.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "splash@3x.png"
     }
   ],
   "info" : {
