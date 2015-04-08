@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PDNavigationController.h
 //  PipeDream
 //
 //  Created by elif ece arslan on 3/21/15.
@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface PDNavigationController : UINavigationController
+@property(nonatomic) UIImageView * backgroundView;
 
 @end
-

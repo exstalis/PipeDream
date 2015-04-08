@@ -10,11 +10,13 @@
 		2D271A6F1ABE1AE300A71464 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A6E1ABE1AE300A71464 /* main.m */; };
 		2D271A721ABE1AE300A71464 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A711ABE1AE300A71464 /* AppDelegate.m */; };
 		2D271A751ABE1AE300A71464 /* PipeDream.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A731ABE1AE300A71464 /* PipeDream.xcdatamodeld */; };
-		2D271A781ABE1AE300A71464 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A771ABE1AE300A71464 /* ViewController.m */; };
 		2D271A7B1ABE1AE300A71464 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D271A791ABE1AE300A71464 /* Main.storyboard */; };
 		2D271A7D1ABE1AE300A71464 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D271A7C1ABE1AE300A71464 /* Images.xcassets */; };
 		2D271A801ABE1AE300A71464 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D271A7E1ABE1AE300A71464 /* LaunchScreen.xib */; };
 		2D271A8C1ABE1AE400A71464 /* PipeDreamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A8B1ABE1AE400A71464 /* PipeDreamTests.m */; };
+		2D271A971ABE1B4A00A71464 /* PDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A961ABE1B4A00A71464 /* PDBaseViewController.m */; };
+		2D271A9D1ABE25C900A71464 /* PDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A9C1ABE25C900A71464 /* PDNavigationController.m */; };
+		2D271AA01ABE288200A71464 /* PDDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A9F1ABE288200A71464 /* PDDrawerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,14 +36,18 @@
 		2D271A701ABE1AE300A71464 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2D271A711ABE1AE300A71464 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2D271A741ABE1AE300A71464 /* PipeDream.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PipeDream.xcdatamodel; sourceTree = "<group>"; };
-		2D271A761ABE1AE300A71464 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2D271A771ABE1AE300A71464 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		2D271A7A1ABE1AE300A71464 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2D271A7C1ABE1AE300A71464 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2D271A7F1ABE1AE300A71464 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		2D271A851ABE1AE400A71464 /* PipeDreamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PipeDreamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D271A8A1ABE1AE400A71464 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D271A8B1ABE1AE400A71464 /* PipeDreamTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PipeDreamTests.m; sourceTree = "<group>"; };
+		2D271A951ABE1B4A00A71464 /* PDBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDBaseViewController.h; sourceTree = "<group>"; };
+		2D271A961ABE1B4A00A71464 /* PDBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDBaseViewController.m; sourceTree = "<group>"; };
+		2D271A9B1ABE25C900A71464 /* PDNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDNavigationController.h; sourceTree = "<group>"; };
+		2D271A9C1ABE25C900A71464 /* PDNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDNavigationController.m; sourceTree = "<group>"; };
+		2D271A9E1ABE288200A71464 /* PDDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDDrawerViewController.h; sourceTree = "<group>"; };
+		2D271A9F1ABE288200A71464 /* PDDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDDrawerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +91,7 @@
 			children = (
 				2D271A701ABE1AE300A71464 /* AppDelegate.h */,
 				2D271A711ABE1AE300A71464 /* AppDelegate.m */,
-				2D271A761ABE1AE300A71464 /* ViewController.h */,
-				2D271A771ABE1AE300A71464 /* ViewController.m */,
+				2D271A981ABE1B6A00A71464 /* Classes */,
 				2D271A791ABE1AE300A71464 /* Main.storyboard */,
 				2D271A7C1ABE1AE300A71464 /* Images.xcassets */,
 				2D271A7E1ABE1AE300A71464 /* LaunchScreen.xib */,
@@ -120,6 +125,27 @@
 				2D271A8A1ABE1AE400A71464 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2D271A981ABE1B6A00A71464 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				2D271A9A1ABE1B9400A71464 /* Common */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		2D271A9A1ABE1B9400A71464 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2D271A951ABE1B4A00A71464 /* PDBaseViewController.h */,
+				2D271A961ABE1B4A00A71464 /* PDBaseViewController.m */,
+				2D271A9B1ABE25C900A71464 /* PDNavigationController.h */,
+				2D271A9C1ABE25C900A71464 /* PDNavigationController.m */,
+				2D271A9E1ABE288200A71464 /* PDDrawerViewController.h */,
+				2D271A9F1ABE288200A71464 /* PDDrawerViewController.m */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,8 +250,10 @@
 			files = (
 				2D271A751ABE1AE300A71464 /* PipeDream.xcdatamodeld in Sources */,
 				2D271A721ABE1AE300A71464 /* AppDelegate.m in Sources */,
-				2D271A781ABE1AE300A71464 /* ViewController.m in Sources */,
+				2D271A9D1ABE25C900A71464 /* PDNavigationController.m in Sources */,
 				2D271A6F1ABE1AE300A71464 /* main.m in Sources */,
+				2D271A971ABE1B4A00A71464 /* PDBaseViewController.m in Sources */,
+				2D271AA01ABE288200A71464 /* PDDrawerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
