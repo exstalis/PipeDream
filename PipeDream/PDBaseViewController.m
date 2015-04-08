@@ -15,6 +15,11 @@
 @property(nonatomic)UILabel *emptyViewLabel;
 @property(nonatomic)UILabel *errorView;
 
+
+
+-(void)loadContentView;
+
+
 @end
 
 @implementation PDBaseViewController
@@ -36,8 +41,26 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark -getters
+-(UIView *)contentView{
 
+    if (_contentView==nil) {
+        [self loadContentView];
+        
+    }
+    return _contentView;
+    
+    
+}
 
+-(void)loadContentView{
+    _contentView=[[UIView alloc]initWithFrame:self.view.frame];
+    [_contentView setAutoresizingMask:(UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight)];
+    [_contentView setBackgroundColor:[UIColor clearColor]];
+    [self.view addSubview:_contentView];
+    
+    
+}
 
 /*
 #pragma mark - Navigation

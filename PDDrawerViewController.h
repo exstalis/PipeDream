@@ -2,7 +2,7 @@
 //  PDDrawerViewController.h
 //  PipeDream
 //
-//  Created by elif ece arslan on 3/21/15.
+//  Created by elif ece arslan on 4/7/15.
 //  Copyright (c) 2015 elif ece arslan. All rights reserved.
 //
 
@@ -38,4 +38,6 @@ typedef NS_ENUM(NSInteger, STDrawerMenuViewControllerItem){
 
 -(void)setupMenuView;
 -(void)showMenu:(BOOL)menu;
+-(void) menuButtonPressed:(id)sender;
+
 

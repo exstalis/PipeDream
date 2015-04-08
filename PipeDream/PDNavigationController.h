@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PDBaseViewController.h"
 
 @interface PDNavigationController : UINavigationController
 @property(nonatomic) UIImageView * backgroundView;

@@ -15,7 +15,7 @@
 
 
 
-//@property(nonatomic)UIView *contentView;
+@property(nonatomic)UIView *contentView;
 //gesture recognizerlara bak eklemen gerekebilir
 - (void)showErrorViewWithError:(NSError*)error;
 -(void)showEmptyViewWithInfo:(NSString *)info;
