@@ -33,11 +33,12 @@ typedef NS_ENUM(NSInteger, STDrawerMenuViewControllerItem){
 
 
 @protocol PDDrawerViewContollerDelegate <NSObject>
+@property(nonatomic) BOOL isTapped ;
 
 -(void)drawerMenu:(PDDrawerViewController *)controller didSelectMenuItem:(STDrawerMenuViewControllerItem)item;
 
 -(void)setupMenuView;
 -(void)showMenu:(BOOL)menu;
--(void) menuButtonPressed:(id)sender;
+-(void) menuAction:(id)sender;
 
 

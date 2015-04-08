@@ -28,7 +28,7 @@
 
 -(void)setupMenuView;
 -(void)showMenu:(BOOL)menu;
--(void) menuButtonPressed:(id)sender;
+-(void) menuAction:(id)sender;
 @end
 
 
@@ -53,7 +53,7 @@
 }
 
 
--(void)menuButtonPressed:(id)sender{
+-(void)menuAction:(id)sender{
 
     if(self.isTapped==NO){
     

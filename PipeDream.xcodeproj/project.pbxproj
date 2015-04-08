@@ -17,11 +17,14 @@
 		2D271A971ABE1B4A00A71464 /* PDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A961ABE1B4A00A71464 /* PDBaseViewController.m */; };
 		2D271A9D1ABE25C900A71464 /* PDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A9C1ABE25C900A71464 /* PDNavigationController.m */; };
 		2DC51D121AD4B8C500B9FA1F /* PDDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC51D111AD4B8C500B9FA1F /* PDDrawerViewController.m */; };
-		2DC51D1B1AD4D2FD00B9FA1F /* Portrait - 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC51D181AD4D2FD00B9FA1F /* Portrait - 6.png */; };
-		2DC51D1C1AD4D2FD00B9FA1F /* Portrait - 6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC51D191AD4D2FD00B9FA1F /* Portrait - 6@2x.png */; };
-		2DC51D1D1AD4D2FD00B9FA1F /* Portrait - 6@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC51D1A1AD4D2FD00B9FA1F /* Portrait - 6@3x.png */; };
 		2DC51D231AD4EC2900B9FA1F /* PDBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC51D221AD4EC2900B9FA1F /* PDBaseTableViewController.m */; };
 		2DC51D261AD4ECA800B9FA1F /* PDNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC51D251AD4ECA800B9FA1F /* PDNewsViewController.m */; };
+		2DC51D381AD5B58200B9FA1F /* Front View Swipe Left.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC51D331AD5B58200B9FA1F /* Front View Swipe Left.png */; };
+		2DC51D391AD5B58200B9FA1F /* Front View Swipe Left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC51D341AD5B58200B9FA1F /* Front View Swipe Left@2x.png */; };
+		2DC51D3A1AD5B58200B9FA1F /* Front View.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC51D351AD5B58200B9FA1F /* Front View.png */; };
+		2DC51D3B1AD5B58200B9FA1F /* Front View@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC51D361AD5B58200B9FA1F /* Front View@2x.png */; };
+		2DC51D3C1AD5B58200B9FA1F /* Front View@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC51D371AD5B58200B9FA1F /* Front View@3x.png */; };
+		2DC51D3F1AD5C49D00B9FA1F /* PDFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC51D3E1AD5C49D00B9FA1F /* PDFeedTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,13 +56,17 @@
 		2D271A9C1ABE25C900A71464 /* PDNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDNavigationController.m; sourceTree = "<group>"; };
 		2DC51D101AD4B8C500B9FA1F /* PDDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDDrawerViewController.h; path = ../PDDrawerViewController.h; sourceTree = "<group>"; };
 		2DC51D111AD4B8C500B9FA1F /* PDDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDDrawerViewController.m; path = ../PDDrawerViewController.m; sourceTree = "<group>"; };
-		2DC51D181AD4D2FD00B9FA1F /* Portrait - 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Portrait - 6.png"; sourceTree = "<group>"; };
-		2DC51D191AD4D2FD00B9FA1F /* Portrait - 6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Portrait - 6@2x.png"; sourceTree = "<group>"; };
-		2DC51D1A1AD4D2FD00B9FA1F /* Portrait - 6@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Portrait - 6@3x.png"; sourceTree = "<group>"; };
 		2DC51D211AD4EC2900B9FA1F /* PDBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDBaseTableViewController.h; sourceTree = "<group>"; };
 		2DC51D221AD4EC2900B9FA1F /* PDBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDBaseTableViewController.m; sourceTree = "<group>"; };
 		2DC51D241AD4ECA800B9FA1F /* PDNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDNewsViewController.h; sourceTree = "<group>"; };
 		2DC51D251AD4ECA800B9FA1F /* PDNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDNewsViewController.m; sourceTree = "<group>"; };
+		2DC51D331AD5B58200B9FA1F /* Front View Swipe Left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Front View Swipe Left.png"; sourceTree = "<group>"; };
+		2DC51D341AD5B58200B9FA1F /* Front View Swipe Left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Front View Swipe Left@2x.png"; sourceTree = "<group>"; };
+		2DC51D351AD5B58200B9FA1F /* Front View.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Front View.png"; sourceTree = "<group>"; };
+		2DC51D361AD5B58200B9FA1F /* Front View@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Front View@2x.png"; sourceTree = "<group>"; };
+		2DC51D371AD5B58200B9FA1F /* Front View@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Front View@3x.png"; sourceTree = "<group>"; };
+		2DC51D3D1AD5C49D00B9FA1F /* PDFeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFeedTableViewCell.h; sourceTree = "<group>"; };
+		2DC51D3E1AD5C49D00B9FA1F /* PDFeedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFeedTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +159,8 @@
 		2D271A9A1ABE1B9400A71464 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				2DC51D3D1AD5C49D00B9FA1F /* PDFeedTableViewCell.h */,
+				2DC51D3E1AD5C49D00B9FA1F /* PDFeedTableViewCell.m */,
 				2DC51D211AD4EC2900B9FA1F /* PDBaseTableViewController.h */,
 				2DC51D221AD4EC2900B9FA1F /* PDBaseTableViewController.m */,
 				2D271A951ABE1B4A00A71464 /* PDBaseViewController.h */,
@@ -176,9 +185,11 @@
 		2DC51D171AD4D2D100B9FA1F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2DC51D181AD4D2FD00B9FA1F /* Portrait - 6.png */,
-				2DC51D191AD4D2FD00B9FA1F /* Portrait - 6@2x.png */,
-				2DC51D1A1AD4D2FD00B9FA1F /* Portrait - 6@3x.png */,
+				2DC51D331AD5B58200B9FA1F /* Front View Swipe Left.png */,
+				2DC51D341AD5B58200B9FA1F /* Front View Swipe Left@2x.png */,
+				2DC51D351AD5B58200B9FA1F /* Front View.png */,
+				2DC51D361AD5B58200B9FA1F /* Front View@2x.png */,
+				2DC51D371AD5B58200B9FA1F /* Front View@3x.png */,
 			);
 			name = Resources;
 			path = ..;
@@ -265,11 +276,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D271A7B1ABE1AE300A71464 /* Main.storyboard in Resources */,
-				2DC51D1D1AD4D2FD00B9FA1F /* Portrait - 6@3x.png in Resources */,
-				2DC51D1C1AD4D2FD00B9FA1F /* Portrait - 6@2x.png in Resources */,
+				2DC51D3B1AD5B58200B9FA1F /* Front View@2x.png in Resources */,
+				2DC51D3A1AD5B58200B9FA1F /* Front View.png in Resources */,
+				2DC51D3C1AD5B58200B9FA1F /* Front View@3x.png in Resources */,
+				2DC51D391AD5B58200B9FA1F /* Front View Swipe Left@2x.png in Resources */,
 				2D271A801ABE1AE300A71464 /* LaunchScreen.xib in Resources */,
 				2D271A7D1ABE1AE300A71464 /* Images.xcassets in Resources */,
-				2DC51D1B1AD4D2FD00B9FA1F /* Portrait - 6.png in Resources */,
+				2DC51D381AD5B58200B9FA1F /* Front View Swipe Left.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D271A751ABE1AE300A71464 /* PipeDream.xcdatamodeld in Sources */,
+				2DC51D3F1AD5C49D00B9FA1F /* PDFeedTableViewCell.m in Sources */,
 				2DC51D261AD4ECA800B9FA1F /* PDNewsViewController.m in Sources */,
 				2D271A721ABE1AE300A71464 /* AppDelegate.m in Sources */,
 				2D271A9D1ABE25C900A71464 /* PDNavigationController.m in Sources */,

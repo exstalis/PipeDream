@@ -7,8 +7,16 @@
 //
 
 #import "PDBaseTableViewController.h"
+#import "PDDrawerViewController.h"
+#import "PDFeedTableViewCell.h"
+#import "PDNavigationController.h"
 
-@interface PDNewsViewController :PDBaseTableViewController<UITableViewDelegate,UITableViewDataSource>
+#import "PDBaseViewController.h"
+
+
+@interface PDNewsViewController :PDBaseTableViewController <UITableViewDelegate,UITableViewDataSource,PDDrawerViewContollerDelegate>
 
 
 @end
+
+

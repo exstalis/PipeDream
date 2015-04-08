@@ -8,7 +8,7 @@
 
 #import "PDBaseViewController.h"
 
-@interface PDBaseTableViewController : PDBaseViewController<UITableViewDataSource,UITableViewDelegate>
+@interface PDBaseTableViewController :PDBaseViewController<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,getter=isLoading) BOOL loading;
 @property(nonatomic) BOOL canLoadMore;
 @property(nonatomic)BOOL canPullToResfresh;
