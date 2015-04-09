@@ -8,19 +8,27 @@
 
 #import "PDBaseViewController.h"
 
-
-typedef NS_ENUM(NSInteger, STDrawerMenuViewControllerItem){
-    PDDrawerMenuViewControllerItemNews,
-    PDDrawerMenuViewControllerItemOpinion,
-    PDDrawerMenuViewControllerItemRelease,
-    PDDrawerMenuViewControllerItemSports,
-    PDDrawerMenuViewControllerItemContact,
-    PDDrawerMenuViewControllerItemSettings,
-    PDDrawerMenuViewControllerItem_COUNT,
-    
-};
-
 @protocol PDDrawerViewContollerDelegate;
+
+
+
+
+
+
+
+//
+//typedef NS_ENUM(NSInteger, STDrawerMenuViewControllerItem){
+//    PDDrawerMenuViewControllerItemNews,
+//    PDDrawerMenuViewControllerItemOpinion,
+//    PDDrawerMenuViewControllerItemRelease,
+//    PDDrawerMenuViewControllerItemSports,
+//    PDDrawerMenuViewControllerItemContact,
+//    PDDrawerMenuViewControllerItemSettings,
+//    PDDrawerMenuViewControllerItem_COUNT,
+//    
+//};
+//
+
 
 
 
@@ -32,13 +40,14 @@ typedef NS_ENUM(NSInteger, STDrawerMenuViewControllerItem){
 @end
 
 
-@protocol PDDrawerViewContollerDelegate <NSObject>
-@property(nonatomic) BOOL isTapped ;
 
--(void)drawerMenu:(PDDrawerViewController *)controller didSelectMenuItem:(STDrawerMenuViewControllerItem)item;
+@protocol PDDrawerViewContollerDelegate <NSObject>
+
+
+//-(void)drawerMenu:(PDDrawerViewController *)controller didSelectMenuItem:(STDrawerMenuViewControllerItem)item;
 
 -(void)setupMenuView;
 -(void)showMenu:(BOOL)menu;
 -(void) menuAction:(id)sender;
 
-
+@end

@@ -54,13 +54,22 @@
 
 
 -(void)menuAction:(id)sender{
-
-    if(self.isTapped==NO){
     
-    [UIView animateWithDuration:1.0 animations:^{
-        self.menuButton.alpha=1.0;
-        [self showMenu:NO];
-    }];
+    if (self.isTapped==NO) {
+        [UIView animateWithDuration:1.0 animations:^{
+            self.menuButton.alpha=0;
+            [self showMenu:YES];
+            self.isTapped=YES;
+            
+        }];
+        
+    }
+    else if (self.isTapped==YES) {
+        [UIView animateWithDuration:1.0 animations:^{
+            self.menuButton.alpha=1.0;
+            [self showMenu:NO];
+            
+        }];
         self.isTapped=NO;
         
     }
