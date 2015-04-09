@@ -14,6 +14,7 @@
 @interface PDBaseViewController : UIViewController<UIViewControllerTransitioningDelegate,UIGestureRecognizerDelegate>
 
 
+@property(nonatomic,strong) NSArray* menuItems;
 
 @property(nonatomic)UIView *contentView;
 //gesture recognizerlara bak eklemen gerekebilir

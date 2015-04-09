@@ -13,8 +13,10 @@
 
 #import "PDBaseViewController.h"
 
+@class PDDrawerViewController;
 
-@interface PDNewsViewController :PDBaseTableViewController <UITableViewDelegate,UITableViewDataSource,PDDrawerViewContollerDelegate>
+@interface PDNewsViewController :PDBaseTableViewController<PDDrawerViewContollerDelegate>
+
 
 
 @end

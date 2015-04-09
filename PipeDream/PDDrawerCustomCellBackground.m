@@ -10,12 +10,21 @@
 
 @implementation PDDrawerCustomCellBackground
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+
+
+-(void)drawRect:(CGRect)rect{
+    CGContextRef aRef=UIGraphicsGetCurrentContext();
+    CGContextSaveGState(aRef);
+    UIBezierPath *bezierPath=[UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:5.0f];
+    [bezierPath setLineWidth:4.0f];
+    [[UIColor blackColor] setStroke];
+    UIColor *fillColor=[UIColor colorWithRed:102/255.0 green:205/255.0 blue:170/255.0 alpha:1.0];
+    [fillColor setFill];
+    [bezierPath stroke];
+    [bezierPath fill];
+    CGContextRestoreGState(aRef);
+    
 }
-*/
+
 
 @end

@@ -20,7 +20,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="135" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="euW-Bg-52B">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="135" id="QSo-3Q-Q2E" customClass="PDFeedTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" rowHeight="135" id="QSo-3Q-Q2E" customClass="PDFeedTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QSo-3Q-Q2E" id="lFS-h2-3yS">
@@ -32,7 +32,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfG-gJ-D4o">
                                                     <rect key="frame" x="37" y="18" width="132" height="44"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -61,6 +61,9 @@
                                 <action selector="menuButtonPressed:" destination="BYZ-38-t0r" id="yhb-V5-sc3"/>
                             </connections>
                         </barButtonItem>
+                        <connections>
+                            <outlet property="leftBarButtonItem" destination="Kpu-1n-yUe" id="WuM-Vo-hyH"/>
+                        </connections>
                     </navigationItem>
                     <connections>
                         <outlet property="menuLeftBarButtonItem" destination="Kpu-1n-yUe" id="7kU-Hq-mlZ"/>
