@@ -18,8 +18,6 @@
 
 
 
--(void)loadContentView;
-
 
 @end
 
@@ -28,6 +26,7 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    [self.view setBackgroundColor:[UIColor clearColor]];
     
     [self setupMenuView];
     
@@ -48,24 +47,15 @@
 }
 
 #pragma mark -getters
--(UIView *)contentView{
+-(UIView *)menuView{
 
-    if (_contentView==nil) {
-        [self loadContentView];
+    if (_menuView==nil) {
+        [self setupMenuView];
         
     }
-    return _contentView;
+    return _menuView;
     
 
-}
-
--(void)loadContentView{
-    _contentView=[[UIView alloc]initWithFrame:self.view.frame];
-    [_contentView setAutoresizingMask:(UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight)];
-//    [_contentView setBackgroundColor:[UIColor clearColor]];
-    [self.view addSubview:_contentView];
-    
-    
 }
 
 
@@ -77,9 +67,10 @@
 -(void)setupMenuView{
     self.menuItems=@[@"News", @"Opinion",@"Release",@"Sports",@"Contact us"];
     self.menuTableView.delegate=self;
-    self.menuTableView.dataSource=self;
-    self.menuView=[[PDDrawerCustomCellBackground alloc]initWithFrame:CGRectMake(-menuWidth, 65.0, menuWidth, 400.0)];
-    self.menuView.backgroundColor=[UIColor clearColor];
+    _menuTableView.dataSource=self;
+    _menuView=[[PDDrawerCustomCellBackground alloc]initWithFrame:CGRectMake(-menuWidth, 65.0, menuWidth, 400.0)];
+    [_menuView setAutoresizingMask:(UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight)];
+    _menuView.backgroundColor=[UIColor clearColor];
     [self.view addSubview:self.menuView];
     
     self.menuTableView=[[UITableView alloc]initWithFrame:self.menuView.bounds style:UITableViewStylePlain];
@@ -120,6 +111,9 @@
     
 }
 
-
+-(NSString *)identifier{
+    return NSStringFromClass(self.class);
+    
+}
 
 @end

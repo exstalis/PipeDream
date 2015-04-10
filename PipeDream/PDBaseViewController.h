@@ -24,11 +24,12 @@
 
 @property(nonatomic) BOOL isTapped ;
 
+-(NSString*)identifier;
 
 -(void)setupMenuView;
 -(void)showMenu:(BOOL)menu;
 
-@property(nonatomic)UIView *contentView;
+//@property(nonatomic)UIView *contentView;
 //gesture recognizerlara bak eklemen gerekebilir
 - (void)showErrorViewWithError:(NSError*)error;
 -(void)showEmptyViewWithInfo:(NSString *)info;

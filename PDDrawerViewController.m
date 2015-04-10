@@ -42,25 +42,62 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return  self.menuItems.count;
+    return PDDrawerMenuViewControllerItem_COUNT;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"cell"];
+
     
-    if (cell==nil) {
-        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-        
-    }
-    //buraya enumda tanimladigin itemleri switch case'e koyarak yaz. ve resim, sekil eklemeleri yap.
+    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([PDDrawerTableViewCell class])];
+    cell.selectionStyle=UITableViewCellSelectionStyleGray;
     
-    NSString *menuOptionText=self.menuItems[indexPath.row];
-    cell.textLabel.text=menuOptionText;
     cell.accessoryType=UITableViewCellAccessoryNone;
     cell.textLabel.textColor=[UIColor whiteColor];
-    cell.backgroundColor=[UIColor clearColor];
     cell.textLabel.textAlignment=NSTextAlignmentCenter;
+    
+    
+    switch ((PDDrawerMenuViewControllerItem)indexPath.row) {
+        case PDDrawerMenuViewControllerItemNews:{
+            [cell.textLabel setText:@"News"];
+//            put an image
+            break;
+        }
+       
+        case PDDrawerMenuViewControllerItemOpinion:{
+            [cell.textLabel setText:@"Opinion"];
+            //            put an image
+            break;
+        }
+        case PDDrawerMenuViewControllerItemRelease:{
+            [cell.textLabel setText:@"Release"];
+            //            put an image
+            break;
+        }
+
+        case PDDrawerMenuViewControllerItemSports:{
+            [cell.textLabel setText:@"Sports"];
+            //            put an image
+            break;
+        }
+        case PDDrawerMenuViewControllerItemContact:{
+            [cell.textLabel setText:@"Contact"];
+            //            put an image
+            break;
+        }
+        case PDDrawerMenuViewControllerItemSettings:{
+            [cell.textLabel setText:@"Settings"];
+            //            put an image
+            break;
+        }
+        case PDDrawerMenuViewControllerItem_COUNT:
+        default:
+            return nil;
+    }
+    
+    
+
+
     
     return cell;
     
@@ -73,37 +110,10 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
-    //    NSString *menuText=self.menuItems[indexPath.row];
-    if (indexPath.row == 0) {
-        
-        [self showMenu:NO];
-        NSLog(@"news");
-        [UIView animateWithDuration:1 animations:^{
-            self.menuButton.alpha=1.0;
-            
-            
-        }];
-        
-    }
-    else if (indexPath.row == 1) {
-        NSLog(@"opinion");
-        [self performSegueWithIdentifier:@"opinion" sender:nil];
-        
-        
-        
-    }
-    else if (indexPath.row == 2) {
-        NSLog(@"release");
-        [self performSegueWithIdentifier:@"release" sender:nil];
-        
-    }
-    else if (indexPath.row ==3){
-        [self performSegueWithIdentifier:@"sports" sender:nil];
-        
-    }
-    else if (indexPath.row ==4){
-        [self performSegueWithIdentifier:@"contact" sender:nil];
-    }
+    
+    [self.delegate drawerMenu:self didSelectMenuItem:indexPath.row];
+    
+
 }
 
 

@@ -20,7 +20,6 @@
     [[UIColor whiteColor] setStroke];
     UIColor *fillColor=[UIColor colorWithRed:80/255.0 green:200/255.0 blue:150/255.0 alpha:0.6];
     [fillColor setFill];
-   
     [bezierPath stroke];
     [bezierPath fill];
     CGContextRestoreGState(aRef);
