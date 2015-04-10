@@ -15,11 +15,12 @@
 -(void)drawRect:(CGRect)rect{
     CGContextRef aRef=UIGraphicsGetCurrentContext();
     CGContextSaveGState(aRef);
-    UIBezierPath *bezierPath=[UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:5.0f];
-    [bezierPath setLineWidth:4.0f];
-    [[UIColor blackColor] setStroke];
-    UIColor *fillColor=[UIColor colorWithRed:102/255.0 green:205/255.0 blue:170/255.0 alpha:1.0];
+    UIBezierPath *bezierPath=[UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:3.0f];
+    [bezierPath setLineWidth:5.0f];
+    [[UIColor whiteColor] setStroke];
+    UIColor *fillColor=[UIColor colorWithRed:80/255.0 green:200/255.0 blue:150/255.0 alpha:0.6];
     [fillColor setFill];
+   
     [bezierPath stroke];
     [bezierPath fill];
     CGContextRestoreGState(aRef);

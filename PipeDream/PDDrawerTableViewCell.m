@@ -20,4 +20,24 @@
     // Configure the view for the selected state
 }
 
+
+
+
+-(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
+    self=[super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if(self !=nil){
+//        [self setBackgroundView:nil];
+//        [self setSelectedBackgroundView:nil];
+        [self setSelectionStyle:UITableViewCellSelectionStyleDefault];
+        [self.textLabel setTextColor:[UIColor whiteColor]];
+        [self.textLabel setFont:[UIFont fontWithName:@"Open Sans" size:14.0]];
+
+        
+    }
+    return self;
+    
+}
+
+
+
 @end

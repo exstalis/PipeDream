@@ -7,13 +7,12 @@
 #import <UIKit/UIKit.h>
 
 
-#import "PDBaseTableViewController.h"
-
-
 
 
 
 
 @interface PDFeedTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *headline;
+@property (weak, nonatomic) IBOutlet UIImageView *thumbnail;
 
 @end

@@ -14,8 +14,9 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuLeftBarButtonItem;
 - (IBAction)menuButtonPressed:(id)sender;
 @property (nonatomic) BOOL isTapped;
-@property(nonatomic) UIButton *menuButton;
+//@property(nonatomic) UIButton *menuButton;
 @property(nonatomic)   PDDrawerViewController *drawer;
+@property (weak, nonatomic) IBOutlet UITableView *newsTableView;
 
 @end
 
@@ -25,7 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     // Do any additional setup after loading the view.
 }
 
@@ -45,7 +46,7 @@
         [UIView animateWithDuration:1.0 animations:^{
             self.menuButton.alpha=0;
             
-            [self.drawer showMenu:YES];
+            [self showMenu:YES];
             self.isTapped=YES;
             
         }];
@@ -54,7 +55,7 @@
     else if (self.isTapped==YES) {
         [UIView animateWithDuration:1.0 animations:^{
             self.menuButton.alpha=1.0;
-            [self.drawer showMenu:NO];
+            [self showMenu:NO];
             
         }];
         self.isTapped=NO;
@@ -69,4 +70,32 @@
     [self menuAction:sender];
 
 }
+
+
+#pragma mark - tableview datasource
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+    
+}
+
+
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+
+    return 20;
+    
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    PDFeedTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"newsCell"];
+    if (cell==nil) {
+        cell=[[PDFeedTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"newsCell"];
+        
+    }
+    
+    return cell;
+    
+}
+
 @end

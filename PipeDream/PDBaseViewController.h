@@ -9,12 +9,24 @@
 #import <UIKit/UIKit.h>
 
 
+#import "PDDrawerCustomCellBackground.h"
 
 
-@interface PDBaseViewController : UIViewController<UIViewControllerTransitioningDelegate,UIGestureRecognizerDelegate>
+@interface PDBaseViewController : UIViewController<UIViewControllerTransitioningDelegate,UIGestureRecognizerDelegate,UITableViewDelegate,UITableViewDataSource>
 
-
+@property(strong,nonatomic) NSMutableArray *imageArray;
 @property(nonatomic,strong) NSArray* menuItems;
+@property (weak, nonatomic)UIBarButtonItem *menuLeftBarButtonItem;
+@property(nonatomic,strong)PDDrawerCustomCellBackground *menuView;
+@property(nonatomic,strong)UIDynamicAnimator *animator;
+@property(nonatomic,strong)UITableView *menuTableView;
+@property(nonatomic,strong) UIButton *menuButton;
+
+@property(nonatomic) BOOL isTapped ;
+
+
+-(void)setupMenuView;
+-(void)showMenu:(BOOL)menu;
 
 @property(nonatomic)UIView *contentView;
 //gesture recognizerlara bak eklemen gerekebilir

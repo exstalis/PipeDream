@@ -7,6 +7,7 @@
 //
 
 #import "PDBaseViewController.h"
+#import "PDDrawerCustomCellBackground.h"
 
 @protocol PDDrawerViewContollerDelegate;
 
@@ -24,26 +25,11 @@
 
 
 
-@class PDDrawerViewController;
 
 
 @interface PDDrawerViewController : PDBaseViewController<UITableViewDataSource,UITableViewDelegate>
 
 @property(nonatomic)id <PDDrawerViewContollerDelegate> delegate;
-
-@property(strong,nonatomic) NSMutableArray *imageArray;
-
-@property (weak, nonatomic)UIBarButtonItem *menuLeftBarButtonItem;
-@property(nonatomic,strong)UIView *menuView;
-@property(nonatomic,strong)UIDynamicAnimator *animator;
-@property(nonatomic,strong)UITableView *menuTableView;
-@property(nonatomic,strong) UIButton *menuButton;
-
-@property(nonatomic) BOOL isTapped ;
-
-
--(void)setupMenuView;
--(void)showMenu:(BOOL)menu;
 
 @end
 
@@ -55,8 +41,6 @@
 
 //-(void)drawerMenu:(PDDrawerViewController *)controller didSelectMenuItem:(STDrawerMenuViewControllerItem)item;
 
-//-(void)setupMenuView;
-//-(void)showMenu:(BOOL)menu;
 
 
 @end

@@ -18,8 +18,10 @@
 		2D271A9D1ABE25C900A71464 /* PDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A9C1ABE25C900A71464 /* PDNavigationController.m */; };
 		2DBEBCAE1AD70B7100123DB5 /* BG.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBEBCAD1AD70B7100123DB5 /* BG.png */; };
 		2DBEBCB11AD70DA000123DB5 /* PDDrawerCustomCellBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBEBCB01AD70DA000123DB5 /* PDDrawerCustomCellBackground.m */; };
+		2DBEBCB51AD72A8E00123DB5 /* PDDrawerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBEBCB41AD72A8E00123DB5 /* PDDrawerTableViewCell.m */; };
+		2DBEBCC01AD7314000123DB5 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBEBCBE1AD7314000123DB5 /* menu.png */; };
+		2DBEBCC11AD7314000123DB5 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBEBCBF1AD7314000123DB5 /* menu@2x.png */; };
 		2DC51D121AD4B8C500B9FA1F /* PDDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC51D111AD4B8C500B9FA1F /* PDDrawerViewController.m */; };
-		2DC51D231AD4EC2900B9FA1F /* PDBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC51D221AD4EC2900B9FA1F /* PDBaseTableViewController.m */; };
 		2DC51D261AD4ECA800B9FA1F /* PDNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC51D251AD4ECA800B9FA1F /* PDNewsViewController.m */; };
 		2DC51D381AD5B58200B9FA1F /* Front View Swipe Left.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC51D331AD5B58200B9FA1F /* Front View Swipe Left.png */; };
 		2DC51D391AD5B58200B9FA1F /* Front View Swipe Left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC51D341AD5B58200B9FA1F /* Front View Swipe Left@2x.png */; };
@@ -59,10 +61,12 @@
 		2DBEBCAD1AD70B7100123DB5 /* BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BG.png; sourceTree = "<group>"; };
 		2DBEBCAF1AD70DA000123DB5 /* PDDrawerCustomCellBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDDrawerCustomCellBackground.h; sourceTree = "<group>"; };
 		2DBEBCB01AD70DA000123DB5 /* PDDrawerCustomCellBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDDrawerCustomCellBackground.m; sourceTree = "<group>"; };
+		2DBEBCB31AD72A8E00123DB5 /* PDDrawerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDDrawerTableViewCell.h; sourceTree = "<group>"; };
+		2DBEBCB41AD72A8E00123DB5 /* PDDrawerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDDrawerTableViewCell.m; sourceTree = "<group>"; };
+		2DBEBCBE1AD7314000123DB5 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		2DBEBCBF1AD7314000123DB5 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
 		2DC51D101AD4B8C500B9FA1F /* PDDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDDrawerViewController.h; path = ../PDDrawerViewController.h; sourceTree = "<group>"; };
 		2DC51D111AD4B8C500B9FA1F /* PDDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDDrawerViewController.m; path = ../PDDrawerViewController.m; sourceTree = "<group>"; };
-		2DC51D211AD4EC2900B9FA1F /* PDBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDBaseTableViewController.h; sourceTree = "<group>"; };
-		2DC51D221AD4EC2900B9FA1F /* PDBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDBaseTableViewController.m; sourceTree = "<group>"; };
 		2DC51D241AD4ECA800B9FA1F /* PDNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDNewsViewController.h; sourceTree = "<group>"; };
 		2DC51D251AD4ECA800B9FA1F /* PDNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDNewsViewController.m; sourceTree = "<group>"; };
 		2DC51D331AD5B58200B9FA1F /* Front View Swipe Left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Front View Swipe Left.png"; sourceTree = "<group>"; };
@@ -167,8 +171,6 @@
 				2DC51D3D1AD5C49D00B9FA1F /* PDFeedTableViewCell.h */,
 				2DC51D3E1AD5C49D00B9FA1F /* PDFeedTableViewCell.m */,
 				2DBEBCB21AD70DAC00123DB5 /* Drawer */,
-				2DC51D211AD4EC2900B9FA1F /* PDBaseTableViewController.h */,
-				2DC51D221AD4EC2900B9FA1F /* PDBaseTableViewController.m */,
 				2D271A951ABE1B4A00A71464 /* PDBaseViewController.h */,
 				2D271A961ABE1B4A00A71464 /* PDBaseViewController.m */,
 				2D271A9B1ABE25C900A71464 /* PDNavigationController.h */,
@@ -182,6 +184,8 @@
 			children = (
 				2DBEBCAF1AD70DA000123DB5 /* PDDrawerCustomCellBackground.h */,
 				2DBEBCB01AD70DA000123DB5 /* PDDrawerCustomCellBackground.m */,
+				2DBEBCB31AD72A8E00123DB5 /* PDDrawerTableViewCell.h */,
+				2DBEBCB41AD72A8E00123DB5 /* PDDrawerTableViewCell.m */,
 				2DC51D101AD4B8C500B9FA1F /* PDDrawerViewController.h */,
 				2DC51D111AD4B8C500B9FA1F /* PDDrawerViewController.m */,
 			);
@@ -200,6 +204,8 @@
 		2DC51D171AD4D2D100B9FA1F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2DBEBCBE1AD7314000123DB5 /* menu.png */,
+				2DBEBCBF1AD7314000123DB5 /* menu@2x.png */,
 				2DBEBCAD1AD70B7100123DB5 /* BG.png */,
 				2DC51D331AD5B58200B9FA1F /* Front View Swipe Left.png */,
 				2DC51D341AD5B58200B9FA1F /* Front View Swipe Left@2x.png */,
@@ -291,12 +297,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DBEBCC11AD7314000123DB5 /* menu@2x.png in Resources */,
 				2D271A7B1ABE1AE300A71464 /* Main.storyboard in Resources */,
 				2DC51D3B1AD5B58200B9FA1F /* Front View@2x.png in Resources */,
 				2DC51D3A1AD5B58200B9FA1F /* Front View.png in Resources */,
 				2DC51D3C1AD5B58200B9FA1F /* Front View@3x.png in Resources */,
 				2DC51D391AD5B58200B9FA1F /* Front View Swipe Left@2x.png in Resources */,
 				2DBEBCAE1AD70B7100123DB5 /* BG.png in Resources */,
+				2DBEBCC01AD7314000123DB5 /* menu.png in Resources */,
 				2D271A801ABE1AE300A71464 /* LaunchScreen.xib in Resources */,
 				2D271A7D1ABE1AE300A71464 /* Images.xcassets in Resources */,
 				2DC51D381AD5B58200B9FA1F /* Front View Swipe Left.png in Resources */,
@@ -319,11 +327,11 @@
 			files = (
 				2D271A751ABE1AE300A71464 /* PipeDream.xcdatamodeld in Sources */,
 				2DC51D3F1AD5C49D00B9FA1F /* PDFeedTableViewCell.m in Sources */,
+				2DBEBCB51AD72A8E00123DB5 /* PDDrawerTableViewCell.m in Sources */,
 				2DC51D261AD4ECA800B9FA1F /* PDNewsViewController.m in Sources */,
 				2D271A721ABE1AE300A71464 /* AppDelegate.m in Sources */,
 				2D271A9D1ABE25C900A71464 /* PDNavigationController.m in Sources */,
 				2D271A6F1ABE1AE300A71464 /* main.m in Sources */,
-				2DC51D231AD4EC2900B9FA1F /* PDBaseTableViewController.m in Sources */,
 				2D271A971ABE1B4A00A71464 /* PDBaseViewController.m in Sources */,
 				2DC51D121AD4B8C500B9FA1F /* PDDrawerViewController.m in Sources */,
 				2DBEBCB11AD70DA000123DB5 /* PDDrawerCustomCellBackground.m in Sources */,

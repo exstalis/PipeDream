@@ -29,7 +29,8 @@
         [self setSelectedBackgroundView:nil];
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
         [self.textLabel setTextColor:[UIColor whiteColor]];
-        [self.textLabel setFont:[UIFont fontWithName:@"Open Sans" size:17.0]];
+        [self.textLabel setFont:[UIFont fontWithName:@"Open Sans" size:14.0]];
+        [self.headline setFont:[UIFont fontWithName:@"Open Sans" size:14.0]];;
         
     }
     return self;
