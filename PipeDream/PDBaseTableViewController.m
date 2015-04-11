@@ -16,13 +16,72 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    
+    
+    
+    [_menuTableView setDelegate:self];
+    [_menuTableView setDataSource:self];
+    
+    self.menuTableView=[[UITableView alloc]initWithFrame:self.menuView.bounds style:UITableViewStylePlain];
+    
+    _menuTableView.backgroundColor=[UIColor clearColor];
+    _menuTableView.separatorStyle=UITableViewCellSeparatorStyleSingleLine;
+    _menuTableView.scrollEnabled=NO;
+    _menuTableView.alpha=0.6;
+    [_menuTableView setRowHeight:50.0];
+    [_menuTableView setContentInset:UIEdgeInsetsMake(10.0, 0.0, 10.0, 0.0)];
+    [_menuTableView setBounces:NO];
+    [_menuTableView registerClass:[PDDrawerTableViewCell class] forCellReuseIdentifier:NSStringFromClass([PDDrawerTableViewCell class])];
+    [_menuTableView setSeparatorInset:UIEdgeInsetsMake(0.0, 10.0, 0.0, 10.0)];
+    UIView *headerView=[[UIView alloc]initWithFrame:CGRectMake(0.0, 0.0, _menuTableView.frame.size.width, 45.0)];
+    [self.menuTableView addSubview:headerView];
+    [self.menuView addSubview:self.menuTableView];
+//    image logosu koy buraya !!!!
+    
+
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  }
+
+
+-(void)drawerMenu:(PDDrawerViewController *)controller didSelectMenuItem:(PDDrawerMenuViewControllerItem)item{
+    
+    switch (item) {
+        case PDDrawerMenuViewControllerItemNews:{
+            NSLog(@"News pressed");
+            [self performSegueWithIdentifier:@"news" sender:nil];
+            break;
+        }
+        case PDDrawerMenuViewControllerItemOpinion:{
+            NSLog(@"News pressed");
+            [self performSegueWithIdentifier:@"opinion" sender:nil];
+            break;
+        }
+        case PDDrawerMenuViewControllerItemRelease:{
+            NSLog(@"News pressed");
+            [self performSegueWithIdentifier:@"release" sender:nil];
+            break;
+        }
+        case PDDrawerMenuViewControllerItemContact:{
+            NSLog(@"News pressed");
+            [self performSegueWithIdentifier:@"contact" sender:nil];
+            break;
+        }
+         
+            
+        default:
+            break;
+    }
+    
 }
+
+
+
+
 
 /*
 #pragma mark - Navigation

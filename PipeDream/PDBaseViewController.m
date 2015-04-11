@@ -66,22 +66,13 @@
 
 -(void)setupMenuView{
     self.menuItems=@[@"News", @"Opinion",@"Release",@"Sports",@"Contact us"];
-    self.menuTableView.delegate=self;
-    _menuTableView.dataSource=self;
+
     _menuView=[[PDDrawerCustomCellBackground alloc]initWithFrame:CGRectMake(-menuWidth, 65.0, menuWidth, 400.0)];
     [_menuView setAutoresizingMask:(UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight)];
     _menuView.backgroundColor=[UIColor clearColor];
     [self.view addSubview:self.menuView];
-    
-    self.menuTableView=[[UITableView alloc]initWithFrame:self.menuView.bounds style:UITableViewStylePlain];
-    
-    self.menuTableView.backgroundColor=[UIColor clearColor];
-    self.menuTableView.separatorStyle=UITableViewCellSeparatorStyleSingleLine;
-    self.menuTableView.scrollEnabled=NO;
-    self.menuTableView.alpha=0.6;
-
-    
-    [self.menuView addSubview:self.menuTableView];
+  
+   
     [self.view addSubview:self.menuView];
     
     

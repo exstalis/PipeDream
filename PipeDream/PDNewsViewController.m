@@ -11,9 +11,10 @@
 
 
 @interface PDNewsViewController ()
+
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuLeftBarButtonItem;
+
 - (IBAction)menuButtonPressed:(id)sender;
-@property (nonatomic) BOOL isTapped;
 //@property(nonatomic) UIButton *menuButton;
 @property(nonatomic)   PDDrawerViewController *drawer;
 @property (weak, nonatomic) IBOutlet UITableView *newsTableView;
@@ -39,8 +40,7 @@
 
 -(void)menuAction:(id)sender{
 //    
-    self.drawer=[[PDDrawerViewController alloc]init];
-    [self.drawer setDelegate:self];
+   
     
     if (self.isTapped==NO) {
         [UIView animateWithDuration:1.0 animations:^{

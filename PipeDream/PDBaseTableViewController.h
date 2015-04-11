@@ -7,7 +7,14 @@
 //
 
 #import "PDBaseViewController.h"
+#import "PDNavigationController.h"
+#import "PDDrawerViewController.h"
+#import "PDDrawerTableViewCell.h"
+#import "PDDrawerCustomCellBackground.h"
 
-@interface PDBaseTableViewController : PDBaseViewController
+@interface PDBaseTableViewController : PDBaseViewController<PDDrawerViewContollerDelegate,UITableViewDataSource,UITableViewDelegate>
+@property(nonatomic,strong)UITableView *menuTableView;
+
+
 
 @end

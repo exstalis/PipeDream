@@ -48,6 +48,9 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
 
+    [self.delegate drawerMenu:self cellForMenuItem:indexPath.row];
+    
+    
     
     UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([PDDrawerTableViewCell class])];
     cell.selectionStyle=UITableViewCellSelectionStyleGray;
@@ -55,6 +58,7 @@
     cell.accessoryType=UITableViewCellAccessoryNone;
     cell.textLabel.textColor=[UIColor whiteColor];
     cell.textLabel.textAlignment=NSTextAlignmentCenter;
+    
     
     
     switch ((PDDrawerMenuViewControllerItem)indexPath.row) {

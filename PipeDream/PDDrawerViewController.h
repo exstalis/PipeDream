@@ -43,6 +43,7 @@ typedef NS_ENUM(NSInteger, PDDrawerMenuViewControllerItem){
 
 -(void)drawerMenu:(PDDrawerViewController *)controller didSelectMenuItem:(PDDrawerMenuViewControllerItem)item;
 
+-(void)drawerMenu:(PDDrawerViewController*)controller  cellForMenuItem:(PDDrawerMenuViewControllerItem)item;
 
 
 @end

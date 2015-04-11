@@ -10,12 +10,15 @@
 #import "PDFeedTableViewCell.h"
 
 #import "PDNavigationController.h"
-
+#import "PDBaseTableViewController.h"
+#import "PDDrawerCustomCellBackground.h"
 #import "PDBaseViewController.h"
+#import "PDDrawerTableViewCell.h"
+
 
 @class PDDrawerViewController;
 
-@interface PDNewsViewController :PDBaseViewController<PDDrawerViewContollerDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface PDNewsViewController :PDBaseViewController<UITableViewDataSource,UITableViewDelegate>
 
 
 
