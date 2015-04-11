@@ -12,14 +12,14 @@
 #import "PDDrawerCustomCellBackground.h"
 
 
-
-typedef NS_ENUM(NSInteger, PDMenuViewControllerItem){
+typedef NS_ENUM (NSInteger, PDMenuViewControllerItem){
     PDMenuViewControllerItemNews,
     PDMenuViewControllerItemOpinion,
     PDMenuViewControllerItemRelease,
     PDMenuViewControllerItemSports,
     PDMenuViewControllerItemContact,
     PDMenuViewControllerItemSettings,
+    
     PDMenuViewControllerItem_COUNT,
     
 };

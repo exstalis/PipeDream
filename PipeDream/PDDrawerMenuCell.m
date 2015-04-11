@@ -20,9 +20,6 @@
  }
 
 
-
-
-
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self=[super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if(self){
@@ -30,7 +27,7 @@
         [self setSelectedBackgroundView:nil];
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
         [self.textLabel setTextColor:[UIColor blackColor]];
-        [self.textLabel setFont:[UIFont fontWithName:@"Open-Sans" size:17.0]];
+        [self.textLabel setFont:[UIFont fontWithName:@"OpenSans-Regular" size:17.0]];
         
         
     }

@@ -20,7 +20,6 @@
 @property(nonatomic,strong) NSArray* menuItems;
 @property(nonatomic,strong)UIView *menuView;
 @property(nonatomic,strong)UIDynamicAnimator *animator;
-@property(nonatomic,strong) UIButton *menuButton;
 @property(nonatomic,readonly)NSString *identifier;
 
 @property(nonatomic) BOOL isTapped ;

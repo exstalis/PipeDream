@@ -9,6 +9,7 @@
 #import "BaseMenuViewController.h"
 
 @interface BaseMenuViewController ()
+@property(nonatomic,strong) UIButton *menuButton;
 
 @end
 
@@ -62,57 +63,60 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-        static NSString *cellID=@"menuCell";
-    PDDrawerMenuCell *cell=[tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
+//    static NSString *cellID=@"menuCell";
+//    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
     
     
-//    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([PDDrawerMenuCell class]) forIndexPath:indexPath];
+    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([PDDrawerMenuCell class])];
+    
+    
+    NSString *menuText=self.menuItems[indexPath.row];
+    
+    cell.textLabel.text=menuText;
     cell.selectionStyle=UITableViewCellSelectionStyleGray;
-    
     cell.accessoryType=UITableViewCellAccessoryNone;
-    cell.textLabel.textColor=[UIColor whiteColor];
     cell.textLabel.textAlignment=NSTextAlignmentCenter;
     
     
     
-    switch ((PDMenuViewControllerItem)indexPath.row) {
-        case PDMenuViewControllerItemNews:{
-            [cell.textLabel setText:@"News"];
-            //            put an image
-            break;
-        }
-            
-        case PDMenuViewControllerItemOpinion:{
-            [cell.textLabel setText:@"Opinion"];
-            //            put an image
-            break;
-        }
-        case PDMenuViewControllerItemRelease:{
-            [cell.textLabel setText:@"Release"];
-            //            put an image
-            break;
-        }
-            
-        case PDMenuViewControllerItemSports:{
-            [cell.textLabel setText:@"Sports"];
-            //            put an image
-            break;
-        }
-        case PDMenuViewControllerItemContact:{
-            [cell.textLabel setText:@"Contact"];
-            //            put an image
-            break;
-        }
-        case PDMenuViewControllerItemSettings:{
-            [cell.textLabel setText:@"Settings"];
-            //            put an image
-            break;
-        }
-        case PDMenuViewControllerItem_COUNT:
-        default:
-            return nil;
-    }
-    
+//    switch ((PDMenuViewControllerItem)indexPath.row) {
+//        case PDMenuViewControllerItemNews:{
+//            [cell.textLabel setText:@"News"];
+//            //            put an image
+//            break;
+//        }
+//            
+//        case PDMenuViewControllerItemOpinion:{
+//            [cell.textLabel setText:@"Opinion"];
+//            //            put an image
+//            break;
+//        }
+//        case PDMenuViewControllerItemRelease:{
+//            [cell.textLabel setText:@"Release"];
+//            //            put an image
+//            break;
+//        }
+//            
+//        case PDMenuViewControllerItemSports:{
+//            [cell.textLabel setText:@"Sports"];
+//            //            put an image
+//            break;
+//        }
+//        case PDMenuViewControllerItemContact:{
+//            [cell.textLabel setText:@"Contact"];
+//            //            put an image
+//            break;
+//        }
+//        case PDMenuViewControllerItemSettings:{
+//            [cell.textLabel setText:@"Settings"];
+//            //            put an image
+//            break;
+//        }
+//        case PDMenuViewControllerItem_COUNT:
+//        default:
+//            break;
+//    }
+//    
     
     
     
