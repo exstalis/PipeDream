@@ -16,11 +16,11 @@
 		2D271A8C1ABE1AE400A71464 /* PipeDreamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A8B1ABE1AE400A71464 /* PipeDreamTests.m */; };
 		2D271A971ABE1B4A00A71464 /* PDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A961ABE1B4A00A71464 /* PDBaseViewController.m */; };
 		2D271A9D1ABE25C900A71464 /* PDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A9C1ABE25C900A71464 /* PDNavigationController.m */; };
-		2D8DADE71AD88CE40047AECE /* PDDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8DADE61AD88CE40047AECE /* PDDrawerViewController.m */; };
-		2D8DADEA1AD88D830047AECE /* PDBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8DADE91AD88D830047AECE /* PDBaseTableViewController.m */; };
+		2D8DADED1AD8B7440047AECE /* PDDrawerMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8DADEC1AD8B7440047AECE /* PDDrawerMenuCell.m */; };
+		2D8DADF31AD8D8C70047AECE /* BaseMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8DADF21AD8D8C70047AECE /* BaseMenuViewController.m */; };
+		2D8DADF71AD8E2E70047AECE /* PDFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8DADF61AD8E2E70047AECE /* PDFeedTableViewCell.m */; };
 		2DBEBCAE1AD70B7100123DB5 /* BG.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBEBCAD1AD70B7100123DB5 /* BG.png */; };
 		2DBEBCB11AD70DA000123DB5 /* PDDrawerCustomCellBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBEBCB01AD70DA000123DB5 /* PDDrawerCustomCellBackground.m */; };
-		2DBEBCB51AD72A8E00123DB5 /* PDDrawerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBEBCB41AD72A8E00123DB5 /* PDDrawerTableViewCell.m */; };
 		2DBEBCC01AD7314000123DB5 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBEBCBE1AD7314000123DB5 /* menu.png */; };
 		2DBEBCC11AD7314000123DB5 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBEBCBF1AD7314000123DB5 /* menu@2x.png */; };
 		2DC51D261AD4ECA800B9FA1F /* PDNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC51D251AD4ECA800B9FA1F /* PDNewsViewController.m */; };
@@ -29,7 +29,6 @@
 		2DC51D3A1AD5B58200B9FA1F /* Front View.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC51D351AD5B58200B9FA1F /* Front View.png */; };
 		2DC51D3B1AD5B58200B9FA1F /* Front View@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC51D361AD5B58200B9FA1F /* Front View@2x.png */; };
 		2DC51D3C1AD5B58200B9FA1F /* Front View@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC51D371AD5B58200B9FA1F /* Front View@3x.png */; };
-		2DC51D3F1AD5C49D00B9FA1F /* PDFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC51D3E1AD5C49D00B9FA1F /* PDFeedTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,15 +58,15 @@
 		2D271A961ABE1B4A00A71464 /* PDBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDBaseViewController.m; sourceTree = "<group>"; };
 		2D271A9B1ABE25C900A71464 /* PDNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDNavigationController.h; sourceTree = "<group>"; };
 		2D271A9C1ABE25C900A71464 /* PDNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDNavigationController.m; sourceTree = "<group>"; };
-		2D8DADE51AD88CE40047AECE /* PDDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDDrawerViewController.h; sourceTree = "<group>"; };
-		2D8DADE61AD88CE40047AECE /* PDDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDDrawerViewController.m; sourceTree = "<group>"; };
-		2D8DADE81AD88D830047AECE /* PDBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDBaseTableViewController.h; sourceTree = "<group>"; };
-		2D8DADE91AD88D830047AECE /* PDBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDBaseTableViewController.m; sourceTree = "<group>"; };
+		2D8DADEB1AD8B7440047AECE /* PDDrawerMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDDrawerMenuCell.h; sourceTree = "<group>"; };
+		2D8DADEC1AD8B7440047AECE /* PDDrawerMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDDrawerMenuCell.m; sourceTree = "<group>"; };
+		2D8DADF11AD8D8C70047AECE /* BaseMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseMenuViewController.h; sourceTree = "<group>"; };
+		2D8DADF21AD8D8C70047AECE /* BaseMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseMenuViewController.m; sourceTree = "<group>"; };
+		2D8DADF51AD8E2E70047AECE /* PDFeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFeedTableViewCell.h; sourceTree = "<group>"; };
+		2D8DADF61AD8E2E70047AECE /* PDFeedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFeedTableViewCell.m; sourceTree = "<group>"; };
 		2DBEBCAD1AD70B7100123DB5 /* BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BG.png; sourceTree = "<group>"; };
 		2DBEBCAF1AD70DA000123DB5 /* PDDrawerCustomCellBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDDrawerCustomCellBackground.h; sourceTree = "<group>"; };
 		2DBEBCB01AD70DA000123DB5 /* PDDrawerCustomCellBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDDrawerCustomCellBackground.m; sourceTree = "<group>"; };
-		2DBEBCB31AD72A8E00123DB5 /* PDDrawerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDDrawerTableViewCell.h; sourceTree = "<group>"; };
-		2DBEBCB41AD72A8E00123DB5 /* PDDrawerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDDrawerTableViewCell.m; sourceTree = "<group>"; };
 		2DBEBCBE1AD7314000123DB5 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		2DBEBCBF1AD7314000123DB5 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
 		2DC51D241AD4ECA800B9FA1F /* PDNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDNewsViewController.h; sourceTree = "<group>"; };
@@ -77,8 +76,6 @@
 		2DC51D351AD5B58200B9FA1F /* Front View.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Front View.png"; sourceTree = "<group>"; };
 		2DC51D361AD5B58200B9FA1F /* Front View@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Front View@2x.png"; sourceTree = "<group>"; };
 		2DC51D371AD5B58200B9FA1F /* Front View@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Front View@3x.png"; sourceTree = "<group>"; };
-		2DC51D3D1AD5C49D00B9FA1F /* PDFeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFeedTableViewCell.h; sourceTree = "<group>"; };
-		2DC51D3E1AD5C49D00B9FA1F /* PDFeedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFeedTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,10 +168,10 @@
 		2D271A9A1ABE1B9400A71464 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				2D8DADE81AD88D830047AECE /* PDBaseTableViewController.h */,
-				2D8DADE91AD88D830047AECE /* PDBaseTableViewController.m */,
 				2D271A951ABE1B4A00A71464 /* PDBaseViewController.h */,
 				2D271A961ABE1B4A00A71464 /* PDBaseViewController.m */,
+				2D8DADF11AD8D8C70047AECE /* BaseMenuViewController.h */,
+				2D8DADF21AD8D8C70047AECE /* BaseMenuViewController.m */,
 				2D271A9B1ABE25C900A71464 /* PDNavigationController.h */,
 				2D271A9C1ABE25C900A71464 /* PDNavigationController.m */,
 				2D8DADE41AD888790047AECE /* Cell */,
@@ -186,10 +183,10 @@
 		2D8DADE41AD888790047AECE /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				2DBEBCB31AD72A8E00123DB5 /* PDDrawerTableViewCell.h */,
-				2DBEBCB41AD72A8E00123DB5 /* PDDrawerTableViewCell.m */,
-				2DC51D3D1AD5C49D00B9FA1F /* PDFeedTableViewCell.h */,
-				2DC51D3E1AD5C49D00B9FA1F /* PDFeedTableViewCell.m */,
+				2D8DADF51AD8E2E70047AECE /* PDFeedTableViewCell.h */,
+				2D8DADF61AD8E2E70047AECE /* PDFeedTableViewCell.m */,
+				2D8DADEB1AD8B7440047AECE /* PDDrawerMenuCell.h */,
+				2D8DADEC1AD8B7440047AECE /* PDDrawerMenuCell.m */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -199,8 +196,6 @@
 			children = (
 				2DBEBCAF1AD70DA000123DB5 /* PDDrawerCustomCellBackground.h */,
 				2DBEBCB01AD70DA000123DB5 /* PDDrawerCustomCellBackground.m */,
-				2D8DADE51AD88CE40047AECE /* PDDrawerViewController.h */,
-				2D8DADE61AD88CE40047AECE /* PDDrawerViewController.m */,
 			);
 			name = Drawer;
 			sourceTree = "<group>";
@@ -339,16 +334,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D271A751ABE1AE300A71464 /* PipeDream.xcdatamodeld in Sources */,
-				2DC51D3F1AD5C49D00B9FA1F /* PDFeedTableViewCell.m in Sources */,
-				2DBEBCB51AD72A8E00123DB5 /* PDDrawerTableViewCell.m in Sources */,
+				2D8DADED1AD8B7440047AECE /* PDDrawerMenuCell.m in Sources */,
 				2DC51D261AD4ECA800B9FA1F /* PDNewsViewController.m in Sources */,
-				2D8DADEA1AD88D830047AECE /* PDBaseTableViewController.m in Sources */,
 				2D271A721ABE1AE300A71464 /* AppDelegate.m in Sources */,
+				2D8DADF31AD8D8C70047AECE /* BaseMenuViewController.m in Sources */,
+				2D8DADF71AD8E2E70047AECE /* PDFeedTableViewCell.m in Sources */,
 				2D271A9D1ABE25C900A71464 /* PDNavigationController.m in Sources */,
 				2D271A6F1ABE1AE300A71464 /* main.m in Sources */,
 				2D271A971ABE1B4A00A71464 /* PDBaseViewController.m in Sources */,
 				2DBEBCB11AD70DA000123DB5 /* PDDrawerCustomCellBackground.m in Sources */,
-				2D8DADE71AD88CE40047AECE /* PDDrawerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

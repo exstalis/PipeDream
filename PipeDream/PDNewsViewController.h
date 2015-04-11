@@ -6,20 +6,16 @@
 //  Copyright (c) 2015 elif ece arslan. All rights reserved.
 //
 
-#import "PDDrawerViewController.h"
-#import "PDFeedTableViewCell.h"
 
 #import "PDNavigationController.h"
-#import "PDBaseTableViewController.h"
 #import "PDDrawerCustomCellBackground.h"
 #import "PDBaseViewController.h"
-#import "PDDrawerTableViewCell.h"
-
+#import "PDDrawerMenuCell.h"
+#import "BaseMenuViewController.h"
 
 @class PDDrawerViewController;
 
-@interface PDNewsViewController :PDBaseViewController<UITableViewDataSource,UITableViewDelegate>
-
+@interface PDNewsViewController: BaseMenuViewController<UITableViewDataSource,UITableViewDelegate>
 
 
 

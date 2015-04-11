@@ -9,29 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PipeDream/PDNewsViewController.m"
-            timestampString = "450402525.166462"
+            filePath = "PipeDream/PDBaseViewController.m"
+            timestampString = "450410018.128096"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "-menuAction:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PipeDream/PDNewsViewController.m"
-            timestampString = "450402525.166462"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "-menuAction:"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "-setupMenuView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

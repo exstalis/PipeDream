@@ -10,10 +10,6 @@
 
 @implementation PDFeedTableViewCell
 
-- (void)awakeFromNib {
-    // Initialization code
-}
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
@@ -23,14 +19,18 @@
 
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
+    
     self=[super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if(self !=nil){
+    if(self){
+        
         [self setBackgroundView:nil];
         [self setSelectedBackgroundView:nil];
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
         [self.textLabel setTextColor:[UIColor whiteColor]];
-        [self.textLabel setFont:[UIFont fontWithName:@"Open Sans" size:14.0]];
-        [self.headline setFont:[UIFont fontWithName:@"Open Sans" size:14.0]];;
+        [self.textLabel setFont:[UIFont fontWithName:@"Open-Sans" size:14.0]];
+        [self.headline setFont:[UIFont fontWithName:@"Open-Sans" size:14.0]];;
+        self.headline.textColor=[UIColor greenColor];
+        
         
     }
     return self;

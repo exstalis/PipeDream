@@ -73,7 +73,6 @@
     [self.view addSubview:self.menuView];
   
    
-    [self.view addSubview:self.menuView];
     
     
     

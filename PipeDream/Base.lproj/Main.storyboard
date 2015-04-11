@@ -18,8 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="172" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="euW-Bg-52B">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="euW-Bg-52B">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" rowHeight="170" id="QSo-3Q-Q2E" customClass="PDFeedTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -178,6 +179,24 @@
             </objects>
             <point key="canvasLocation" x="-79" y="826"/>
         </scene>
+        <!--Base-->
+        <scene sceneID="9nE-4i-i5b">
+            <objects>
+                <viewController title="Base" id="SdM-0z-UId" customClass="BaseMenuViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lct-Xn-I3Q"/>
+                        <viewControllerLayoutGuide type="bottom" id="48r-7d-e2R"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MfX-j8-Fzr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="net-Ux-rph" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-543" y="1729"/>
+        </scene>
         <!--Opinion-->
         <scene sceneID="j7K-ye-w8e">
             <objects>
@@ -308,7 +327,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iLK-7D-vJ5" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-79" y="1817"/>
+            <point key="canvasLocation" x="200" y="1692"/>
         </scene>
     </scenes>
 </document>

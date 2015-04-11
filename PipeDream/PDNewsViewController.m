@@ -7,6 +7,7 @@
 //
 
 #import "PDNewsViewController.h"
+#import "PDFeedTableViewCell.h"
 
 
 
@@ -27,7 +28,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    self.newsTableView.delegate=self;
+    self.newsTableView.dataSource=self;
+    
+    
     // Do any additional setup after loading the view.
 }
 
@@ -38,31 +42,6 @@
 
 
 
--(void)menuAction:(id)sender{
-//    
-   
-    
-    if (self.isTapped==NO) {
-        [UIView animateWithDuration:1.0 animations:^{
-            self.menuButton.alpha=0;
-            
-            [self showMenu:YES];
-            self.isTapped=YES;
-            
-        }];
-        
-    }
-    else if (self.isTapped==YES) {
-        [UIView animateWithDuration:1.0 animations:^{
-            self.menuButton.alpha=1.0;
-            [self showMenu:NO];
-            
-        }];
-        self.isTapped=NO;
-        
-    }
-    
-}
 
 - (IBAction)menuButtonPressed:(id)sender {
  
@@ -88,9 +67,11 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     
-    PDFeedTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"newsCell"];
+   
+    
+    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"newsCell"];
     if (cell==nil) {
-        cell=[[PDFeedTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"newsCell"];
+        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"newsCell"];
         
     }
     

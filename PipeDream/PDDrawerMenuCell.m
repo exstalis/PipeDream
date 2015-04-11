@@ -1,14 +1,14 @@
 //
-//  PDDrawerTableViewCell.m
+//  PDDrawerMenuCell.m
 //  PipeDream
 //
-//  Created by elif ece arslan on 4/9/15.
+//  Created by elif ece arslan on 4/10/15.
 //  Copyright (c) 2015 elif ece arslan. All rights reserved.
 //
 
-#import "PDDrawerTableViewCell.h"
+#import "PDDrawerMenuCell.h"
 
-@implementation PDDrawerTableViewCell
+@implementation PDDrawerMenuCell
 
 - (void)awakeFromNib {
     // Initialization code
@@ -17,27 +17,26 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
-}
+ }
+
 
 
 
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self=[super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if(self !=nil){
-//        [self setBackgroundView:nil];
-//        [self setSelectedBackgroundView:nil];
-        [self setSelectionStyle:UITableViewCellSelectionStyleDefault];
-        [self.textLabel setTextColor:[UIColor whiteColor]];
+    if(self){
+        [self setBackgroundView:nil];
+        [self setSelectedBackgroundView:nil];
+        [self setSelectionStyle:UITableViewCellSelectionStyleNone];
+        [self.textLabel setTextColor:[UIColor blackColor]];
         [self.textLabel setFont:[UIFont fontWithName:@"Open-Sans" size:17.0]];
-
+        
         
     }
     return self;
     
 }
-
 
 
 @end
