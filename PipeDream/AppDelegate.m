@@ -7,8 +7,28 @@
 //
 
 #import "AppDelegate.h"
+#import "JVFloatingDrawerViewController.h"
+#import "JVFloatingDrawerSpringAnimator.h"
+
+
+static NSString * const kPDDrawersStoryboardName = @"Main";
+
+static NSString * const kPDLeftDrawerStoryboardID = @"PDDrawerViewControllerStoryboardID";
+static NSString * const kPDNewsDrawerStoryboardID = @"PDNewsViewControllerStoryboardID";
+
+static NSString * const kPDOpinionDrawerStoryboardID = @"PDOpinionViewControllerStoryboardID";
+static NSString * const  kPDReleaseDrawerStoryboardID=@"PDReleaseViewControllerStoryboardID";
+static NSString * const  kPDSportsDrawerStoryboardID=@"PDSportsViewControllerStoryboardID";
+
+
+
+//static NSString * const kJVRightDrawerStoryboardID = @"JVRightDrawerViewControllerStoryboardID";
+
+//static NSString * const kJVGitHubProjectPageViewControllerStoryboardID = @"JVGitHubProjectPageViewControllerStoryboardID";
+//static NSString * const kJVDrawerSettingsViewControllerStoryboardID = @"JVDrawerSettingsViewControllerStoryboardID";
 
 @interface AppDelegate ()
+@property (nonatomic, strong, readonly) UIStoryboard *myStoryboard;
 
 @end
 
@@ -16,7 +36,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window.rootViewController = self.drawerViewController;
+    [self configureDrawerViewController];
+    
+    [self.window makeKeyAndVisible];
+    
 
     return YES;
 }
@@ -45,7 +69,13 @@
     [self saveContext];
 }
 
+
+@synthesize myStoryboard=_myStoryboard;
+
+
 #pragma mark - Core Data stack
+
+
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
@@ -124,5 +154,131 @@
         }
     }
 }
+
+
+#pragma mark - Drawer View Controllers
+
+- (JVFloatingDrawerViewController *)drawerViewController {
+    if (_drawerViewController==nil) {
+        _drawerViewController = [[JVFloatingDrawerViewController alloc] init];
+    }
+    
+    return _drawerViewController;
+}
+
+
+
+- (UITableViewController *)leftDrawerViewController {
+    if (_leftDrawerViewController==nil) {
+        _leftDrawerViewController = [self.myStoryboard instantiateViewControllerWithIdentifier:kPDLeftDrawerStoryboardID];
+    }
+    
+    return _leftDrawerViewController;
+}
+
+#pragma news
+
+-(UIViewController *)newsViewController{
+    
+    if (_newsViewController==nil) {
+        _newsViewController=[self.myStoryboard instantiateViewControllerWithIdentifier:kPDNewsDrawerStoryboardID];
+        
+        
+    }
+    return _newsViewController;
+    
+    
+}
+
+#pragma opinion
+
+-(UIViewController *)opinionViewController{
+    
+    
+    if (_opinionViewController==nil) {
+        _opinionViewController=[self.myStoryboard instantiateViewControllerWithIdentifier:kPDOpinionDrawerStoryboardID];
+        
+    }
+    return _opinionViewController;
+    
+}
+
+#pragma release
+
+-(UIViewController *)releaseViewController{
+
+
+    if (_releaseViewController==nil) {
+        _releaseViewController=[self.myStoryboard instantiateViewControllerWithIdentifier:kPDReleaseDrawerStoryboardID];
+        
+    }
+    return _releaseViewController;
+    
+
+
+
+}
+#pragma sports
+
+
+-(UIViewController *)sportsViewController{
+    
+    if (_sportsViewController==nil) {
+        _sportsViewController=[self.myStoryboard instantiateViewControllerWithIdentifier:kPDSportsDrawerStoryboardID];
+        
+    }
+    return _sportsViewController;
+    
+    
+    
+}
+
+
+
+#pragma drawer animation
+
+
+- (JVFloatingDrawerSpringAnimator *)drawerAnimator {
+    if (_drawerAnimator==nil) {
+        _drawerAnimator = [[JVFloatingDrawerSpringAnimator alloc] init];
+    }
+    
+    return _drawerAnimator;
+}
+
+#pragma storyboard
+
+- (UIStoryboard *)myStoryboard {
+    
+    if(_myStoryboard==nil) {
+        _myStoryboard = [UIStoryboard storyboardWithName:kPDDrawersStoryboardName bundle:nil];
+    }
+    
+    return _myStoryboard;
+}
+
+
+
+
+- (void)configureDrawerViewController {
+    self.drawerViewController.leftViewController = self.leftDrawerViewController;
+    self.drawerViewController.centerViewController = self.newsViewController;
+    self.drawerViewController.animator = self.drawerAnimator;
+    
+    self.drawerViewController.backgroundImage = [UIImage imageNamed:@"BG"];
+}
+
+
+
+#pragma mark - Global Access Helper
+
++ (AppDelegate *)globalDelegate {
+    return (AppDelegate *)[UIApplication sharedApplication].delegate;
+}
+
+- (void)toggleLeftDrawer:(id)sender animated:(BOOL)animated {
+    [self.drawerViewController toggleDrawerWithSide:JVFloatingDrawerSideLeft animated:animated completion:nil];
+}
+
 
 @end

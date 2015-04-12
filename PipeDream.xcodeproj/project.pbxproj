@@ -14,18 +14,19 @@
 		2D271A7D1ABE1AE300A71464 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D271A7C1ABE1AE300A71464 /* Images.xcassets */; };
 		2D271A801ABE1AE300A71464 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D271A7E1ABE1AE300A71464 /* LaunchScreen.xib */; };
 		2D271A8C1ABE1AE400A71464 /* PipeDreamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A8B1ABE1AE400A71464 /* PipeDreamTests.m */; };
-		2D271A971ABE1B4A00A71464 /* PDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A961ABE1B4A00A71464 /* PDBaseViewController.m */; };
 		2D271A9D1ABE25C900A71464 /* PDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A9C1ABE25C900A71464 /* PDNavigationController.m */; };
+		2D2921341ADA148A00D622EC /* JVFloatingDrawer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D2921331ADA148A00D622EC /* JVFloatingDrawer.framework */; };
+		2D2921371ADA154500D622EC /* PDDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2921361ADA154500D622EC /* PDDrawerViewController.m */; };
+		2D29213D1ADA49E800D622EC /* PDReleaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D29213C1ADA49E800D622EC /* PDReleaseViewController.m */; };
+		2D2921411ADA4C7100D622EC /* PDSportsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2921401ADA4C7100D622EC /* PDSportsViewController.m */; };
 		2D345C011AD9E56F00308866 /* detail.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D345BFF1AD9E56F00308866 /* detail.png */; };
 		2D345C021AD9E56F00308866 /* detail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D345C001AD9E56F00308866 /* detail@2x.png */; };
 		2D345C051AD9E5C700308866 /* PDNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D345C041AD9E5C700308866 /* PDNewsDetailViewController.m */; };
 		2D5E8E211AD9F2AE00FB533F /* PDOpinionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E8E201AD9F2AE00FB533F /* PDOpinionViewController.m */; };
 		2D5E8E241AD9F32500FB533F /* PDOpinionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E8E231AD9F32500FB533F /* PDOpinionDetailViewController.m */; };
 		2D8DADED1AD8B7440047AECE /* PDDrawerMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8DADEC1AD8B7440047AECE /* PDDrawerMenuCell.m */; };
-		2D8DADF31AD8D8C70047AECE /* BaseMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8DADF21AD8D8C70047AECE /* BaseMenuViewController.m */; };
 		2D8DADF71AD8E2E70047AECE /* PDFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8DADF61AD8E2E70047AECE /* PDFeedTableViewCell.m */; };
 		2DBEBCAE1AD70B7100123DB5 /* BG.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBEBCAD1AD70B7100123DB5 /* BG.png */; };
-		2DBEBCB11AD70DA000123DB5 /* PDDrawerCustomCellBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBEBCB01AD70DA000123DB5 /* PDDrawerCustomCellBackground.m */; };
 		2DBEBCC01AD7314000123DB5 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBEBCBE1AD7314000123DB5 /* menu.png */; };
 		2DBEBCC11AD7314000123DB5 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBEBCBF1AD7314000123DB5 /* menu@2x.png */; };
 		2DC51D261AD4ECA800B9FA1F /* PDNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC51D251AD4ECA800B9FA1F /* PDNewsViewController.m */; };
@@ -34,6 +35,7 @@
 		2DC51D3A1AD5B58200B9FA1F /* Front View.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC51D351AD5B58200B9FA1F /* Front View.png */; };
 		2DC51D3B1AD5B58200B9FA1F /* Front View@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC51D361AD5B58200B9FA1F /* Front View@2x.png */; };
 		2DC51D3C1AD5B58200B9FA1F /* Front View@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC51D371AD5B58200B9FA1F /* Front View@3x.png */; };
+		D09D8ACBB15D3F7BC0EB2839 /* Pods_PipeDream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B9D5B4C476E3BFECB988FE /* Pods_PipeDream.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1DBB73B3EFDBCEBB106DF89E /* Pods-PipeDream.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PipeDream.release.xcconfig"; path = "Pods/Target Support Files/Pods-PipeDream/Pods-PipeDream.release.xcconfig"; sourceTree = "<group>"; };
 		2D271A691ABE1AE300A71464 /* PipeDream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PipeDream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D271A6D1ABE1AE300A71464 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D271A6E1ABE1AE300A71464 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -59,10 +62,15 @@
 		2D271A851ABE1AE400A71464 /* PipeDreamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PipeDreamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D271A8A1ABE1AE400A71464 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D271A8B1ABE1AE400A71464 /* PipeDreamTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PipeDreamTests.m; sourceTree = "<group>"; };
-		2D271A951ABE1B4A00A71464 /* PDBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDBaseViewController.h; sourceTree = "<group>"; };
-		2D271A961ABE1B4A00A71464 /* PDBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDBaseViewController.m; sourceTree = "<group>"; };
 		2D271A9B1ABE25C900A71464 /* PDNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDNavigationController.h; sourceTree = "<group>"; };
 		2D271A9C1ABE25C900A71464 /* PDNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDNavigationController.m; sourceTree = "<group>"; };
+		2D2921331ADA148A00D622EC /* JVFloatingDrawer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JVFloatingDrawer.framework; path = "Pods/../build/Debug-iphoneos/Pods-PipeDream/JVFloatingDrawer.framework"; sourceTree = "<group>"; };
+		2D2921351ADA154500D622EC /* PDDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDDrawerViewController.h; sourceTree = "<group>"; };
+		2D2921361ADA154500D622EC /* PDDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDDrawerViewController.m; sourceTree = "<group>"; };
+		2D29213B1ADA49E800D622EC /* PDReleaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDReleaseViewController.h; sourceTree = "<group>"; };
+		2D29213C1ADA49E800D622EC /* PDReleaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDReleaseViewController.m; sourceTree = "<group>"; };
+		2D29213F1ADA4C7100D622EC /* PDSportsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDSportsViewController.h; sourceTree = "<group>"; };
+		2D2921401ADA4C7100D622EC /* PDSportsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDSportsViewController.m; sourceTree = "<group>"; };
 		2D345BFF1AD9E56F00308866 /* detail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = detail.png; sourceTree = "<group>"; };
 		2D345C001AD9E56F00308866 /* detail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "detail@2x.png"; sourceTree = "<group>"; };
 		2D345C031AD9E5C700308866 /* PDNewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDNewsDetailViewController.h; sourceTree = "<group>"; };
@@ -73,13 +81,9 @@
 		2D5E8E231AD9F32500FB533F /* PDOpinionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDOpinionDetailViewController.m; sourceTree = "<group>"; };
 		2D8DADEB1AD8B7440047AECE /* PDDrawerMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDDrawerMenuCell.h; sourceTree = "<group>"; };
 		2D8DADEC1AD8B7440047AECE /* PDDrawerMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDDrawerMenuCell.m; sourceTree = "<group>"; };
-		2D8DADF11AD8D8C70047AECE /* BaseMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseMenuViewController.h; sourceTree = "<group>"; };
-		2D8DADF21AD8D8C70047AECE /* BaseMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseMenuViewController.m; sourceTree = "<group>"; };
 		2D8DADF51AD8E2E70047AECE /* PDFeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFeedTableViewCell.h; sourceTree = "<group>"; };
 		2D8DADF61AD8E2E70047AECE /* PDFeedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFeedTableViewCell.m; sourceTree = "<group>"; };
 		2DBEBCAD1AD70B7100123DB5 /* BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BG.png; sourceTree = "<group>"; };
-		2DBEBCAF1AD70DA000123DB5 /* PDDrawerCustomCellBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDDrawerCustomCellBackground.h; sourceTree = "<group>"; };
-		2DBEBCB01AD70DA000123DB5 /* PDDrawerCustomCellBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDDrawerCustomCellBackground.m; sourceTree = "<group>"; };
 		2DBEBCBE1AD7314000123DB5 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		2DBEBCBF1AD7314000123DB5 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
 		2DC51D241AD4ECA800B9FA1F /* PDNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDNewsViewController.h; sourceTree = "<group>"; };
@@ -89,6 +93,8 @@
 		2DC51D351AD5B58200B9FA1F /* Front View.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Front View.png"; sourceTree = "<group>"; };
 		2DC51D361AD5B58200B9FA1F /* Front View@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Front View@2x.png"; sourceTree = "<group>"; };
 		2DC51D371AD5B58200B9FA1F /* Front View@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Front View@3x.png"; sourceTree = "<group>"; };
+		42B9D5B4C476E3BFECB988FE /* Pods_PipeDream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PipeDream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		774EED6B9BEC8E099AFBF156 /* Pods-PipeDream.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PipeDream.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PipeDream/Pods-PipeDream.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D2921341ADA148A00D622EC /* JVFloatingDrawer.framework in Frameworks */,
+				D09D8ACBB15D3F7BC0EB2839 /* Pods_PipeDream.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +123,8 @@
 				2D271A6B1ABE1AE300A71464 /* PipeDream */,
 				2D271A881ABE1AE400A71464 /* PipeDreamTests */,
 				2D271A6A1ABE1AE300A71464 /* Products */,
+				7931DE257A76F74859FB3B5E /* Pods */,
+				794F173DADAE86E716A67057 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -181,16 +191,30 @@
 		2D271A9A1ABE1B9400A71464 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				2D271A951ABE1B4A00A71464 /* PDBaseViewController.h */,
-				2D271A961ABE1B4A00A71464 /* PDBaseViewController.m */,
-				2D8DADF11AD8D8C70047AECE /* BaseMenuViewController.h */,
-				2D8DADF21AD8D8C70047AECE /* BaseMenuViewController.m */,
 				2D271A9B1ABE25C900A71464 /* PDNavigationController.h */,
 				2D271A9C1ABE25C900A71464 /* PDNavigationController.m */,
 				2D8DADE41AD888790047AECE /* Cell */,
 				2DBEBCB21AD70DAC00123DB5 /* Drawer */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		2D29213E1ADA49ED00D622EC /* Release */ = {
+			isa = PBXGroup;
+			children = (
+				2D29213B1ADA49E800D622EC /* PDReleaseViewController.h */,
+				2D29213C1ADA49E800D622EC /* PDReleaseViewController.m */,
+			);
+			name = Release;
+			sourceTree = "<group>";
+		};
+		2D2921421ADA4C7E00D622EC /* Sports */ = {
+			isa = PBXGroup;
+			children = (
+				2D29213F1ADA4C7100D622EC /* PDSportsViewController.h */,
+				2D2921401ADA4C7100D622EC /* PDSportsViewController.m */,
+			);
+			name = Sports;
 			sourceTree = "<group>";
 		};
 		2D345C061AD9E5D300308866 /* Opinion */ = {
@@ -229,8 +253,8 @@
 		2DBEBCB21AD70DAC00123DB5 /* Drawer */ = {
 			isa = PBXGroup;
 			children = (
-				2DBEBCAF1AD70DA000123DB5 /* PDDrawerCustomCellBackground.h */,
-				2DBEBCB01AD70DA000123DB5 /* PDDrawerCustomCellBackground.m */,
+				2D2921351ADA154500D622EC /* PDDrawerViewController.h */,
+				2D2921361ADA154500D622EC /* PDDrawerViewController.m */,
 			);
 			name = Drawer;
 			sourceTree = "<group>";
@@ -240,6 +264,8 @@
 			children = (
 				2D345C071AD9E5DC00308866 /* News */,
 				2D345C061AD9E5D300308866 /* Opinion */,
+				2D29213E1ADA49ED00D622EC /* Release */,
+				2D2921421ADA4C7E00D622EC /* Sports */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -262,6 +288,24 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		7931DE257A76F74859FB3B5E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				774EED6B9BEC8E099AFBF156 /* Pods-PipeDream.debug.xcconfig */,
+				1DBB73B3EFDBCEBB106DF89E /* Pods-PipeDream.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		794F173DADAE86E716A67057 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2D2921331ADA148A00D622EC /* JVFloatingDrawer.framework */,
+				42B9D5B4C476E3BFECB988FE /* Pods_PipeDream.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -269,9 +313,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D271A8F1ABE1AE400A71464 /* Build configuration list for PBXNativeTarget "PipeDream" */;
 			buildPhases = (
+				79E1597D1B55E73377686FB0 /* Check Pods Manifest.lock */,
 				2D271A651ABE1AE300A71464 /* Sources */,
 				2D271A661ABE1AE300A71464 /* Frameworks */,
 				2D271A671ABE1AE300A71464 /* Resources */,
+				E945EC40D7B6FFF6E411B530 /* Embed Pods Frameworks */,
+				1D350AC411592F23B47CB64B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -367,24 +414,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1D350AC411592F23B47CB64B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PipeDream/Pods-PipeDream-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		79E1597D1B55E73377686FB0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E945EC40D7B6FFF6E411B530 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PipeDream/Pods-PipeDream-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2D271A651ABE1AE300A71464 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D2921411ADA4C7100D622EC /* PDSportsViewController.m in Sources */,
+				2D29213D1ADA49E800D622EC /* PDReleaseViewController.m in Sources */,
 				2D271A751ABE1AE300A71464 /* PipeDream.xcdatamodeld in Sources */,
 				2D8DADED1AD8B7440047AECE /* PDDrawerMenuCell.m in Sources */,
 				2D5E8E241AD9F32500FB533F /* PDOpinionDetailViewController.m in Sources */,
 				2DC51D261AD4ECA800B9FA1F /* PDNewsViewController.m in Sources */,
 				2D271A721ABE1AE300A71464 /* AppDelegate.m in Sources */,
-				2D8DADF31AD8D8C70047AECE /* BaseMenuViewController.m in Sources */,
 				2D8DADF71AD8E2E70047AECE /* PDFeedTableViewCell.m in Sources */,
 				2D345C051AD9E5C700308866 /* PDNewsDetailViewController.m in Sources */,
 				2D5E8E211AD9F2AE00FB533F /* PDOpinionViewController.m in Sources */,
+				2D2921371ADA154500D622EC /* PDDrawerViewController.m in Sources */,
 				2D271A9D1ABE25C900A71464 /* PDNavigationController.m in Sources */,
 				2D271A6F1ABE1AE300A71464 /* main.m in Sources */,
-				2D271A971ABE1B4A00A71464 /* PDBaseViewController.m in Sources */,
-				2DBEBCB11AD70DA000123DB5 /* PDDrawerCustomCellBackground.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,8 +603,13 @@
 		};
 		2D271A901ABE1AE400A71464 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 774EED6B9BEC8E099AFBF156 /* Pods-PipeDream.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Pods-PipeDream",
+				);
 				INFOPLIST_FILE = PipeDream/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -518,8 +618,13 @@
 		};
 		2D271A911ABE1AE400A71464 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DBB73B3EFDBCEBB106DF89E /* Pods-PipeDream.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Pods-PipeDream",
+				);
 				INFOPLIST_FILE = PipeDream/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

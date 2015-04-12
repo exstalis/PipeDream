@@ -8,32 +8,75 @@
 
 #import "PDDrawerMenuCell.h"
 
+
+@interface PDDrawerMenuCell ()
+
+
+@property (weak, nonatomic) IBOutlet UIImageView *menuCellIcon;
+
+@property (weak, nonatomic) IBOutlet UILabel *menuItemLabel;
+
+@end
+
 @implementation PDDrawerMenuCell
 
 - (void)awakeFromNib {
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+
+    
     // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
+
  }
 
 
--(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
-    self=[super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if(self){
-        [self setBackgroundView:nil];
-        [self setSelectedBackgroundView:nil];
-        [self setSelectionStyle:UITableViewCellSelectionStyleNone];
-        [self.textLabel setTextColor:[UIColor blackColor]];
-        [self.textLabel setFont:[UIFont fontWithName:@"OpenSans-Regular" size:17.0]];
-        
-        
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
+    [super setHighlighted:highlighted animated:animated];
+    [self highlightCell:highlighted];
+}
+
+- (void)highlightCell:(BOOL)highlight {
+    UIColor *tintColor = [UIColor whiteColor];
+    if(highlight) {
+        tintColor = [UIColor colorWithWhite:1.0 alpha:0.6];
     }
-    return self;
+    
+    self.menuItemLabel.textColor = tintColor;
+    self.menuCellIcon.tintColor = tintColor;
+}
+
+#pragma mark - Accessors
+
+#pragma Title
+
+- (NSString *)sectionTitle {
+    return self.menuItemLabel.text;
+}
+
+
+
+
+-(void)setSectionTitle:(NSString *)sectionTitle{
+    self.menuItemLabel.text=sectionTitle;
     
 }
 
+
+
+
+#pragma Icon
+
+- (UIImage *)iconImage {
+    return self.menuCellIcon.image;
+}
+
+-(void)setMenuCellIcon:(UIImageView *)menuCellIcon{
+    [self.menuCellIcon.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    
+}
 
 @end

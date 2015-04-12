@@ -1,0 +1,1296 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0046F5AF56670C9E34A2DCDA /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C6F34BBB49B35DA118B1EC9 /* AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		06C8F32DE78F70C1BD7CEDFE /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0184378A280F1D91D8C11E71 /* AFHTTPRequestOperationManager.m */; };
+		06E778009B2094CED3C52006 /* NSLayoutConstraint+FLKAutoLayoutDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CB1B3626035DF4EA1724D3 /* NSLayoutConstraint+FLKAutoLayoutDebug.m */; };
+		078AE8FFC8A0F4D93DE1A950 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 824ECECF83EAE5AC9620E757 /* UIProgressView+AFNetworking.m */; };
+		097CDD1E054C3CD741B754D4 /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 72F90BE8B8E18B6E3D69E080 /* UIImageView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0B9A9873184D76246576B592 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BC041DCB85FFCC0FEA26B61 /* Foundation.framework */; };
+		1729E52134BF89625A6D9F47 /* UIView+FLKAutoLayoutDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB91A1DDAF63F6B802913B2 /* UIView+FLKAutoLayoutDebug.m */; };
+		1F3AD9139FAF9402A92DF00A /* FLKAutoLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3D6F91556FAF62B6AEDB4D /* FLKAutoLayout.framework */; };
+		22AF1628B8664C313869882B /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = AFF8860B397D93CC8BDDCEDE /* AFNetworkActivityIndicatorManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24A55BC13D024638A6060D45 /* ORStackView+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 6114E810B54F9DB752AB1A60 /* ORStackView+Private.h */; };
+		24CD6F0E616288DFC0BEE0B4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32AAD0148435D95A324917D /* SystemConfiguration.framework */; };
+		276D904154FC766A10284EB6 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AABF8EDC8B38C9B752B6B24 /* UIRefreshControl+AFNetworking.m */; };
+		27C0358EB97A5B4C0AC57F50 /* UIView+FLKAutoLayoutPredicate.h in Headers */ = {isa = PBXBuildFile; fileRef = F70F5B40BC1F8C81D6B05D1E /* UIView+FLKAutoLayoutPredicate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		297A7F7CA20F61BCBB3D9E07 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E9ADA9E0A57CA7959E50CB /* AFURLSessionManager.m */; };
+		2C8E08AC6B5EE7B2534375AF /* AFHTTPRequestOperationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F70C6AACC31FD8212BE327B5 /* AFHTTPRequestOperationManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2CBD3A4EDEBD91E1B024B867 /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = EFBBAFF49B0C90CD68086B23 /* AFHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		330F74C83E7D18D178A67508 /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = D838190DC2E392FE7DDC373E /* AFURLRequestSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		346F932DE7454BEBC60AFF5E /* JVFloatingDrawerSpringAnimator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F4F94C5E993F3A7CD5C52C9 /* JVFloatingDrawerSpringAnimator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37877DFB6D1FAF11E7510265 /* Pods-PipeDream-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3239F6DA82DC54B9DD024B /* Pods-PipeDream-dummy.m */; };
+		3A10B4B7B40C6228BAC27853 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 11CA41858EE1CF38A606846A /* UIImageView+AFNetworking.m */; };
+		3CB72BCE8D23858E1A0ACAD4 /* AFURLConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 38FC443252BE2BC33A218E15 /* AFURLConnectionOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4494E4C92F69098A5A83A2F8 /* ORStackScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = C2C39771210B257C21035D30 /* ORStackScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4A982F3211DCCD047816C6D6 /* ORSplitStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52682C216A68E89C39ECA862 /* ORSplitStackView.m */; };
+		4F6A0CE4AAC9BA858FED8373 /* UIAlertView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DD7974441834DF8EF72DD25 /* UIAlertView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4FE88B50E597E997B2A444DB /* UIView+FLKAutoLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = EAEEAF10934F100EA66FF087 /* UIView+FLKAutoLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		52D5910BA4F21991C4F336F4 /* ORTagBasedAutoStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DCDCB1FD5220F359E77AA4 /* ORTagBasedAutoStackView.m */; };
+		53399EA65C6A268980C65656 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BC041DCB85FFCC0FEA26B61 /* Foundation.framework */; };
+		5BACA1F506AFD24FEC977D53 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6746E768FA942483BDA61209 /* AFURLConnectionOperation.m */; };
+		5D78D14D9C29D808B15132BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BC041DCB85FFCC0FEA26B61 /* Foundation.framework */; };
+		5E7D1E00C13421D4ED677D14 /* UIAlertView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3E959495528D431627A6C8 /* UIAlertView+AFNetworking.m */; };
+		65D355FB954E5657412518F6 /* AFHTTPRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = FCE80FC079C2AE064CF3D5DF /* AFHTTPRequestOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6777D906DC305515340414CA /* UIActivityIndicatorView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = DD78ACE988EE9D6439CAF77C /* UIActivityIndicatorView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7099F7D408DB732779E726A7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFEE9517786C12519316FABE /* CoreGraphics.framework */; };
+		70EC1790DEA1823D947BEC90 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4A882458669DF51F13E65C /* AFHTTPSessionManager.m */; };
+		736EC395CCBDCFDB1413B00A /* ORTagBasedAutoStackView.h in Headers */ = {isa = PBXBuildFile; fileRef = 954B00127619FE049E57254F /* ORTagBasedAutoStackView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75AE5C7917D6948F600ABEBB /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = CCD7DEBD33EC24F43D54053B /* AFSecurityPolicy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		77A99AE56C6904A589464BB6 /* Pods-PipeDream-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 968A3880F85304F9953A0C12 /* Pods-PipeDream-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		77D6143BD60DEA0BE4A99B73 /* UIKit+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = FFA73D0E242FFEA6A0E15535 /* UIKit+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		79D84F166C2890F33BC7D257 /* ORStackScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B43287D633532DE43097E3B8 /* ORStackScrollView.m */; };
+		7A7CDD2341468D860212955D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4D86E4D937E4517B4C48F0 /* MobileCoreServices.framework */; };
+		7CC229EE2D579652BC14272B /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BDAA9C2A0EC741BAAC1CC0BE /* AFHTTPRequestOperation.m */; };
+		806B46D0E580EA7008C6A33B /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF175F669BFFE80DF7BEB94 /* AFNetworkActivityIndicatorManager.m */; };
+		8324F55A91EDE2273CB6C922 /* JVFloatingDrawerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2287E588E240D2305A2BFA47 /* JVFloatingDrawerView.m */; };
+		85CE26BF1FE538E5D1980631 /* UIView+FLKAutoLayoutPredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = DF738E664D56CEAE586372E1 /* UIView+FLKAutoLayoutPredicate.m */; };
+		88A4CD477E5C6C99048639D9 /* JVFloatingDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CF3CA29C3E5AAEDC9DCFA0 /* JVFloatingDrawerViewController.m */; };
+		8A167942C36860F5741D63D0 /* Pods-PipeDream-AFNetworking-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AEAAC02197CAD71A71DE628 /* Pods-PipeDream-AFNetworking-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8CD0E41BF244184FF43F1059 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE83A0F939BBD305E1C73DF /* AFURLRequestSerialization.m */; };
+		8F610E3BAB1150B49F99C177 /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3C9D2CD32F1C0F8410815E /* UIButton+AFNetworking.m */; };
+		91EDF17F7C1767204B3AD044 /* JVFloatingDrawerAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 52AAC9B85E4E0868BDE6A1CA /* JVFloatingDrawerAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9537507466D88FC1D790911C /* ORStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = E311E5265CF291FD5F31F383 /* ORStackView.m */; };
+		9C1193EEBD5478C2A6CCDCFD /* ORStackView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F5E5871265D9098A8720942 /* ORStackView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D0896FD051AD0EAE4128DDF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BC041DCB85FFCC0FEA26B61 /* Foundation.framework */; };
+		9E2423BB2C5EAC81C43BEA3A /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = EA872591FF3293F937ED8253 /* AFURLSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9EE0AB92907CA6CBCF7157B9 /* Pods-PipeDream-AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE7EF72E10D8F7F14A5911E /* Pods-PipeDream-AFNetworking-dummy.m */; };
+		9F5C92E4ECD536C741B90EB7 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 759320C9647CC01E280061FE /* AFSecurityPolicy.m */; };
+		ABD4334610EEEDCF7A9CA077 /* UIRefreshControl+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DA1B8DBDE986F22C6C81E06 /* UIRefreshControl+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ABD5135C76E047E71883CEF0 /* Pods-PipeDream-FLKAutoLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CA862B3C23B154D3B008AE4F /* Pods-PipeDream-FLKAutoLayout-dummy.m */; };
+		B03800E0D80D3BD501F68B48 /* UIView+FLKAutoLayoutDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C6EFB663334B5E10FA8AF6B /* UIView+FLKAutoLayoutDebug.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B259979FD19ABB78CFFC2C60 /* NSLayoutConstraint+FLKAutoLayoutDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = CDDE5A3B149D39E94E685001 /* NSLayoutConstraint+FLKAutoLayoutDebug.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B2676252412EFA4EEC5B5F1A /* FLKAutoLayoutPredicateList.h in Headers */ = {isa = PBXBuildFile; fileRef = 932CCED0332670ACEBCCF8CD /* FLKAutoLayoutPredicateList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5F86C7B321F14D5A5602E8C /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B72B3361F83D8B4245DA836 /* AFNetworkReachabilityManager.m */; };
+		BA57127BE73EE2877BFF48F4 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 68EE41A56C3DB86D4D18C0E2 /* UIWebView+AFNetworking.m */; };
+		BBA1B744F55D7D82ECE39A95 /* JVFloatingDrawerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E024D6E9E2935BD2F66A9D5 /* JVFloatingDrawerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC67FF1C2CAF2B2121490668 /* ORStackView+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 9279438A58D76F8DF5A3A550 /* ORStackView+Private.m */; };
+		BD2F50F1E7DCD7C472914594 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BC041DCB85FFCC0FEA26B61 /* Foundation.framework */; };
+		C1EDC5A5A79117E0350BAE0A /* ORSplitStackView.h in Headers */ = {isa = PBXBuildFile; fileRef = B3D9BF4BAA215CA39DEDAC35 /* ORSplitStackView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C72840E72FA598861EC9EFD1 /* UIButton+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = AD07828946F8A0DFAFC5B1DF /* UIButton+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C7683942F0D0BDF2EE705219 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C257309B23F43C2A7DCB7D /* AFURLResponseSerialization.m */; };
+		C77DE4AC10A44E07BDAA84CA /* Pods-PipeDream-ORStackView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A55BCAB608543EF71274DD6D /* Pods-PipeDream-ORStackView-dummy.m */; };
+		CABD526AE83E0558E4B5442C /* JVFloatingDrawerSpringAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3F5FF5BABC0C950F65EEBC /* JVFloatingDrawerSpringAnimator.m */; };
+		CD92DB639B7498303E923519 /* UIWebView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = F6D44952EA6DCC766A927CA3 /* UIWebView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CECF32749D7B678CF1905C68 /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 648FEC2C2C696365F95DCD5E /* AFURLResponseSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3F3F3E93D6F8CD444A49964 /* UIView+FLKAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF7074AF9BED1919C819132 /* UIView+FLKAutoLayout.m */; };
+		D659E25746B517B89DF3AB72 /* AFNetworkReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 18FD1D1960406D8222857A45 /* AFNetworkReachabilityManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D8EDDA75C50B64599C160B01 /* Pods-PipeDream-JVFloatingDrawer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C108A468942F377BAEB0BB6C /* Pods-PipeDream-JVFloatingDrawer-dummy.m */; };
+		E0AB1AFD63FFBEAF90202A1F /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = F46CB10B1461B2269CEFABFD /* UIActivityIndicatorView+AFNetworking.m */; };
+		E3118FDDA6E615B0C297F91F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CB2475C0172B20F34699F0 /* Security.framework */; };
+		EB92BFEFC4E500F8C4479BDD /* Pods-PipeDream-JVFloatingDrawer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CC8F263EB28F9028B4EF5E5B /* Pods-PipeDream-JVFloatingDrawer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED67A2C9BE31C0F68227CAA7 /* FLKAutoLayoutPredicateList.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B0FBA3FBFA91BFFC939EDA /* FLKAutoLayoutPredicateList.m */; };
+		F528EEF76AE0E34F0BD33340 /* JVFloatingDrawerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = F5D47FF556344C0E91241565 /* JVFloatingDrawerViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F5A8D4E2B0163EEDB43B5893 /* Pods-PipeDream-ORStackView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E43439F9147446E5C3E5CFF9 /* Pods-PipeDream-ORStackView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F76122B16C9A5376A9E71B2E /* Pods-PipeDream-FLKAutoLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FDBA62845AE753B6D1059B66 /* Pods-PipeDream-FLKAutoLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA39F8C6597B31D437C991DE /* UIProgressView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = AB9A165B1E5AEA05F22AB86C /* UIProgressView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		109501F38847AF521EC3A872 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4BBFFCD65ECF57A342C0119E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E492F75EC3A8C7A044C3AAA5;
+			remoteInfo = "Pods-PipeDream-FLKAutoLayout";
+		};
+		1AF1B3B2A65897E3E14E635A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4BBFFCD65ECF57A342C0119E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E9676CB5732A57E49AAD9C1C;
+			remoteInfo = "Pods-PipeDream-ORStackView";
+		};
+		6B1CD2D905CF1A50FDCC6CAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4BBFFCD65ECF57A342C0119E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E86BC20743728DF0E9CF222B;
+			remoteInfo = "Pods-PipeDream-JVFloatingDrawer";
+		};
+		8EB21A77FE9D77FF2363E7A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4BBFFCD65ECF57A342C0119E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E492F75EC3A8C7A044C3AAA5;
+			remoteInfo = "Pods-PipeDream-FLKAutoLayout";
+		};
+		B4A6B9F5587B2CF0E571E130 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4BBFFCD65ECF57A342C0119E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8AB3D059F521B0A1987D7103;
+			remoteInfo = "Pods-PipeDream-AFNetworking";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0184378A280F1D91D8C11E71 /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperationManager.m; path = AFNetworking/AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		05CF3CA29C3E5AAEDC9DCFA0 /* JVFloatingDrawerViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JVFloatingDrawerViewController.m; path = Pod/Classes/JVFloatingDrawerViewController.m; sourceTree = "<group>"; };
+		06CB2475C0172B20F34699F0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		07370959C5569A9ECFA85DDB /* Pods-PipeDream-FLKAutoLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PipeDream-FLKAutoLayout.modulemap"; sourceTree = "<group>"; };
+		11CA41858EE1CF38A606846A /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		1551BC18C3FD8B93A7D39C20 /* Pods-PipeDream-AFNetworking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PipeDream-AFNetworking-prefix.pch"; sourceTree = "<group>"; };
+		18FD1D1960406D8222857A45 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		1DD7974441834DF8EF72DD25 /* UIAlertView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+AFNetworking.h"; path = "UIKit+AFNetworking/UIAlertView+AFNetworking.h"; sourceTree = "<group>"; };
+		20A6E1A28596E09D07A934DF /* Pods_PipeDream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PipeDream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		223853D6DD89BFBEAD782327 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		2287E588E240D2305A2BFA47 /* JVFloatingDrawerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JVFloatingDrawerView.m; path = Pod/Classes/JVFloatingDrawerView.m; sourceTree = "<group>"; };
+		23BCEB20914AD7E6D611138D /* Pods-PipeDream-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PipeDream-resources.sh"; sourceTree = "<group>"; };
+		28C257309B23F43C2A7DCB7D /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		2A4A882458669DF51F13E65C /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPSessionManager.m; path = AFNetworking/AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		2B72B3361F83D8B4245DA836 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkReachabilityManager.m; path = AFNetworking/AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		2C6EFB663334B5E10FA8AF6B /* UIView+FLKAutoLayoutDebug.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+FLKAutoLayoutDebug.h"; path = "FLKAutoLayout/UIView+FLKAutoLayoutDebug.h"; sourceTree = "<group>"; };
+		2CE3A5D7CB67263835E084B4 /* Pods-PipeDream.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PipeDream.modulemap"; sourceTree = "<group>"; };
+		2DA1B8DBDE986F22C6C81E06 /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIRefreshControl+AFNetworking.h"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
+		38FC443252BE2BC33A218E15 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLConnectionOperation.h; path = AFNetworking/AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		39940EBA14CD334C460A4419 /* Pods-PipeDream-AFNetworking-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PipeDream-AFNetworking-Private.xcconfig"; sourceTree = "<group>"; };
+		39CB1B3626035DF4EA1724D3 /* NSLayoutConstraint+FLKAutoLayoutDebug.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+FLKAutoLayoutDebug.m"; path = "FLKAutoLayout/NSLayoutConstraint+FLKAutoLayoutDebug.m"; sourceTree = "<group>"; };
+		3B3F5FF5BABC0C950F65EEBC /* JVFloatingDrawerSpringAnimator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JVFloatingDrawerSpringAnimator.m; path = Pod/Classes/JVFloatingDrawerSpringAnimator.m; sourceTree = "<group>"; };
+		3BC041DCB85FFCC0FEA26B61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3E3CAE2D0790CD84ECA85419 /* FLKAutoLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FLKAutoLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F4F94C5E993F3A7CD5C52C9 /* JVFloatingDrawerSpringAnimator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JVFloatingDrawerSpringAnimator.h; path = Pod/Classes/JVFloatingDrawerSpringAnimator.h; sourceTree = "<group>"; };
+		3F5E5871265D9098A8720942 /* ORStackView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ORStackView.h; path = Classes/ios/ORStackView.h; sourceTree = "<group>"; };
+		3FC19E10309C8D19A5F58293 /* Pods-PipeDream-AFNetworking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PipeDream-AFNetworking.xcconfig"; sourceTree = "<group>"; };
+		4035EFF58798AEC9AEA64072 /* Pods-PipeDream-FLKAutoLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PipeDream-FLKAutoLayout.xcconfig"; sourceTree = "<group>"; };
+		43B0FBA3FBFA91BFFC939EDA /* FLKAutoLayoutPredicateList.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FLKAutoLayoutPredicateList.m; path = FLKAutoLayout/FLKAutoLayoutPredicateList.m; sourceTree = "<group>"; };
+		4C6F34BBB49B35DA118B1EC9 /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
+		52551678F8CB1439135B6FE2 /* Pods-PipeDream-JVFloatingDrawer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PipeDream-JVFloatingDrawer.xcconfig"; sourceTree = "<group>"; };
+		52682C216A68E89C39ECA862 /* ORSplitStackView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ORSplitStackView.m; path = Classes/ios/ORSplitStackView.m; sourceTree = "<group>"; };
+		52AAC9B85E4E0868BDE6A1CA /* JVFloatingDrawerAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JVFloatingDrawerAnimation.h; path = Pod/Classes/JVFloatingDrawerAnimation.h; sourceTree = "<group>"; };
+		5E024D6E9E2935BD2F66A9D5 /* JVFloatingDrawerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JVFloatingDrawerView.h; path = Pod/Classes/JVFloatingDrawerView.h; sourceTree = "<group>"; };
+		60537627AC9AB715D74D0E1E /* Pods-PipeDream-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PipeDream-environment.h"; sourceTree = "<group>"; };
+		6114E810B54F9DB752AB1A60 /* ORStackView+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ORStackView+Private.h"; path = "Classes/ios/private/ORStackView+Private.h"; sourceTree = "<group>"; };
+		648FEC2C2C696365F95DCD5E /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		6746E768FA942483BDA61209 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLConnectionOperation.m; path = AFNetworking/AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		68963D1C7DA080C497E33274 /* Pods-PipeDream-ORStackView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PipeDream-ORStackView.xcconfig"; sourceTree = "<group>"; };
+		68EE41A56C3DB86D4D18C0E2 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+AFNetworking.m"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		6AABF8EDC8B38C9B752B6B24 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIRefreshControl+AFNetworking.m"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
+		6B7C10BC250AB20EA4522937 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D2F9F0F4761A1752B3A3BD5 /* Pods-PipeDream-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PipeDream-frameworks.sh"; sourceTree = "<group>"; };
+		6D3C9D2CD32F1C0F8410815E /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+AFNetworking.m"; path = "UIKit+AFNetworking/UIButton+AFNetworking.m"; sourceTree = "<group>"; };
+		6F74A777CB9D2A396BF206E6 /* Pods-PipeDream.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PipeDream.release.xcconfig"; sourceTree = "<group>"; };
+		721DAE3E887D9D928C2178E4 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		72F90BE8B8E18B6E3D69E080 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		759320C9647CC01E280061FE /* AFSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
+		7AB91A1DDAF63F6B802913B2 /* UIView+FLKAutoLayoutDebug.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+FLKAutoLayoutDebug.m"; path = "FLKAutoLayout/UIView+FLKAutoLayoutDebug.m"; sourceTree = "<group>"; };
+		7AEAAC02197CAD71A71DE628 /* Pods-PipeDream-AFNetworking-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PipeDream-AFNetworking-umbrella.h"; sourceTree = "<group>"; };
+		7BB75E2AB81D5F8A09353BF0 /* JVFloatingDrawer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JVFloatingDrawer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D553A9DBD28C35D391C794A /* Pods-PipeDream-JVFloatingDrawer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PipeDream-JVFloatingDrawer.modulemap"; sourceTree = "<group>"; };
+		824ECECF83EAE5AC9620E757 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIProgressView+AFNetworking.m"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
+		83564017A6639F61FB0B0834 /* Pods-PipeDream-ORStackView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PipeDream-ORStackView-prefix.pch"; sourceTree = "<group>"; };
+		8A787AD1835C27E0B8E9BABC /* Pods-PipeDream.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PipeDream.debug.xcconfig"; sourceTree = "<group>"; };
+		8AF7074AF9BED1919C819132 /* UIView+FLKAutoLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+FLKAutoLayout.m"; path = "FLKAutoLayout/UIView+FLKAutoLayout.m"; sourceTree = "<group>"; };
+		8B3239F6DA82DC54B9DD024B /* Pods-PipeDream-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PipeDream-dummy.m"; sourceTree = "<group>"; };
+		8B3D6F91556FAF62B6AEDB4D /* FLKAutoLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FLKAutoLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C4207B2996D0F07301E234D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9279438A58D76F8DF5A3A550 /* ORStackView+Private.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ORStackView+Private.m"; path = "Classes/ios/private/ORStackView+Private.m"; sourceTree = "<group>"; };
+		932CCED0332670ACEBCCF8CD /* FLKAutoLayoutPredicateList.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FLKAutoLayoutPredicateList.h; path = FLKAutoLayout/FLKAutoLayoutPredicateList.h; sourceTree = "<group>"; };
+		93E2F7614D9CD631803BCDAC /* Pods-PipeDream-FLKAutoLayout-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PipeDream-FLKAutoLayout-Private.xcconfig"; sourceTree = "<group>"; };
+		954B00127619FE049E57254F /* ORTagBasedAutoStackView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ORTagBasedAutoStackView.h; path = Classes/ios/ORTagBasedAutoStackView.h; sourceTree = "<group>"; };
+		968A3880F85304F9953A0C12 /* Pods-PipeDream-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PipeDream-umbrella.h"; sourceTree = "<group>"; };
+		9BE7EF72E10D8F7F14A5911E /* Pods-PipeDream-AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PipeDream-AFNetworking-dummy.m"; sourceTree = "<group>"; };
+		9CC8F8D0B67772795BF1D558 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A55BCAB608543EF71274DD6D /* Pods-PipeDream-ORStackView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PipeDream-ORStackView-dummy.m"; sourceTree = "<group>"; };
+		A5A0AA87249EFAE4A97426D3 /* Pods-PipeDream-JVFloatingDrawer-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PipeDream-JVFloatingDrawer-Private.xcconfig"; sourceTree = "<group>"; };
+		AA4D86E4D937E4517B4C48F0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
+		AB9A165B1E5AEA05F22AB86C /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+AFNetworking.h"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
+		AD07828946F8A0DFAFC5B1DF /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+AFNetworking.h"; path = "UIKit+AFNetworking/UIButton+AFNetworking.h"; sourceTree = "<group>"; };
+		AEE83A0F939BBD305E1C73DF /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		AFF8860B397D93CC8BDDCEDE /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkActivityIndicatorManager.h; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h"; sourceTree = "<group>"; };
+		B3D9BF4BAA215CA39DEDAC35 /* ORSplitStackView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ORSplitStackView.h; path = Classes/ios/ORSplitStackView.h; sourceTree = "<group>"; };
+		B43287D633532DE43097E3B8 /* ORStackScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ORStackScrollView.m; path = Classes/ios/ORStackScrollView.m; sourceTree = "<group>"; };
+		B8D355BD35128845DA84B217 /* Pods-PipeDream-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PipeDream-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BDAA9C2A0EC741BAAC1CC0BE /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperation.m; path = AFNetworking/AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		BF22B8F79F9BC5AE94909C37 /* ORStackView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ORStackView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C108A468942F377BAEB0BB6C /* Pods-PipeDream-JVFloatingDrawer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PipeDream-JVFloatingDrawer-dummy.m"; sourceTree = "<group>"; };
+		C2C39771210B257C21035D30 /* ORStackScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ORStackScrollView.h; path = Classes/ios/ORStackScrollView.h; sourceTree = "<group>"; };
+		C8DCDCB1FD5220F359E77AA4 /* ORTagBasedAutoStackView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ORTagBasedAutoStackView.m; path = Classes/ios/ORTagBasedAutoStackView.m; sourceTree = "<group>"; };
+		C907AF8B852C61D30E765D61 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA862B3C23B154D3B008AE4F /* Pods-PipeDream-FLKAutoLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PipeDream-FLKAutoLayout-dummy.m"; sourceTree = "<group>"; };
+		CC12D035EC73393A6AF81DF7 /* Pods-PipeDream-FLKAutoLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PipeDream-FLKAutoLayout-prefix.pch"; sourceTree = "<group>"; };
+		CC8F263EB28F9028B4EF5E5B /* Pods-PipeDream-JVFloatingDrawer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PipeDream-JVFloatingDrawer-umbrella.h"; sourceTree = "<group>"; };
+		CCD7DEBD33EC24F43D54053B /* AFSecurityPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = AFNetworking/AFSecurityPolicy.h; sourceTree = "<group>"; };
+		CDDE5A3B149D39E94E685001 /* NSLayoutConstraint+FLKAutoLayoutDebug.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+FLKAutoLayoutDebug.h"; path = "FLKAutoLayout/NSLayoutConstraint+FLKAutoLayoutDebug.h"; sourceTree = "<group>"; };
+		D527955BB83D87CF743E705F /* Pods-PipeDream-AFNetworking.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PipeDream-AFNetworking.modulemap"; sourceTree = "<group>"; };
+		D5292398A47E72A20AAC933C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D838190DC2E392FE7DDC373E /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		DD78ACE988EE9D6439CAF77C /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIActivityIndicatorView+AFNetworking.h"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
+		DE187CA9C49524279269E08B /* Pods-PipeDream-ORStackView-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PipeDream-ORStackView-Private.xcconfig"; sourceTree = "<group>"; };
+		DF738E664D56CEAE586372E1 /* UIView+FLKAutoLayoutPredicate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+FLKAutoLayoutPredicate.m"; path = "FLKAutoLayout/UIView+FLKAutoLayoutPredicate.m"; sourceTree = "<group>"; };
+		DFF175F669BFFE80DF7BEB94 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m"; sourceTree = "<group>"; };
+		E2BE701FB4D1B9AFB6C80DD6 /* Pods-PipeDream-ORStackView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PipeDream-ORStackView.modulemap"; sourceTree = "<group>"; };
+		E2E9ADA9E0A57CA7959E50CB /* AFURLSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
+		E311E5265CF291FD5F31F383 /* ORStackView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ORStackView.m; path = Classes/ios/ORStackView.m; sourceTree = "<group>"; };
+		E32AAD0148435D95A324917D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		E43439F9147446E5C3E5CFF9 /* Pods-PipeDream-ORStackView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PipeDream-ORStackView-umbrella.h"; sourceTree = "<group>"; };
+		EA872591FF3293F937ED8253 /* AFURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
+		EAD4057A2D4A2F7DB3D8D4D5 /* Pods-PipeDream-JVFloatingDrawer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PipeDream-JVFloatingDrawer-prefix.pch"; sourceTree = "<group>"; };
+		EAEEAF10934F100EA66FF087 /* UIView+FLKAutoLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+FLKAutoLayout.h"; path = "FLKAutoLayout/UIView+FLKAutoLayout.h"; sourceTree = "<group>"; };
+		EFBBAFF49B0C90CD68086B23 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = AFNetworking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		EFEE9517786C12519316FABE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		F46CB10B1461B2269CEFABFD /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIActivityIndicatorView+AFNetworking.m"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
+		F504B2B9CE00A074A4B13188 /* Pods-PipeDream-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PipeDream-acknowledgements.plist"; sourceTree = "<group>"; };
+		F5D47FF556344C0E91241565 /* JVFloatingDrawerViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JVFloatingDrawerViewController.h; path = Pod/Classes/JVFloatingDrawerViewController.h; sourceTree = "<group>"; };
+		F6D44952EA6DCC766A927CA3 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
+		F70C6AACC31FD8212BE327B5 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperationManager.h; path = AFNetworking/AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		F70F5B40BC1F8C81D6B05D1E /* UIView+FLKAutoLayoutPredicate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+FLKAutoLayoutPredicate.h"; path = "FLKAutoLayout/UIView+FLKAutoLayoutPredicate.h"; sourceTree = "<group>"; };
+		FCE80FC079C2AE064CF3D5DF /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperation.h; path = AFNetworking/AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		FDBA62845AE753B6D1059B66 /* Pods-PipeDream-FLKAutoLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PipeDream-FLKAutoLayout-umbrella.h"; sourceTree = "<group>"; };
+		FE3E959495528D431627A6C8 /* UIAlertView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+AFNetworking.m"; path = "UIKit+AFNetworking/UIAlertView+AFNetworking.m"; sourceTree = "<group>"; };
+		FFA73D0E242FFEA6A0E15535 /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIKit+AFNetworking.h"; path = "UIKit+AFNetworking/UIKit+AFNetworking.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0E6AE9EBA40F40345CDA84A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F3AD9139FAF9402A92DF00A /* FLKAutoLayout.framework in Frameworks */,
+				5D78D14D9C29D808B15132BC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1014ECEC3D2DD4537BCABE1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B9A9873184D76246576B592 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		284E44C754C1CD3D5B0EC80C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7099F7D408DB732779E726A7 /* CoreGraphics.framework in Frameworks */,
+				BD2F50F1E7DCD7C472914594 /* Foundation.framework in Frameworks */,
+				7A7CDD2341468D860212955D /* MobileCoreServices.framework in Frameworks */,
+				E3118FDDA6E615B0C297F91F /* Security.framework in Frameworks */,
+				24CD6F0E616288DFC0BEE0B4 /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		469A2E2FBB1603BAE4E382F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D0896FD051AD0EAE4128DDF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99855638926F7D9D198D7BAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53399EA65C6A268980C65656 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		05883913FE9FBD606E9AA9AB /* JVFloatingDrawer */ = {
+			isa = PBXGroup;
+			children = (
+				52AAC9B85E4E0868BDE6A1CA /* JVFloatingDrawerAnimation.h */,
+				3F4F94C5E993F3A7CD5C52C9 /* JVFloatingDrawerSpringAnimator.h */,
+				3B3F5FF5BABC0C950F65EEBC /* JVFloatingDrawerSpringAnimator.m */,
+				5E024D6E9E2935BD2F66A9D5 /* JVFloatingDrawerView.h */,
+				2287E588E240D2305A2BFA47 /* JVFloatingDrawerView.m */,
+				F5D47FF556344C0E91241565 /* JVFloatingDrawerViewController.h */,
+				05CF3CA29C3E5AAEDC9DCFA0 /* JVFloatingDrawerViewController.m */,
+				AE1768DC41B56776B7C9C4C1 /* Support Files */,
+			);
+			path = JVFloatingDrawer;
+			sourceTree = "<group>";
+		};
+		187B013E463D436062BF3A00 /* FLKAutoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				932CCED0332670ACEBCCF8CD /* FLKAutoLayoutPredicateList.h */,
+				43B0FBA3FBFA91BFFC939EDA /* FLKAutoLayoutPredicateList.m */,
+				CDDE5A3B149D39E94E685001 /* NSLayoutConstraint+FLKAutoLayoutDebug.h */,
+				39CB1B3626035DF4EA1724D3 /* NSLayoutConstraint+FLKAutoLayoutDebug.m */,
+				EAEEAF10934F100EA66FF087 /* UIView+FLKAutoLayout.h */,
+				8AF7074AF9BED1919C819132 /* UIView+FLKAutoLayout.m */,
+				2C6EFB663334B5E10FA8AF6B /* UIView+FLKAutoLayoutDebug.h */,
+				7AB91A1DDAF63F6B802913B2 /* UIView+FLKAutoLayoutDebug.m */,
+				F70F5B40BC1F8C81D6B05D1E /* UIView+FLKAutoLayoutPredicate.h */,
+				DF738E664D56CEAE586372E1 /* UIView+FLKAutoLayoutPredicate.m */,
+				1F21AC29550EF85B21665E5F /* Support Files */,
+			);
+			path = FLKAutoLayout;
+			sourceTree = "<group>";
+		};
+		1F21AC29550EF85B21665E5F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8C4207B2996D0F07301E234D /* Info.plist */,
+				07370959C5569A9ECFA85DDB /* Pods-PipeDream-FLKAutoLayout.modulemap */,
+				4035EFF58798AEC9AEA64072 /* Pods-PipeDream-FLKAutoLayout.xcconfig */,
+				93E2F7614D9CD631803BCDAC /* Pods-PipeDream-FLKAutoLayout-Private.xcconfig */,
+				CA862B3C23B154D3B008AE4F /* Pods-PipeDream-FLKAutoLayout-dummy.m */,
+				CC12D035EC73393A6AF81DF7 /* Pods-PipeDream-FLKAutoLayout-prefix.pch */,
+				FDBA62845AE753B6D1059B66 /* Pods-PipeDream-FLKAutoLayout-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-PipeDream-FLKAutoLayout";
+			sourceTree = "<group>";
+		};
+		30E8ADC4A6B2E032E128BC51 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				721DAE3E887D9D928C2178E4 /* AFNetworking.framework */,
+				3E3CAE2D0790CD84ECA85419 /* FLKAutoLayout.framework */,
+				7BB75E2AB81D5F8A09353BF0 /* JVFloatingDrawer.framework */,
+				BF22B8F79F9BC5AE94909C37 /* ORStackView.framework */,
+				20A6E1A28596E09D07A934DF /* Pods_PipeDream.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		41FA11F0C0D04E6BFE4FE3BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8B3D6F91556FAF62B6AEDB4D /* FLKAutoLayout.framework */,
+				86D578947D1D1FD2C885CB26 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		42CCE59B28F4E2857DBE771E /* Pods-PipeDream */ = {
+			isa = PBXGroup;
+			children = (
+				9CC8F8D0B67772795BF1D558 /* Info.plist */,
+				2CE3A5D7CB67263835E084B4 /* Pods-PipeDream.modulemap */,
+				B8D355BD35128845DA84B217 /* Pods-PipeDream-acknowledgements.markdown */,
+				F504B2B9CE00A074A4B13188 /* Pods-PipeDream-acknowledgements.plist */,
+				8B3239F6DA82DC54B9DD024B /* Pods-PipeDream-dummy.m */,
+				60537627AC9AB715D74D0E1E /* Pods-PipeDream-environment.h */,
+				6D2F9F0F4761A1752B3A3BD5 /* Pods-PipeDream-frameworks.sh */,
+				23BCEB20914AD7E6D611138D /* Pods-PipeDream-resources.sh */,
+				968A3880F85304F9953A0C12 /* Pods-PipeDream-umbrella.h */,
+				8A787AD1835C27E0B8E9BABC /* Pods-PipeDream.debug.xcconfig */,
+				6F74A777CB9D2A396BF206E6 /* Pods-PipeDream.release.xcconfig */,
+			);
+			name = "Pods-PipeDream";
+			path = "Target Support Files/Pods-PipeDream";
+			sourceTree = "<group>";
+		};
+		460452265E747ACF1E62B4C4 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				42CCE59B28F4E2857DBE771E /* Pods-PipeDream */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		49EF149674579B4815D8C0FC /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C907AF8B852C61D30E765D61 /* Info.plist */,
+				D527955BB83D87CF743E705F /* Pods-PipeDream-AFNetworking.modulemap */,
+				3FC19E10309C8D19A5F58293 /* Pods-PipeDream-AFNetworking.xcconfig */,
+				39940EBA14CD334C460A4419 /* Pods-PipeDream-AFNetworking-Private.xcconfig */,
+				9BE7EF72E10D8F7F14A5911E /* Pods-PipeDream-AFNetworking-dummy.m */,
+				1551BC18C3FD8B93A7D39C20 /* Pods-PipeDream-AFNetworking-prefix.pch */,
+				7AEAAC02197CAD71A71DE628 /* Pods-PipeDream-AFNetworking-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-PipeDream-AFNetworking";
+			sourceTree = "<group>";
+		};
+		55DC97B6535CD4C4C0914301 /* ORStackView */ = {
+			isa = PBXGroup;
+			children = (
+				B3D9BF4BAA215CA39DEDAC35 /* ORSplitStackView.h */,
+				52682C216A68E89C39ECA862 /* ORSplitStackView.m */,
+				C2C39771210B257C21035D30 /* ORStackScrollView.h */,
+				B43287D633532DE43097E3B8 /* ORStackScrollView.m */,
+				3F5E5871265D9098A8720942 /* ORStackView.h */,
+				E311E5265CF291FD5F31F383 /* ORStackView.m */,
+				6114E810B54F9DB752AB1A60 /* ORStackView+Private.h */,
+				9279438A58D76F8DF5A3A550 /* ORStackView+Private.m */,
+				954B00127619FE049E57254F /* ORTagBasedAutoStackView.h */,
+				C8DCDCB1FD5220F359E77AA4 /* ORTagBasedAutoStackView.m */,
+				BD1E8DE882FABD90F36617F5 /* Support Files */,
+			);
+			path = ORStackView;
+			sourceTree = "<group>";
+		};
+		57B60E5AC369F55378EE24DA /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				AFF8860B397D93CC8BDDCEDE /* AFNetworkActivityIndicatorManager.h */,
+				DFF175F669BFFE80DF7BEB94 /* AFNetworkActivityIndicatorManager.m */,
+				DD78ACE988EE9D6439CAF77C /* UIActivityIndicatorView+AFNetworking.h */,
+				F46CB10B1461B2269CEFABFD /* UIActivityIndicatorView+AFNetworking.m */,
+				1DD7974441834DF8EF72DD25 /* UIAlertView+AFNetworking.h */,
+				FE3E959495528D431627A6C8 /* UIAlertView+AFNetworking.m */,
+				AD07828946F8A0DFAFC5B1DF /* UIButton+AFNetworking.h */,
+				6D3C9D2CD32F1C0F8410815E /* UIButton+AFNetworking.m */,
+				72F90BE8B8E18B6E3D69E080 /* UIImageView+AFNetworking.h */,
+				11CA41858EE1CF38A606846A /* UIImageView+AFNetworking.m */,
+				FFA73D0E242FFEA6A0E15535 /* UIKit+AFNetworking.h */,
+				AB9A165B1E5AEA05F22AB86C /* UIProgressView+AFNetworking.h */,
+				824ECECF83EAE5AC9620E757 /* UIProgressView+AFNetworking.m */,
+				2DA1B8DBDE986F22C6C81E06 /* UIRefreshControl+AFNetworking.h */,
+				6AABF8EDC8B38C9B752B6B24 /* UIRefreshControl+AFNetworking.m */,
+				F6D44952EA6DCC766A927CA3 /* UIWebView+AFNetworking.h */,
+				68EE41A56C3DB86D4D18C0E2 /* UIWebView+AFNetworking.m */,
+			);
+			name = UIKit;
+			sourceTree = "<group>";
+		};
+		684DB27A41C2DE334F9497FD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A40A3D9ED082A2D0D92C3AD0 /* AFNetworking */,
+				187B013E463D436062BF3A00 /* FLKAutoLayout */,
+				05883913FE9FBD606E9AA9AB /* JVFloatingDrawer */,
+				55DC97B6535CD4C4C0914301 /* ORStackView */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		86D578947D1D1FD2C885CB26 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				EFEE9517786C12519316FABE /* CoreGraphics.framework */,
+				3BC041DCB85FFCC0FEA26B61 /* Foundation.framework */,
+				AA4D86E4D937E4517B4C48F0 /* MobileCoreServices.framework */,
+				06CB2475C0172B20F34699F0 /* Security.framework */,
+				E32AAD0148435D95A324917D /* SystemConfiguration.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		96A659344544A2A687C8EFCE = {
+			isa = PBXGroup;
+			children = (
+				223853D6DD89BFBEAD782327 /* Podfile */,
+				41FA11F0C0D04E6BFE4FE3BE /* Frameworks */,
+				684DB27A41C2DE334F9497FD /* Pods */,
+				30E8ADC4A6B2E032E128BC51 /* Products */,
+				460452265E747ACF1E62B4C4 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		A03B9413CC27EE7F531A15A9 /* Serialization */ = {
+			isa = PBXGroup;
+			children = (
+				D838190DC2E392FE7DDC373E /* AFURLRequestSerialization.h */,
+				AEE83A0F939BBD305E1C73DF /* AFURLRequestSerialization.m */,
+				648FEC2C2C696365F95DCD5E /* AFURLResponseSerialization.h */,
+				28C257309B23F43C2A7DCB7D /* AFURLResponseSerialization.m */,
+			);
+			name = Serialization;
+			sourceTree = "<group>";
+		};
+		A40A3D9ED082A2D0D92C3AD0 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				4C6F34BBB49B35DA118B1EC9 /* AFNetworking.h */,
+				D3DC8C5D869A631802CFAE7D /* NSURLConnection */,
+				A6B94C846B46EF125DCF2BD8 /* NSURLSession */,
+				E4A160E105BA7847AA3DD423 /* Reachability */,
+				AA781F1216D3F90E177591BC /* Security */,
+				A03B9413CC27EE7F531A15A9 /* Serialization */,
+				49EF149674579B4815D8C0FC /* Support Files */,
+				57B60E5AC369F55378EE24DA /* UIKit */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		A6B94C846B46EF125DCF2BD8 /* NSURLSession */ = {
+			isa = PBXGroup;
+			children = (
+				EFBBAFF49B0C90CD68086B23 /* AFHTTPSessionManager.h */,
+				2A4A882458669DF51F13E65C /* AFHTTPSessionManager.m */,
+				EA872591FF3293F937ED8253 /* AFURLSessionManager.h */,
+				E2E9ADA9E0A57CA7959E50CB /* AFURLSessionManager.m */,
+			);
+			name = NSURLSession;
+			sourceTree = "<group>";
+		};
+		AA781F1216D3F90E177591BC /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				CCD7DEBD33EC24F43D54053B /* AFSecurityPolicy.h */,
+				759320C9647CC01E280061FE /* AFSecurityPolicy.m */,
+			);
+			name = Security;
+			sourceTree = "<group>";
+		};
+		AE1768DC41B56776B7C9C4C1 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D5292398A47E72A20AAC933C /* Info.plist */,
+				7D553A9DBD28C35D391C794A /* Pods-PipeDream-JVFloatingDrawer.modulemap */,
+				52551678F8CB1439135B6FE2 /* Pods-PipeDream-JVFloatingDrawer.xcconfig */,
+				A5A0AA87249EFAE4A97426D3 /* Pods-PipeDream-JVFloatingDrawer-Private.xcconfig */,
+				C108A468942F377BAEB0BB6C /* Pods-PipeDream-JVFloatingDrawer-dummy.m */,
+				EAD4057A2D4A2F7DB3D8D4D5 /* Pods-PipeDream-JVFloatingDrawer-prefix.pch */,
+				CC8F263EB28F9028B4EF5E5B /* Pods-PipeDream-JVFloatingDrawer-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-PipeDream-JVFloatingDrawer";
+			sourceTree = "<group>";
+		};
+		BD1E8DE882FABD90F36617F5 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6B7C10BC250AB20EA4522937 /* Info.plist */,
+				E2BE701FB4D1B9AFB6C80DD6 /* Pods-PipeDream-ORStackView.modulemap */,
+				68963D1C7DA080C497E33274 /* Pods-PipeDream-ORStackView.xcconfig */,
+				DE187CA9C49524279269E08B /* Pods-PipeDream-ORStackView-Private.xcconfig */,
+				A55BCAB608543EF71274DD6D /* Pods-PipeDream-ORStackView-dummy.m */,
+				83564017A6639F61FB0B0834 /* Pods-PipeDream-ORStackView-prefix.pch */,
+				E43439F9147446E5C3E5CFF9 /* Pods-PipeDream-ORStackView-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-PipeDream-ORStackView";
+			sourceTree = "<group>";
+		};
+		D3DC8C5D869A631802CFAE7D /* NSURLConnection */ = {
+			isa = PBXGroup;
+			children = (
+				FCE80FC079C2AE064CF3D5DF /* AFHTTPRequestOperation.h */,
+				BDAA9C2A0EC741BAAC1CC0BE /* AFHTTPRequestOperation.m */,
+				F70C6AACC31FD8212BE327B5 /* AFHTTPRequestOperationManager.h */,
+				0184378A280F1D91D8C11E71 /* AFHTTPRequestOperationManager.m */,
+				38FC443252BE2BC33A218E15 /* AFURLConnectionOperation.h */,
+				6746E768FA942483BDA61209 /* AFURLConnectionOperation.m */,
+			);
+			name = NSURLConnection;
+			sourceTree = "<group>";
+		};
+		E4A160E105BA7847AA3DD423 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				18FD1D1960406D8222857A45 /* AFNetworkReachabilityManager.h */,
+				2B72B3361F83D8B4245DA836 /* AFNetworkReachabilityManager.m */,
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0A0C93560281C34B057FA24B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1EDC5A5A79117E0350BAE0A /* ORSplitStackView.h in Headers */,
+				4494E4C92F69098A5A83A2F8 /* ORStackScrollView.h in Headers */,
+				24A55BC13D024638A6060D45 /* ORStackView+Private.h in Headers */,
+				9C1193EEBD5478C2A6CCDCFD /* ORStackView.h in Headers */,
+				736EC395CCBDCFDB1413B00A /* ORTagBasedAutoStackView.h in Headers */,
+				F5A8D4E2B0163EEDB43B5893 /* Pods-PipeDream-ORStackView-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FF754C642C745D5822091A6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65D355FB954E5657412518F6 /* AFHTTPRequestOperation.h in Headers */,
+				2C8E08AC6B5EE7B2534375AF /* AFHTTPRequestOperationManager.h in Headers */,
+				2CBD3A4EDEBD91E1B024B867 /* AFHTTPSessionManager.h in Headers */,
+				22AF1628B8664C313869882B /* AFNetworkActivityIndicatorManager.h in Headers */,
+				D659E25746B517B89DF3AB72 /* AFNetworkReachabilityManager.h in Headers */,
+				0046F5AF56670C9E34A2DCDA /* AFNetworking.h in Headers */,
+				75AE5C7917D6948F600ABEBB /* AFSecurityPolicy.h in Headers */,
+				3CB72BCE8D23858E1A0ACAD4 /* AFURLConnectionOperation.h in Headers */,
+				330F74C83E7D18D178A67508 /* AFURLRequestSerialization.h in Headers */,
+				CECF32749D7B678CF1905C68 /* AFURLResponseSerialization.h in Headers */,
+				9E2423BB2C5EAC81C43BEA3A /* AFURLSessionManager.h in Headers */,
+				8A167942C36860F5741D63D0 /* Pods-PipeDream-AFNetworking-umbrella.h in Headers */,
+				6777D906DC305515340414CA /* UIActivityIndicatorView+AFNetworking.h in Headers */,
+				4F6A0CE4AAC9BA858FED8373 /* UIAlertView+AFNetworking.h in Headers */,
+				C72840E72FA598861EC9EFD1 /* UIButton+AFNetworking.h in Headers */,
+				097CDD1E054C3CD741B754D4 /* UIImageView+AFNetworking.h in Headers */,
+				77D6143BD60DEA0BE4A99B73 /* UIKit+AFNetworking.h in Headers */,
+				FA39F8C6597B31D437C991DE /* UIProgressView+AFNetworking.h in Headers */,
+				ABD4334610EEEDCF7A9CA077 /* UIRefreshControl+AFNetworking.h in Headers */,
+				CD92DB639B7498303E923519 /* UIWebView+AFNetworking.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41AC5D67813DC831004C09E2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77A99AE56C6904A589464BB6 /* Pods-PipeDream-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43619818256943AF98B4E656 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2676252412EFA4EEC5B5F1A /* FLKAutoLayoutPredicateList.h in Headers */,
+				B259979FD19ABB78CFFC2C60 /* NSLayoutConstraint+FLKAutoLayoutDebug.h in Headers */,
+				F76122B16C9A5376A9E71B2E /* Pods-PipeDream-FLKAutoLayout-umbrella.h in Headers */,
+				4FE88B50E597E997B2A444DB /* UIView+FLKAutoLayout.h in Headers */,
+				B03800E0D80D3BD501F68B48 /* UIView+FLKAutoLayoutDebug.h in Headers */,
+				27C0358EB97A5B4C0AC57F50 /* UIView+FLKAutoLayoutPredicate.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		596795EB24043CA3F18EFD1C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91EDF17F7C1767204B3AD044 /* JVFloatingDrawerAnimation.h in Headers */,
+				346F932DE7454BEBC60AFF5E /* JVFloatingDrawerSpringAnimator.h in Headers */,
+				BBA1B744F55D7D82ECE39A95 /* JVFloatingDrawerView.h in Headers */,
+				F528EEF76AE0E34F0BD33340 /* JVFloatingDrawerViewController.h in Headers */,
+				EB92BFEFC4E500F8C4479BDD /* Pods-PipeDream-JVFloatingDrawer-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8AB3D059F521B0A1987D7103 /* Pods-PipeDream-AFNetworking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D04DC5C04DF346E5A888BFDB /* Build configuration list for PBXNativeTarget "Pods-PipeDream-AFNetworking" */;
+			buildPhases = (
+				BEC87CF67E6A4731E3AAEF43 /* Sources */,
+				284E44C754C1CD3D5B0EC80C /* Frameworks */,
+				1FF754C642C745D5822091A6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-PipeDream-AFNetworking";
+			productName = "Pods-PipeDream-AFNetworking";
+			productReference = 721DAE3E887D9D928C2178E4 /* AFNetworking.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E492F75EC3A8C7A044C3AAA5 /* Pods-PipeDream-FLKAutoLayout */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 377F4C721120775F3609C0AB /* Build configuration list for PBXNativeTarget "Pods-PipeDream-FLKAutoLayout" */;
+			buildPhases = (
+				7D7A4AF1349465D369107A63 /* Sources */,
+				1014ECEC3D2DD4537BCABE1A /* Frameworks */,
+				43619818256943AF98B4E656 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-PipeDream-FLKAutoLayout";
+			productName = "Pods-PipeDream-FLKAutoLayout";
+			productReference = 3E3CAE2D0790CD84ECA85419 /* FLKAutoLayout.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E86BC20743728DF0E9CF222B /* Pods-PipeDream-JVFloatingDrawer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 688C1E4399076E69AB3E7C13 /* Build configuration list for PBXNativeTarget "Pods-PipeDream-JVFloatingDrawer" */;
+			buildPhases = (
+				760DACF0412C8A9C4C79561C /* Sources */,
+				99855638926F7D9D198D7BAF /* Frameworks */,
+				596795EB24043CA3F18EFD1C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-PipeDream-JVFloatingDrawer";
+			productName = "Pods-PipeDream-JVFloatingDrawer";
+			productReference = 7BB75E2AB81D5F8A09353BF0 /* JVFloatingDrawer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E9676CB5732A57E49AAD9C1C /* Pods-PipeDream-ORStackView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44DA5E64D49C84E6DAE42C4A /* Build configuration list for PBXNativeTarget "Pods-PipeDream-ORStackView" */;
+			buildPhases = (
+				6AEBA88D30EB62E2042AD31D /* Sources */,
+				0E6AE9EBA40F40345CDA84A0 /* Frameworks */,
+				0A0C93560281C34B057FA24B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9D9E8162C02F0E1BF51FA06C /* PBXTargetDependency */,
+			);
+			name = "Pods-PipeDream-ORStackView";
+			productName = "Pods-PipeDream-ORStackView";
+			productReference = BF22B8F79F9BC5AE94909C37 /* ORStackView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FF49233314B579BE62E01918 /* Pods-PipeDream */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37990D59DAD9331A00139DF4 /* Build configuration list for PBXNativeTarget "Pods-PipeDream" */;
+			buildPhases = (
+				63D4DAE29B72A9F824797EAC /* Sources */,
+				469A2E2FBB1603BAE4E382F4 /* Frameworks */,
+				41AC5D67813DC831004C09E2 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA4CA877411FE3CD0250B4B2 /* PBXTargetDependency */,
+				92F4D00A0E31D9C595459756 /* PBXTargetDependency */,
+				F9BE7CC15642F0E36C657F38 /* PBXTargetDependency */,
+				7953087DCA11DC927434881B /* PBXTargetDependency */,
+			);
+			name = "Pods-PipeDream";
+			productName = "Pods-PipeDream";
+			productReference = 20A6E1A28596E09D07A934DF /* Pods_PipeDream.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4BBFFCD65ECF57A342C0119E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+			};
+			buildConfigurationList = 3D46A8629B9DD8963445A1FD /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 96A659344544A2A687C8EFCE;
+			productRefGroup = 30E8ADC4A6B2E032E128BC51 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FF49233314B579BE62E01918 /* Pods-PipeDream */,
+				8AB3D059F521B0A1987D7103 /* Pods-PipeDream-AFNetworking */,
+				E492F75EC3A8C7A044C3AAA5 /* Pods-PipeDream-FLKAutoLayout */,
+				E86BC20743728DF0E9CF222B /* Pods-PipeDream-JVFloatingDrawer */,
+				E9676CB5732A57E49AAD9C1C /* Pods-PipeDream-ORStackView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		63D4DAE29B72A9F824797EAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37877DFB6D1FAF11E7510265 /* Pods-PipeDream-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AEBA88D30EB62E2042AD31D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A982F3211DCCD047816C6D6 /* ORSplitStackView.m in Sources */,
+				79D84F166C2890F33BC7D257 /* ORStackScrollView.m in Sources */,
+				BC67FF1C2CAF2B2121490668 /* ORStackView+Private.m in Sources */,
+				9537507466D88FC1D790911C /* ORStackView.m in Sources */,
+				52D5910BA4F21991C4F336F4 /* ORTagBasedAutoStackView.m in Sources */,
+				C77DE4AC10A44E07BDAA84CA /* Pods-PipeDream-ORStackView-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		760DACF0412C8A9C4C79561C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CABD526AE83E0558E4B5442C /* JVFloatingDrawerSpringAnimator.m in Sources */,
+				8324F55A91EDE2273CB6C922 /* JVFloatingDrawerView.m in Sources */,
+				88A4CD477E5C6C99048639D9 /* JVFloatingDrawerViewController.m in Sources */,
+				D8EDDA75C50B64599C160B01 /* Pods-PipeDream-JVFloatingDrawer-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D7A4AF1349465D369107A63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED67A2C9BE31C0F68227CAA7 /* FLKAutoLayoutPredicateList.m in Sources */,
+				06E778009B2094CED3C52006 /* NSLayoutConstraint+FLKAutoLayoutDebug.m in Sources */,
+				ABD5135C76E047E71883CEF0 /* Pods-PipeDream-FLKAutoLayout-dummy.m in Sources */,
+				D3F3F3E93D6F8CD444A49964 /* UIView+FLKAutoLayout.m in Sources */,
+				1729E52134BF89625A6D9F47 /* UIView+FLKAutoLayoutDebug.m in Sources */,
+				85CE26BF1FE538E5D1980631 /* UIView+FLKAutoLayoutPredicate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEC87CF67E6A4731E3AAEF43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CC229EE2D579652BC14272B /* AFHTTPRequestOperation.m in Sources */,
+				06C8F32DE78F70C1BD7CEDFE /* AFHTTPRequestOperationManager.m in Sources */,
+				70EC1790DEA1823D947BEC90 /* AFHTTPSessionManager.m in Sources */,
+				806B46D0E580EA7008C6A33B /* AFNetworkActivityIndicatorManager.m in Sources */,
+				B5F86C7B321F14D5A5602E8C /* AFNetworkReachabilityManager.m in Sources */,
+				9F5C92E4ECD536C741B90EB7 /* AFSecurityPolicy.m in Sources */,
+				5BACA1F506AFD24FEC977D53 /* AFURLConnectionOperation.m in Sources */,
+				8CD0E41BF244184FF43F1059 /* AFURLRequestSerialization.m in Sources */,
+				C7683942F0D0BDF2EE705219 /* AFURLResponseSerialization.m in Sources */,
+				297A7F7CA20F61BCBB3D9E07 /* AFURLSessionManager.m in Sources */,
+				9EE0AB92907CA6CBCF7157B9 /* Pods-PipeDream-AFNetworking-dummy.m in Sources */,
+				E0AB1AFD63FFBEAF90202A1F /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				5E7D1E00C13421D4ED677D14 /* UIAlertView+AFNetworking.m in Sources */,
+				8F610E3BAB1150B49F99C177 /* UIButton+AFNetworking.m in Sources */,
+				3A10B4B7B40C6228BAC27853 /* UIImageView+AFNetworking.m in Sources */,
+				078AE8FFC8A0F4D93DE1A950 /* UIProgressView+AFNetworking.m in Sources */,
+				276D904154FC766A10284EB6 /* UIRefreshControl+AFNetworking.m in Sources */,
+				BA57127BE73EE2877BFF48F4 /* UIWebView+AFNetworking.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7953087DCA11DC927434881B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-PipeDream-ORStackView";
+			target = E9676CB5732A57E49AAD9C1C /* Pods-PipeDream-ORStackView */;
+			targetProxy = 1AF1B3B2A65897E3E14E635A /* PBXContainerItemProxy */;
+		};
+		92F4D00A0E31D9C595459756 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-PipeDream-FLKAutoLayout";
+			target = E492F75EC3A8C7A044C3AAA5 /* Pods-PipeDream-FLKAutoLayout */;
+			targetProxy = 109501F38847AF521EC3A872 /* PBXContainerItemProxy */;
+		};
+		9D9E8162C02F0E1BF51FA06C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-PipeDream-FLKAutoLayout";
+			target = E492F75EC3A8C7A044C3AAA5 /* Pods-PipeDream-FLKAutoLayout */;
+			targetProxy = 8EB21A77FE9D77FF2363E7A2 /* PBXContainerItemProxy */;
+		};
+		AA4CA877411FE3CD0250B4B2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-PipeDream-AFNetworking";
+			target = 8AB3D059F521B0A1987D7103 /* Pods-PipeDream-AFNetworking */;
+			targetProxy = B4A6B9F5587B2CF0E571E130 /* PBXContainerItemProxy */;
+		};
+		F9BE7CC15642F0E36C657F38 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-PipeDream-JVFloatingDrawer";
+			target = E86BC20743728DF0E9CF222B /* Pods-PipeDream-JVFloatingDrawer */;
+			targetProxy = 6B1CD2D905CF1A50FDCC6CAE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		08213400B34A648E9DD819CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE187CA9C49524279269E08B /* Pods-PipeDream-ORStackView-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-PipeDream-ORStackView/Pods-PipeDream-ORStackView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-PipeDream-ORStackView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-PipeDream-ORStackView/Pods-PipeDream-ORStackView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = ORStackView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1FC2C56CD250C2327EE63640 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2FE532D9617FB1F35DDF750F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93E2F7614D9CD631803BCDAC /* Pods-PipeDream-FLKAutoLayout-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-PipeDream-FLKAutoLayout/Pods-PipeDream-FLKAutoLayout-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-PipeDream-FLKAutoLayout/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-PipeDream-FLKAutoLayout/Pods-PipeDream-FLKAutoLayout.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = FLKAutoLayout;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3935BBC71C60B56299E04019 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39940EBA14CD334C460A4419 /* Pods-PipeDream-AFNetworking-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-PipeDream-AFNetworking/Pods-PipeDream-AFNetworking-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-PipeDream-AFNetworking/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-PipeDream-AFNetworking/Pods-PipeDream-AFNetworking.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = AFNetworking;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3F5DAFF7DC256AC2E6E6E726 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5A0AA87249EFAE4A97426D3 /* Pods-PipeDream-JVFloatingDrawer-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-PipeDream-JVFloatingDrawer/Pods-PipeDream-JVFloatingDrawer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-PipeDream-JVFloatingDrawer/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-PipeDream-JVFloatingDrawer/Pods-PipeDream-JVFloatingDrawer.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = JVFloatingDrawer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		416ABB6D8629EDCE3AF97D73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93E2F7614D9CD631803BCDAC /* Pods-PipeDream-FLKAutoLayout-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-PipeDream-FLKAutoLayout/Pods-PipeDream-FLKAutoLayout-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-PipeDream-FLKAutoLayout/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-PipeDream-FLKAutoLayout/Pods-PipeDream-FLKAutoLayout.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = FLKAutoLayout;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		56A4351658C65B8A5BA7CED7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A787AD1835C27E0B8E9BABC /* Pods-PipeDream.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PipeDream/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-PipeDream/Pods-PipeDream.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_PipeDream;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		64799C1A98452AAD9D60FD34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F74A777CB9D2A396BF206E6 /* Pods-PipeDream.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PipeDream/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-PipeDream/Pods-PipeDream.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_PipeDream;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7507ED2D20F79090D0C7C1CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE187CA9C49524279269E08B /* Pods-PipeDream-ORStackView-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-PipeDream-ORStackView/Pods-PipeDream-ORStackView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-PipeDream-ORStackView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-PipeDream-ORStackView/Pods-PipeDream-ORStackView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = ORStackView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D4C94819A7B9B7CC146E3B34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5A0AA87249EFAE4A97426D3 /* Pods-PipeDream-JVFloatingDrawer-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-PipeDream-JVFloatingDrawer/Pods-PipeDream-JVFloatingDrawer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-PipeDream-JVFloatingDrawer/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-PipeDream-JVFloatingDrawer/Pods-PipeDream-JVFloatingDrawer.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = JVFloatingDrawer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E3080AFAC9B682129656E338 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		E84CCA9A715DB1ACFF7A68AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39940EBA14CD334C460A4419 /* Pods-PipeDream-AFNetworking-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-PipeDream-AFNetworking/Pods-PipeDream-AFNetworking-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-PipeDream-AFNetworking/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-PipeDream-AFNetworking/Pods-PipeDream-AFNetworking.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = AFNetworking;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		377F4C721120775F3609C0AB /* Build configuration list for PBXNativeTarget "Pods-PipeDream-FLKAutoLayout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FE532D9617FB1F35DDF750F /* Debug */,
+				416ABB6D8629EDCE3AF97D73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37990D59DAD9331A00139DF4 /* Build configuration list for PBXNativeTarget "Pods-PipeDream" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56A4351658C65B8A5BA7CED7 /* Debug */,
+				64799C1A98452AAD9D60FD34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D46A8629B9DD8963445A1FD /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3080AFAC9B682129656E338 /* Debug */,
+				1FC2C56CD250C2327EE63640 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44DA5E64D49C84E6DAE42C4A /* Build configuration list for PBXNativeTarget "Pods-PipeDream-ORStackView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08213400B34A648E9DD819CB /* Debug */,
+				7507ED2D20F79090D0C7C1CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		688C1E4399076E69AB3E7C13 /* Build configuration list for PBXNativeTarget "Pods-PipeDream-JVFloatingDrawer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F5DAFF7DC256AC2E6E6E726 /* Debug */,
+				D4C94819A7B9B7CC146E3B34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D04DC5C04DF346E5A888BFDB /* Build configuration list for PBXNativeTarget "Pods-PipeDream-AFNetworking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3935BBC71C60B56299E04019 /* Debug */,
+				E84CCA9A715DB1ACFF7A68AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4BBFFCD65ECF57A342C0119E /* Project object */;
+}

@@ -10,4 +10,10 @@
 
 @interface PDDrawerMenuCell : UITableViewCell
 
+
+@property (nonatomic, copy) NSString *sectionTitle;
+@property (nonatomic, strong) UIImage *iconImage;
+
+
+
 @end

@@ -7,31 +7,74 @@
 //
 
 #import "PDOpinionViewController.h"
+#import "PDFeedTableViewCell.h"
+#import "JVFloatingDrawerViewController.h"
+#import "JVFloatingDrawerSpringAnimator.h"
+#import "AppDelegate.h"
+
 
 @interface PDOpinionViewController ()
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
+- (IBAction)showMenu:(UIBarButtonItem *)sender;
 
 @end
+
+
+
+
 
 @implementation PDOpinionViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)showMenu:(UIBarButtonItem *)sender {
+    [[AppDelegate globalDelegate] toggleLeftDrawer:self animated:YES];
+    
+    
 }
-*/
+
+
+- (JVFloatingDrawerSpringAnimator *)drawerAnimator {
+    return [[AppDelegate globalDelegate] drawerAnimator];
+}
+
+
+#pragma mark - TableView datasource
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+    
+}
+
+
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return 20;
+    
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    
+    PDFeedTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"opinionCell"];
+    if (cell==nil) {
+        cell=[[PDFeedTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"opinionCell"];
+        
+    }
+    
+    
+    
+    
+    return cell;
+    
+}
+
 
 @end

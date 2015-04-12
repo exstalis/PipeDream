@@ -1,0 +1,6 @@
+framework module JVFloatingDrawer {
+  umbrella header "Pods-PipeDream-JVFloatingDrawer-umbrella.h"
+
+  export *
+  module * { export * }
+}

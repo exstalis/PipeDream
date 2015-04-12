@@ -6,8 +6,10 @@
 //  Copyright (c) 2015 elif ece arslan. All rights reserved.
 //
 
-#import "BaseMenuViewController.h"
+#import "PDNavigationController.h"
+#import "PDDrawerMenuCell.h"
 
-@interface PDOpinionViewController : BaseMenuViewController
+@interface PDOpinionViewController : UITableViewController
+
 
 @end

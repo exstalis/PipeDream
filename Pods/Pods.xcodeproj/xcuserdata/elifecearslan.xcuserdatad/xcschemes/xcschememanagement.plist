@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Pods-PipeDream-AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-PipeDream-FLKAutoLayout.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-PipeDream-JVFloatingDrawer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-PipeDream-ORStackView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-PipeDream.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>8AB3D059F521B0A1987D7103</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E492F75EC3A8C7A044C3AAA5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E86BC20743728DF0E9CF222B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E9676CB5732A57E49AAD9C1C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FF49233314B579BE62E01918</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

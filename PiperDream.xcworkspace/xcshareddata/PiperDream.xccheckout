@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>557D995E-AA0C-4698-A117-F8A017A64D9D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>PiperDream</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D36A8E2059E1F14839DE8E153D8B6EDAC51CDED2</key>
+		<string>https://bitbucket.org/exstalis/pipedream.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PiperDream.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D36A8E2059E1F14839DE8E153D8B6EDAC51CDED2</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://bitbucket.org/exstalis/pipedream.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D36A8E2059E1F14839DE8E153D8B6EDAC51CDED2</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D36A8E2059E1F14839DE8E153D8B6EDAC51CDED2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PipeDream</string>
+		</dict>
+	</array>
+</dict>
+</plist>

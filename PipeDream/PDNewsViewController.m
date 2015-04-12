@@ -8,18 +8,18 @@
 
 #import "PDNewsViewController.h"
 #import "PDFeedTableViewCell.h"
+#import "JVFloatingDrawerViewController.h"
+#import "JVFloatingDrawerSpringAnimator.h"
+#import "AppDelegate.h"
 
 
 
 @interface PDNewsViewController ()
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *menuLeftBarButtonItem;
-@property(weak,nonatomic)UIButton* menuButton;
-@property(nonatomic)BOOL isTapped;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
+- (IBAction)showMenu:(UIBarButtonItem *)sender;
 
-- (IBAction)menuButtonPressed:(id)sender;
-//@property(nonatomic) UIButton *menuButton;
-@property (weak, nonatomic) IBOutlet UITableView *newsTableView;
+
 
 @end
 
@@ -41,19 +41,7 @@
 
 
 
-
-- (IBAction)menuButtonPressed:(id)sender {
-
-//    [self removeFromParentViewController];
-    
-    [self menuAction:sender];
-    
-    
-}
-#pragma mark -Menu Action Delegate
-
-
-#pragma mark - tableview datasource
+#pragma mark - TableView datasource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
     
@@ -84,9 +72,23 @@
 
 
 
+#pragma mark -Menu Action Delegate
 
 
 
+
+
+- (IBAction)showMenu:(UIBarButtonItem *)sender {
+    
+    [[AppDelegate globalDelegate] toggleLeftDrawer:self animated:YES];
+    
+
+}
+
+
+- (JVFloatingDrawerSpringAnimator *)drawerAnimator {
+    return [[AppDelegate globalDelegate] drawerAnimator];
+}
 
 
 @end

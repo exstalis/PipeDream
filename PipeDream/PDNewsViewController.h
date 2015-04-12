@@ -8,14 +8,9 @@
 
 
 #import "PDNavigationController.h"
-#import "PDDrawerCustomCellBackground.h"
-#import "PDBaseViewController.h"
 #import "PDDrawerMenuCell.h"
-#import "BaseMenuViewController.h"
 
-@interface PDNewsViewController: BaseMenuViewController<UITableViewDataSource,UITableViewDelegate>
-
-
+@interface PDNewsViewController: UITableViewController
 
 @end
 
