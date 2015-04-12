@@ -16,6 +16,11 @@
 		2D271A8C1ABE1AE400A71464 /* PipeDreamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A8B1ABE1AE400A71464 /* PipeDreamTests.m */; };
 		2D271A971ABE1B4A00A71464 /* PDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A961ABE1B4A00A71464 /* PDBaseViewController.m */; };
 		2D271A9D1ABE25C900A71464 /* PDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A9C1ABE25C900A71464 /* PDNavigationController.m */; };
+		2D345C011AD9E56F00308866 /* detail.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D345BFF1AD9E56F00308866 /* detail.png */; };
+		2D345C021AD9E56F00308866 /* detail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D345C001AD9E56F00308866 /* detail@2x.png */; };
+		2D345C051AD9E5C700308866 /* PDNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D345C041AD9E5C700308866 /* PDNewsDetailViewController.m */; };
+		2D5E8E211AD9F2AE00FB533F /* PDOpinionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E8E201AD9F2AE00FB533F /* PDOpinionViewController.m */; };
+		2D5E8E241AD9F32500FB533F /* PDOpinionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E8E231AD9F32500FB533F /* PDOpinionDetailViewController.m */; };
 		2D8DADED1AD8B7440047AECE /* PDDrawerMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8DADEC1AD8B7440047AECE /* PDDrawerMenuCell.m */; };
 		2D8DADF31AD8D8C70047AECE /* BaseMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8DADF21AD8D8C70047AECE /* BaseMenuViewController.m */; };
 		2D8DADF71AD8E2E70047AECE /* PDFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8DADF61AD8E2E70047AECE /* PDFeedTableViewCell.m */; };
@@ -58,6 +63,14 @@
 		2D271A961ABE1B4A00A71464 /* PDBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDBaseViewController.m; sourceTree = "<group>"; };
 		2D271A9B1ABE25C900A71464 /* PDNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDNavigationController.h; sourceTree = "<group>"; };
 		2D271A9C1ABE25C900A71464 /* PDNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDNavigationController.m; sourceTree = "<group>"; };
+		2D345BFF1AD9E56F00308866 /* detail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = detail.png; sourceTree = "<group>"; };
+		2D345C001AD9E56F00308866 /* detail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "detail@2x.png"; sourceTree = "<group>"; };
+		2D345C031AD9E5C700308866 /* PDNewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDNewsDetailViewController.h; sourceTree = "<group>"; };
+		2D345C041AD9E5C700308866 /* PDNewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDNewsDetailViewController.m; sourceTree = "<group>"; };
+		2D5E8E1F1AD9F2AE00FB533F /* PDOpinionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDOpinionViewController.h; sourceTree = "<group>"; };
+		2D5E8E201AD9F2AE00FB533F /* PDOpinionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDOpinionViewController.m; sourceTree = "<group>"; };
+		2D5E8E221AD9F32500FB533F /* PDOpinionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDOpinionDetailViewController.h; sourceTree = "<group>"; };
+		2D5E8E231AD9F32500FB533F /* PDOpinionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDOpinionDetailViewController.m; sourceTree = "<group>"; };
 		2D8DADEB1AD8B7440047AECE /* PDDrawerMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDDrawerMenuCell.h; sourceTree = "<group>"; };
 		2D8DADEC1AD8B7440047AECE /* PDDrawerMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDDrawerMenuCell.m; sourceTree = "<group>"; };
 		2D8DADF11AD8D8C70047AECE /* BaseMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseMenuViewController.h; sourceTree = "<group>"; };
@@ -180,6 +193,28 @@
 			name = Common;
 			sourceTree = "<group>";
 		};
+		2D345C061AD9E5D300308866 /* Opinion */ = {
+			isa = PBXGroup;
+			children = (
+				2D5E8E1F1AD9F2AE00FB533F /* PDOpinionViewController.h */,
+				2D5E8E201AD9F2AE00FB533F /* PDOpinionViewController.m */,
+				2D5E8E221AD9F32500FB533F /* PDOpinionDetailViewController.h */,
+				2D5E8E231AD9F32500FB533F /* PDOpinionDetailViewController.m */,
+			);
+			name = Opinion;
+			sourceTree = "<group>";
+		};
+		2D345C071AD9E5DC00308866 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				2DC51D241AD4ECA800B9FA1F /* PDNewsViewController.h */,
+				2DC51D251AD4ECA800B9FA1F /* PDNewsViewController.m */,
+				2D345C031AD9E5C700308866 /* PDNewsDetailViewController.h */,
+				2D345C041AD9E5C700308866 /* PDNewsDetailViewController.m */,
+			);
+			name = News;
+			sourceTree = "<group>";
+		};
 		2D8DADE41AD888790047AECE /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,8 +238,8 @@
 		2DC51D161AD4D0F900B9FA1F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				2DC51D241AD4ECA800B9FA1F /* PDNewsViewController.h */,
-				2DC51D251AD4ECA800B9FA1F /* PDNewsViewController.m */,
+				2D345C071AD9E5DC00308866 /* News */,
+				2D345C061AD9E5D300308866 /* Opinion */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -212,6 +247,8 @@
 		2DC51D171AD4D2D100B9FA1F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2D345BFF1AD9E56F00308866 /* detail.png */,
+				2D345C001AD9E56F00308866 /* detail@2x.png */,
 				2DBEBCBE1AD7314000123DB5 /* menu.png */,
 				2DBEBCBF1AD7314000123DB5 /* menu@2x.png */,
 				2DBEBCAD1AD70B7100123DB5 /* BG.png */,
@@ -312,7 +349,9 @@
 				2DC51D3C1AD5B58200B9FA1F /* Front View@3x.png in Resources */,
 				2DC51D391AD5B58200B9FA1F /* Front View Swipe Left@2x.png in Resources */,
 				2DBEBCAE1AD70B7100123DB5 /* BG.png in Resources */,
+				2D345C021AD9E56F00308866 /* detail@2x.png in Resources */,
 				2DBEBCC01AD7314000123DB5 /* menu.png in Resources */,
+				2D345C011AD9E56F00308866 /* detail.png in Resources */,
 				2D271A801ABE1AE300A71464 /* LaunchScreen.xib in Resources */,
 				2D271A7D1ABE1AE300A71464 /* Images.xcassets in Resources */,
 				2DC51D381AD5B58200B9FA1F /* Front View Swipe Left.png in Resources */,
@@ -335,10 +374,13 @@
 			files = (
 				2D271A751ABE1AE300A71464 /* PipeDream.xcdatamodeld in Sources */,
 				2D8DADED1AD8B7440047AECE /* PDDrawerMenuCell.m in Sources */,
+				2D5E8E241AD9F32500FB533F /* PDOpinionDetailViewController.m in Sources */,
 				2DC51D261AD4ECA800B9FA1F /* PDNewsViewController.m in Sources */,
 				2D271A721ABE1AE300A71464 /* AppDelegate.m in Sources */,
 				2D8DADF31AD8D8C70047AECE /* BaseMenuViewController.m in Sources */,
 				2D8DADF71AD8E2E70047AECE /* PDFeedTableViewCell.m in Sources */,
+				2D345C051AD9E5C700308866 /* PDNewsDetailViewController.m in Sources */,
+				2D5E8E211AD9F2AE00FB533F /* PDOpinionViewController.m in Sources */,
 				2D271A9D1ABE25C900A71464 /* PDNavigationController.m in Sources */,
 				2D271A6F1ABE1AE300A71464 /* main.m in Sources */,
 				2D271A971ABE1B4A00A71464 /* PDBaseViewController.m in Sources */,

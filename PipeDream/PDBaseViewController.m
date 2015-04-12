@@ -30,8 +30,7 @@
     
     [self setupMenuView];
     
-    self.animator=[[UIDynamicAnimator alloc]initWithReferenceView:self.view];
-    self.isTapped=NO;
+ 
 //    [self.view setBackgroundColor:[UIColor clearColor]];
     
     // Do any additional setup after loading the view.
@@ -46,17 +45,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-//#pragma mark -getters
-//-(UIView *)menuView{
-//
-//    if (_menuView==nil) {
-//        [self setupMenuView];
-//        
-//    }
-//    return _menuView;
-//    
-//
-//}
+#pragma mark -getters
+-(UIView *)menuView{
+
+    if (_menuView==nil) {
+        [self setupMenuView];
+        
+    }
+    return _menuView;
+    
+
+}
 
 
 #pragma mark -Menu setup
@@ -65,7 +64,6 @@
 
 
 -(void)setupMenuView{
-    self.menuItems=@[@"News", @"Opinion",@"Release",@"Sports",@"Contact us"];
 
     _menuView=[[PDDrawerCustomCellBackground alloc]initWithFrame:CGRectMake(-menuWidth, 65.0, menuWidth, 400.0)];
     [_menuView setAutoresizingMask:(UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight)];

@@ -10,6 +10,7 @@
 
 @interface BaseMenuViewController ()
 @property(nonatomic,strong) UIButton *menuButton;
+@property(nonatomic,strong) NSArray* menuItems;
 
 @end
 
@@ -19,7 +20,10 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    self.menuItems=@[@"News", @"Opinion",@"Release",@"Sports",@"Contact us"];
 
+    self.animator=[[UIDynamicAnimator alloc]initWithReferenceView:self.view];
+    self.isTapped=NO;
     self.menuTableView=[[UITableView alloc]initWithFrame:self.menuView.bounds style:UITableViewStylePlain];
     [self.menuTableView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [_menuTableView setDelegate:self];
@@ -135,6 +139,7 @@
     
     [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
     
+    
 //    [self.delegate drawerMenu:self didSelectMenuItem:indexPath.row];
     
     switch ((PDMenuViewControllerItem)indexPath.row) {
@@ -168,10 +173,13 @@
     
 }
 
-
-
+//-(void)showMenuBar:(UIBarButtonItem*)menuButton{
+//    
+//    [self.delegate menuAction:menuButton];
+//    
+//}
 -(void)menuAction:(id)sender{
-
+    
     if (self.isTapped==NO) {
         [UIView animateWithDuration:1.0 animations:^{
             self.menuButton.alpha=0;
@@ -185,7 +193,9 @@
     else if (self.isTapped==YES) {
         [UIView animateWithDuration:1.0 animations:^{
             self.menuButton.alpha=1.0;
+            
             [self showMenu:NO];
+            
             
         }];
         self.isTapped=NO;
@@ -193,6 +203,7 @@
     }
     
 }
+
 /*
 #pragma mark - Navigation
 

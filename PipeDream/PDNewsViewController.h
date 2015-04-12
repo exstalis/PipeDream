@@ -13,8 +13,6 @@
 #import "PDDrawerMenuCell.h"
 #import "BaseMenuViewController.h"
 
-@class PDDrawerViewController;
-
 @interface PDNewsViewController: BaseMenuViewController<UITableViewDataSource,UITableViewDelegate>
 
 

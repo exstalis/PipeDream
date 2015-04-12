@@ -23,12 +23,23 @@ typedef NS_ENUM (NSInteger, PDMenuViewControllerItem){
     PDMenuViewControllerItem_COUNT,
     
 };
+//@protocol BaseMenuViewControllerDelegate;
+
 
 
 
 @interface BaseMenuViewController : PDBaseViewController<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong)UITableView *menuTableView;
+@property(nonatomic)BOOL isTapped;
 
+//@property(nonatomic)id <BaseMenuViewControllerDelegate>delegate;
+
+-(void)showMenuBar:(UIBarButtonItem*)menuButton;
 -(void) menuAction:(id)sender;
 
+
 @end
+//@protocol BaseMenuViewControllerDelegate <NSObject>
+//@property(nonatomic) BOOL isTapped ;
+//
+//@end

@@ -17,12 +17,10 @@
 @interface PDBaseViewController : UIViewController<UIViewControllerTransitioningDelegate,UIGestureRecognizerDelegate>
 
 @property(strong,nonatomic) NSMutableArray *imageArray;
-@property(nonatomic,strong) NSArray* menuItems;
 @property(nonatomic,strong)UIView *menuView;
 @property(nonatomic,strong)UIDynamicAnimator *animator;
 @property(nonatomic,readonly)NSString *identifier;
 
-@property(nonatomic) BOOL isTapped ;
 
 -(NSString*)identifier;
 

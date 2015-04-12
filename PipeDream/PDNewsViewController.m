@@ -14,10 +14,11 @@
 @interface PDNewsViewController ()
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuLeftBarButtonItem;
+@property(weak,nonatomic)UIButton* menuButton;
+@property(nonatomic)BOOL isTapped;
 
 - (IBAction)menuButtonPressed:(id)sender;
 //@property(nonatomic) UIButton *menuButton;
-@property(nonatomic)   PDDrawerViewController *drawer;
 @property (weak, nonatomic) IBOutlet UITableView *newsTableView;
 
 @end
@@ -28,9 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.newsTableView.delegate=self;
-    self.newsTableView.dataSource=self;
-    
+
     
     // Do any additional setup after loading the view.
 }
@@ -44,11 +43,14 @@
 
 
 - (IBAction)menuButtonPressed:(id)sender {
- 
 
+//    [self removeFromParentViewController];
+    
     [self menuAction:sender];
-
+    
+    
 }
+#pragma mark -Menu Action Delegate
 
 
 #pragma mark - tableview datasource
@@ -74,8 +76,17 @@
         
     }
     
+    
+    
     return cell;
     
 }
+
+
+
+
+
+
+
 
 @end
