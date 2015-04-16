@@ -8,16 +8,26 @@
 
 #import "PDNewsViewController.h"
 #import "PDFeedTableViewCell.h"
-#import "JVFloatingDrawerViewController.h"
-#import "JVFloatingDrawerSpringAnimator.h"
 #import "AppDelegate.h"
-
-
+#import "PDNewsTableviewCell.h"
+#import "Article.h"
+#import "ArticleCategory.h"
+#import "PDNetworkClient.h"
+#import "RequestOperationConfig.h"
+#import "PDSingleton.h"
 
 @interface PDNewsViewController ()
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 - (IBAction)showMenu:(UIBarButtonItem *)sender;
+
+
+
+
+@property NSArray *newsArticleArray;
+@property NSString *newsArticle;
+
+
 
 
 
@@ -27,11 +37,42 @@
 
 @implementation PDNewsViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    self.indicator=[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    
+    
+    
+    
+    
+    PDNetworkClient *manager=[[PDNetworkClient alloc]init];
+    [manager getArticleFeed:[PDSingleton sharedClient].articleDictionary success:^(AFHTTPRequestOperation *operation, id responseObject, id responseMTLModel) {
+        
+
+        
+        NSError *error=[[NSError alloc]init];
+        
+        [_articleDict initWithDictionary:[PDSingleton sharedClient].articleDictionary error:&error];
+        
+        [_newsArticleArray initWithArray:_articleDict.body copyItems:YES];
+       
+        [_newsFrontPageTableView reloadData];
 
     
-    // Do any additional setup after loading the view.
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+             NSLog(@"Failed to load!");
+    
+    }];
+    
+    
+
+    
+
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,18 +92,28 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-    return 20;
+    return _newsArticleArray.count;
     
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-
+   NSArray *newsTableArray=[self.newsArticleArray objectAtIndex:indexPath.row];
+    NSLog(@"%@",newsTableArray);
+    
    
     
-    PDFeedTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"newsCell"];
+    PDNewsTableviewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"newsCell" forIndexPath:indexPath];
+    
+    [cell.newsTitle viewWithTag:1];
+//    [cell.newsExcerptLabel.text=[newsTableArray valueForKey:@"excerpt"];
+    
+    
+//    [cell.newsTitle.text=[areddit valueForKey:@"title"];
+    
     if (cell==nil) {
-        cell=[[PDFeedTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"newsCell"];
+        cell=[[PDNewsTableviewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"newsCell"];
         
     }
+    
     
     
     

@@ -2,7 +2,7 @@
 CONFIGURATION_BUILD_DIR = $PODS_FRAMEWORK_BUILD_PATH
 FRAMEWORK_SEARCH_PATHS = "$PODS_FRAMEWORK_BUILD_PATH"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/JVFloatingDrawer" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/FLKAutoLayout" "${PODS_ROOT}/Headers/Public/JVFloatingDrawer" "${PODS_ROOT}/Headers/Public/ORStackView"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/JVFloatingDrawer" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/FLKAutoLayout" "${PODS_ROOT}/Headers/Public/JVFloatingDrawer" "${PODS_ROOT}/Headers/Public/Mantle" "${PODS_ROOT}/Headers/Public/ORStackView"
 OTHER_LDFLAGS = -ObjC
 PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-PipeDream
 PODS_ROOT = ${SRCROOT}
