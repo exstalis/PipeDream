@@ -30,7 +30,7 @@
 
 static NSString * const kPDClientAPIBaseURLString = @"http://wwww.bupipedream.com/api/";
 
-static NSString * const kPDClientJSONString=@"http://www.bupipedream.com/api/get_recent_posts/";
+static NSString * const kPDClientJSONString=@"http://www.bupipedream.com/api/get_post/?post_id=53135/";
 
 
 
@@ -63,16 +63,10 @@ static NSString * const kPDClientJSONString=@"http://www.bupipedream.com/api/get
         
         NSError *error = nil;
         
-        
-        
         Article *articleObject=[MTLJSONAdapter modelOfClass:[Article class] fromJSONDictionary:responseObject error:&error];
-        
-        
-//        Article *articleObject=[articleObject initWithDictionary:responseObject error:&error];
-
-        
+            
         [PDSingleton sharedClient].article =[articleObject mutableCopy];
-        
+        //NSLog(@"%@", articleObject.excerpt);
         
         
         success(nil, nil, articleObject);

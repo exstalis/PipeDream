@@ -11,7 +11,7 @@
 @interface Image : MTLModel
 
 @property(strong, nonatomic, readonly) NSURL *imageURL;
-@property(nonatomic, readonly) NSInteger *width;
-@property(nonatomic, readonly) NSInteger *height;
+@property(nonatomic, readonly) NSNumber *width;
+@property(nonatomic, readonly) NSNumber *height;
 
 @end

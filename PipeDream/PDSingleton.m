@@ -10,18 +10,16 @@
 
 
 static PDSingleton *sharedInstance;
-
+static dispatch_once_t oncePredicate;
 
 @implementation PDSingleton
 
 +(PDSingleton *)sharedClient{
-    @synchronized(self){
-        if (sharedInstance==nil) {
-            sharedInstance=[[[self class] alloc]init];
-            
-        }
-        return sharedInstance;
-    }
+    static PDSingleton *_sharedClient;
+    dispatch_once(&oncePredicate, ^{
+        _sharedClient = [[self alloc] init];
+    });
+    return _sharedClient;
 
 }
 

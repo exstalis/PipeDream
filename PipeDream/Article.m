@@ -7,21 +7,24 @@
 //
 
 #import "Article.h"
+#import "Attachments.h"
+#import "ArticleCategory.h"
+#import "Author.h"
 
 @implementation Article
 
 //maps JSON to properties
 + (NSDictionary *) JSONKeyPathsByPropertyKey {
     return @{
-             
-             @"title" : @"title",
-             @"excerpt" : @"excerpt",
-             @"body" : @"content",
-             @"url" : @"url",
-             @"date" : @"date",
-             @"author" : @"author",
-             @"attachments" : @"attachments",
-             @"categories" : @"categories"
+             @"identifier" : @"post.id",
+             @"title" : @"post.title",
+             @"excerpt" : @"post.excerpt",
+             @"body" : @"post.content",
+             @"url" : @"post.url",
+             @"date" : @"post.date",
+             @"author" : @"post.author",
+             @"attachments" : @"post.attachments",
+             @"categories" : @"post.categories"
              };
 }
 //formats the date
@@ -50,7 +53,7 @@
 
 //transform attachments with a Attachments object
 +(NSValueTransformer *) attachmentsTransformer {
-    return [MTLJSONAdapter arrayTransformerWithModelClass:Attachments.class];
+    return [MTLJSONAdapter dictionaryTransformerWithModelClass:Attachments.class];
 }
 
 //transform attachments with a ArticleCategory object
@@ -58,34 +61,10 @@
     return [MTLJSONAdapter arrayTransformerWithModelClass:ArticleCategory.class];
 }
 
-+(NSDictionary *) deserializeArticleInfoFromJSON:(NSDictionary *)articleJSON {
-    
-    NSError *error;
-    NSDictionary *articleInfo = [MTLJSONAdapter modelOfClass:[Article class] fromJSONDictionary:articleJSON error:&error];
-    if (error) {
-        NSLog(@"Couldn't convert article JSON to Article Models: %@", error);
-        return nil;
-    }
-    return articleInfo;
++(NSValueTransformer *) authorTransformer {
+    return [MTLJSONAdapter dictionaryTransformerWithModelClass:Author.class];
 }
 
-+(NSData *) serializeArticleInforIntoNSData:(NSArray *)articleInfo {
-    
-    NSError *error;
-    NSArray *articleJSON = [MTLJSONAdapter JSONArrayFromModels:articleInfo error:&error];
-    if (error) {
-        NSLog(@"Couldn't create article JSON Array: %@", error);
-        return nil;
-    }
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:articleJSON options:0 error:&error];
-    if (error) {
-        NSLog(@"Couldn't convert article JSON into NSData: %@", error);
-        return nil;
-    }
-    
-    return jsonData;
-    
-}
 
 
 -(instancetype) initWithDictionary:(NSDictionary *)dictionaryValue error:(NSError **)error {

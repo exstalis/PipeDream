@@ -12,14 +12,14 @@
 
 @interface Attachments : MTLModel <MTLJSONSerializing>
 
-@property(nonatomic, readonly) NSInteger *ID;
+@property(nonatomic, readonly) NSNumber *ID;
 @property(strong, nonatomic, readonly) NSURL *url;
 @property(strong, nonatomic, readonly) NSString *title;
 @property(strong, nonatomic, readonly) NSString *caption;
 @property(strong, nonatomic, readonly) NSString *desc;
-@property(nonatomic, readonly) NSInteger *parent;
+@property(nonatomic, readonly) NSNumber *parent;
 @property(strong, nonatomic, readonly) NSString *mimeType;
-@property(strong, nonatomic, readonly) Image *images;
+@property(strong, nonatomic, readonly) NSDictionary *images;
 
 
 

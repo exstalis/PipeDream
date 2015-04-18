@@ -13,18 +13,16 @@
 @interface Article : MTLModel<MTLJSONSerializing>
 
 //article properties
+@property(nonatomic,readonly)NSNumber *identifier;
 @property(copy, nonatomic, readonly) NSString *title;
-
-@property(copy, nonatomic, readonly) NSString *titlePlain;
-
 @property(copy, nonatomic, readonly) NSString *excerpt;
 @property(copy, nonatomic, readonly) NSString *body;
 @property(copy, nonatomic, readonly) NSURL *url;
 @property(copy, nonatomic, readonly) NSDate *date;
-@property(copy, nonatomic, readonly) NSString *author;
-@property(copy, nonatomic, readonly) Attachments *attachments;
-@property(copy, nonatomic, readonly) ArticleCategory *categories;
-//@property(nonatomic,readonly)NSInteger *identifier;
+@property(copy, nonatomic, readonly) NSDictionary *author;
+@property(copy, nonatomic, readonly) NSArray *attachments;
+@property(copy, nonatomic, readonly) NSArray *categories;
+
 
 
 @end

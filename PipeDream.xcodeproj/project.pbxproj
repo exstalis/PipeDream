@@ -35,7 +35,6 @@
 		2D5D94161ADCBC620068DB3E /* ArticleCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D940C1ADCBC620068DB3E /* ArticleCategory.m */; };
 		2D5D94171ADCBC620068DB3E /* Attachments.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D940E1ADCBC620068DB3E /* Attachments.m */; };
 		2D5D94181ADCBC620068DB3E /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D94101ADCBC620068DB3E /* Author.m */; };
-		2D5D94191ADCBC620068DB3E /* Entity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D94121ADCBC620068DB3E /* Entity.m */; };
 		2D5D941A1ADCBC620068DB3E /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D94141ADCBC620068DB3E /* Image.m */; };
 		2D5D941F1ADCBD7E0068DB3E /* PDNetworkClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D941E1ADCBD7E0068DB3E /* PDNetworkClient.m */; };
 		2D5D94221ADCBEAB0068DB3E /* PDSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D94211ADCBEAB0068DB3E /* PDSingleton.m */; };
@@ -118,8 +117,6 @@
 		2D5D940E1ADCBC620068DB3E /* Attachments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Attachments.m; sourceTree = "<group>"; };
 		2D5D940F1ADCBC620068DB3E /* Author.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Author.h; sourceTree = "<group>"; };
 		2D5D94101ADCBC620068DB3E /* Author.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Author.m; sourceTree = "<group>"; };
-		2D5D94111ADCBC620068DB3E /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
-		2D5D94121ADCBC620068DB3E /* Entity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entity.m; sourceTree = "<group>"; };
 		2D5D94131ADCBC620068DB3E /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
 		2D5D94141ADCBC620068DB3E /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
 		2D5D941D1ADCBD7E0068DB3E /* PDNetworkClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDNetworkClient.h; sourceTree = "<group>"; };
@@ -334,8 +331,6 @@
 				2D5D940E1ADCBC620068DB3E /* Attachments.m */,
 				2D5D940F1ADCBC620068DB3E /* Author.h */,
 				2D5D94101ADCBC620068DB3E /* Author.m */,
-				2D5D94111ADCBC620068DB3E /* Entity.h */,
-				2D5D94121ADCBC620068DB3E /* Entity.m */,
 				2D5D94131ADCBC620068DB3E /* Image.h */,
 				2D5D94141ADCBC620068DB3E /* Image.m */,
 			);
@@ -593,7 +588,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D5D94191ADCBC620068DB3E /* Entity.m in Sources */,
 				2D5D94171ADCBC620068DB3E /* Attachments.m in Sources */,
 				2D2921411ADA4C7100D622EC /* PDSportsViewController.m in Sources */,
 				2D7A30A71ADF37B700A6055C /* PDNewsTableviewCell.m in Sources */,

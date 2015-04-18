@@ -52,11 +52,11 @@
         
 
         
-        NSError *error=[[NSError alloc]init];
-        
-        [_articleDict initWithDictionary:[PDSingleton sharedClient].articleDictionary error:&error];
-        
-        [_newsArticleArray initWithArray:_articleDict.body copyItems:YES];
+      //  NSError *error=[[NSError alloc]init];
+//        
+//        [_articleDict initWithDictionary:[PDSingleton sharedClient].articleDictionary error:&error];
+//        
+//        [_newsArticleArray initWithArray:_articleDict.body copyItems:YES];
        
         [_newsFrontPageTableView reloadData];
 
