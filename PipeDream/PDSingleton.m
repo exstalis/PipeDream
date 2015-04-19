@@ -7,12 +7,16 @@
 //
 
 #import "PDSingleton.h"
+#import "Article.h"
+#import "ArticleCategory.h"
+#import "Attachments.h"
 
 
 static PDSingleton *sharedInstance;
 
 
 @implementation PDSingleton
+
 
 +(PDSingleton *)sharedClient{
     @synchronized(self){
@@ -24,5 +28,61 @@ static PDSingleton *sharedInstance;
     }
 
 }
+
+
+
+
+
+//- (id)initWithArticle:(Article *)article
+//{
+//    if (self = [super init]) {
+//        self.article=article ;
+//    }
+//    return self;
+//}
+//
+
+
+
+
+
+//- (NSMutableSet *)currentArticleOperations
+//{
+//    if (!_currentArticleOperations) {
+//        _currentArticleOperations = [[NSMutableSet alloc] init];
+//    }
+//    return _currentArticleOperations;
+//}
+//- (NSOperationQueue *)articleOperationQueue
+//{
+//    if (!_articleOperationQueue) {
+//        _articleOperationQueue = [[NSOperationQueue alloc] init];
+//        _articleOperationQueue.name = @"Article Operation Queue";
+//        _articleOperationQueue.maxConcurrentOperationCount = 3;
+//    }
+//    return _articleOperationQueue;
+//    
+//}
+//
+//
+//- (void)startBackgroundFetchingWithArticle:(NSArray *)articles{
+//    
+//    for (Article *article in articles) {
+//        if (![[self currentArticleOperations] containsObject:article.title]) {
+//            
+//            PDSingleton *operation = [[PDSingleton alloc] initWithArticle:article];
+//        
+//            
+//            [[self currentArticleOperations] addObject:article.title];
+//            
+//            [[self articleOperationQueue] addOperation:operation];
+//            
+//        }
+//    }
+//}
+//
+
+
+
 
 @end

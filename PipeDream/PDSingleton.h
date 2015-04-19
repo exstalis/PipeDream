@@ -13,12 +13,17 @@
 
 
 @interface PDSingleton : NSObject
+@property (nonatomic, retain, readwrite) Article *articleShared;
+@property NSMutableDictionary *articleDictionary;
+@property NSArray * articleArray;
+
 +(PDSingleton*)sharedClient;
 
 
-@property NSMutableDictionary *articleDictionary;
-@property NSArray * articleArray;
-@property Article *article;
+@property (nonatomic, strong) NSMutableSet *currentArticleOperations;
+@property (nonatomic, strong) NSOperationQueue *articleOperationQueue;
 
+
+//- (void)startBackgroundFetchingWithArticle:(NSArray *)articles;
 
 @end

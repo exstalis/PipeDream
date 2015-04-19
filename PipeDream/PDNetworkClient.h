@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <Mantle/Mantle.h>
 #import "Article.h"
+
 #import "Blocks.h"
 
 
-
-@class AFHTTPRequestOperation;
+#import "RequestOperationConfig.h"
 
 
 @class Article;
@@ -21,54 +21,22 @@
 @class Author;
 @class Attachments;
 @class PDSingleton;
+@class PDJSONTranslator;
 
 
 
 
 @interface PDNetworkClient : NSObject
 
-@property (nonatomic,strong,readonly) MTLModel *model;
-
--(void)getArticleFeed:(NSArray*)article
-               succes:(void(^)())success failure:(void (^)())failure;
-
-
-//
-//-(void)performRequestForPath:(NSString*)path
-//                 usingMethod:(AFHTTPRequestOperation *)operation
-//              WithParameters:(NSDictionary*)parameters
-//                        data:(NSData*)data
-//                  identifier:(NSString*)identifier
-//             completionBlock:(void (^) (id , NSURLResponse *, NSError *))completionBlock;
-
 
 
 -(void)getArticleFeed:(NSDictionary*)article
-              success:(void (^)(AFHTTPRequestOperation *operation, id responseObject,id responseMTLModel))success
-              failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+              success:(void (^)(AFHTTPRequestOperation *operation, id responseObject,id responseMTLModel))success;
 
 
-//
-//- (void)getArticleWithCompletion:(ArrayCompletionBlock)completion;
-//
-//
-//- (void)storeArticles:(NSArray *)articles;
-//- (void)getArticleWithCategories:(ArticleCategory *)category
-//
-//                  completion:(ArrayCompletionBlock)completion;
-//
-//- (void)storeArticle:(NSArray *)articles
-//        fromCategory:(ArticleCategory *)category;
-//
-//
-//
-//+ (AFHTTPRequestOperation *)createHTTPRequestOperationWithConfiguration:(RequestOperationConfigBlock)configuration;
-//
-//-(void)getRedditFrontPage:(NSString *)subreddit succes:(void(^)())success failure:(void (^)())failure;
-//
 
+-(void)getRecentArticleWithCompletion:(ArticleCompletionBlock)completion;
 
-+(NSURL*)APIBaseURL;
 
 
 @end

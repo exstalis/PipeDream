@@ -10,21 +10,27 @@
 #import "Attachments.h"
 #import "ArticleCategory.h"
 
+
+typedef enum : NSUInteger {
+    PDStateOpen,
+    PDStateClosed
+} PDState;
+
+
 @interface Article : MTLModel<MTLJSONSerializing>
 
+
 //article properties
-@property(copy, nonatomic, readonly) NSString *title;
-
+@property(nonatomic, readonly) NSString *articleTitle;
+@property(copy, nonatomic, readonly) NSNumber *articleID;
 @property(copy, nonatomic, readonly) NSString *titlePlain;
-
-@property(copy, nonatomic, readonly) NSString *excerpt;
-@property(copy, nonatomic, readonly) NSString *body;
-@property(copy, nonatomic, readonly) NSURL *url;
-@property(copy, nonatomic, readonly) NSDate *date;
-@property(copy, nonatomic, readonly) NSString *author;
-@property(copy, nonatomic, readonly) Attachments *attachments;
-@property(copy, nonatomic, readonly) ArticleCategory *categories;
-//@property(nonatomic,readonly)NSInteger *identifier;
+@property (nonatomic, assign, readonly) PDState state;
+@property(copy, nonatomic, readonly) NSString *articleExcerpt;
+@property(copy, nonatomic, readonly) NSString *articleBody;
+@property(copy, nonatomic, readonly) NSURL *articleURL;
+@property(copy, nonatomic, readonly) NSDate *articleDate;
+@property(copy, nonatomic, readonly) NSString *authorName;
+@property(copy, nonatomic, readonly) NSArray *articleCategories;
 
 
 @end

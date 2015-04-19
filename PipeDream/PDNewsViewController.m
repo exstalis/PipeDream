@@ -24,11 +24,11 @@
 
 
 
-@property NSArray *newsArticleArray;
+@property NSMutableArray *newsArticleArray;
 @property NSString *newsArticle;
 
 
-
+-(void)loadNewsArticle;
 
 
 @end
@@ -41,39 +41,70 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    [self loadNewsArticle];
 //    self.indicator=[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     
     
     
     
     
-    PDNetworkClient *manager=[[PDNetworkClient alloc]init];
-    [manager getArticleFeed:[PDSingleton sharedClient].articleDictionary success:^(AFHTTPRequestOperation *operation, id responseObject, id responseMTLModel) {
-        
-
-        
-        NSError *error=[[NSError alloc]init];
-        
-        [_articleDict initWithDictionary:[PDSingleton sharedClient].articleDictionary error:&error];
-        
-        [_newsArticleArray initWithArray:_articleDict.body copyItems:YES];
-       
-        [_newsFrontPageTableView reloadData];
-
-    
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-             NSLog(@"Failed to load!");
-    
-    }];
-    
-    
+//    PDNetworkClient *manager=[[PDNetworkClient alloc]init];
+//    [manager getArticleFeed:[PDSingleton sharedClient].articleDictionary success:^(AFHTTPRequestOperation *operation, id responseObject, id responseMTLModel) {
+//        
+//
+//        
+//        NSError *error=[[NSError alloc]init];
+//        
+//        [_articleDict initWithDictionary:[PDSingleton sharedClient].articleDictionary error:&error];
+//        
+//        [_newsArticleArray initWithArray:_articleDict.body copyItems:YES];
+//       
+//        [_newsFrontPageTableView reloadData];
+//
+//    
+//        
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        
+//             NSLog(@"Failed to load!");
+//    
+//    }];
+//    
+//    
 
     
 
     
 }
+
+
+
+-(void)loadNewsArticle{
+    
+    PDNetworkClient *manager=[[PDNetworkClient alloc]init];
+    
+    [manager getRecentArticleWithCompletion:^(Article *articleObjects, NSError *error) {
+        
+
+        
+    
+        
+        
+        
+    }];
+
+    
+    
+    
+}
+  
+    
+    
+
+
+    
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

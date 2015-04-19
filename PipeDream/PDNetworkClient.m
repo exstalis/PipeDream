@@ -17,12 +17,18 @@
 #import "Article.h"
 #import "ArticleCategory.h"
 #import "Attachments.h"
-#import "Entity.h"
 #import "Image.h"
 #import "Author.h"
 #import "Blocks.h"
 #import "RequestOperationConfig.h"
+#import "PDJSONTranslator.h"
 
+
+@interface PDNetworkClient ()
+//@property (nonatomic,strong)PDJSONTranslator *translator;
+
++ (AFHTTPRequestOperation *)createHTTPRequestOperationWithConfiguration:(RequestOperationConfigBlock)configuration;
+@end
 
 
 
@@ -30,102 +36,117 @@
 
 static NSString * const kPDClientAPIBaseURLString = @"http://wwww.bupipedream.com/api/";
 
-static NSString * const kPDClientJSONString=@"http://www.bupipedream.com/api/get_recent_posts/";
+static NSString * const kPDClientJSONRecentPostString=@"http://www.bupipedream.com/api/get_recent_posts/";
 
 
 
-
-+(NSURL *)APIBaseURL{
++ (AFHTTPRequestOperation *)createHTTPRequestOperationWithConfiguration:(RequestOperationConfigBlock)configuration
+{
     
-    return [NSURL URLWithString:kPDClientAPIBaseURLString];
+
+    NSParameterAssert(configuration != nil);
+    RequestOperationConfig* requestOperationConfig = [[RequestOperationConfig alloc] init];
+    if (configuration) {
+        configuration(requestOperationConfig);
+    }
+    NSURLRequest *request = [NSURLRequest requestWithURL:[requestOperationConfig URL]];
+    AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    requestOperation.responseSerializer = requestOperationConfig.responseSerializer;
+    return requestOperation;
+    
+    
     
 }
 
 
 
-
-
--(void)getArticleFeed:(NSDictionary*)article success:
-(void (^)(AFHTTPRequestOperation *operation, id responseObject,id responseMTLModel))success
-              failure:
-(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure{
+-(void)getRecentArticleWithCompletion:(ArticleCompletionBlock)completion{
     
     
-    NSString *urlString=[NSString stringWithFormat:kPDClientJSONString];
-    NSURL *recentPostURL=[NSURL URLWithString:urlString];
     
-    NSURLRequest *request=[NSURLRequest requestWithURL:recentPostURL];
-    
-    AFHTTPRequestOperation *operation=[[AFHTTPRequestOperation alloc]initWithRequest:request];
-    operation.responseSerializer=[AFJSONResponseSerializer serializer];
-   
+    AFHTTPRequestOperation *operation=[PDNetworkClient createHTTPRequestOperationWithConfiguration:^(RequestOperationConfig *config) {
+        config.URL=[NSURL URLWithString:kPDClientJSONRecentPostString];
+        config.responseSerializer=[AFJSONResponseSerializer serializer];
+        
+    }];
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        NSError *error = nil;
+        if (completion==nil) {
+            return;
+            
+        }
+        
+        NSError *error=nil;
         
         
+//        Article *recentarticleColletion=[MTLJSONAdapter modelOfClass:[Article class] fromJSONDictionary:responseObject error:&error];
         
-        Article *articleObject=[MTLJSONAdapter modelOfClass:[Article class] fromJSONDictionary:responseObject error:&error];
+        [PDSingleton sharedClient].articleShared =[recentarticleColletion mutableCopy];
         
+              completion(recentarticleColletion,nil);
         
-//        Article *articleObject=[articleObject initWithDictionary:responseObject error:&error];
-
-        
-        [PDSingleton sharedClient].article =[articleObject mutableCopy];
-        
-        
-        
-        success(nil, nil, articleObject);
-
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-        NSLog(@"Request Failed: %@, %@", error, error.userInfo);
-        
-        
+           } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (completion) {
+            completion(nil, error);
+        }
         
     }];
     
     [operation start];
-    
+//    [[NSOperationQueue mainQueue] addOperation:operation];
 
+    
 }
 
-//- (Article *)updateUser:(Article*)article {
-//    NSDictionary *articleDict = [MTLJSONAdapter JSONDictionaryFromModel:article];
-//    NSDictionary *updatedUser = [self.webClient postToPath:@"users.json" withParameters:userDict];
+
+
+
+
+//-(void)getArticleFeed:(NSDictionary*)article success:
+//(void (^)(AFHTTPRequestOperation *operation, id responseObject,id responseMTLModel))success
+//              failure:
+//(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure{
 //    
-//    return [MTLJSONAdapter modelOfClass:[User class] fromJSONDictionary:updatedUser error:nil];
+//    
+//    NSString *urlString=[NSString stringWithFormat:kPDClientJSONString];
+//    NSURL *recentPostURL=[NSURL URLWithString:urlString];
+//    
+//    NSURLRequest *request=[NSURLRequest requestWithURL:recentPostURL];
+//    
+//    AFHTTPRequestOperation *operation=[[AFHTTPRequestOperation alloc]initWithRequest:request];
+//    operation.responseSerializer=[AFJSONResponseSerializer serializer];
+//   
+//    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        
+//        NSError *error = nil;
+//        
+//        
+//        
+//        Article *articleObject=[MTLJSONAdapter modelOfClass:[Article class] fromJSONDictionary:responseObject error:&error];
+//        
+//        
+////        Article *articleObject=[articleObject initWithDictionary:responseObject error:&error];
+//
+//        
+//        [PDSingleton sharedClient].article =[articleObject mutableCopy];
+//        
+//        
+//        
+//        success(nil, nil, articleObject);
+//
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        
+//        NSLog(@"Request Failed: %@, %@", error, error.userInfo);
+//        
+//        
+//        
+//    }];
+//    
+//    [operation start];
+//    
+//
 //}
 
-//
-//__weak MOMCreateChatMessageOperation *weakSelf = self;
-//NSURLRequest *request =
-//[[MOMNetworkClient sharedClient]
-// performRequestForPath:[NSString stringWithFormat:@"/chat/%@/", self.threadIdentifier]
-// usingMethod:HIPNetworkClientRequestMethodPost
-// withParameters:nil
-// data:postData
-// identifier:self.requestIdentifier
-// completionHandler:^(id parsedData, NSURLResponse *response, NSError *error) {
-//     if (nil == error) {
-//         __autoreleasing NSError *parseError = nil;
-//         MOMChatMessagesResponse *responseObject = [MTLJSONAdapter
-//                                                    modelOfClass:[MOMChatMessagesResponse class]
-//                                                    fromJSONDictionary:parsedData
-//                                                    error:&parseError];
-//         
-//         if (nil == parseError) {
-//             [weakSelf setResponseObject:responseObject];
-//         } else {
-//             [weakSelf setError:parseError];
-//         }
-//     } else {
-//         [weakSelf setError:error];
-//     }
-//     
-//     [weakSelf setState:MOMRequestOperationStateCompleted];
-// }]
-//
 
 
 @end

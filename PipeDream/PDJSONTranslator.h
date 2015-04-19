@@ -8,23 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <Mantle/Mantle.h>
+#import "Article.h"
 
-@interface PDJSONTranslator : NSObject<MTLTransformerErrorHandling>
+@interface PDJSONTranslator : NSObject<MTLTransformerErrorHandling,MTLJSONSerializing>
 
 
-
-- (id)translateModelFromJSON:(NSDictionary *)JSON
-               withclassName:(NSString *)className;
-- (id)translateCollectionFromJSON:(NSDictionary *)JSON
-                    withClassName:(NSString *)className;
+-(NSArray *) translateJSONForArticle:(NSDictionary *)articleJSON ;
 
 
 
-
-//- (id)translateModelfromManagedObject:(NSManagedObject *)managedObject
-//                        withClassName:(NSString *)className;
-//- (id)translateCollectionfromManagedObjects:(NSArray *)managedObjects
-//                              withClassName:(NSString *)className;
-//
 
 @end

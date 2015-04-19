@@ -17,4 +17,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *newsDateLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *newsThumbnailImage;
 
+
 @end

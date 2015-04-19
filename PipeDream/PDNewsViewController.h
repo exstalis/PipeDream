@@ -18,9 +18,9 @@
 
 @interface PDNewsViewController: UITableViewController
 
-@property (weak, nonatomic) IBOutlet UITableView *newsFrontPageTableView;
 
-@property (nonatomic) Article *articleDict;
+@property (nonatomic) NSMutableDictionary *newsArticleDictionary;
+
 
 
 

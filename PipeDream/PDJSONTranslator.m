@@ -11,32 +11,43 @@
 
 @implementation PDJSONTranslator
 
-- (id)translateModelFromJSON:(NSDictionary *)JSON
-               withclassName:(NSString *)className
-{
-    NSParameterAssert(className != nil);
-    NSError *error = nil;
-    id model = [MTLJSONAdapter modelOfClass:NSClassFromString(className)
-                         fromJSONDictionary:JSON
-                                      error:&error];
-    if (!error) {
-        return model;
-    } else {
+
+
+
+
+//- (NSValueTransformer *)stateJSONTransformer {
+//    NSDictionary *states = @{
+//                             @"ok": @(PDStateOpen),
+//                             @"closed": @(PDStateClosed)
+//                             };
+//    
+//    
+//    
+//    return [MTLValueTransformer
+//            transformerUsingForwardBlock:^(id value, BOOL *success, NSError **error) {
+//                return states[value];
+//            }
+//            reverseBlock:^(id value, BOOL *success, NSError **error) {
+//                return [states allKeysForObject:states].lastObject;
+//                
+//            }];
+//    
+//    
+//    
+//}
+
+-(NSArray *) translateJSONForArticle:(NSDictionary *)articleJSON {
+    
+    NSError *error;
+    NSArray *articleInfo =[MTLJSONAdapter modelOfClass:[Article class] fromJSONDictionary:articleJSON error:&error];
+    if (error) {
+        NSLog(@"Couldn't convert article JSON to Article Models: %@", error);
         return nil;
     }
+    return articleInfo;
 }
 
-- (id)translateCollectionFromJSON:(NSDictionary *)JSON
-                    withClassName:(NSString *)className
-{
-    NSParameterAssert(className != nil);
-    if ([JSON isKindOfClass:[NSArray class]]) {
-        NSValueTransformer *valueTransformer = [MTLJSONAdapter arrayTransformerWithModelClass:[(className)class]];
-        NSArray *collection=[valueTransformer transformedValue:JSON];
-        
-                    
-        return collection;
-    }
-    return nil;
-}
+
+
+
 @end

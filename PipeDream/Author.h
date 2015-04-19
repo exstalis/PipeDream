@@ -10,7 +10,7 @@
 
 @interface Author : MTLModel
 
-@property(nonatomic, readonly) NSInteger *authorID;
+@property(nonatomic, readonly) NSNumber *authorID;
 @property(strong, nonatomic, readonly) NSString *fullName;
 @property(strong, nonatomic, readonly) NSURL *url;
 
