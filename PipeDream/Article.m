@@ -19,15 +19,15 @@
 + (NSDictionary *) JSONKeyPathsByPropertyKey {
     return @{
              
-             @"articleID" : @"post.id",
-             @"articleTitle" : @"post.title",
-             @"titlePlain" : @"post.title_plain",
-             @"articleExcerpt" : @"post.excerpt",
-             @"articleBody":@"post.content",
-             @"articleURL" : @"post.url",
-             @"articleDate" : @"post.date",
-             @"authorName" : @"post.author",
-             @"articleCategories": @"post.categories",
+             @"articleID" : @"id",
+             @"articleTitle" : @"title",
+             @"titlePlain" : @"title_plain",
+             @"articleExcerpt" : @"excerpt",
+             @"articleBody":@"content",
+             @"articleURL" : @"url",
+             @"articleDate" : @"date",
+             @"authorName" : @"author",
+             @"articleCategories": @"categories",
              
          
              };

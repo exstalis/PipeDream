@@ -21,7 +21,6 @@
 #import "Author.h"
 #import "Blocks.h"
 #import "RequestOperationConfig.h"
-#import "PDJSONTranslator.h"
 
 
 @interface PDNetworkClient ()
@@ -37,6 +36,34 @@
 static NSString * const kPDClientAPIBaseURLString = @"http://wwww.bupipedream.com/api/";
 
 static NSString * const kPDClientJSONRecentPostString=@"http://www.bupipedream.com/api/get_recent_posts/";
+
+
+
+-(NSArray *) translateJSONForArticleFromJSONDictionary:(NSDictionary *)articleJSON {
+    
+    NSError *error;
+    NSArray *articleInfo =[MTLJSONAdapter modelOfClass:[Article class] fromJSONDictionary:articleJSON error:&error];
+    if (error) {
+        NSLog(@"Couldn't convert article JSON to Article Models: %@", error);
+        return nil;
+    }
+    return articleInfo;
+}
+
+-(NSArray *)translateJSONForArticleFromJSONArray:(NSArray *)articleJSON{
+    
+    
+    NSError *error=nil;
+    NSArray *articleInfo=[MTLJSONAdapter modelsOfClass:[Article class] fromJSONArray:articleJSON error:&error];
+    if (error) {
+        NSLog(@"Couldn't convert article JSON to Article Models: %@", error);
+        return nil;
+    }
+    return articleInfo;
+    
+}
+
+
 
 
 
@@ -60,7 +87,7 @@ static NSString * const kPDClientJSONRecentPostString=@"http://www.bupipedream.c
 
 
 
--(void)getRecentArticleWithCompletion:(ArticleCompletionBlock)completion{
+-(void)getRecentArticleWithCompletion:(ArrayCompletionBlock)completion{
     
     
     
@@ -76,12 +103,15 @@ static NSString * const kPDClientJSONRecentPostString=@"http://www.bupipedream.c
             
         }
         
-        NSError *error=nil;
+        
+        
+        NSArray * recentarticleColletion=[self translateJSONForArticleFromJSONArray:[responseObject objectForKey:@"posts"]];
+        
         
         
 //        Article *recentarticleColletion=[MTLJSONAdapter modelOfClass:[Article class] fromJSONDictionary:responseObject error:&error];
-        
-        [PDSingleton sharedClient].articleShared =[recentarticleColletion mutableCopy];
+//        
+        [PDSingleton sharedClient].articleArray =[recentarticleColletion mutableCopy];
         
               completion(recentarticleColletion,nil);
         

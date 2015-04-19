@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D0632FA1AE16D840023EE6F /* PDJSONTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0632F91AE16D840023EE6F /* PDJSONTranslator.m */; };
 		2D271A6F1ABE1AE300A71464 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A6E1ABE1AE300A71464 /* main.m */; };
 		2D271A721ABE1AE300A71464 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A711ABE1AE300A71464 /* AppDelegate.m */; };
 		2D271A751ABE1AE300A71464 /* PipeDream.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A731ABE1AE300A71464 /* PipeDream.xcdatamodeld */; };
@@ -72,8 +71,6 @@
 
 /* Begin PBXFileReference section */
 		1DBB73B3EFDBCEBB106DF89E /* Pods-PipeDream.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PipeDream.release.xcconfig"; path = "Pods/Target Support Files/Pods-PipeDream/Pods-PipeDream.release.xcconfig"; sourceTree = "<group>"; };
-		2D0632F81AE16D840023EE6F /* PDJSONTranslator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDJSONTranslator.h; sourceTree = "<group>"; };
-		2D0632F91AE16D840023EE6F /* PDJSONTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDJSONTranslator.m; sourceTree = "<group>"; };
 		2D271A691ABE1AE300A71464 /* PipeDream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PipeDream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D271A6D1ABE1AE300A71464 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D271A6E1ABE1AE300A71464 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -349,8 +346,6 @@
 				2D5D941E1ADCBD7E0068DB3E /* PDNetworkClient.m */,
 				2D5D94201ADCBEAB0068DB3E /* PDSingleton.h */,
 				2D5D94211ADCBEAB0068DB3E /* PDSingleton.m */,
-				2D0632F81AE16D840023EE6F /* PDJSONTranslator.h */,
-				2D0632F91AE16D840023EE6F /* PDJSONTranslator.m */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -601,7 +596,6 @@
 				2D271A751ABE1AE300A71464 /* PipeDream.xcdatamodeld in Sources */,
 				2D5D941A1ADCBC620068DB3E /* Image.m in Sources */,
 				2D8DADED1AD8B7440047AECE /* PDDrawerMenuCell.m in Sources */,
-				2D0632FA1AE16D840023EE6F /* PDJSONTranslator.m in Sources */,
 				2D5E8E241AD9F32500FB533F /* PDOpinionDetailViewController.m in Sources */,
 				2DC51D261AD4ECA800B9FA1F /* PDNewsViewController.m in Sources */,
 				2D271A721ABE1AE300A71464 /* AppDelegate.m in Sources */,
