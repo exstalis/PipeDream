@@ -133,25 +133,41 @@ static NSString * const kPDClientJSONRecentPostString=@"http://www.bupipedream.c
     
     [self getRecentArticleWithCompletion:^(NSArray *array, NSError *error) {
         
+        NSArray *imagesArray=[[NSArray alloc]init];
         
         NSArray *attachmentsArray= [[NSArray alloc]init];
+        _denemeArray=[[NSMutableArray alloc]init];
+        
+        
+        
+        
 
         
         for (Article *article in array) {
             
         
             
-            attachmentsArray =[self translateJSONForArticleFromJSONArray:[article articleAttachments] withClassName:@"Attachments"];
+            attachmentsArray =  [self translateJSONForArticleFromJSONArray:[article articleAttachments] withClassName:@"Attachments"];
+            
+           ;
             
             
+            [_denemeArray addObjectsFromArray:attachmentsArray];
+        }
             
         
+        for (Attachments *attachmentsObjects in  _denemeArray) {
             
-//          [self translateJSONForArticleFromJSONDictionary:attachmentsDictionary withClassName:@"Attachments"];
-    
-            
-            
+            for (NSDictionary *image in [attachmentsObjects images]) {
+                NSDictionary *dict = [[NSDictionary alloc] init];
+//                dict = [attachmentsObjects.images valueForKey:image];
+                
+            }
         }
+        
+            
+    
+        
         completion(attachmentsArray,nil);
 
         

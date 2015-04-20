@@ -28,6 +28,7 @@
 
 @interface PDNetworkClient : NSObject
 
+@property(nonatomic,strong) NSMutableArray *denemeArray;
 
 
 -(NSArray *) translateJSONForArticleFromJSONDictionary:(NSDictionary *)articleJSON withClassName:(NSString *)className;
