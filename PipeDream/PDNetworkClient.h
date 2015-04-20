@@ -30,15 +30,14 @@
 
 
 
--(NSArray *) translateJSONForArticleFromJSONDictionary:(NSDictionary *)articleJSON;
+-(NSArray *) translateJSONForArticleFromJSONDictionary:(NSDictionary *)articleJSON withClassName:(NSString *)className;
 
--(NSArray *) translateJSONForArticleFromJSONArray:(NSArray *)articleJSON;
+-(NSArray *) translateJSONForArticleFromJSONArray:(NSArray *)articleJSON withClassName:(NSString *)className ;
 
 
 
 -(void)getRecentArticleWithCompletion:(ArrayCompletionBlock)completion;
 
--(void)getAttachmentsWithCompletion:(ArrayCompletionBlock)completion;
-
+-(void)getRecentAttachmentsFromArray:(ArrayCompletionBlock)completion;
 
 @end

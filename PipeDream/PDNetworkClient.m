@@ -39,10 +39,10 @@ static NSString * const kPDClientJSONRecentPostString=@"http://www.bupipedream.c
 
 
 
--(NSArray *) translateJSONForArticleFromJSONDictionary:(NSDictionary *)articleJSON {
+-(NSArray *) translateJSONForArticleFromJSONDictionary:(NSDictionary *)articleJSON withClassName:(NSString *)className {
     
     NSError *error;
-    NSArray *articleInfo =[MTLJSONAdapter modelOfClass:[Article class] fromJSONDictionary:articleJSON error:&error];
+    NSArray *articleInfo =[MTLJSONAdapter modelOfClass:NSClassFromString(className) fromJSONDictionary:articleJSON error:&error];
     if (error) {
         NSLog(@"Couldn't convert article JSON to Article Models: %@", error);
         return nil;
@@ -50,11 +50,11 @@ static NSString * const kPDClientJSONRecentPostString=@"http://www.bupipedream.c
     return articleInfo;
 }
 
--(NSArray *)translateJSONForArticleFromJSONArray:(NSArray *)articleJSON{
+-(NSArray *)translateJSONForArticleFromJSONArray:(NSArray *)articleJSON withClassName:(NSString *)className {
     
     
     NSError *error=nil;
-    NSArray *articleInfo=[MTLJSONAdapter modelsOfClass:[Article class] fromJSONArray:articleJSON error:&error];
+    NSArray *articleInfo=[MTLJSONAdapter modelsOfClass:NSClassFromString(className) fromJSONArray:articleJSON error:&error];
     if (error) {
         NSLog(@"Couldn't convert article JSON to Article Models: %@", error);
         return nil;
@@ -103,7 +103,7 @@ static NSString * const kPDClientJSONRecentPostString=@"http://www.bupipedream.c
             
         }
    
-        NSArray * recentarticleColletion=[self translateJSONForArticleFromJSONArray:[responseObject objectForKey:@"posts"]];
+        NSArray * recentarticleColletion=[self translateJSONForArticleFromJSONArray:[responseObject objectForKey:@"posts"] withClassName:@"Article"];
      
    
      
@@ -126,14 +126,50 @@ static NSString * const kPDClientJSONRecentPostString=@"http://www.bupipedream.c
 
 
 
--(void)getAttachmentsWithCompletion:(ArrayCompletionBlock)completion{
+-(void)getRecentAttachmentsFromArray:(ArrayCompletionBlock)completion{
     
     
     
     
+    [self getRecentArticleWithCompletion:^(NSArray *array, NSError *error) {
+        
+        
+        NSArray *attachmentsArray= [[NSArray alloc]init];
+
+        
+        for (Article *article in array) {
+            
+        
+            
+            attachmentsArray =[self translateJSONForArticleFromJSONArray:[article articleAttachments] withClassName:@"Attachments"];
+            
+            
+            
+        
+            
+//          [self translateJSONForArticleFromJSONDictionary:attachmentsDictionary withClassName:@"Attachments"];
+    
+            
+            
+        }
+        completion(attachmentsArray,nil);
+
+        
+            
+    }];
     
     
+
+
 }
+    
+        
+    
+    
+    
+    
+    
+
 
 
 
