@@ -147,9 +147,9 @@ static NSString * const kPDClientJSONRecentPostString=@"http://www.bupipedream.c
             
         
             
-            attachmentsArray =  [self translateJSONForArticleFromJSONArray:[article articleAttachments] withClassName:@"Attachments"];
+            article.articleAttachments =  [self translateJSONForArticleFromJSONArray:[article articleAttachments] withClassName:@"Attachments"];
             
-           ;
+            NSLog(@"%@", article.articleAttachments);
             
             
             [_denemeArray addObjectsFromArray:attachmentsArray];
