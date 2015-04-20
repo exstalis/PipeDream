@@ -10,7 +10,16 @@
 #import "PDNavigationController.h"
 #import "PDDrawerMenuCell.h"
 
+@class Article;
+@class ArticleCategory;
+@class Attachments;
+@class Attachments;
+
+
 @interface PDNewsViewController: UITableViewController
+
+
+
 
 @end
 
