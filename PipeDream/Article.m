@@ -26,9 +26,9 @@
              @"articleBody":@"content",
              @"articleURL" : @"url",
              @"articleDate" : @"date",
-             @"authorName" : @"author",
+             @"authorName" : @"author.name",
              @"articleCategories": @"categories",
-             
+             @"articleAttachments" :@"attachments"
          
              };
 }
@@ -66,7 +66,6 @@
 +(NSValueTransformer *) categoriesTransformer {
     return [MTLJSONAdapter arrayTransformerWithModelClass:[ArticleCategory class]];
 }
-
 
 
 

@@ -29,6 +29,7 @@
 		2D3F85ED1ADDF90800A040E1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D3F85EC1ADDF90800A040E1 /* SystemConfiguration.framework */; };
 		2D3F85F01ADE080900A040E1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D3F85EF1ADE080900A040E1 /* QuartzCore.framework */; };
 		2D3F85F21ADE083400A040E1 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D3F85F11ADE083400A040E1 /* AFNetworking.framework */; };
+		2D4FC8451AE491050044ACEF /* PDOpinionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FC8441AE491050044ACEF /* PDOpinionTableViewCell.m */; };
 		2D5D94081ADCBABC0068DB3E /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5D94071ADCBABC0068DB3E /* Mantle.framework */; };
 		2D5D94151ADCBC620068DB3E /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D940A1ADCBC620068DB3E /* Article.m */; };
 		2D5D94161ADCBC620068DB3E /* ArticleCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D940C1ADCBC620068DB3E /* ArticleCategory.m */; };
@@ -107,6 +108,8 @@
 		2D3F85F11ADE083400A040E1 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "Pods/../build/Debug-iphoneos/Pods-PipeDream/AFNetworking.framework"; sourceTree = "<group>"; };
 		2D46DF6F1ADE214B0014B98C /* RequestOperationConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestOperationConfig.h; sourceTree = "<group>"; };
 		2D46DF721ADE218B0014B98C /* Blocks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Blocks.h; sourceTree = "<group>"; };
+		2D4FC8431AE491050044ACEF /* PDOpinionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDOpinionTableViewCell.h; sourceTree = "<group>"; };
+		2D4FC8441AE491050044ACEF /* PDOpinionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDOpinionTableViewCell.m; sourceTree = "<group>"; };
 		2D5D94071ADCBABC0068DB3E /* Mantle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mantle.framework; path = "Pods/../build/Debug-iphoneos/Pods-PipeDream/Mantle.framework"; sourceTree = "<group>"; };
 		2D5D94091ADCBC620068DB3E /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
 		2D5D940A1ADCBC620068DB3E /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
@@ -295,6 +298,8 @@
 				2D5E8E201AD9F2AE00FB533F /* PDOpinionViewController.m */,
 				2D5E8E221AD9F32500FB533F /* PDOpinionDetailViewController.h */,
 				2D5E8E231AD9F32500FB533F /* PDOpinionDetailViewController.m */,
+				2D4FC8431AE491050044ACEF /* PDOpinionTableViewCell.h */,
+				2D4FC8441AE491050044ACEF /* PDOpinionTableViewCell.m */,
 			);
 			name = Opinion;
 			sourceTree = "<group>";
@@ -599,6 +604,7 @@
 				2D5E8E241AD9F32500FB533F /* PDOpinionDetailViewController.m in Sources */,
 				2DC51D261AD4ECA800B9FA1F /* PDNewsViewController.m in Sources */,
 				2D271A721ABE1AE300A71464 /* AppDelegate.m in Sources */,
+				2D4FC8451AE491050044ACEF /* PDOpinionTableViewCell.m in Sources */,
 				2D5D94221ADCBEAB0068DB3E /* PDSingleton.m in Sources */,
 				2D5D94151ADCBC620068DB3E /* Article.m in Sources */,
 				2D2921451ADA585100D622EC /* PDReleaseDetailViewController.m in Sources */,

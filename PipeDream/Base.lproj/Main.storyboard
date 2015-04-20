@@ -15,11 +15,11 @@
                         <viewControllerLayoutGuide type="bottom" id="aI0-h1-386"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="n9I-1q-vbL">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detail" translatesAutoresizingMaskIntoConstraints="NO" id="jgJ-Ri-P6V" userLabel="background detail">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRV-M9-WA4" userLabel="author">
                                 <rect key="frame" x="27" y="341" width="79" height="26"/>
@@ -32,20 +32,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bwr-Oy-dpG" userLabel="headline">
-                                <rect key="frame" x="133" y="341" width="475" height="26"/>
+                                <rect key="frame" x="133" y="341" width="250" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Li9-8B-VCY" userLabel="article">
-                                <rect key="frame" x="16" y="385" width="568" height="195"/>
+                                <rect key="frame" x="16" y="385" width="343" height="262"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LoR-j8-7Qh" userLabel="article image">
-                                <rect key="frame" x="39" y="98" width="522" height="196"/>
+                                <rect key="frame" x="39" y="98" width="297" height="196"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="196" id="Wkj-3Q-O6M"/>
                                 </constraints>
@@ -75,9 +75,6 @@
                     <navigationItem key="navigationItem" title="Article" id="ZRv-LD-bDg">
                         <barButtonItem key="backBarButtonItem" title="back" id="lqz-5l-z7F"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="backButton" destination="lqz-5l-z7F" id="ObE-RQ-lal"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rD0-Xg-DVz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -310,7 +307,7 @@
             <objects>
                 <tableViewController title="News" id="hTh-ku-D6W" customClass="PDNewsViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="219" sectionHeaderHeight="22" sectionFooterHeight="22" id="Jo5-qc-H2J">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -319,29 +316,29 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Og-6k-cLa" id="agQ-WL-qzP">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUY-gb-1Dn" userLabel="title">
-                                            <rect key="frame" x="23" y="33" width="172" height="33"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUY-gb-1Dn" userLabel="title">
+                                            <rect key="frame" x="23" y="33" width="229" height="33"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmT-6n-pgm" userLabel="excerpt">
-                                            <rect key="frame" x="23" y="74" width="201" height="66"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="excerpt" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmT-6n-pgm" userLabel="excerpt">
+                                            <rect key="frame" x="23" y="74" width="229" height="66"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cyo-Mx-VSd" userLabel="author">
-                                            <rect key="frame" x="23" y="155" width="97" height="28"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cyo-Mx-VSd" userLabel="author">
+                                            <rect key="frame" x="23" y="153" width="97" height="28"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uSb-cX-isO" userLabel="thumbnail">
-                                            <rect key="frame" x="256" y="52" width="97" height="96"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uSb-cX-isO" userLabel="thumbnail">
+                                            <rect key="frame" x="260" y="52" width="97" height="96"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZx-xv-BQ9" userLabel="date">
-                                            <rect key="frame" x="150" y="153" width="86" height="30"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZx-xv-BQ9" userLabel="date">
+                                            <rect key="frame" x="144" y="153" width="86" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -349,18 +346,18 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="newsAuthorLabel" destination="Cyo-Mx-VSd" id="KOn-Ff-LLF"/>
-                                    <outlet property="newsDateLabel" destination="lZx-xv-BQ9" id="eK3-LA-dT4"/>
-                                    <outlet property="newsExcerptLabel" destination="rmT-6n-pgm" id="7xO-xu-2HH"/>
-                                    <outlet property="newsThumbnailImage" destination="uSb-cX-isO" id="upl-nv-nxQ"/>
-                                    <outlet property="newsTitle" destination="BUY-gb-1Dn" id="ac6-LD-bRx"/>
+                                    <outlet property="newsAuthorLabel" destination="Cyo-Mx-VSd" id="m9I-DT-9wg"/>
+                                    <outlet property="newsDateLabel" destination="lZx-xv-BQ9" id="gwQ-pc-9hj"/>
+                                    <outlet property="newsExcerptLabel" destination="rmT-6n-pgm" id="fZa-1m-Z2h"/>
+                                    <outlet property="newsThumbnailImage" destination="uSb-cX-isO" id="u8O-UI-EwT"/>
+                                    <outlet property="newsTitle" destination="BUY-gb-1Dn" id="Mkf-tF-HSj"/>
                                     <segue destination="C8q-uu-JBC" kind="show" id="oob-tp-43Z"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="hTh-ku-D6W" id="cYi-Tb-SOG"/>
-                            <outlet property="delegate" destination="hTh-ku-D6W" id="mg6-Np-SWj"/>
+                            <outlet property="dataSource" destination="hTh-ku-D6W" id="TFV-bA-0HE"/>
+                            <outlet property="delegate" destination="hTh-ku-D6W" id="lVo-Hy-VOb"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="News" id="M5Y-DX-vjJ">
@@ -370,6 +367,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="menuButton" destination="wre-mh-Z19" id="MOG-fH-POc"/>
                     </connections>
@@ -387,7 +385,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="opinionCell" rowHeight="200" id="z17-K1-HCA">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="opinionCell" rowHeight="200" id="z17-K1-HCA" customClass="PDOpinionTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z17-K1-HCA" id="rJV-jS-TqU">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -422,6 +420,11 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="opinionAuthorLabel" destination="4nD-oW-Evk" id="zuh-3d-EYZ"/>
+                                    <outlet property="opinionDateLabel" destination="2gd-hS-87M" id="ZNy-n5-yjh"/>
+                                    <outlet property="opinionExercptLabel" destination="QGL-jU-mt7" id="4IK-DE-QKJ"/>
+                                    <outlet property="opinionThumbnail" destination="qef-SF-EO5" id="8W0-1q-YgX"/>
+                                    <outlet property="opinionTitleLabel" destination="uhr-fD-D5F" id="k17-3d-DuW"/>
                                     <segue destination="fqw-ft-6jd" kind="show" id="abM-JV-YQL"/>
                                 </connections>
                             </tableViewCell>

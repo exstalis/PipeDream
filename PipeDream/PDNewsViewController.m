@@ -15,6 +15,9 @@
 #import "PDNetworkClient.h"
 #import "RequestOperationConfig.h"
 #import "PDSingleton.h"
+#import "JVFloatingDrawerViewController.h"
+#import "JVFloatingDrawerSpringAnimator.h"
+
 
 @interface PDNewsViewController ()
 
@@ -22,10 +25,11 @@
 - (IBAction)showMenu:(UIBarButtonItem *)sender;
 
 
+@property (nonatomic) NSMutableDictionary *newsArticleDictionary;
+@property (nonatomic,strong) NSMutableArray *newsArticleArray;
+@property (nonatomic,strong)Article *newsArticleObjects;
 
 
-@property NSMutableArray *newsArticleArray;
-@property NSString *newsArticle;
 
 
 -(void)loadNewsArticle;
@@ -42,8 +46,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+
+    _newsArticleObjects=[[Article alloc]init];
     
     [self loadNewsArticle];
+    
 //    self.indicator=[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     
     
@@ -55,18 +62,32 @@
     
 }
 
+-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+    
+    self=[super initWithCoder:aDecoder];
+    if (self!=nil) {
+        _newsArticleArray=[[NSMutableArray alloc]init];
+        
+    }
+    return self;
+    
+}
+
 
 
 -(void)loadNewsArticle{
-    
     
     PDNetworkClient *manager=[[PDNetworkClient alloc ]init];
     [manager getRecentArticleWithCompletion:^(NSArray *array, NSError *error) {
         
         if (error==nil) {
             if (array!=nil) {
-                [self.newsArticleArray removeAllObjects];
-                [self.newsArticleArray arrayByAddingObjectsFromArray:array];
+                [_newsArticleArray removeAllObjects];
+                [_newsArticleArray addObjectsFromArray:array];
+                
+//                NSLog(@"newsarticle %@",_newsArticleArray);
+                
+                [self.tableView reloadData];
                 
             }
         }
@@ -74,10 +95,8 @@
         
     }];
 
+ 
 
-    
-    
-    
 }
   
     
@@ -104,32 +123,37 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-    return _newsArticleArray.count;
+    return [_newsArticleArray count];
+//    buraya ttotal count vrment gerek
+    
     
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-   NSArray *newsTableArray=[self.newsArticleArray objectAtIndex:indexPath.row];
-    NSLog(@"%@",newsTableArray);
-    
-   
-    
-    PDNewsTableviewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"newsCell" forIndexPath:indexPath];
-    
-    [cell.newsTitle viewWithTag:1];
-//    [cell.newsExcerptLabel.text=[newsTableArray valueForKey:@"excerpt"];
+
+  
     
     
-//    [cell.newsTitle.text=[areddit valueForKey:@"title"];
-    
-    if (cell==nil) {
-        cell=[[PDNewsTableviewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"newsCell"];
+    PDNewsTableviewCell *newsCell=[tableView dequeueReusableCellWithIdentifier:@"newsCell"];
+          if (newsCell==nil) {
+        newsCell=[[PDNewsTableviewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"newsCell"];
         
     }
+//
     
     
+    Article *newsArticle=[_newsArticleArray objectAtIndex:indexPath.row];
+//    
+//    NSLog(@"article array : %@",_newsArticleArray);
     
     
-    return cell;
+    newsCell.newsTitle.text=newsArticle.articleTitle;
+    newsCell.newsExcerptLabel.text=newsArticle.articleExcerpt;
+    newsCell.newsAuthorLabel.text=newsArticle.authorName;
+    newsCell.newsDateLabel.text=newsArticle.articleDate.description;
+//    newsCell.newsThumbnailImage.image=newsArticle.articleAttachments;
+    
+ 
+    return newsCell;
     
 }
 

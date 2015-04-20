@@ -102,20 +102,15 @@ static NSString * const kPDClientJSONRecentPostString=@"http://www.bupipedream.c
             return;
             
         }
-        
-        
-        
+   
         NSArray * recentarticleColletion=[self translateJSONForArticleFromJSONArray:[responseObject objectForKey:@"posts"]];
+     
+   
+     
         
-        
-        
-//        Article *recentarticleColletion=[MTLJSONAdapter modelOfClass:[Article class] fromJSONDictionary:responseObject error:&error];
-//        
-        [PDSingleton sharedClient].articleArray =[recentarticleColletion mutableCopy];
-        
-              completion(recentarticleColletion,nil);
-        
-           } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            completion(recentarticleColletion,nil);}
+     
+                                     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (completion) {
             completion(nil, error);
         }
@@ -131,51 +126,15 @@ static NSString * const kPDClientJSONRecentPostString=@"http://www.bupipedream.c
 
 
 
+-(void)getAttachmentsWithCompletion:(ArrayCompletionBlock)completion{
+    
+    
+    
+    
+    
+    
+}
 
-//-(void)getArticleFeed:(NSDictionary*)article success:
-//(void (^)(AFHTTPRequestOperation *operation, id responseObject,id responseMTLModel))success
-//              failure:
-//(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure{
-//    
-//    
-//    NSString *urlString=[NSString stringWithFormat:kPDClientJSONString];
-//    NSURL *recentPostURL=[NSURL URLWithString:urlString];
-//    
-//    NSURLRequest *request=[NSURLRequest requestWithURL:recentPostURL];
-//    
-//    AFHTTPRequestOperation *operation=[[AFHTTPRequestOperation alloc]initWithRequest:request];
-//    operation.responseSerializer=[AFJSONResponseSerializer serializer];
-//   
-//    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        
-//        NSError *error = nil;
-//        
-//        
-//        
-//        Article *articleObject=[MTLJSONAdapter modelOfClass:[Article class] fromJSONDictionary:responseObject error:&error];
-//        
-//        
-////        Article *articleObject=[articleObject initWithDictionary:responseObject error:&error];
-//
-//        
-//        [PDSingleton sharedClient].article =[articleObject mutableCopy];
-//        
-//        
-//        
-//        success(nil, nil, articleObject);
-//
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        
-//        NSLog(@"Request Failed: %@, %@", error, error.userInfo);
-//        
-//        
-//        
-//    }];
-//    
-//    [operation start];
-//    
-//
-//}
 
 
 

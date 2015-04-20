@@ -24,6 +24,6 @@
 @property (nonatomic, strong) NSOperationQueue *articleOperationQueue;
 
 
-//- (void)startBackgroundFetchingWithArticle:(NSArray *)articles;
+//- (void)fetchArticleObjectsFromArray:(NSArray *)articles;
 
 @end

@@ -33,17 +33,13 @@ static PDSingleton *sharedInstance;
 
 
 
-//- (id)initWithArticle:(Article *)article
-//{
-//    if (self = [super init]) {
-//        self.article=article ;
-//    }
-//    return self;
-//}
-//
-
-
-
+- (id)initWithArticle:(Article *)article
+{
+    if (self = [super init]) {
+        self.articleShared=article ;
+    }
+    return self;
+}
 
 
 //- (NSMutableSet *)currentArticleOperations
@@ -65,23 +61,22 @@ static PDSingleton *sharedInstance;
 //}
 //
 //
-//- (void)startBackgroundFetchingWithArticle:(NSArray *)articles{
+//- (void)fetchArticleObjectsFromArray:(NSArray *)articles{
 //    
 //    for (Article *article in articles) {
-//        if (![[self currentArticleOperations] containsObject:article.title]) {
-//            
+//        if (![[self currentArticleOperations] containsObject:article.articleID]) {
+//
 //            PDSingleton *operation = [[PDSingleton alloc] initWithArticle:article];
 //        
 //            
-//            [[self currentArticleOperations] addObject:article.title];
+//            [[self currentArticleOperations] addObject:article.articleID];
 //            
-//            [[self articleOperationQueue] addOperation:operation];
-//            
+//
 //        }
 //    }
 //}
 //
-
+//
 
 
 

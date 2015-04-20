@@ -8,10 +8,9 @@
 
 #import "PDOpinionViewController.h"
 #import "PDFeedTableViewCell.h"
-#import "JVFloatingDrawerViewController.h"
-#import "JVFloatingDrawerSpringAnimator.h"
 #import "AppDelegate.h"
 
+#import "PDOpinionTableViewCell.h"
 
 @interface PDOpinionViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
@@ -63,11 +62,13 @@
     
     
     
-    PDFeedTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"opinionCell"];
+    PDOpinionTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"opinionCell" forIndexPath:indexPath];
+    
     if (cell==nil) {
-        cell=[[PDFeedTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"opinionCell"];
+        cell=[[PDOpinionTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"opinionCell"];
         
     }
+//    [cell.opinionAuthorLabel setText:@"author"];
     
     
     
