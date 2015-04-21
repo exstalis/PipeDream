@@ -34,6 +34,10 @@ static NSString * const kPDClientAPIBaseURLString = @"http://wwww.bupipedream.co
 
 static NSString * const kPDClientJSONRecentPostString=@"http://www.bupipedream.com/api/get_recent_posts/";
 
+static NSString * const kPDClientJSONOpinionPostsString = @"http://www.bupipedream.com/api/get_category_posts/?slug=opinion/";
+
+
+
 
 -(NSArray *) translateJSONForArticleFromJSONDictionary:(NSDictionary *)articleJSON {
     
@@ -101,6 +105,30 @@ static NSString * const kPDClientJSONRecentPostString=@"http://www.bupipedream.c
     
     [operation start];
     
+}
+
+- (void)getOpinionArticlesWithCompletion:(ArrayCompletionBlock)completion
+{
+    AFHTTPRequestOperation *operation = [PDNetworkClient createHTTPRequestOperationWithConfiguration:^(RequestOperationConfig *config) {
+        
+        config.URL = [NSURL URLWithString:kPDClientJSONPoinionPostsString];
+        config.responseSerializer = [AFJSONResponseSerializer serializer];
+    }];
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (!completion) {
+            return nil;
+        }
+        
+        NSArray *recentOpinionArticles = [self translateJSONForArticleFromJSONArray:[responseObject objectForKey:@"posts"]];
+        [PDSingleton sharedClient].articleArray = [recentOpinionArticles mutableCopy];
+        
+        completion(recentOpinionArticles, nil);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (completion) {
+            completion(nil, error);
+        }
+    }];
+    [operation start];
 }
 
 @end

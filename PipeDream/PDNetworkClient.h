@@ -41,6 +41,7 @@
 
 
 -(void)getRecentArticleWithCompletion:(ArrayCompletionBlock)completion;
+-(void)getOpinionArticlesWithCompletion:(ArrayCompletionBlock)completion;
 
 
 
