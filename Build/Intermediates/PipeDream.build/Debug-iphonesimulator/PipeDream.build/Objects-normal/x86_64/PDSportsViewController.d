@@ -16,4 +16,5 @@ dependencies: \
   /Users/elifecearslan/Developer/PipeDream/PipeDream/PDShareUtility.h \
   /Users/elifecearslan/Developer/PipeDream/PipeDream/PDDrawerMenuCell.h \
   /Users/elifecearslan/Developer/PipeDream/PipeDream/PDSportsTableViewCell.h \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDFeedTableViewCell.h
+  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDFeedTableViewCell.h \
+  /Users/elifecearslan/Developer/PipeDream/PipeDream/NSString+HTMLDecoder.h

@@ -18,4 +18,5 @@ dependencies: \
   /Users/elifecearslan/Developer/PipeDream/PipeDream/KLCPopup/KLCPopup.h \
   /Users/elifecearslan/Developer/PipeDream/PipeDream/Attachments.h \
   /Users/elifecearslan/Developer/PipeDream/PipeDream/PDRecentTableViewCell.h \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDFeedTableViewCell.h
+  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDFeedTableViewCell.h \
+  /Users/elifecearslan/Developer/PipeDream/PipeDream/NSString+HTMLDecoder.h

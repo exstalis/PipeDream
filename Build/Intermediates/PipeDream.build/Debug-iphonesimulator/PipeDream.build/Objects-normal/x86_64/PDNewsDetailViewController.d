@@ -20,4 +20,5 @@ dependencies: \
   /Users/elifecearslan/Developer/PipeDream/PipeDream/AppDelegate.h \
   /Users/elifecearslan/Developer/PipeDream/PipeDream/PDNewsTableviewCell.h \
   /Users/elifecearslan/Developer/PipeDream/PipeDream/PDFeedTableViewCell.h \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/ArticleCategory.h
+  /Users/elifecearslan/Developer/PipeDream/PipeDream/ArticleCategory.h \
+  /Users/elifecearslan/Developer/PipeDream/PipeDream/NSString+HTMLDecoder.h
