@@ -10,4 +10,6 @@
 
 @interface PDNewsDetailViewController : UIViewController
 
+@property(nonatomic, strong) Article *article;
+
 @end

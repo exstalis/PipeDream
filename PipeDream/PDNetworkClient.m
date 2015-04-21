@@ -7,10 +7,7 @@
 //
 
 #import "PDNetworkClient.h"
-
-
 #import <QuartzCore/QuartzCore.h>
-
 #import <AFNetworking/AFNetworking.h>
 #import <Mantle/Mantle.h>
 #import "PDSingleton.h"
@@ -38,7 +35,6 @@ static NSString * const kPDClientAPIBaseURLString = @"http://wwww.bupipedream.co
 static NSString * const kPDClientJSONRecentPostString=@"http://www.bupipedream.com/api/get_recent_posts/";
 
 
-
 -(NSArray *) translateJSONForArticleFromJSONDictionary:(NSDictionary *)articleJSON {
     
     NSError *error;
@@ -52,7 +48,6 @@ static NSString * const kPDClientJSONRecentPostString=@"http://www.bupipedream.c
 
 -(NSArray *)translateJSONForArticleFromJSONArray:(NSArray *)articleJSON{
     
-    
     NSError *error=nil;
     NSArray *articleInfo=[MTLJSONAdapter modelsOfClass:[Article class] fromJSONArray:articleJSON error:&error];
     if (error) {
@@ -63,14 +58,9 @@ static NSString * const kPDClientJSONRecentPostString=@"http://www.bupipedream.c
     
 }
 
-
-
-
-
 + (AFHTTPRequestOperation *)createHTTPRequestOperationWithConfiguration:(RequestOperationConfigBlock)configuration
 {
     
-
     NSParameterAssert(configuration != nil);
     RequestOperationConfig* requestOperationConfig = [[RequestOperationConfig alloc] init];
     if (configuration) {
@@ -81,15 +71,9 @@ static NSString * const kPDClientJSONRecentPostString=@"http://www.bupipedream.c
     requestOperation.responseSerializer = requestOperationConfig.responseSerializer;
     return requestOperation;
     
-    
-    
 }
 
-
-
 -(void)getRecentArticleWithCompletion:(ArrayCompletionBlock)completion{
-    
-    
     
     AFHTTPRequestOperation *operation=[PDNetworkClient createHTTPRequestOperationWithConfiguration:^(RequestOperationConfig *config) {
         config.URL=[NSURL URLWithString:kPDClientJSONRecentPostString];
@@ -100,22 +84,15 @@ static NSString * const kPDClientJSONRecentPostString=@"http://www.bupipedream.c
         
         if (completion==nil) {
             return;
-            
         }
-        
-        
         
         NSArray * recentarticleColletion=[self translateJSONForArticleFromJSONArray:[responseObject objectForKey:@"posts"]];
         
-        
-        
-//        Article *recentarticleColletion=[MTLJSONAdapter modelOfClass:[Article class] fromJSONDictionary:responseObject error:&error];
-//        
         [PDSingleton sharedClient].articleArray =[recentarticleColletion mutableCopy];
         
-              completion(recentarticleColletion,nil);
+        completion(recentarticleColletion,nil);
         
-           } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (completion) {
             completion(nil, error);
         }
@@ -123,8 +100,7 @@ static NSString * const kPDClientJSONRecentPostString=@"http://www.bupipedream.c
     }];
     
     [operation start];
-//    [[NSOperationQueue mainQueue] addOperation:operation];
-
     
 }
+
 @end
