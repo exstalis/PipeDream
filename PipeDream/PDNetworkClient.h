@@ -35,12 +35,13 @@
 -(NSArray *) translateJSONForArticleFromJSONArray:(NSArray *)articleJSON;
 
 
--(void)getArticleFeed:(NSDictionary*)article
-              success:(void (^)(AFHTTPRequestOperation *operation, id responseObject,id responseMTLModel))success;
+//-(void)getArticleFeed:(NSDictionary*)article
+//              success:(void (^)(AFHTTPRequestOperation *operation, id responseObject,id responseMTLModel))success;
 
 
 
 -(void)getRecentArticleWithCompletion:(ArrayCompletionBlock)completion;
+-(void)getOpinionArticlesWithCompletion:(ArrayCompletionBlock)completion;
 
 
 

@@ -7,15 +7,19 @@
 //
 
 #import "PDOpinionViewController.h"
+#import "PDOpinionDetailViewController.h"
 #import "PDFeedTableViewCell.h"
 #import "JVFloatingDrawerViewController.h"
 #import "JVFloatingDrawerSpringAnimator.h"
 #import "AppDelegate.h"
+#import "PDNetworkClient.h"
 
 
 @interface PDOpinionViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 - (IBAction)showMenu:(UIBarButtonItem *)sender;
+
+@property(nonatomic, strong) NSMutableArray *opinionArticlesArray;
 
 @end
 
@@ -27,12 +31,45 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self loadOpinionArticles];
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self != nil) {
+        _opinionArticlesArray = [[NSMutableArray alloc] init];
+    }
+    return self;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"OpinionDetailSegue"]) {
+        PDOpinionDetailViewController *viewController = (PDOpinionDetailViewController *)[segue destinationViewController];
+        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+        //Article'i yolla
+    }
+}
+
+- (void)loadOpinionArticles
+{    
+    PDNetworkClient *manager = [[PDNetworkClient alloc] init];
+    [manager getOpinionArticlesWithCompletion:^(NSArray *array, NSError *error) {
+        if (error == nil) {
+            if (array != nil) {
+                [_opinionArticlesArray removeAllObjects];
+                [_opinionArticlesArray addObjectsFromArray:array];
+                
+                [self.tableView reloadData];
+            }
+        }
+    }];
+}
 
 - (IBAction)showMenu:(UIBarButtonItem *)sender {
     [[AppDelegate globalDelegate] toggleLeftDrawer:self animated:YES];

@@ -7,6 +7,7 @@
 //
 
 #import "PDReleaseViewController.h"
+#import "PDReleaseDetailViewController.h"
 #import "PDFeedTableViewCell.h"
 #import "JVFloatingDrawerViewController.h"
 #import "JVFloatingDrawerSpringAnimator.h"
@@ -32,6 +33,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    PDReleaseDetailViewController *viewController = (PDReleaseDetailViewController *)[segue destinationViewController];
+    NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+    //Article'i yolla
 }
 
 
