@@ -134,10 +134,10 @@ static NSString * const kPDClientJSONRecentPostString=@"http://www.bupipedream.c
     [self getRecentArticleWithCompletion:^(NSArray *array, NSError *error) {
         
         NSArray *imagesArray=[[NSArray alloc]init];
+//        NSDictionary *imagesTempDict=[[NSDictionary alloc]init];
         
         NSArray *attachmentsArray= [[NSArray alloc]init];
         _denemeArray=[[NSMutableArray alloc]init];
-        
         
         
         
@@ -146,23 +146,28 @@ static NSString * const kPDClientJSONRecentPostString=@"http://www.bupipedream.c
         for (Article *article in array) {
             
         
-            
+        
             attachmentsArray =  [self translateJSONForArticleFromJSONArray:[article articleAttachments] withClassName:@"Attachments"];
-            
-           ;
+           
             
             
             [_denemeArray addObjectsFromArray:attachmentsArray];
         }
-            
+        NSLog(@"%@ /n",_denemeArray);
         
-        for (Attachments *attachmentsObjects in  _denemeArray) {
+        
+        
+        for (Attachments *attachmentsObjects in  attachmentsArray) {
+        
             
-            for (NSDictionary *image in [attachmentsObjects images]) {
-                NSDictionary *dict = [[NSDictionary alloc] init];
-//                dict = [attachmentsObjects.images valueForKey:image];
                 
-            }
+              Image   * imagesTempDict=[MTLJSONAdapter modelOfClass:[Image class] fromJSONDictionary:attachmentsObjects.images error:nil];
+            
+            
+    
+
+                
+        
         }
         
             

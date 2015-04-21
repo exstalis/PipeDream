@@ -15,10 +15,6 @@
              @"ID" : @"id",
              @"url" : @"url",
              @"title" : @"title",
-             @"caption" : @"caption",
-             @"desc" : @"description",
-             @"parent" : @"parent",
-             @"mimeType" : @"mime_type",
              @"images" : @"images"
              };
 }
@@ -31,7 +27,20 @@
 }
 
 +(NSValueTransformer *) imagesTransformer {
-    return [MTLJSONAdapter arrayTransformerWithModelClass:Image.class];
+    return [MTLJSONAdapter arrayTransformerWithModelClass:[Image class]];
+    
+    
 }
+
+
++(NSValueTransformer *)imagesSizeTransformer{
+    
+    return [MTLJSONAdapter dictionaryTransformerWithModelClass:[Image class]];
+    
+    
+}
+
+
+
 
 @end

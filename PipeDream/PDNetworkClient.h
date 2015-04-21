@@ -30,6 +30,9 @@
 
 @property(nonatomic,strong) NSMutableArray *denemeArray;
 
+@property(nonatomic,strong) NSMutableDictionary *imagesDictionary;
+
+
 
 -(NSArray *) translateJSONForArticleFromJSONDictionary:(NSDictionary *)articleJSON withClassName:(NSString *)className;
 
