@@ -41,4 +41,6 @@
 
 -(void)getRecentAttachmentsFromArray:(ArrayCompletionBlock)completion;
 
+-(void)getOpinionArticlesWithCompletion:(ArrayCompletionBlock)completion;
+
 @end
