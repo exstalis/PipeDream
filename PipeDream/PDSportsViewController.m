@@ -7,6 +7,7 @@
 //
 
 #import "PDSportsViewController.h"
+#import "PDSportsDetailViewController.h"
 #import "PDFeedTableViewCell.h"
 #import "JVFloatingDrawerViewController.h"
 #import "JVFloatingDrawerSpringAnimator.h"
@@ -38,7 +39,12 @@
 }
 
 
-
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    PDSportsDetailViewController *viewController = (PDSportsDetailViewController *)[segue destinationViewController];
+    NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+    //Article'i yolla
+}
 
 
 
