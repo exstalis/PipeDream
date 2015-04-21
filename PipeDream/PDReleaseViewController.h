@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PDNavigationController.h"
+#import "PDFeedTableViewController.h"
 
-@interface PDReleaseViewController : UITableViewController
+
+@interface PDReleaseViewController : PDFeedTableViewController
+@property (nonatomic,strong) NSMutableArray *releaseArticleImageArray;
+@property (nonatomic,strong) NSMutableArray *releaseArticleArray;
+
 
 @end

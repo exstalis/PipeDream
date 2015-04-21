@@ -25,8 +25,5 @@
 @property (weak, nonatomic) IBOutlet UITextView *newsDetailsArticle;
 @property (weak, nonatomic) IBOutlet UIImageView *newsDetailImage;
 
-@property(nonatomic,strong,readwrite)Article *contentArticle;
-
-@property(nonatomic,strong)Attachments *contentAttachment;
 
 @end

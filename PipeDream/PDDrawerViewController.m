@@ -30,7 +30,12 @@ static NSString * const kPDDrawerCellReuseIdentifier = @"PDDrawerCellReuseIdenti
 
 
 @interface PDDrawerViewController ()
+{
+    UIImage *_drawerBackground;
+    
 
+    
+}
 @end
 
 @implementation PDDrawerViewController
@@ -38,8 +43,14 @@ static NSString * const kPDDrawerCellReuseIdentifier = @"PDDrawerCellReuseIdenti
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.backgroundColor = [UIColor clearColor];
+    
     self.tableView.contentInset = UIEdgeInsetsMake(kPDTableViewTopInset, 0.0, 0.0, 0.0);
     self.clearsSelectionOnViewWillAppear = NO;
+    
+
+    
+    
+    
     
     
 }
@@ -49,7 +60,11 @@ static NSString * const kPDDrawerCellReuseIdentifier = @"PDDrawerCellReuseIdenti
     [super viewDidAppear:animated];
     [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForItem:kPDDrawerMenuIndex inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
     
+    
+    
 }
+
+
 
 
 - (void)didReceiveMemoryWarning {

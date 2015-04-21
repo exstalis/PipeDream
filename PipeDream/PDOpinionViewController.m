@@ -37,7 +37,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self loadOpinionArticles];
     
     
     
@@ -45,6 +44,16 @@
     
 }
 
+
+
+
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self loadOpinionArticles];
+    [super viewWillDisappear:animated];
+    
+    
+}
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
@@ -75,8 +84,15 @@
     }];
 }
 
+#pragma array setter
 
-
+-(void)setOpinionArticlesArray:(NSMutableArray *)opinionArticlesArray{
+    
+    if (![self.opinionArticlesArray isEqualToArray:opinionArticlesArray]) {
+        self.opinionArticlesArray=opinionArticlesArray;
+        
+    }
+}
 
 
 #pragma mark -Menu Action Delegate
@@ -131,8 +147,10 @@
     
     NSURL* url=[NSURL URLWithString:self.feedAttachments.thumbnailImage [@"url"]];
     
-    [cell.opinionThumnail setImageWithURL:url placeholderImage:[UIImage imageNamed: @"menu.png"]];
     
+ 
+    [cell.opinionThumnail setImageWithURL:url placeholderImage:[UIImage imageNamed: @"menu.png"]];
+  
     
     if ([self.fbShareButton.titleLabel.text isEqualToString:@"Share on Facebook"] ){
         
@@ -163,7 +181,7 @@
 - (IBAction)showShareOptionsPopup:(id)sender {
     
     
-    [self sharingOptionsButtonAction];
+    [self sharePopupView];
     
 }
 

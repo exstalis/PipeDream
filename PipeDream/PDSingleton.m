@@ -38,7 +38,6 @@ static NSString *const kSkipLoginKey = @"shouldSkipLogin";
 - (instancetype)initWithArticle:(Article *)article
 {
     if (self = [super init]) {
-//        self.sharedArticle=article ;
         
         article=[self.sharedArticle mutableCopy];
         
@@ -49,25 +48,6 @@ static NSString *const kSkipLoginKey = @"shouldSkipLogin";
 
 
 
-//- (instancetype)initWithArticle:(Article*)article withAttachments:(NSArray *)attachment{
-//    
-//    
-//    if (self=[super init]) {
-//      
-//    
-//
-//    
-//    }
-//        
-//        
-//        
-//    return self;
-//    
-//}
-//    
-
-    
-    
     
     
 

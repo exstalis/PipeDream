@@ -53,7 +53,6 @@
 //    self.newsShareUtility.delegate=self;
     
 
-    [self loadNewsArticle];
     
 //    self.indicator=[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
 
@@ -71,6 +70,8 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [self resignFirstResponder];
+    [self loadNewsArticle];
+
     [super viewWillDisappear:animated];
 }
 
@@ -192,14 +193,12 @@
     if ([[segue identifier] isEqualToString:@"NewsDetailSegue"]) {
         PDNewsDetailViewController *destinationViewController = (PDNewsDetailViewController *)[segue destinationViewController];
         NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-//        Article * article= [self.newsArticleArray objectAtIndex:selectedIndexPath.row];
         
         destinationViewController.contentArticle=[self.newsArticleArray objectAtIndex:selectedIndexPath.row];
         destinationViewController.contentAttachment=self.feedAttachments;
         
         
 
-//        NSLog(@"deatil article objects %@", destinationViewController.contentArticle );
         
     }
 }
@@ -222,7 +221,7 @@
 
 - (IBAction)showSharingOptionsPopU:(id)sender {
 
-    [self sharingOptionsButtonAction];
+    [self sharePopupView];
 }
 
 
