@@ -12,11 +12,14 @@
 #import "JVFloatingDrawerViewController.h"
 #import "JVFloatingDrawerSpringAnimator.h"
 #import "AppDelegate.h"
+#import "PDNetworkClient.h"
 
 
 @interface PDOpinionViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 - (IBAction)showMenu:(UIBarButtonItem *)sender;
+
+@property(nonatomic, strong) NSMutableArray *opinionArticlesArray;
 
 @end
 
@@ -28,6 +31,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self loadOpinionArticles];
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self != nil) {
+        _opinionArticlesArray = [[NSMutableArray alloc] init];
+    }
+    return self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,6 +54,21 @@
         NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
         //Article'i yolla
     }
+}
+
+- (void)loadOpinionArticles
+{    
+    PDNetworkClient *manager = [[PDNetworkClient alloc] init];
+    [manager getOpinionArticlesWithCompletion:^(NSArray *array, NSError *error) {
+        if (error == nil) {
+            if (array != nil) {
+                [_opinionArticlesArray removeAllObjects];
+                [_opinionArticlesArray addObjectsFromArray:array];
+                
+                [self.tableView reloadData];
+            }
+        }
+    }];
 }
 
 - (IBAction)showMenu:(UIBarButtonItem *)sender {

@@ -26,7 +26,7 @@
 - (IBAction)showMenu:(UIBarButtonItem *)sender;
 
 
-@property (nonatomic) NSMutableDictionary *newsArticleDictionary;
+@property (nonatomic, readwrite) NSMutableDictionary *newsArticleDictionary;
 @property (nonatomic,strong) NSMutableArray *newsArticleArray;
 @property (nonatomic,strong)Article *newsArticleObjects;
 @property(nonatomic,strong)NSMutableArray *newsAttachments;
@@ -90,13 +90,13 @@
         
     }];
 
-    [manager getRecentAttachmentsFromArray:^(NSArray *array, NSError *error) {
-        if (error==nil) {
-            if (array!=nil) {
-                [_newsAttachments addObjectsFromArray:array];
-            }
-        }
-    }];
+//    [manager getRecentAttachmentsFromArray:^(NSArray *array, NSError *error) {
+//        if (error==nil) {
+//            if (array!=nil) {
+//                [_newsAttachments addObjectsFromArray:array];
+//            }
+//        }
+//    }];
 }
   
 - (void)didReceiveMemoryWarning {

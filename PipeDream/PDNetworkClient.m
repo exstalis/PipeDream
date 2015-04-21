@@ -111,23 +111,28 @@ static NSString * const kPDClientJSONOpinionPostsString = @"http://www.bupipedre
 {
     AFHTTPRequestOperation *operation = [PDNetworkClient createHTTPRequestOperationWithConfiguration:^(RequestOperationConfig *config) {
         
-        config.URL = [NSURL URLWithString:kPDClientJSONPoinionPostsString];
+        config.URL = [NSURL URLWithString:kPDClientJSONOpinionPostsString];
         config.responseSerializer = [AFJSONResponseSerializer serializer];
     }];
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        if (!completion) {
-            return nil;
+        
+        if (completion == nil) {
+            return;
         }
         
         NSArray *recentOpinionArticles = [self translateJSONForArticleFromJSONArray:[responseObject objectForKey:@"posts"]];
-        [PDSingleton sharedClient].articleArray = [recentOpinionArticles mutableCopy];
+        
+        [PDSingleton sharedClient].articleArray =[recentOpinionArticles mutableCopy];
         
         completion(recentOpinionArticles, nil);
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (completion) {
             completion(nil, error);
         }
+        
     }];
+    
     [operation start];
 }
 
