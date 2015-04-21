@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class Article;
+
 @interface PDNewsDetailViewController : UIViewController
 
 @property(nonatomic, strong) Article *article;

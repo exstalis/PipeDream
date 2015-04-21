@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class Article;
+
 @interface PDOpinionDetailViewController : UIViewController
+
+@property(nonatomic, strong) Article *article;
 
 @end

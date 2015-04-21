@@ -422,7 +422,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="fqw-ft-6jd" kind="show" id="abM-JV-YQL"/>
+                                    <segue destination="fqw-ft-6jd" kind="show" identifier="OpinionDetailSegue" id="abM-JV-YQL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -490,7 +490,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="oS1-V1-BNd" kind="show" id="hKF-PW-Wdb"/>
+                                    <segue destination="oS1-V1-BNd" kind="show" identifier="ReleaseDetailSgue" id="hKF-PW-Wdb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -558,7 +558,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="dAN-2B-kFa" kind="show" id="I3i-1o-l7D"/>
+                                    <segue destination="dAN-2B-kFa" kind="show" identifier="SportsDetailSegue" id="I3i-1o-l7D"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
