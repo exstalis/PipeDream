@@ -18,14 +18,12 @@
 @property (nonatomic, retain, readwrite) Attachments *sharedAttachments;
 
 
-
 @property(nonatomic,assign)BOOL skipLogin;
 
 
 +(PDSingleton*)sharedClient;
 
 - (instancetype)initWithArticle:(Article *)article;
-- (instancetype)initWithArticle:(Article*)article withAttachments:(NSArray *)attachment;
 
 
 @property (nonatomic, strong) NSMutableSet *currentArticleOperations;

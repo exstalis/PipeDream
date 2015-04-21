@@ -20,12 +20,22 @@
 #import <FBSDKShareKit/FBSDKShareKit.h>
 #import "RequestOperationConfig.h"
 #import "Blocks.h"
+#import "Article.h"
+#import "ArticleCategory.h"
+#import "PDNetworkClient.h"
+#import "PDArticleContentView.h"
+#import "Attachments.h"
+#import <UIKit+AFNetworking.h>
+#import "NSString+HTMLDecoder.h"
 
 @interface PDContentViewController : UIViewController
 
+@property(nonatomic,strong,readwrite)Article *contentArticle;
+
+@property(nonatomic,strong,readwrite)Attachments *contentAttachment;
+
 @property(strong,nonatomic)UITextView *articleBodyTextView;
 - (void)textViewDidChange:(UITextView *)textView;
-
 - (void)scrollViewDidChange:(UIScrollView *)scrollView;
 
 

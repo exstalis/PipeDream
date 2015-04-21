@@ -9,6 +9,7 @@
 #import "PDReleaseDetailViewController.h"
 
 @interface PDReleaseDetailViewController ()
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
 
 @end
 
@@ -16,22 +17,60 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self contentView];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+-(void)viewWillAppear:(BOOL)animated{
+    
+    
+    [super viewWillAppear:YES];
+    
+    
+    
+
+    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(BOOL)canBecomeFirstResponder
+{
+    return YES;
 }
-*/
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        self.releaseDetailArticleArray= [[NSMutableArray alloc] init];
+        self.releaseDetailAttachments=[[NSMutableArray alloc]init];
+    
+    }
+    return self;
+}
+
+//buradaki scrollari superclass'a yolla inherit et, method yaz... boyle olmaz :/
+
+
+-(void)contentView{
+    
+    [self scrollViewDidChange:self.releaseScrollView];
+    
+    self.releaseTitle.text = [self.contentArticle.articleTitle decodeHTML];
+    self.releaseArticle.text = [self.contentArticle.articleBody decodeHTML];
+    
+    CGSize sizeThatShouldFitTheContent = [self.releaseArticle sizeThatFits:self.releaseArticle.frame.size];
+    
+    _heightConstraint.constant = sizeThatShouldFitTheContent.height;
+    
+    NSURL *imageURL=[NSURL URLWithString:self.contentAttachment.fullImage[@"url"]];
+
+    [self.releaseImage setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"Logo.png"]];
+    
+    
+}
+
 
 @end

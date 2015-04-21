@@ -8,7 +8,6 @@
 
 #import "PDReleaseViewController.h"
 #import "PDReleaseDetailViewController.h"
-#import "PDFeedTableViewCell.h"
 #import "JVFloatingDrawerViewController.h"
 #import "JVFloatingDrawerSpringAnimator.h"
 #import "AppDelegate.h"
@@ -17,15 +16,20 @@
 #import "PDReleaseTableViewCell.h"
 #import "PDNetworkClient.h"
 #import "NSString+HTMLDecoder.h"
+#import "NSString+HTMLDecoder.h"
+#import "NSString_stripHtml.h"
+
 
 @interface PDReleaseViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
-@property(nonatomic, strong) NSMutableArray *releaseArticlesArray;
-@property(nonatomic,strong) Article *releaseArticles;
+
+- (IBAction)showShareOptions:(id)sender;
+@property(nonatomic,strong)PDShareUtility *newsShareUtility;
 
 
+- (void)showMenu:(UIBarButtonItem *)sender;
+- (void)loadReleaseArticles;
 
-- (IBAction)showMenu:(UIBarButtonItem *)sender;
 
 @end
 
@@ -33,15 +37,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _releaseArticles=[[Article alloc]init];
+    self.automaticallyAdjustsScrollViewInsets = YES;
     [self loadReleaseArticles];
+
 
     
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
@@ -51,21 +55,34 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self != nil) {
-        _releaseArticlesArray = [[NSMutableArray alloc] init];
+        
+        _releaseArticleArray = [[NSMutableArray alloc] init];
     }
     return self;
+}
+
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self loadReleaseArticles];
+
+    [super viewWillDisappear:animated];
+
+
+    
 }
 
 - (void)loadReleaseArticles
 {
     PDNetworkClient *manager = [[PDNetworkClient alloc] init];
-    [manager getOpinionArticlesWithCompletion:^(NSArray *array, NSError *error) {
+    [manager getReleaseArticlesWithCompletion:^(NSArray *array, NSError *error) {
         if (error == nil) {
             if (array != nil) {
-                [_releaseArticlesArray removeAllObjects];
-                [_releaseArticlesArray addObjectsFromArray:array];
-                
-                [self.tableView reloadData];
+                [_releaseArticleArray removeAllObjects];
+           
+                [_releaseArticleArray addObjectsFromArray:array];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.tableView reloadData];
+                });
             }
         }
     }];
@@ -85,28 +102,53 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return [_releaseArticlesArray  count];
+    return [_releaseArticleArray  count];
     
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     
     
-    PDReleaseTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"releaseCell" forIndexPath:indexPath];
+    PDReleaseTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"releaseCell"];
+  
+  self.feedArticle=[_releaseArticleArray objectAtIndex:indexPath.row];
+    cell.releaseTitle.text = [self.feedArticle.articleTitle decodeHTML];
+    cell.releaseAuthor.text = self.feedArticle.authorName;
+    cell.releaseDate.text = self.feedArticle.date.description;
+    cell.releaseExcerpt.text= [self.feedArticle.articleExcerpt decodeHTML];
     
-    if (cell==nil) {
-        cell=[[PDReleaseTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"releaseCell"];
+    [cell.releaseThumbnail cancelImageRequestOperation];
+
+    
+    NSURL* url=[NSURL URLWithString:self.feedAttachments.thumbnailImage [@"url"]];
+    for (Attachments *att in self.feedArticle.articleAttachments) {
+        self.feedAttachments=att;
         
     }
     
-    _releaseArticles=[_releaseArticlesArray objectAtIndex:indexPath.row];
+    [cell.releaseThumbnail setImageWithURL:url placeholderImage:[UIImage imageNamed: @"menu.png"]];
     
-    cell.releaseTitle.text = [_releaseArticles.articleTitle decodeHTML];
-    cell.releaseAuthor.text = _releaseArticles.authorName;
-    cell.releaseDate.text = _releaseArticles.date.description;
-    cell.releaseExcerpt.text= [_releaseArticles.articleExcerpt decodeHTML];
+    [cell.releaseShareButton addTarget:self action:@selector(showShareOptions:) forControlEvents:UIControlEventTouchUpInside];
     
-    
+
+    if ([self.fbShareButton.titleLabel.text isEqualToString:@"Share on Facebook"] ){
+        
+        
+        [self facebookShare];
+        self.shareUtility.delegate=nil;
+//        test delegate..
+        
+        
+    }
+    if ([self.mailButton.titleLabel.text isEqualToString:@"Mail"]) {
+        
+        [self sendwithMail:self.mailButton];
+        
+        
+        
+        
+    }
+
     
     
     
@@ -115,11 +157,35 @@
 }
 
 
+
+#pragma segue to newsdetail
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"ReleaseDetailSegue"]) {
+        PDReleaseDetailViewController *destinationViewController = (PDReleaseDetailViewController *)[segue destinationViewController];
+        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+        
+        destinationViewController.contentArticle=[self.releaseArticleArray objectAtIndex:selectedIndexPath.row];
+        destinationViewController.contentAttachment=self.feedAttachments;
+        
+
+    }
+}
+
+
+
 #pragma mark - MenuBar
 - (JVFloatingDrawerSpringAnimator *)drawerAnimator {
     return [[AppDelegate globalDelegate] drawerAnimator];
 }
 
+
+- (void)showShareOptions:(id)sender {
+    
+    [self sharingOptionsButtonAction];
+
+}
 
 - (IBAction)showMenu:(UIBarButtonItem *)sender {
     
@@ -127,4 +193,8 @@
     [[AppDelegate globalDelegate] toggleLeftDrawer:self animated:YES];
     
 }
+
+
+
+
 @end
