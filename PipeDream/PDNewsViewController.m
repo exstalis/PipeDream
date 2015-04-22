@@ -26,9 +26,7 @@
 - (IBAction)showMenu:(UIBarButtonItem *)sender;
 
 
-@property (nonatomic, readwrite) NSMutableDictionary *newsArticleDictionary;
 @property (nonatomic,strong) NSMutableArray *newsArticleArray;
-@property (nonatomic,strong)Article *newsArticleObjects;
 @property(nonatomic,strong)NSMutableArray *newsAttachments;
 
 -(void)loadNewsArticle;
@@ -41,7 +39,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _newsArticleObjects=[[Article alloc]init];
     
     [self loadNewsArticle];
     
@@ -60,15 +57,15 @@
     
 }
 
--(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"NewsDetailSegue"]) {
-        PDNewsDetailViewController *viewController = (PDNewsDetailViewController *)[segue destinationViewController];
-        NSIndexPath *selectedPath = [self.tableView indexPathForSelectedRow];
-        Article *article = [_newsArticleArray objectAtIndex:selectedPath.row];
-        viewController.article = article;
-    }
-}
+//-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    if ([[segue identifier] isEqualToString:@"NewsDetailSegue"]) {
+//        PDNewsDetailViewController *viewController = (PDNewsDetailViewController *)[segue destinationViewController];
+//        NSIndexPath *selectedPath = [self.tableView indexPathForSelectedRow];
+//        Article *article = [_newsArticleArray objectAtIndex:selectedPath.row];
+//        viewController.article = article;
+//    }
+//}
 
 -(void)loadNewsArticle{
     
@@ -90,13 +87,7 @@
         
     }];
 
-//    [manager getRecentAttachmentsFromArray:^(NSArray *array, NSError *error) {
-//        if (error==nil) {
-//            if (array!=nil) {
-//                [_newsAttachments addObjectsFromArray:array];
-//            }
-//        }
-//    }];
+
 }
   
 - (void)didReceiveMemoryWarning {

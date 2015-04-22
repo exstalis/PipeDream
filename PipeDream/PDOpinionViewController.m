@@ -12,6 +12,8 @@
 #import "JVFloatingDrawerViewController.h"
 #import "JVFloatingDrawerSpringAnimator.h"
 #import "AppDelegate.h"
+#import "Article.h"
+
 #import "PDNetworkClient.h"
 
 
@@ -47,14 +49,14 @@
     [super didReceiveMemoryWarning];
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"OpinionDetailSegue"]) {
-        PDOpinionDetailViewController *viewController = (PDOpinionDetailViewController *)[segue destinationViewController];
-        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-        //Article'i yolla
-    }
-}
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+////{
+////    if ([[segue identifier] isEqualToString:@"OpinionDetailSegue"]) {
+////        PDOpinionDetailViewController *viewController = (PDOpinionDetailViewController *)[segue destinationViewController];
+////        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+////        //Article'i yolla
+////    }
+////}
 
 - (void)loadOpinionArticles
 {    
@@ -105,6 +107,7 @@
         cell=[[PDFeedTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"opinionCell"];
         
     }
+
     
     
     

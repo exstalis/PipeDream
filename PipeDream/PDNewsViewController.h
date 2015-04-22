@@ -19,7 +19,6 @@
 @interface PDNewsViewController: UITableViewController
 
 
-@property (nonatomic, readonly) NSMutableDictionary *newsArticleDictionary;
 
 
 

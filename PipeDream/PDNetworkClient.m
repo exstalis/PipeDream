@@ -120,11 +120,11 @@ static NSString * const kPDClientJSONOpinionPostsString = @"http://www.bupipedre
             return;
         }
         
-        NSArray *recentOpinionArticles = [self translateJSONForArticleFromJSONArray:[responseObject objectForKey:@"posts"]];
+        NSArray *opinionArticles = [self translateJSONForArticleFromJSONArray:[responseObject objectForKey:@"posts"]];
         
-        [PDSingleton sharedClient].articleArray =[recentOpinionArticles mutableCopy];
+//        [PDSingleton sharedClient].articleArray =[opinionArticles mutableCopy];
         
-        completion(recentOpinionArticles, nil);
+        completion(opinionArticles, nil);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (completion) {

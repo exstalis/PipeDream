@@ -26,7 +26,7 @@
              @"articleBody":@"content",
              @"articleURL" : @"url",
              @"articleDate" : @"date",
-             @"authorName" : @"author",
+             @"authorName" : @"author.name",
              @"articleCategories": @"categories",
              
          
