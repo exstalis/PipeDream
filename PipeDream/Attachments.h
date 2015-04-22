@@ -12,6 +12,7 @@
 
 @interface Attachments : MTLModel <MTLJSONSerializing>
 
+
 @property(nonatomic, readonly) NSNumber *ID;
 @property(strong, nonatomic, readonly) NSURL *url;
 @property(strong, nonatomic, readonly) NSString *title;
@@ -20,6 +21,7 @@
 @property(nonatomic, readonly) NSNumber *parent;
 @property(strong, nonatomic, readonly) NSString *mimeType;
 @property(strong, nonatomic, readonly) NSDictionary *images;
+
 
 
 

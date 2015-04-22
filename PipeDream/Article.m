@@ -10,21 +10,28 @@
 #import "Attachments.h"
 #import "ArticleCategory.h"
 #import "Author.h"
+#import <MapKit/MapKit.h>
+
+
+
 
 @implementation Article
 
 //maps JSON to properties
 + (NSDictionary *) JSONKeyPathsByPropertyKey {
     return @{
-             @"identifier" : @"post.id",
-             @"title" : @"post.title",
-             @"excerpt" : @"post.excerpt",
-             @"body" : @"post.content",
-             @"url" : @"post.url",
-             @"date" : @"post.date",
-             @"author" : @"post.author",
-             @"attachments" : @"post.attachments",
-             @"categories" : @"post.categories"
+             
+             @"articleID" : @"id",
+             @"articleTitle" : @"title",
+             @"titlePlain" : @"title_plain",
+             @"articleExcerpt" : @"excerpt",
+             @"articleBody":@"content",
+             @"articleURL" : @"url",
+             @"articleDate" : @"date",
+             @"authorName" : @"author.name",
+             @"articleCategories": @"categories",
+             @"articleAttachments" :@"attachments"
+         
              };
 }
 //formats the date
@@ -54,7 +61,7 @@
 
 //transform attachments with a Attachments object
 +(NSValueTransformer *) attachmentsTransformer {
-    return [MTLJSONAdapter dictionaryTransformerWithModelClass:Attachments.class];
+    return [MTLJSONAdapter arrayTransformerWithModelClass:[Attachments class]];
 }
 
 //transform attachments with a ArticleCategory object

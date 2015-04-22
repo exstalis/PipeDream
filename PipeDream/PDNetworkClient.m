@@ -35,7 +35,7 @@
 
 static NSString * const kPDClientAPIBaseURLString = @"http://wwww.bupipedream.com/api/";
 
-static NSString * const kPDClientJSONString=@"http://www.bupipedream.com/api/get_post/?post_id=53135/";
+static NSString * const kPDClientJSONRecentPostString=@"http://www.bupipedream.com/api/get_recent_posts/";
 
 
 
@@ -98,12 +98,50 @@ static NSString * const kPDClientJSONString=@"http://www.bupipedream.com/api/get
     }];
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        Article *articleObject=[MTLJSONAdapter modelOfClass:[Article class] fromJSONDictionary:responseObject error:&error];
+        if (completion==nil) {
+            return;
             
-        [PDSingleton sharedClient].article =[articleObject mutableCopy];
-        //NSLog(@"%@", articleObject.excerpt);
+        }
+   
+        NSArray * recentarticleColletion=[self translateJSONForArticleFromJSONArray:[responseObject objectForKey:@"posts"] withClassName:@"Article"];
+     
+   
+     
+        
+            completion(recentarticleColletion,nil);}
+     
+                                     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (completion) {
+            completion(nil, error);
+        }
+        
+    }];
+    
+    [operation start];
+//    [[NSOperationQueue mainQueue] addOperation:operation];
+
+    
+}
+
+
+
+
+-(void)getRecentAttachmentsFromArray:(ArrayCompletionBlock)completion{
+    
+    
+    
+    
+    [self getRecentArticleWithCompletion:^(NSArray *array, NSError *error) {
+        
+        NSArray *imagesArray=[[NSArray alloc]init];
+        
+        NSArray *attachmentsArray= [[NSArray alloc]init];
+        _denemeArray=[[NSMutableArray alloc]init];
         
         
+        
+        
+        success(nil, nil, articleObject);
 
         
         for (Article *article in array) {

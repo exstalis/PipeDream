@@ -69,13 +69,12 @@
     if (self!=nil) {
         _newsArticleArray=[[NSMutableArray alloc]init];
         
-      //  NSError *error=[[NSError alloc]init];
-//        
-//        [_articleDict initWithDictionary:[PDSingleton sharedClient].articleDictionary error:&error];
-//        
-//        [_newsArticleArray initWithArray:_articleDict.body copyItems:YES];
-       
-        [_newsFrontPageTableView reloadData];
+    }
+    return self;
+    
+}
+
+
 
 -(void)loadNewsArticle{
     

@@ -19,16 +19,21 @@ typedef enum : NSUInteger {
 
 @interface Article : MTLModel<MTLJSONSerializing>
 
+
 //article properties
-@property(nonatomic,readonly)NSNumber *identifier;
-@property(copy, nonatomic, readonly) NSString *title;
-@property(copy, nonatomic, readonly) NSString *excerpt;
-@property(copy, nonatomic, readonly) NSString *body;
-@property(copy, nonatomic, readonly) NSURL *url;
-@property(copy, nonatomic, readonly) NSDate *date;
-@property(copy, nonatomic, readonly) NSDictionary *author;
-@property(copy, nonatomic, readonly) NSArray *attachments;
-@property(copy, nonatomic, readonly) NSArray *categories;
+@property(nonatomic, readonly) NSString *articleTitle;
+@property(copy, nonatomic, readonly) NSNumber *articleID;
+@property(copy, nonatomic, readonly) NSString *titlePlain;
+@property (nonatomic, assign, readonly) PDState state;
+@property(copy, nonatomic, readonly) NSString *articleExcerpt;
+@property(copy, nonatomic, readonly) NSString *articleBody;
+@property(copy, nonatomic, readonly) NSURL *articleURL;
+@property(copy, nonatomic, readonly) NSDate *articleDate;
+@property(copy, nonatomic, readonly) NSString *authorName;
+@property(copy, nonatomic, readonly) NSArray *articleCategories;
+@property(copy, nonatomic, readonly) NSArray *articleAttachments;
+//@property(copy, nonatomic, readonly) NSNumber *articleCount;
+
 
 
 
