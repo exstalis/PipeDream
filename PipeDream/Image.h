@@ -8,7 +8,8 @@
 
 #import <Mantle/Mantle.h>
 
-@interface Image : MTLModel
+@interface Image : MTLModel <MTLJSONSerializing>
+
 
 @property(strong, nonatomic, readonly) NSURL *imageURL;
 @property(nonatomic, readonly) NSInteger *width;

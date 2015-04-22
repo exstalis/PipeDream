@@ -39,10 +39,10 @@ static NSString * const kPDClientJSONOpinionPostsString = @"http://www.bupipedre
 
 
 
--(NSArray *) translateJSONForArticleFromJSONDictionary:(NSDictionary *)articleJSON {
+-(NSArray *) translateFromJSONDictionary:(NSDictionary *)articleJSON withClassName:(NSString*)className{
     
     NSError *error;
-    NSArray *articleInfo =[MTLJSONAdapter modelOfClass:[Article class] fromJSONDictionary:articleJSON error:&error];
+    NSArray *articleInfo =[MTLJSONAdapter modelOfClass:NSClassFromString(className) fromJSONDictionary:articleJSON error:&error];
     if (error) {
         NSLog(@"Couldn't convert article JSON to Article Models: %@", error);
         return nil;
@@ -50,10 +50,13 @@ static NSString * const kPDClientJSONOpinionPostsString = @"http://www.bupipedre
     return articleInfo;
 }
 
--(NSArray *)translateJSONForArticleFromJSONArray:(NSArray *)articleJSON{
+-(NSArray *)translateFromJSONArray:(NSArray *)articleJSON withClassName:(NSString*)className{
     
     NSError *error=nil;
-    NSArray *articleInfo=[MTLJSONAdapter modelsOfClass:[Article class] fromJSONArray:articleJSON error:&error];
+    NSArray *articleInfo=[MTLJSONAdapter modelsOfClass:NSClassFromString(className)fromJSONArray:articleJSON error:&error];
+    
+
+    
     if (error) {
         NSLog(@"Couldn't convert article JSON to Article Models: %@", error);
         return nil;
@@ -90,9 +93,11 @@ static NSString * const kPDClientJSONOpinionPostsString = @"http://www.bupipedre
             return;
         }
         
-        NSArray * recentarticleColletion=[self translateJSONForArticleFromJSONArray:[responseObject objectForKey:@"posts"]];
+        NSArray * recentarticleColletion=[self translateFromJSONArray:[responseObject objectForKey:@"posts"] withClassName:@"Article"];
         
-        [PDSingleton sharedClient].articleArray =[recentarticleColletion mutableCopy];
+        [PDSingleton sharedClient].newsArticleArray =[recentarticleColletion mutableCopy];
+        
+     
         
         completion(recentarticleColletion,nil);
         
@@ -120,9 +125,16 @@ static NSString * const kPDClientJSONOpinionPostsString = @"http://www.bupipedre
             return;
         }
         
-        NSArray *opinionArticles = [self translateJSONForArticleFromJSONArray:[responseObject objectForKey:@"posts"]];
+        NSArray *opinionArticles = [self translateFromJSONArray:[responseObject objectForKey:@"posts"] withClassName:@"Article"];
         
-//        [PDSingleton sharedClient].articleArray =[opinionArticles mutableCopy];
+
+    
+        [PDSingleton sharedClient].opinionArticleArray =[opinionArticles mutableCopy];
+        
+        
+        
+      
+        
         
         completion(opinionArticles, nil);
         

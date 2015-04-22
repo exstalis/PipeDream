@@ -7,8 +7,6 @@
 //
 
 #import <Mantle/Mantle.h>
-#import "Attachments.h"
-#import "ArticleCategory.h"
 
 
 typedef enum : NSUInteger {
@@ -32,7 +30,7 @@ typedef enum : NSUInteger {
 @property(copy, nonatomic, readonly) NSString *authorName;
 @property(copy, nonatomic, readonly) NSArray *articleCategories;
 @property(copy, nonatomic) NSArray *articleAttachments;
-//@property(copy, nonatomic, readonly) NSNumber *articleCount;
+@property(copy, nonatomic, readonly) NSNumber *articleCount;
 
 
 @end

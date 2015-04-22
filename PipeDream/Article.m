@@ -10,6 +10,8 @@
 #import "Author.h"
 #import <MapKit/MapKit.h>
 
+#import "ArticleCategory.h"
+#import "Attachments.h"
 
 
 
@@ -28,8 +30,8 @@
              @"articleDate" : @"date",
              @"authorName" : @"author.name",
              @"articleCategories": @"categories",
-             
-         
+             @"articleCount" : @"count_total",
+             @"articleAttachments" : @"attachments"
              };
 }
 //formats the date
@@ -76,6 +78,15 @@
     
     return [MTLJSONAdapter dictionaryTransformerWithModelClass:[Author class]];
     
+}
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionaryValue error:(NSError **)error {
+    self = [super initWithDictionary:dictionaryValue error:error];
+    if (self == nil) return nil;
+    _articleDate = [NSDate date];
+    
+    
+    return self;
 }
 
 

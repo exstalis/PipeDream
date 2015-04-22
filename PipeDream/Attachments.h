@@ -8,9 +8,12 @@
 
 
 #import <Mantle/Mantle.h>
-#import "Image.h"
+#import "Article.h"
 
-@interface Attachments : MTLModel <MTLJSONSerializing>
+
+
+@interface Attachments :Article <MTLJSONSerializing>
+
 
 
 @property(nonatomic, readonly) NSNumber *ID;

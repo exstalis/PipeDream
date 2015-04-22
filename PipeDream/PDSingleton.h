@@ -15,7 +15,10 @@
 @interface PDSingleton : NSObject
 @property (nonatomic, retain, readwrite) Article *articleShared;
 @property NSMutableDictionary *articleDictionary;
-@property NSArray * articleArray;
+@property NSArray * opinionArticleArray;
+@property NSArray *newsArticleArray;
+@property NSArray *releaseArticleArray;
+
 
 +(PDSingleton*)sharedClient;
 

@@ -387,7 +387,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="opinionCell" rowHeight="200" id="z17-K1-HCA">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="opinionCell" rowHeight="200" id="z17-K1-HCA" customClass="PDOpinionTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z17-K1-HCA" id="rJV-jS-TqU">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -422,6 +422,11 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="opinionAuthor" destination="4nD-oW-Evk" id="V9r-CY-qDZ"/>
+                                    <outlet property="opinionDate" destination="2gd-hS-87M" id="LHB-VY-Zre"/>
+                                    <outlet property="opinionExcerpt" destination="QGL-jU-mt7" id="Ll0-eN-szE"/>
+                                    <outlet property="opinionThumnail" destination="qef-SF-EO5" id="SO5-aL-yA2"/>
+                                    <outlet property="opinionTitle" destination="uhr-fD-D5F" id="jck-Gn-SPJ"/>
                                     <segue destination="fqw-ft-6jd" kind="show" id="tN6-lE-ICT"/>
                                 </connections>
                             </tableViewCell>

@@ -8,6 +8,9 @@
 
 #import "Attachments.h"
 
+#import "Image.h"
+
+
 @implementation Attachments
 
 +(NSDictionary *) JSONKeyPathsByPropertyKey {
@@ -32,6 +35,13 @@
 
 +(NSValueTransformer *) imagesTransformer {
     return [MTLJSONAdapter arrayTransformerWithModelClass:Image.class];
+}
+- (void)mergeValuesForKeysFromModel:(MTLModel *)model {
+    for (NSString *key in self.class.propertyKeys) {
+        if (![model.class.propertyKeys containsObject:key]) continue;
+        
+        [self mergeValueForKey:key fromModel:model];
+    }
 }
 
 @end

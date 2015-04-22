@@ -30,13 +30,9 @@
 
 
 
--(NSArray *) translateJSONForArticleFromJSONDictionary:(NSDictionary *)articleJSON;
+-(NSArray *) translateFromJSONDictionary:(NSDictionary *)articleJSON withClassName:(NSString*)className;
 
--(NSArray *) translateJSONForArticleFromJSONArray:(NSArray *)articleJSON;
-
-
-//-(void)getArticleFeed:(NSDictionary*)article
-//              success:(void (^)(AFHTTPRequestOperation *operation, id responseObject,id responseMTLModel))success;
+-(NSArray *) translateFromJSONArray:(NSArray *)articleJSON withClassName:(NSString*)className;
 
 
 

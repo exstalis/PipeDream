@@ -11,6 +11,7 @@
 #import "PDFeedTableViewCell.h"
 #import "AppDelegate.h"
 #import "Article.h"
+#import "PDOpinionTableViewCell.h"
 
 #import "PDNetworkClient.h"
 
@@ -18,6 +19,8 @@
 @interface PDOpinionViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 - (IBAction)showMenu:(UIBarButtonItem *)sender;
+
+@property(nonatomic,strong) Article *opinionArticles;
 
 @property(nonatomic, strong) NSMutableArray *opinionArticlesArray;
 
@@ -32,6 +35,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadOpinionArticles];
+    _opinionArticles=[[Article alloc]init];
+    
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
@@ -93,18 +98,25 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 20;
+    return [_opinionArticlesArray count];
     
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     
     
-    PDFeedTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"opinionCell"];
+    PDOpinionTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"opinionCell"];
     if (cell==nil) {
-        cell=[[PDFeedTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"opinionCell"];
+        cell=[[PDOpinionTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"opinionCell"];
         
     }
+    _opinionArticles=[_opinionArticlesArray objectAtIndex:indexPath.row];
+    cell.opinionTitle.text=_opinionArticles.articleTitle;
+    cell.opinionExcerpt.text=_opinionArticles.articleExcerpt;
+    cell.opinionAuthor.text=_opinionArticles.authorName;
+    cell.opinionDate.text=_opinionArticles.articleDate.description;
+    
+
 
     
     
