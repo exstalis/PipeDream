@@ -8,7 +8,8 @@
 
 #import <Mantle/Mantle.h>
 
-@interface ArticleCategory : MTLModel
+@interface ArticleCategory : MTLModel<MTLJSONSerializing>
+
 
 @property(nonatomic, readonly) NSInteger *categoryID;
 @property(strong, nonatomic, readonly) NSString *title;

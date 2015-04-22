@@ -7,12 +7,16 @@
 //
 
 #import "PDSingleton.h"
+#import "Article.h"
+#import "ArticleCategory.h"
+#import "Attachments.h"
 
 
 static PDSingleton *sharedInstance;
 static dispatch_once_t oncePredicate;
 
 @implementation PDSingleton
+
 
 +(PDSingleton *)sharedClient{
     static PDSingleton *_sharedClient;
@@ -22,5 +26,56 @@ static dispatch_once_t oncePredicate;
     return _sharedClient;
 
 }
+
+
+
+
+
+- (id)initWithArticle:(Article *)article
+{
+    if (self = [super init]) {
+        self.articleShared=article ;
+    }
+    return self;
+}
+
+
+//- (NSMutableSet *)currentArticleOperations
+//{
+//    if (!_currentArticleOperations) {
+//        _currentArticleOperations = [[NSMutableSet alloc] init];
+//    }
+//    return _currentArticleOperations;
+//}
+//- (NSOperationQueue *)articleOperationQueue
+//{
+//    if (!_articleOperationQueue) {
+//        _articleOperationQueue = [[NSOperationQueue alloc] init];
+//        _articleOperationQueue.name = @"Article Operation Queue";
+//        _articleOperationQueue.maxConcurrentOperationCount = 3;
+//    }
+//    return _articleOperationQueue;
+//    
+//}
+//
+//
+//- (void)fetchArticleObjectsFromArray:(NSArray *)articles{
+//    
+//    for (Article *article in articles) {
+//        if (![[self currentArticleOperations] containsObject:article.articleID]) {
+//
+//            PDSingleton *operation = [[PDSingleton alloc] initWithArticle:article];
+//        
+//            
+//            [[self currentArticleOperations] addObject:article.articleID];
+//            
+//
+//        }
+//    }
+//}
+//
+//
+
+
 
 @end

@@ -9,7 +9,6 @@
 #import "PDNewsDetailViewController.h"
 
 @interface PDNewsDetailViewController ()
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *backButton;
 
 @end
 

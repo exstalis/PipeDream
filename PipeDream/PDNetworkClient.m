@@ -17,12 +17,17 @@
 #import "Article.h"
 #import "ArticleCategory.h"
 #import "Attachments.h"
-#import "Entity.h"
 #import "Image.h"
 #import "Author.h"
 #import "Blocks.h"
 #import "RequestOperationConfig.h"
 
+
+@interface PDNetworkClient ()
+//@property (nonatomic,strong)PDJSONTranslator *translator;
+
++ (AFHTTPRequestOperation *)createHTTPRequestOperationWithConfiguration:(RequestOperationConfigBlock)configuration;
+@end
 
 
 
@@ -34,10 +39,27 @@ static NSString * const kPDClientJSONString=@"http://www.bupipedream.com/api/get
 
 
 
-
-+(NSURL *)APIBaseURL{
+-(NSArray *) translateJSONForArticleFromJSONDictionary:(NSDictionary *)articleJSON withClassName:(NSString *)className {
     
-    return [NSURL URLWithString:kPDClientAPIBaseURLString];
+    NSError *error;
+    NSArray *articleInfo =[MTLJSONAdapter modelOfClass:NSClassFromString(className) fromJSONDictionary:articleJSON error:&error];
+    if (error) {
+        NSLog(@"Couldn't convert article JSON to Article Models: %@", error);
+        return nil;
+    }
+    return articleInfo;
+}
+
+-(NSArray *)translateJSONForArticleFromJSONArray:(NSArray *)articleJSON withClassName:(NSString *)className {
+    
+    
+    NSError *error=nil;
+    NSArray *articleInfo=[MTLJSONAdapter modelsOfClass:NSClassFromString(className) fromJSONArray:articleJSON error:&error];
+    if (error) {
+        NSLog(@"Couldn't convert article JSON to Article Models: %@", error);
+        return nil;
+    }
+    return articleInfo;
     
 }
 
@@ -45,23 +67,36 @@ static NSString * const kPDClientJSONString=@"http://www.bupipedream.com/api/get
 
 
 
--(void)getArticleFeed:(NSDictionary*)article success:
-(void (^)(AFHTTPRequestOperation *operation, id responseObject,id responseMTLModel))success
-              failure:
-(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure{
++ (AFHTTPRequestOperation *)createHTTPRequestOperationWithConfiguration:(RequestOperationConfigBlock)configuration
+{
+    
+
+    NSParameterAssert(configuration != nil);
+    RequestOperationConfig* requestOperationConfig = [[RequestOperationConfig alloc] init];
+    if (configuration) {
+        configuration(requestOperationConfig);
+    }
+    NSURLRequest *request = [NSURLRequest requestWithURL:[requestOperationConfig URL]];
+    AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    requestOperation.responseSerializer = requestOperationConfig.responseSerializer;
+    return requestOperation;
     
     
-    NSString *urlString=[NSString stringWithFormat:kPDClientJSONString];
-    NSURL *recentPostURL=[NSURL URLWithString:urlString];
     
-    NSURLRequest *request=[NSURLRequest requestWithURL:recentPostURL];
+}
+
+
+
+-(void)getRecentArticleWithCompletion:(ArrayCompletionBlock)completion{
     
-    AFHTTPRequestOperation *operation=[[AFHTTPRequestOperation alloc]initWithRequest:request];
-    operation.responseSerializer=[AFJSONResponseSerializer serializer];
-   
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+    
+    
+    AFHTTPRequestOperation *operation=[PDNetworkClient createHTTPRequestOperationWithConfiguration:^(RequestOperationConfig *config) {
+        config.URL=[NSURL URLWithString:kPDClientJSONRecentPostString];
+        config.responseSerializer=[AFJSONResponseSerializer serializer];
         
-        NSError *error = nil;
+    }];
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         Article *articleObject=[MTLJSONAdapter modelOfClass:[Article class] fromJSONDictionary:responseObject error:&error];
             
@@ -69,57 +104,53 @@ static NSString * const kPDClientJSONString=@"http://www.bupipedream.com/api/get
         //NSLog(@"%@", articleObject.excerpt);
         
         
-        success(nil, nil, articleObject);
 
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
-        NSLog(@"Request Failed: %@, %@", error, error.userInfo);
+        for (Article *article in array) {
+            
         
+            
+            attachmentsArray =  [self translateJSONForArticleFromJSONArray:[article articleAttachments] withClassName:@"Attachments"];
+            
+           ;
+            
+            
+            [_denemeArray addObjectsFromArray:attachmentsArray];
+        }
+            
         
+        for (Attachments *attachmentsObjects in  _denemeArray) {
+            
+            for (NSDictionary *image in [attachmentsObjects images]) {
+                NSDictionary *dict = [[NSDictionary alloc] init];
+//                dict = [attachmentsObjects.images valueForKey:image];
+                
+            }
+        }
         
+            
+    
+        
+        completion(attachmentsArray,nil);
+
+        
+            
     }];
     
-    [operation start];
     
 
+
 }
+    
+        
+    
+    
+    
+    
+    
 
-//- (Article *)updateUser:(Article*)article {
-//    NSDictionary *articleDict = [MTLJSONAdapter JSONDictionaryFromModel:article];
-//    NSDictionary *updatedUser = [self.webClient postToPath:@"users.json" withParameters:userDict];
-//    
-//    return [MTLJSONAdapter modelOfClass:[User class] fromJSONDictionary:updatedUser error:nil];
-//}
 
-//
-//__weak MOMCreateChatMessageOperation *weakSelf = self;
-//NSURLRequest *request =
-//[[MOMNetworkClient sharedClient]
-// performRequestForPath:[NSString stringWithFormat:@"/chat/%@/", self.threadIdentifier]
-// usingMethod:HIPNetworkClientRequestMethodPost
-// withParameters:nil
-// data:postData
-// identifier:self.requestIdentifier
-// completionHandler:^(id parsedData, NSURLResponse *response, NSError *error) {
-//     if (nil == error) {
-//         __autoreleasing NSError *parseError = nil;
-//         MOMChatMessagesResponse *responseObject = [MTLJSONAdapter
-//                                                    modelOfClass:[MOMChatMessagesResponse class]
-//                                                    fromJSONDictionary:parsedData
-//                                                    error:&parseError];
-//         
-//         if (nil == parseError) {
-//             [weakSelf setResponseObject:responseObject];
-//         } else {
-//             [weakSelf setError:parseError];
-//         }
-//     } else {
-//         [weakSelf setError:error];
-//     }
-//     
-//     [weakSelf setState:MOMRequestOperationStateCompleted];
-// }]
-//
+
 
 
 @end

@@ -40,6 +40,7 @@
     return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
 }
 
+
 //transforms the date
 + (NSValueTransformer *) dateJSONTransformer {
     
@@ -58,7 +59,7 @@
 
 //transform attachments with a ArticleCategory object
 +(NSValueTransformer *) categoriesTransformer {
-    return [MTLJSONAdapter arrayTransformerWithModelClass:ArticleCategory.class];
+    return [MTLJSONAdapter arrayTransformerWithModelClass:[ArticleCategory class]];
 }
 
 +(NSValueTransformer *) authorTransformer {
@@ -66,18 +67,13 @@
 }
 
 
+//for author properties
 
--(instancetype) initWithDictionary:(NSDictionary *)dictionaryValue error:(NSError **)error {
++ (NSValueTransformer *)authorJSONTransformer {
     
-    self= [super initWithDictionary:dictionaryValue error:error];
+    return [MTLJSONAdapter dictionaryTransformerWithModelClass:[Author class]];
     
-    if (self == nil) {
-        return nil;
-    }
-    
-    return self;
 }
-
 
 
 @end

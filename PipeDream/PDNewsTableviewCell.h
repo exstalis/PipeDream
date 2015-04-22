@@ -7,6 +7,8 @@
 //
 
 #import "PDFeedTableViewCell.h"
+#import <QuartzCore/QuartzCore.h>
+
 
 @interface PDNewsTableviewCell : PDFeedTableViewCell
 
@@ -16,5 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *newsExcerptLabel;
 @property (weak, nonatomic) IBOutlet UILabel *newsDateLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *newsThumbnailImage;
+
 
 @end

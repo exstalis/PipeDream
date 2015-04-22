@@ -10,6 +10,13 @@
 #import "Attachments.h"
 #import "ArticleCategory.h"
 
+
+typedef enum : NSUInteger {
+    PDStateOpen,
+    PDStateClosed
+} PDState;
+
+
 @interface Article : MTLModel<MTLJSONSerializing>
 
 //article properties
