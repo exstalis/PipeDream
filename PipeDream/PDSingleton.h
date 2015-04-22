@@ -27,5 +27,6 @@
 
 
 //- (void)fetchArticleObjectsFromArray:(NSArray *)articles;
+-(NSString *)stripHTMLEntities:(NSString *)encodedString;
 
 @end

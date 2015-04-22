@@ -10,6 +10,8 @@
 #import "Article.h"
 #import "ArticleCategory.h"
 #import "Attachments.h"
+#import "NSString+HTML.h"
+#import "NSString_stripHtml.h"
 
 
 static PDSingleton *sharedInstance;
@@ -39,6 +41,14 @@ static dispatch_once_t oncePredicate;
     return self;
 }
 
+-(NSString *)stripHTMLEntities:(NSString *)encodedString
+{
+    NSString *strippedString;
+    strippedString = [encodedString stripHtml];
+    strippedString = [strippedString kv_decodeHTMLCharacterEntities];
+    
+    return strippedString;
+}
 
 //- (NSMutableSet *)currentArticleOperations
 //{
