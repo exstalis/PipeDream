@@ -7,17 +7,21 @@
 //
 
 #import "PDReleaseViewController.h"
+#import "PDReleaseDetailViewController.h"
 #import "PDFeedTableViewCell.h"
 #import "JVFloatingDrawerViewController.h"
 #import "JVFloatingDrawerSpringAnimator.h"
 #import "AppDelegate.h"
 #import "PDDrawerMenuCell.h"
 #import "PDNavigationController.h"
+#import "PDNetworkClient.h"
 
 
 @interface PDReleaseViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 - (IBAction)showMenu:(UIBarButtonItem *)sender;
+
+@property(nonatomic, strong) NSMutableArray *releaseArticlesArray;
 
 @end
 
@@ -25,8 +29,41 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
+    [self loadReleaseArticles];
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self != nil) {
+        _releaseArticlesArray = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
+- (void)loadReleaseArticles
+{
+    PDNetworkClient *manager = [[PDNetworkClient alloc] init];
+    [manager getOpinionArticlesWithCompletion:^(NSArray *array, NSError *error) {
+        if (error == nil) {
+            if (array != nil) {
+                [_releaseArticlesArray removeAllObjects];
+                [_releaseArticlesArray addObjectsFromArray:array];
+                
+                [self.tableView reloadData];
+            }
+        }
+    }];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"ReleaseDetailSegue"]) {
+        PDReleaseDetailViewController *viewController = (PDReleaseDetailViewController *)[segue destinationViewController];
+        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+        Article *selectedArticle = [_releaseArticlesArray objectAtIndex:selectedIndexPath.row];
+        viewController.article = selectedArticle;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

@@ -7,6 +7,7 @@
 //
 
 #import "PDNewsViewController.h"
+#import "PDNewsDetailViewController.h"
 #import "PDFeedTableViewCell.h"
 #import "AppDelegate.h"
 #import "PDNewsTableviewCell.h"
@@ -116,7 +117,15 @@
 
 }
   
-    
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"OpinionDetailSegue"]) {
+        PDNewsDetailViewController *viewController = (PDNewsDetailViewController *)[segue destinationViewController];
+        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+        Article *selectedArticle = [_newsArticleArray objectAtIndex:selectedIndexPath.row];
+        viewController.article = selectedArticle;
+    }
+}
     
 
 

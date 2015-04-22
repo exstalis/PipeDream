@@ -46,4 +46,8 @@
 
 -(void)getOpinionArticlesWithCompletion:(ArrayCompletionBlock)completion;
 
+-(void)getReleaseArticlesWithCompletion:(ArrayCompletionBlock)completion;
+
+-(void)getSportsArticlesWithCompletion:(ArrayCompletionBlock)completion;
+
 @end

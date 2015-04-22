@@ -7,16 +7,20 @@
 //
 
 #import "PDSportsViewController.h"
+#import "PDSportsDetailViewController.h"
 #import "PDFeedTableViewCell.h"
 #import "JVFloatingDrawerViewController.h"
 #import "JVFloatingDrawerSpringAnimator.h"
 #import "AppDelegate.h"
 #import "PDDrawerMenuCell.h"
 #import "PDNavigationController.h"
+#import "PDNetworkClient.h"
 
 @interface PDSportsViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 - (IBAction)showMenu:(UIBarButtonItem *)sender;
+
+@property(nonatomic, strong) NSMutableArray *sportsArticlesArray;
 
 @end
 
@@ -24,12 +28,41 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self loadSportsArticles];
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self != nil) {
+        _sportsArticlesArray = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
+- (void)loadSportsArticles
+{
+    PDNetworkClient *manager = [[PDNetworkClient alloc] init];
+    [manager getOpinionArticlesWithCompletion:^(NSArray *array, NSError *error) {
+        if (error == nil) {
+            if (array != nil) {
+                [_sportsArticlesArray removeAllObjects];
+                [_sportsArticlesArray addObjectsFromArray:array];
+                
+                [self.tableView reloadData];
+            }
+        }
+    }];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"SportsDetailSegue"]) {
+        PDSportsDetailViewController *viewController = (PDSportsDetailViewController *)[segue destinationViewController];
+        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+        Article *selectedArticle = [_sportsArticlesArray objectAtIndex:selectedIndexPath.row];
+        viewController.article = selectedArticle;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
