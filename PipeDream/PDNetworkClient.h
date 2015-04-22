@@ -28,17 +28,26 @@
 
 @interface PDNetworkClient : NSObject
 
+@property(nonatomic,strong) NSMutableArray *denemeArray;
+
+@property(nonatomic,strong) NSMutableDictionary *imagesDictionary;
 
 
--(NSArray *) translateJSONForArticleFromJSONDictionary:(NSDictionary *)articleJSON;
 
--(NSArray *) translateJSONForArticleFromJSONArray:(NSArray *)articleJSON;
+-(NSArray *) translateJSONForArticleFromJSONDictionary:(NSDictionary *)articleJSON withClassName:(NSString *)className;
+
+-(NSArray *) translateJSONForArticleFromJSONArray:(NSArray *)articleJSON withClassName:(NSString *)className ;
 
 
 
 -(void)getRecentArticleWithCompletion:(ArrayCompletionBlock)completion;
 
--(void)getAttachmentsWithCompletion:(ArrayCompletionBlock)completion;
+-(void)getRecentAttachmentsFromArray:(ArrayCompletionBlock)completion;
 
+-(void)getOpinionArticlesWithCompletion:(ArrayCompletionBlock)completion;
+
+-(void)getReleaseArticlesWithCompletion:(ArrayCompletionBlock)completion;
+
+-(void)getSportsArticlesWithCompletion:(ArrayCompletionBlock)completion;
 
 @end

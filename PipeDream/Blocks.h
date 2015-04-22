@@ -21,3 +21,4 @@ typedef void (^ArticleCompletionBlock)(Article *articleObjects, NSError *error);
 
 typedef void (^RequestOperationConfigBlock)(RequestOperationConfig *config);
 typedef void (^DictionaryCompletionBlock)(NSDictionary *dictionary, NSError *error);
+typedef void (^ImagesCompletionBlock)(NSArray *array,Image * images, NSError *error);
