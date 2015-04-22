@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class Article;
+
 @interface PDSportsDetailViewController : UIViewController
+
+@property(nonatomic, strong) Article *article;
 
 @end

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Gdb-mp-nHA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Gdb-mp-nHA">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -351,7 +351,7 @@
                                     <outlet property="newsExcerptLabel" destination="rmT-6n-pgm" id="fZa-1m-Z2h"/>
                                     <outlet property="newsThumbnailImage" destination="uSb-cX-isO" id="u8O-UI-EwT"/>
                                     <outlet property="newsTitle" destination="BUY-gb-1Dn" id="Mkf-tF-HSj"/>
-                                    <segue destination="C8q-uu-JBC" kind="show" id="oob-tp-43Z"/>
+                                    <segue destination="C8q-uu-JBC" kind="show" identifier="NewsDetailSegue" id="oob-tp-43Z"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -425,7 +425,7 @@
                                     <outlet property="opinionExercptLabel" destination="QGL-jU-mt7" id="4IK-DE-QKJ"/>
                                     <outlet property="opinionThumbnail" destination="qef-SF-EO5" id="8W0-1q-YgX"/>
                                     <outlet property="opinionTitleLabel" destination="uhr-fD-D5F" id="k17-3d-DuW"/>
-                                    <segue destination="fqw-ft-6jd" kind="show" id="abM-JV-YQL"/>
+                                    <segue destination="fqw-ft-6jd" kind="show" identifier="OpinionDetailSegue" id="abM-JV-YQL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -493,7 +493,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="oS1-V1-BNd" kind="show" id="hKF-PW-Wdb"/>
+                                    <segue destination="oS1-V1-BNd" kind="show" identifier="ReleaseDetailSegue" id="hKF-PW-Wdb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -561,7 +561,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="dAN-2B-kFa" kind="show" id="I3i-1o-l7D"/>
+                                    <segue destination="dAN-2B-kFa" kind="show" identifier="SportsDetailSegue" id="I3i-1o-l7D"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

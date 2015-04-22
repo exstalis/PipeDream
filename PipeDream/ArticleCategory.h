@@ -11,9 +11,9 @@
 @interface ArticleCategory : MTLModel<MTLJSONSerializing>
 
 
-@property(nonatomic, readonly) NSInteger *categoryID;
+@property(nonatomic, readonly) NSNumber *categoryID;
 @property(strong, nonatomic, readonly) NSString *title;
-@property(nonatomic, readonly) NSInteger *parent;
-@property(nonatomic, readonly) NSInteger *postCount;
+@property(nonatomic, readonly) NSNumber *parent;
+@property(nonatomic, readonly) NSNumber *postCount;
 
 @end

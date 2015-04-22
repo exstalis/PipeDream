@@ -31,7 +31,7 @@ typedef enum : NSUInteger {
 @property(copy, nonatomic, readonly) NSDate *articleDate;
 @property(copy, nonatomic, readonly) NSString *authorName;
 @property(copy, nonatomic, readonly) NSArray *articleCategories;
-@property(copy, nonatomic, readonly) NSArray *articleAttachments;
+@property(copy, nonatomic) NSArray *articleAttachments;
 //@property(copy, nonatomic, readonly) NSNumber *articleCount;
 
 

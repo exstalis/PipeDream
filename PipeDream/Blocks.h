@@ -20,3 +20,5 @@ typedef void (^ArrayCompletionBlock)(NSArray *array, NSError *error);
 typedef void (^ArticleCompletionBlock)(Article *articleObjects, NSError *error);
 
 typedef void (^DictionaryCompletionBlock)(NSDictionary *dictionary, NSError *error);typedef void (^RequestOperationConfigBlock)(RequestOperationConfig *config);
+
+typedef void (^RequestOperationConfigBlock)(RequestOperationConfig *config);

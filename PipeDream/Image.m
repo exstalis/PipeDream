@@ -13,11 +13,17 @@
 +(NSDictionary *) JSONKeyPathsByPropertyKey {
     
     return @{
-             @"imageURL" : @"full.url",
-             @"width" : @"full.width",
-             @"height" : @"full.height"
+            
+             @"thumbnailSizeImages" :@"thumbnail.url",
+             @"fullSizeImages" :@"full.url",
+             @"mediumSizeImages" : @"medium.url",
+             @"largeSizeImages" : @"large.url"
+             
+
              };
 }
+
+
 
 //transforms the URL
 + (NSValueTransformer *) imageURLJSONTransformer {
