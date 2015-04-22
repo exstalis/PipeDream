@@ -9,8 +9,6 @@
 #import "PDOpinionViewController.h"
 #import "PDOpinionDetailViewController.h"
 #import "PDFeedTableViewCell.h"
-#import "JVFloatingDrawerViewController.h"
-#import "JVFloatingDrawerSpringAnimator.h"
 #import "AppDelegate.h"
 #import "Article.h"
 

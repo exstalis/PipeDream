@@ -95,7 +95,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "114"
             endingLineNumber = "114"
-            landmarkName = "-getOpinionArticlesWithCompletion:"
+            landmarkName = "-getRecentArticleWithCompletion:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -111,7 +111,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "114"
             endingLineNumber = "114"
-            landmarkName = "-getOpinionArticlesWithCompletion:"
+            landmarkName = "-getRecentArticleWithCompletion:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -127,7 +127,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "133"
             endingLineNumber = "133"
-            landmarkName = "-getOpinionArticlesWithCompletion:"
+            landmarkName = "-getRecentAttachmentsfromRecentArticle:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -142,7 +142,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "176"
-            endingLineNumber = "176">
+            endingLineNumber = "176"
+            landmarkName = "-getRecentAttachmentsfromRecentArticle:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -156,7 +158,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "164"
-            endingLineNumber = "164">
+            endingLineNumber = "164"
+            landmarkName = "-getRecentAttachmentsfromRecentArticle:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -267,7 +271,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "123"
             endingLineNumber = "123"
-            landmarkName = "-getOpinionArticlesWithCompletion:"
+            landmarkName = "-getRecentArticleWithCompletion:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
