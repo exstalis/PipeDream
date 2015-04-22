@@ -42,7 +42,7 @@
 
 -(void)getRecentArticleWithCompletion:(ArrayCompletionBlock)completion;
 
--(void)getRecentAttachmentsFromArray:(ArrayCompletionBlock)completion;
+//-(void)getRecentAttachmentsFromArray:(ArrayCompletionBlock)completion;
 
 -(void)getOpinionArticlesWithCompletion:(ArrayCompletionBlock)completion;
 

@@ -26,10 +26,16 @@
 
 
 //transforms the URL
-+ (NSValueTransformer *) imageURLJSONTransformer {
++ (NSValueTransformer *) thumbnailSizeImagesJSONTransformer {
     return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
 }
 
++ (NSValueTransformer *) fullSizeImagesJSONTransformer {
+    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
+}
 
++ (NSValueTransformer *) largeSizeImagesJSONTransformer {
+    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
+}
 
 @end

@@ -99,7 +99,6 @@ static NSString * const kPDClientJSONSportsPostsString = @"http://www.bupipedrea
         }
    
         NSArray *recentArticleCollection = [self translateJSONForArticleFromJSONArray:[responseObject objectForKey:@"posts"] withClassName:@"Article"];
-        
         completion(recentArticleCollection, nil);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (completion) {
@@ -198,62 +197,62 @@ static NSString * const kPDClientJSONSportsPostsString = @"http://www.bupipedrea
     [operation start];
 }
 
--(void)getRecentAttachmentsFromArray:(ArrayCompletionBlock)completion{
-    
-    
-    
-    
-    [self getRecentArticleWithCompletion:^(NSArray *array, NSError *error) {
-        
-        NSArray *imagesArray=[[NSArray alloc]init];
-//        NSDictionary *imagesTempDict=[[NSDictionary alloc]init];
-        
-        NSArray *attachmentsArray= [[NSArray alloc]init];
-        _denemeArray=[[NSMutableArray alloc]init];
-        
-        
+//-(void)getRecentAttachmentsFromArray:(ArrayCompletionBlock)completion{
+//    
+//    
+//    
+//    
+//    [self getRecentArticleWithCompletion:^(NSArray *array, NSError *error) {
+//        
+//        NSArray *imagesArray=[[NSArray alloc]init];
+////        NSDictionary *imagesTempDict=[[NSDictionary alloc]init];
+//        
+//        NSArray *attachmentsArray= [[NSArray alloc]init];
+//        _denemeArray=[[NSMutableArray alloc]init];
+//        
+//        
+//
+//        for (Article *article in array) {
+//            
+//        
+//        
+//            attachmentsArray =  [self translateJSONForArticleFromJSONArray:[article articleAttachments] withClassName:@"Attachments"];
+//           
+//
+//            
+//            [_denemeArray addObjectsFromArray:attachmentsArray];
+//        }
+//        NSLog(@"%@ /n",_denemeArray);
+//        
+//        
+//        
+//        for (Attachments *attachmentsObjects in  attachmentsArray) {
+//        
+//            
+//                
+////              Image   * imagesTempDict=[MTLJSONAdapter modelOfClass:[Image class] fromJSONDictionary:attachmentsObjects.images error:nil];
+//            
+//            
+//    
+//
+//                
+//        
+//        }
+//        
+//            
+//    
+//        
+//        completion(attachmentsArray,nil);
+//
+//        
+//            
+//    }];
+//    
+//    
+//
+//
+//}
 
-        for (Article *article in array) {
-            
-        
-        
-            attachmentsArray =  [self translateJSONForArticleFromJSONArray:[article articleAttachments] withClassName:@"Attachments"];
-           
-
-            
-            [_denemeArray addObjectsFromArray:attachmentsArray];
-        }
-        NSLog(@"%@ /n",_denemeArray);
-        
-        
-        
-        for (Attachments *attachmentsObjects in  attachmentsArray) {
-        
-            
-                
-              Image   * imagesTempDict=[MTLJSONAdapter modelOfClass:[Image class] fromJSONDictionary:attachmentsObjects.images error:nil];
-            
-            
-    
-
-                
-        
-        }
-        
-            
-    
-        
-        completion(attachmentsArray,nil);
-
-        
-            
-    }];
-    
-    
-
-
-}
-    
         
     
     

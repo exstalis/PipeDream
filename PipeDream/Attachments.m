@@ -26,19 +26,12 @@
     return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
 }
 
-+(NSValueTransformer *) imagesTransformer {
-    return [MTLJSONAdapter arrayTransformerWithModelClass:[Image class]];
-    
-    
-}
-
-
-+(NSValueTransformer *)imagesSizeTransformer{
-    
++(NSValueTransformer *) imagesJSONTransformer {
     return [MTLJSONAdapter dictionaryTransformerWithModelClass:[Image class]];
     
     
 }
+
 
 
 

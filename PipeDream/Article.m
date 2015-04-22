@@ -43,13 +43,13 @@
 }
 
 //transforms the URL
-+ (NSValueTransformer *) urlJSONTransformer {
++ (NSValueTransformer *) articleURLJSONTransformer {
     return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
 }
 
 
 //transforms the date
-+ (NSValueTransformer *) dateJSONTransformer {
++ (NSValueTransformer *) aricleDateJSONTransformer {
     
     
     return [MTLValueTransformer transformerUsingForwardBlock:^(NSString *str, BOOL *success, NSError **error) {
@@ -60,27 +60,21 @@
 }
 
 //transform attachments with a Attachments object
-+(NSValueTransformer *) attachmentsTransformer {
++(NSValueTransformer *) articleAttachmentsJSONTransformer {
     return [MTLJSONAdapter arrayTransformerWithModelClass:[Attachments class]];
 }
 
 //transform attachments with a ArticleCategory object
-+(NSValueTransformer *) categoriesTransformer {
++(NSValueTransformer *) articleCategoriesJSONTransformer {
     return [MTLJSONAdapter arrayTransformerWithModelClass:[ArticleCategory class]];
 }
 
-+(NSValueTransformer *) authorTransformer {
-    return [MTLJSONAdapter dictionaryTransformerWithModelClass:Author.class];
-}
+//+(NSValueTransformer *) authorNameJSONTransformer {
+//    return [MTLJSONAdapter dictionaryTransformerWithModelClass:Author.class];
+//}
 
 
-//for author properties
 
-+ (NSValueTransformer *)authorJSONTransformer {
-    
-    return [MTLJSONAdapter dictionaryTransformerWithModelClass:[Author class]];
-    
-}
 
 
 @end

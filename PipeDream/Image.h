@@ -15,10 +15,10 @@
 //@property(nonatomic, readonly) NSNumber *width;
 //@property(nonatomic, readonly) NSNumber *height;
 
-@property(strong, nonatomic, readonly) NSDictionary *fullSizeImages;
-@property(strong, nonatomic, readonly) NSDictionary *thumbnailSizeImages;
-@property(strong, nonatomic, readonly) NSDictionary *mediumSizeImages;
-@property(strong, nonatomic, readonly) NSDictionary *largeSizeImages;
+@property(strong, nonatomic, readonly) NSURL *fullSizeImages;
+@property(strong, nonatomic, readonly) NSURL *thumbnailSizeImages;
+@property(strong, nonatomic, readonly) NSURL *mediumSizeImages;
+@property(strong, nonatomic, readonly) NSURL *largeSizeImages;
 
 
 

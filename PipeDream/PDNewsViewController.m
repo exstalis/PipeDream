@@ -98,22 +98,22 @@
     }];
 
     
-[manager getRecentAttachmentsFromArray:^(NSArray *array, NSError *error) {
-    if (error==nil) {
-        if (array!=nil) {
-            [_newsAttachments addObjectsFromArray:array];
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        }
-    }
-}];
+//[manager getRecentAttachmentsFromArray:^(NSArray *array, NSError *error) {
+//    if (error==nil) {
+//        if (array!=nil) {
+//            [_newsAttachments addObjectsFromArray:array];
+//            
+//            
+//            
+//            
+//            
+//            
+//            
+//            
+//            
+//        }
+//    }
+//}];
 
 }
   
