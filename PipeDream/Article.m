@@ -9,13 +9,10 @@
 #import "Article.h"
 #import "Attachments.h"
 #import "ArticleCategory.h"
-#import "Author.h"
 #import <MapKit/MapKit.h>
-
 #import "ArticleCategory.h"
 #import "Attachments.h"
 
-#import "Image.h"
 
 @implementation Article
 
@@ -56,7 +53,6 @@
 //transforms the date
 + (NSValueTransformer *) aricleDateJSONTransformer {
     
-    
     return [MTLValueTransformer transformerUsingForwardBlock:^(NSString *str, BOOL *success, NSError **error) {
         return [self.dateFormatter dateFromString:str];
     } reverseBlock:^(NSDate *date, BOOL *success, NSError **error) {
@@ -64,17 +60,8 @@
     }];
 }
 
-//transform attachments with a ArticleCategory object
-+(NSValueTransformer *) articleCategoriesTransformer {
-    return [MTLJSONAdapter arrayTransformerWithModelClass:[ArticleCategory class]];
-    
-    
-    
-}
-
-
 //transform attachments with a Attachments object
-+(NSValueTransformer *) articleAttachmentsTransformer {
++(NSValueTransformer *) articleAttachmentsJSONTransformer {
     return [MTLJSONAdapter arrayTransformerWithModelClass:[Attachments class]];
 }
 
@@ -82,22 +69,5 @@
 +(NSValueTransformer *) articleCategoriesJSONTransformer {
     return [MTLJSONAdapter arrayTransformerWithModelClass:[ArticleCategory class]];
 }
-
-//+(NSValueTransformer *) authorNameJSONTransformer {
-//    return [MTLJSONAdapter dictionaryTransformerWithModelClass:Author.class];
-//}
-
-
-
-- (instancetype)initWithDictionary:(NSDictionary *)dictionaryValue error:(NSError **)error {
-    self = [super initWithDictionary:dictionaryValue error:error];
-    if (self == nil) return nil;
-    _articleDate = [NSDate date];
-
-    
-    return self;
-}
-
-
 
 @end

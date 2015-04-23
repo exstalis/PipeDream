@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2BA09AD61AE82F520084C258 /* NSString_stripHtml.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA09AD51AE82F520084C258 /* NSString_stripHtml.m */; };
 		2BA09AD91AE833070084C258 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA09AD81AE833070084C258 /* NSString+HTML.m */; };
 		2D271A6F1ABE1AE300A71464 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A6E1ABE1AE300A71464 /* main.m */; };
 		2D271A721ABE1AE300A71464 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A711ABE1AE300A71464 /* AppDelegate.m */; };
@@ -37,8 +36,6 @@
 		2D5D94151ADCBC620068DB3E /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D940A1ADCBC620068DB3E /* Article.m */; };
 		2D5D94161ADCBC620068DB3E /* ArticleCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D940C1ADCBC620068DB3E /* ArticleCategory.m */; };
 		2D5D94171ADCBC620068DB3E /* Attachments.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D940E1ADCBC620068DB3E /* Attachments.m */; };
-		2D5D94181ADCBC620068DB3E /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D94101ADCBC620068DB3E /* Author.m */; };
-		2D5D941A1ADCBC620068DB3E /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D94141ADCBC620068DB3E /* Image.m */; };
 		2D5D941F1ADCBD7E0068DB3E /* PDNetworkClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D941E1ADCBD7E0068DB3E /* PDNetworkClient.m */; };
 		2D5D94221ADCBEAB0068DB3E /* PDSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D94211ADCBEAB0068DB3E /* PDSingleton.m */; };
 		2D5E8E211AD9F2AE00FB533F /* PDOpinionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E8E201AD9F2AE00FB533F /* PDOpinionViewController.m */; };
@@ -126,10 +123,6 @@
 		2D5D940C1ADCBC620068DB3E /* ArticleCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleCategory.m; sourceTree = "<group>"; };
 		2D5D940D1ADCBC620068DB3E /* Attachments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attachments.h; sourceTree = "<group>"; };
 		2D5D940E1ADCBC620068DB3E /* Attachments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Attachments.m; sourceTree = "<group>"; };
-		2D5D940F1ADCBC620068DB3E /* Author.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Author.h; sourceTree = "<group>"; };
-		2D5D94101ADCBC620068DB3E /* Author.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Author.m; sourceTree = "<group>"; };
-		2D5D94131ADCBC620068DB3E /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
-		2D5D94141ADCBC620068DB3E /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
 		2D5D941D1ADCBD7E0068DB3E /* PDNetworkClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDNetworkClient.h; sourceTree = "<group>"; };
 		2D5D941E1ADCBD7E0068DB3E /* PDNetworkClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDNetworkClient.m; sourceTree = "<group>"; };
 		2D5D94201ADCBEAB0068DB3E /* PDSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDSingleton.h; sourceTree = "<group>"; };
@@ -357,10 +350,6 @@
 				2D5D940C1ADCBC620068DB3E /* ArticleCategory.m */,
 				2D5D940D1ADCBC620068DB3E /* Attachments.h */,
 				2D5D940E1ADCBC620068DB3E /* Attachments.m */,
-				2D5D940F1ADCBC620068DB3E /* Author.h */,
-				2D5D94101ADCBC620068DB3E /* Author.m */,
-				2D5D94131ADCBC620068DB3E /* Image.h */,
-				2D5D94141ADCBC620068DB3E /* Image.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -623,7 +612,6 @@
 				2D29213D1ADA49E800D622EC /* PDReleaseViewController.m in Sources */,
 				2D2921481ADA586E00D622EC /* PDSportsDetailViewController.m in Sources */,
 				2D271A751ABE1AE300A71464 /* PipeDream.xcdatamodeld in Sources */,
-				2D5D941A1ADCBC620068DB3E /* Image.m in Sources */,
 				2D8DADED1AD8B7440047AECE /* PDDrawerMenuCell.m in Sources */,
 				2D5E8E241AD9F32500FB533F /* PDOpinionDetailViewController.m in Sources */,
 				2DC51D261AD4ECA800B9FA1F /* PDNewsViewController.m in Sources */,
@@ -634,7 +622,6 @@
 				2D2921451ADA585100D622EC /* PDReleaseDetailViewController.m in Sources */,
 				2D7A30AB1ADFF4DA00A6055C /* RequestOperationConfig.m in Sources */,
 				2D8DADF71AD8E2E70047AECE /* PDFeedTableViewCell.m in Sources */,
-				2D5D94181ADCBC620068DB3E /* Author.m in Sources */,
 				2D345C051AD9E5C700308866 /* PDNewsDetailViewController.m in Sources */,
 				2D5E8E211AD9F2AE00FB533F /* PDOpinionViewController.m in Sources */,
 				2D5D941F1ADCBD7E0068DB3E /* PDNetworkClient.m in Sources */,

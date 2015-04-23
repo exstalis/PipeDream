@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9EF3F167B2D954F7B0F1B583"
+               BlueprintIdentifier = "FF6FCB5705C2B591D8C515F8"
                BuildableName = "Pods_PipeDream.framework"
                BlueprintName = "Pods-PipeDream"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -29,6 +29,15 @@
       buildConfiguration = "Debug">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "2D271A681ABE1AE300A71464"
+            BuildableName = "PipeDream.app"
+            BlueprintName = "PipeDream"
+            ReferencedContainer = "container:../PipeDream.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -39,15 +48,16 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9EF3F167B2D954F7B0F1B583"
-            BuildableName = "Pods_PipeDream.framework"
-            BlueprintName = "Pods-PipeDream"
-            ReferencedContainer = "container:Pods.xcodeproj">
+            BlueprintIdentifier = "2D271A681ABE1AE300A71464"
+            BuildableName = "PipeDream.app"
+            BlueprintName = "PipeDream"
+            ReferencedContainer = "container:../PipeDream.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -60,7 +70,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9EF3F167B2D954F7B0F1B583"
+            BlueprintIdentifier = "FF6FCB5705C2B591D8C515F8"
             BuildableName = "Pods_PipeDream.framework"
             BlueprintName = "Pods-PipeDream"
             ReferencedContainer = "container:Pods.xcodeproj">

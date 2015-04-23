@@ -13,8 +13,6 @@
 #import "PDSingleton.h"
 #import "ArticleCategory.h"
 #import "Attachments.h"
-#import "Image.h"
-#import "Author.h"
 #import "Blocks.h"
 #import "RequestOperationConfig.h"
 
@@ -104,8 +102,6 @@ static NSString * const kPDClientJSONSportsPostsString = @"http://www.bupipedrea
         
         [PDSingleton sharedClient].newsArticleArray =[recentarticleColletion mutableCopy];
         
-     
-        
         completion(recentarticleColletion,nil);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -133,9 +129,6 @@ static NSString * const kPDClientJSONSportsPostsString = @"http://www.bupipedrea
         }
         
         NSArray *opinionArticles = [self translateFromJSONArray:[responseObject objectForKey:@"posts"] withClassName:@"Article"];
-        
-
-
         
         completion(opinionArticles, nil);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
