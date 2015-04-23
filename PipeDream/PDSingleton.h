@@ -17,7 +17,7 @@
 @property NSMutableDictionary *articleDictionary;
 @property NSArray * opinionArticleArray;
 @property NSArray *newsArticleArray;
-@property NSArray *releaseArticleArray;
+
 
 
 +(PDSingleton*)sharedClient;
@@ -27,6 +27,7 @@
 @property (nonatomic, strong) NSOperationQueue *articleOperationQueue;
 
 
-//- (void)startBackgroundFetchingWithArticle:(NSArray *)articles;
+//- (void)fetchArticleObjectsFromArray:(NSArray *)articles;
+-(NSString *)stripHTMLEntities:(NSString *)encodedString;
 
 @end

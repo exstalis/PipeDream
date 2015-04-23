@@ -9,20 +9,12 @@
 
 #import <Mantle/Mantle.h>
 #import "Article.h"
-#import "Image.h"
 
+@interface Attachments :MTLModel <MTLJSONSerializing>
 
-
-@interface Attachments :MTLModel <MTLJSONSerializing,MTLTransformerErrorHandling>
-
-
-
-@property(nonatomic, readonly,strong) NSNumber *attachmentID;
-
-@property(strong, nonatomic, readonly) NSString *attachmentTitle;
-@property(strong, nonatomic, readonly) NSDictionary *articleImages;
-
-@property (readonly, nonatomic, assign, getter = isAttachmentForImage) BOOL imageAttachment;
-
+@property(nonatomic, readonly,strong) NSDictionary *fullImage;
+@property(strong, nonatomic, readonly) NSDictionary *thumbnailImage;
+@property(strong, nonatomic, readonly) NSDictionary *mediumImage;
+@property(strong, nonatomic, readonly) NSDictionary *largeImage;
 
 @end

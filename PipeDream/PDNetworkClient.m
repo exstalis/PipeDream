@@ -13,8 +13,6 @@
 #import "PDSingleton.h"
 #import "ArticleCategory.h"
 #import "Attachments.h"
-#import "Image.h"
-#import "Author.h"
 #import "Blocks.h"
 #import "RequestOperationConfig.h"
 
@@ -92,8 +90,8 @@ static NSString * const kPDClientJSONSportsPostsString = @"http://www.bupipedrea
     AFHTTPRequestOperation *operation=[PDNetworkClient createHTTPRequestOperationWithConfiguration:^(RequestOperationConfig *config) {
         config.URL=[NSURL URLWithString:kPDClientJSONRecentPostString];
         config.responseSerializer=[AFJSONResponseSerializer serializer];
-        
     }];
+    
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         if (completion==nil) {
@@ -103,8 +101,6 @@ static NSString * const kPDClientJSONSportsPostsString = @"http://www.bupipedrea
         NSArray * recentarticleColletion=[self translateFromJSONArray:[responseObject objectForKey:@"posts"] withClassName:@"Article"];
         
         [PDSingleton sharedClient].newsArticleArray =[recentarticleColletion mutableCopy];
-        
-     
         
         completion(recentarticleColletion,nil);
         
@@ -116,7 +112,7 @@ static NSString * const kPDClientJSONSportsPostsString = @"http://www.bupipedrea
     }];
     
     [operation start];
-    
+
 }
 
 - (void)getOpinionArticlesWithCompletion:(ArrayCompletionBlock)completion
@@ -134,17 +130,7 @@ static NSString * const kPDClientJSONSportsPostsString = @"http://www.bupipedrea
         
         NSArray *opinionArticles = [self translateFromJSONArray:[responseObject objectForKey:@"posts"] withClassName:@"Article"];
         
-
-    
-        [PDSingleton sharedClient].opinionArticleArray =[opinionArticles mutableCopy];
-        
-        
-        
-      
-        
-        
         completion(opinionArticles, nil);
-        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (completion) {
             completion(nil, error);

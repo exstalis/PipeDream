@@ -15,7 +15,7 @@ typedef enum : NSUInteger {
 } PDState;
 
 
-@interface Article : MTLModel<MTLJSONSerializing,MTLTransformerErrorHandling>
+@interface Article : MTLModel<MTLJSONSerializing>
 
 
 //article properties

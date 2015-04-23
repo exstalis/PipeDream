@@ -87,9 +87,41 @@
         
     }];
 
+    
+//[manager getRecentAttachmentsFromArray:^(NSArray *array, NSError *error) {
+//    if (error==nil) {
+//        if (array!=nil) {
+//            [_newsAttachments addObjectsFromArray:array];
+//            
+//            
+//            
+//            
+//            
+//            
+//            
+//            
+//            
+//        }
+//    }
+//}];
 
 }
   
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"OpinionDetailSegue"]) {
+        PDNewsDetailViewController *viewController = (PDNewsDetailViewController *)[segue destinationViewController];
+        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+        Article *selectedArticle = [_newsArticleArray objectAtIndex:selectedIndexPath.row];
+        viewController.article = selectedArticle;
+    }
+}
+    
+
+
+    
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

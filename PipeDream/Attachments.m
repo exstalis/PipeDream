@@ -14,47 +14,14 @@
 
 +(NSDictionary *) JSONKeyPathsByPropertyKey {
     return @{
-             @"attachmentID" : @"id",
-             @"attachmentTitle" : @"title",
-            @"articleImages": @"images"
+             @"fullImage" : @"images.full",
+             @"thumbnailImage" : @"images.thumbnail",
+             @"mediumImage" : @"images.medium",
+             @"largeImage" : @"images.large"
             };
 
 
 
 }
-
-
-
-
-
-+ (NSValueTransformer *) attachmentsTransformer {
-    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
-}
-
-
-
-
-
-
-
-+(NSValueTransformer *) attachmentsImageTransformer {
-    return [MTLJSONAdapter dictionaryTransformerWithModelClass:[Image class]];
-
-    
-}
-
-
--(instancetype)initWithDictionary:(NSDictionary *)dictionaryValue error:(NSError *__autoreleasing *)error{
-    self = [super initWithDictionary:dictionaryValue error:error];
-    if (self == nil) return nil;
-    [MTLValueTransformer mtl_validatingTransformerForClass:[Image class]];
-    
-    
-    
-    ;
-    
-    return self;
-}
-
 
 @end

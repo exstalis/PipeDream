@@ -11,23 +11,25 @@
 #import "ArticleCategory.h"
 #import "Attachments.h"
 
+#import "NSString+HTML.h"
+#import "NSString_stripHtml.h"
+
+
 
 static PDSingleton *sharedInstance;
-
+static dispatch_once_t oncePredicate;
 
 @implementation PDSingleton
 
-
 +(PDSingleton *)sharedClient{
-    @synchronized(self){
-        if (sharedInstance==nil) {
-            sharedInstance=[[[self class] alloc]init];
-            
-        }
-        return sharedInstance;
-    }
-
+    static PDSingleton *_sharedClient;
+    dispatch_once(&oncePredicate, ^{
+        _sharedClient = [[self alloc] init];
+    });
+    return _sharedClient;
+    
 }
+
 
 
 
@@ -40,9 +42,14 @@ static PDSingleton *sharedInstance;
 //    }
 //    return self;
 //}
-//
-
-
+-(NSString *)stripHTMLEntities:(NSString *)encodedString
+{
+    NSString *strippedString=[[NSString alloc]init];
+    strippedString = [encodedString stripHtml];
+    strippedString = [strippedString kv_decodeHTMLCharacterEntities];
+    
+    return strippedString;
+}
 
 
 
@@ -63,12 +70,12 @@ static PDSingleton *sharedInstance;
 //    return _articleOperationQueue;
 //    
 //}
-//
-//
+//        if (![[self currentArticleOperations] containsObject:article.title]) {
+//            
 //- (void)startBackgroundFetchingWithArticle:(NSArray *)articles{
 //    
 //    for (Article *article in articles) {
-//        if (![[self currentArticleOperations] containsObject:article.title]) {
+//            [[self currentArticleOperations] addObject:article.title];
 //            
 //            PDSingleton *operation = [[PDSingleton alloc] initWithArticle:article];
 //        
