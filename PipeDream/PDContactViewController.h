@@ -14,9 +14,20 @@
 
 
 @interface PDContactViewController : UIViewController<MKMapViewDelegate>
+@property (nonatomic, copy, readwrite) NSURL *URL;
+
+
 @property (weak, nonatomic) IBOutlet MKMapView *pipeDreamOfficeMapView;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuBarButton;
 - (IBAction)navigateThroughMenu:(id)sender;
+
+- (IBAction)likeUsOnFacebook:(id)sender;
+
+- (IBAction)followUsOnInstagram:(id)sender;
+
+
+- (IBAction)followUsOnTwitter:(id)sender;
+
 
 @end
