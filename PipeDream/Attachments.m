@@ -8,40 +8,53 @@
 
 #import "Attachments.h"
 
-#import "Image.h"
 
 
 @implementation Attachments
 
 +(NSDictionary *) JSONKeyPathsByPropertyKey {
     return @{
-             @"ID" : @"id",
-             @"url" : @"url",
-             @"title" : @"title",
-             @"caption" : @"caption",
-             @"desc" : @"description",
-             @"parent" : @"parent",
-             @"mimeType" : @"mime_type",
-             @"images" : @"images"
-             };
+             @"attachmentID" : @"id",
+             @"attachmentTitle" : @"title",
+            @"articleImages": @"images"
+            };
+
+
+
 }
 
-//transforms the URL
 
 
-+ (NSValueTransformer *) urlJSONTransformer {
+
+
++ (NSValueTransformer *) attachmentsTransformer {
     return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
 }
 
-+(NSValueTransformer *) imagesTransformer {
-    return [MTLJSONAdapter arrayTransformerWithModelClass:Image.class];
+
+
+
+
+
+
++(NSValueTransformer *) attachmentsImageTransformer {
+    return [MTLJSONAdapter dictionaryTransformerWithModelClass:[Image class]];
+
+    
 }
-- (void)mergeValuesForKeysFromModel:(MTLModel *)model {
-    for (NSString *key in self.class.propertyKeys) {
-        if (![model.class.propertyKeys containsObject:key]) continue;
-        
-        [self mergeValueForKey:key fromModel:model];
-    }
+
+
+-(instancetype)initWithDictionary:(NSDictionary *)dictionaryValue error:(NSError *__autoreleasing *)error{
+    self = [super initWithDictionary:dictionaryValue error:error];
+    if (self == nil) return nil;
+    [MTLValueTransformer mtl_validatingTransformerForClass:[Image class]];
+    
+    
+    
+    ;
+    
+    return self;
 }
+
 
 @end

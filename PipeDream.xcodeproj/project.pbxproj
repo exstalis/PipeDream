@@ -30,6 +30,7 @@
 		2D3F85F01ADE080900A040E1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D3F85EF1ADE080900A040E1 /* QuartzCore.framework */; };
 		2D3F85F21ADE083400A040E1 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D3F85F11ADE083400A040E1 /* AFNetworking.framework */; };
 		2D4FC84B1AE827950044ACEF /* PDOpinionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FC84A1AE827950044ACEF /* PDOpinionTableViewCell.m */; };
+		2D4FC84E1AE870A90044ACEF /* PDReleaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FC84D1AE870A90044ACEF /* PDReleaseTableViewCell.m */; };
 		2D5D94081ADCBABC0068DB3E /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5D94071ADCBABC0068DB3E /* Mantle.framework */; };
 		2D5D94151ADCBC620068DB3E /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D940A1ADCBC620068DB3E /* Article.m */; };
 		2D5D94161ADCBC620068DB3E /* ArticleCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D940C1ADCBC620068DB3E /* ArticleCategory.m */; };
@@ -110,6 +111,8 @@
 		2D46DF721ADE218B0014B98C /* Blocks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Blocks.h; sourceTree = "<group>"; };
 		2D4FC8491AE827950044ACEF /* PDOpinionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDOpinionTableViewCell.h; sourceTree = "<group>"; };
 		2D4FC84A1AE827950044ACEF /* PDOpinionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDOpinionTableViewCell.m; sourceTree = "<group>"; };
+		2D4FC84C1AE870A90044ACEF /* PDReleaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDReleaseTableViewCell.h; sourceTree = "<group>"; };
+		2D4FC84D1AE870A90044ACEF /* PDReleaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDReleaseTableViewCell.m; sourceTree = "<group>"; };
 		2D5D94071ADCBABC0068DB3E /* Mantle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mantle.framework; path = "Pods/../build/Debug-iphoneos/Pods-PipeDream/Mantle.framework"; sourceTree = "<group>"; };
 		2D5D94091ADCBC620068DB3E /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
 		2D5D940A1ADCBC620068DB3E /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
@@ -273,6 +276,8 @@
 			isa = PBXGroup;
 			children = (
 				2D29213B1ADA49E800D622EC /* PDReleaseViewController.h */,
+				2D4FC84C1AE870A90044ACEF /* PDReleaseTableViewCell.h */,
+				2D4FC84D1AE870A90044ACEF /* PDReleaseTableViewCell.m */,
 				2D29213C1ADA49E800D622EC /* PDReleaseViewController.m */,
 				2D2921431ADA585100D622EC /* PDReleaseDetailViewController.h */,
 				2D2921441ADA585100D622EC /* PDReleaseDetailViewController.m */,
@@ -594,6 +599,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D5D94171ADCBC620068DB3E /* Attachments.m in Sources */,
+				2D4FC84E1AE870A90044ACEF /* PDReleaseTableViewCell.m in Sources */,
 				2D2921411ADA4C7100D622EC /* PDSportsViewController.m in Sources */,
 				2D7A30A71ADF37B700A6055C /* PDNewsTableviewCell.m in Sources */,
 				2D29213D1ADA49E800D622EC /* PDReleaseViewController.m in Sources */,

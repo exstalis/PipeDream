@@ -14,15 +14,16 @@
     return @{
              @"categoryID" : @"id",
              @"title" : @"title",
-             @"parent" : @"parent",
              @"postCount" : @"post_count"
              };
 }
-- (void)mergeValuesForKeysFromModel:(MTLModel *)model {
-    for (NSString *key in self.class.propertyKeys) {
-        if (![model.class.propertyKeys containsObject:key]) continue;
-        
-        [self mergeValueForKey:key fromModel:model];
-    }
+
+
++ (NSValueTransformer *) categoryTransformer {
+    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
 }
+
+
+
+
 @end

@@ -14,7 +14,6 @@
 
 @property(nonatomic, readonly) NSNumber *categoryID;
 @property(strong, nonatomic, readonly) NSString *title;
-@property(nonatomic, readonly) NSNumber *parent;
 @property(nonatomic, readonly) NSNumber *postCount;
 
 @end

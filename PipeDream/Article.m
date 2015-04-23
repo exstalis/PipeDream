@@ -13,7 +13,7 @@
 #import "ArticleCategory.h"
 #import "Attachments.h"
 
-
+#import "Image.h"
 
 @implementation Article
 
@@ -30,8 +30,9 @@
              @"articleDate" : @"date",
              @"authorName" : @"author.name",
              @"articleCategories": @"categories",
-             @"articleCount" : @"count_total",
-             @"articleAttachments" : @"attachments"
+             @"articleAttachments" : @"attachments",
+             @"articleCount" : @"count_total"
+             
              };
 }
 //formats the date
@@ -42,14 +43,16 @@
     return dateFormatter;
 }
 
+
+
 //transforms the URL
-+ (NSValueTransformer *) urlJSONTransformer {
++ (NSValueTransformer *) articleURLJSONTransformer {
     return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
 }
 
 
 //transforms the date
-+ (NSValueTransformer *) dateJSONTransformer {
++ (NSValueTransformer *) aricleDateJSONTransformer {
     
     
     return [MTLValueTransformer transformerUsingForwardBlock:^(NSString *str, BOOL *success, NSError **error) {
@@ -59,35 +62,33 @@
     }];
 }
 
+//transform attachments with a ArticleCategory object
++(NSValueTransformer *) articleCategoriesTransformer {
+    return [MTLJSONAdapter arrayTransformerWithModelClass:[ArticleCategory class]];
+    
+    
+    
+}
+
+
 //transform attachments with a Attachments object
-+(NSValueTransformer *) attachmentsTransformer {
++(NSValueTransformer *) articleAttachmentsTransformer {
     return [MTLJSONAdapter arrayTransformerWithModelClass:[Attachments class]];
 }
 
-//transform attachments with a ArticleCategory object
-+(NSValueTransformer *) categoriesTransformer {
-    return [MTLJSONAdapter arrayTransformerWithModelClass:[ArticleCategory class]];
-}
 
 
 
-
-//for author properties
-
-+ (NSValueTransformer *)authorJSONTransformer {
-    
-    return [MTLJSONAdapter dictionaryTransformerWithModelClass:[Author class]];
-    
-}
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionaryValue error:(NSError **)error {
     self = [super initWithDictionary:dictionaryValue error:error];
     if (self == nil) return nil;
     _articleDate = [NSDate date];
-    
+
     
     return self;
 }
+
 
 
 @end

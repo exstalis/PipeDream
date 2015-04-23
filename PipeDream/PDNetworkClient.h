@@ -30,15 +30,15 @@
 
 
 
--(NSArray *) translateFromJSONDictionary:(NSDictionary *)articleJSON withClassName:(NSString*)className;
+-(id) translateFromJSONDictionary:(NSDictionary *)articleJSON withClassName:(NSString*)className;
 
--(NSArray *) translateFromJSONArray:(NSArray *)articleJSON withClassName:(NSString*)className;
+-(id) translateFromJSONArray:(NSArray *)articleJSON withClassName:(NSString*)className;
+-(void)getSportsArticlesWithCompletion:(ArrayCompletionBlock)completion;
 
 
 
 -(void)getRecentArticleWithCompletion:(ArrayCompletionBlock)completion;
 -(void)getOpinionArticlesWithCompletion:(ArrayCompletionBlock)completion;
-
-
+-(void)getReleaseArticlesWithCompletion:(ArrayCompletionBlock)completion;
 
 @end

@@ -15,9 +15,15 @@
 #import "PDDrawerMenuCell.h"
 #import "PDNavigationController.h"
 
+#import "PDNetworkClient.h"
 
 @interface PDReleaseViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
+@property(nonatomic, strong) NSMutableArray *releaseArticlesArray;
+@property(nonatomic,strong) Article *releaseArticles;
+
+
+
 - (IBAction)showMenu:(UIBarButtonItem *)sender;
 
 @end
@@ -26,7 +32,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    _releaseArticles=[[Article alloc]init];
+    [self loadOpinionArticles];
+
     
 }
 
@@ -35,17 +43,39 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    PDReleaseDetailViewController *viewController = (PDReleaseDetailViewController *)[segue destinationViewController];
-    NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-    //Article'i yolla
-}
 
-
+#pragma mark - MenuBar
 - (JVFloatingDrawerSpringAnimator *)drawerAnimator {
     return [[AppDelegate globalDelegate] drawerAnimator];
 }
+
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self != nil) {
+        _releaseArticlesArray = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
+- (void)loadOpinionArticles
+{
+    PDNetworkClient *manager = [[PDNetworkClient alloc] init];
+    [manager getOpinionArticlesWithCompletion:^(NSArray *array, NSError *error) {
+        if (error == nil) {
+            if (array != nil) {
+                [_releaseArticlesArray removeAllObjects];
+                [_releaseArticlesArray addObjectsFromArray:array];
+                
+                [self.tableView reloadData];
+            }
+        }
+    }];
+}
+
+
+
 
 
 #pragma mark - TableView datasource
@@ -58,7 +88,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 20;
+    return [_releaseArticlesArray  count];
     
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

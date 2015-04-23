@@ -11,7 +11,6 @@
 #import <AFNetworking/AFNetworking.h>
 #import <Mantle/Mantle.h>
 #import "PDSingleton.h"
-#import "Article.h"
 #import "ArticleCategory.h"
 #import "Attachments.h"
 #import "Image.h"
@@ -36,13 +35,19 @@ static NSString * const kPDClientJSONRecentPostString=@"http://www.bupipedream.c
 
 static NSString * const kPDClientJSONOpinionPostsString = @"http://www.bupipedream.com/api/get_category_posts/?slug=opinion/";
 
+static NSString * const kPDClientJSONReleasePostsString = @"http://www.bupipedream.com/api/get_category_posts/?slug=release/";
+
+static NSString * const kPDClientJSONSportsPostsString = @"http://www.bupipedream.com/api/get_category_posts/?slug=sports/";
 
 
-
--(NSArray *) translateFromJSONDictionary:(NSDictionary *)articleJSON withClassName:(NSString*)className{
+-(id) translateFromJSONDictionary:(NSDictionary *)articleJSON withClassName:(NSString*)className{
     
     NSError *error;
     NSArray *articleInfo =[MTLJSONAdapter modelOfClass:NSClassFromString(className) fromJSONDictionary:articleJSON error:&error];
+    
+    
+    
+    
     if (error) {
         NSLog(@"Couldn't convert article JSON to Article Models: %@", error);
         return nil;
@@ -50,12 +55,11 @@ static NSString * const kPDClientJSONOpinionPostsString = @"http://www.bupipedre
     return articleInfo;
 }
 
--(NSArray *)translateFromJSONArray:(NSArray *)articleJSON withClassName:(NSString*)className{
+-(id)translateFromJSONArray:(NSArray *)articleJSON withClassName:(NSString*)className{
     
     NSError *error=nil;
     NSArray *articleInfo=[MTLJSONAdapter modelsOfClass:NSClassFromString(className)fromJSONArray:articleJSON error:&error];
-    
-
+   
     
     if (error) {
         NSLog(@"Couldn't convert article JSON to Article Models: %@", error);
@@ -64,6 +68,9 @@ static NSString * const kPDClientJSONOpinionPostsString = @"http://www.bupipedre
     return articleInfo;
     
 }
+
+
+
 
 + (AFHTTPRequestOperation *)createHTTPRequestOperationWithConfiguration:(RequestOperationConfigBlock)configuration
 {
@@ -147,5 +154,64 @@ static NSString * const kPDClientJSONOpinionPostsString = @"http://www.bupipedre
     
     [operation start];
 }
+
+
+-(void)getReleaseArticlesWithCompletion:(ArrayCompletionBlock)completion
+{
+    
+    AFHTTPRequestOperation *operation = [PDNetworkClient createHTTPRequestOperationWithConfiguration:^(RequestOperationConfig *config) {
+        config.URL = [NSURL URLWithString:kPDClientJSONReleasePostsString];
+        config.responseSerializer = [AFJSONResponseSerializer serializer];
+    }];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        if (completion == nil) {
+            return;
+        }
+        
+        NSArray *recentReleaseArticles = [self translateFromJSONArray:[responseObject objectForKey:@"posts"] withClassName:@"Article"];;
+        
+        completion(recentReleaseArticles, nil);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (completion) {
+            completion(nil, error);
+        }
+        
+    }];
+    
+    [operation start];
+}
+
+-(void)getSportsArticlesWithCompletion:(ArrayCompletionBlock)completion
+{
+    
+    AFHTTPRequestOperation *operation = [PDNetworkClient createHTTPRequestOperationWithConfiguration:^(RequestOperationConfig *config) {
+        config.URL = [NSURL URLWithString:kPDClientJSONSportsPostsString];
+        config.responseSerializer = [AFJSONResponseSerializer serializer];
+    }];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        if (completion == nil) {
+            return;
+        }
+        
+        NSArray *recentSportsArticles = [self translateFromJSONArray:[responseObject objectForKey:@"posts"] withClassName:@"Article"];;
+        
+        completion(recentSportsArticles, nil);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (completion) {
+            completion(nil, error);
+        }
+        
+    }];
+    
+    [operation start];
+}
+
+
 
 @end
