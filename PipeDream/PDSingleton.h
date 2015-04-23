@@ -16,7 +16,6 @@
 @property (nonatomic, retain, readwrite) Article *articleShared;
 @property NSMutableDictionary *articleDictionary;
 @property NSArray * opinionArticleArray;
-@property NSArray *newsArticleArray;
 
 
 

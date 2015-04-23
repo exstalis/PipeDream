@@ -20,7 +20,7 @@ static NSString * const kPDOpinionDrawerStoryboardID = @"PDOpinionViewController
 static NSString * const  kPDReleaseDrawerStoryboardID=@"PDReleaseViewControllerStoryboardID";
 static NSString * const  kPDSportsDrawerStoryboardID=@"PDSportsViewControllerStoryboardID";
 
-
+static NSString * const  kPDRecentDrawerStoryboardID=@"PDRecentViewControllerStoryboardID";
 
 //static NSString * const kJVRightDrawerStoryboardID = @"JVRightDrawerViewControllerStoryboardID";
 
@@ -230,6 +230,19 @@ static NSString * const  kPDSportsDrawerStoryboardID=@"PDSportsViewControllerSto
     return _sportsViewController;
     
     
+    
+}
+
+#pragma recent
+
+
+-(UIViewController *)recentViewController{
+    
+    if (_recentViewController==nil) {
+        _recentViewController=[self.myStoryboard instantiateViewControllerWithIdentifier:kPDRecentDrawerStoryboardID];
+        
+    }
+    return _recentViewController;
     
 }
 

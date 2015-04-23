@@ -33,6 +33,7 @@
 		2D4FC84B1AE827950044ACEF /* PDOpinionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FC84A1AE827950044ACEF /* PDOpinionTableViewCell.m */; };
 		2D4FC84E1AE870A90044ACEF /* PDReleaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FC84D1AE870A90044ACEF /* PDReleaseTableViewCell.m */; };
 		2D4FC8511AE890970044ACEF /* PDSportsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FC8501AE890970044ACEF /* PDSportsTableViewCell.m */; };
+		2D4FC8541AE8A2430044ACEF /* PDRecentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FC8531AE8A2430044ACEF /* PDRecentViewController.m */; };
 		2D5D94081ADCBABC0068DB3E /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5D94071ADCBABC0068DB3E /* Mantle.framework */; };
 		2D5D94151ADCBC620068DB3E /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D940A1ADCBC620068DB3E /* Article.m */; };
 		2D5D94161ADCBC620068DB3E /* ArticleCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D940C1ADCBC620068DB3E /* ArticleCategory.m */; };
@@ -119,6 +120,8 @@
 		2D4FC84D1AE870A90044ACEF /* PDReleaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDReleaseTableViewCell.m; sourceTree = "<group>"; };
 		2D4FC84F1AE890970044ACEF /* PDSportsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDSportsTableViewCell.h; sourceTree = "<group>"; };
 		2D4FC8501AE890970044ACEF /* PDSportsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDSportsTableViewCell.m; sourceTree = "<group>"; };
+		2D4FC8521AE8A2430044ACEF /* PDRecentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDRecentViewController.h; sourceTree = "<group>"; };
+		2D4FC8531AE8A2430044ACEF /* PDRecentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDRecentViewController.m; sourceTree = "<group>"; };
 		2D5D94071ADCBABC0068DB3E /* Mantle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mantle.framework; path = "Pods/../build/Debug-iphoneos/Pods-PipeDream/Mantle.framework"; sourceTree = "<group>"; };
 		2D5D94091ADCBC620068DB3E /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
 		2D5D940A1ADCBC620068DB3E /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
@@ -346,6 +349,15 @@
 			name = Blocks;
 			sourceTree = "<group>";
 		};
+		2D4FC8551AE8A2510044ACEF /* Recent */ = {
+			isa = PBXGroup;
+			children = (
+				2D4FC8521AE8A2430044ACEF /* PDRecentViewController.h */,
+				2D4FC8531AE8A2430044ACEF /* PDRecentViewController.m */,
+			);
+			name = Recent;
+			sourceTree = "<group>";
+		};
 		2D5D941B1ADCBC6B0068DB3E /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -399,6 +411,7 @@
 				2D345C061AD9E5D300308866 /* Opinion */,
 				2D29213E1ADA49ED00D622EC /* Release */,
 				2D2921421ADA4C7E00D622EC /* Sports */,
+				2D4FC8551AE8A2510044ACEF /* Recent */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -636,6 +649,7 @@
 				2D271A9D1ABE25C900A71464 /* PDNavigationController.m in Sources */,
 				2D271A6F1ABE1AE300A71464 /* main.m in Sources */,
 				2D4FC8511AE890970044ACEF /* PDSportsTableViewCell.m in Sources */,
+				2D4FC8541AE8A2430044ACEF /* PDRecentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

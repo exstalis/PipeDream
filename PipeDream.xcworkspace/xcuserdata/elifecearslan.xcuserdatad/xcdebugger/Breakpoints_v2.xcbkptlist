@@ -6,61 +6,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PipeDream/PDNewsViewController.m"
-            timestampString = "451371993.655345"
+            filePath = "PipeDream/PDNetworkClient.m"
+            timestampString = "451453335.891344"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[PDNewsViewController loadNewsArticle]"
-                  moduleName = "PipeDream"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/elifecearslan/Developer/PipeDream/PipeDream/PDNewsViewController.m"
-                  timestampString = "451182051.053633"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "64"
-                  endingLineNumber = "64"
-                  offsetFromSymbolStart = "90">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__39-[PDNewsViewController loadNewsArticle]_block_invoke"
-                  moduleName = "PipeDream"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/elifecearslan/Developer/PipeDream/PipeDream/PDNewsViewController.m"
-                  timestampString = "451182051.053935"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "64"
-                  endingLineNumber = "64"
-                  offsetFromSymbolStart = "67">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PipeDream/PDNewsViewController.m"
-            timestampString = "451371993.655345"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86">
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "-getReleaseArticlesWithCompletion:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -70,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PipeDream/PDNetworkClient.m"
-            timestampString = "451443021.972861"
+            timestampString = "451453335.891344"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152">
+            startingLineNumber = "287"
+            endingLineNumber = "287">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -84,25 +40,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PipeDream/PDNetworkClient.m"
-            timestampString = "451443021.972861"
+            timestampString = "451453335.891344"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "254"
-            endingLineNumber = "254">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PipeDream/PDNetworkClient.m"
-            timestampString = "451443021.972861"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "242"
-            endingLineNumber = "242">
+            startingLineNumber = "275"
+            endingLineNumber = "275">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -112,11 +54,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PipeDream/PDNewsViewController.m"
-            timestampString = "451371993.655345"
+            timestampString = "451454407.84265"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78">
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -126,25 +70,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PipeDream/PDNewsViewController.m"
-            timestampString = "451371993.655345"
+            timestampString = "451454407.84265"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PipeDream/PDNewsViewController.m"
-            timestampString = "451371993.655345"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119">
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -154,25 +86,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PipeDream/PDNetworkClient.m"
-            timestampString = "451443021.972861"
+            timestampString = "451453335.891344"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139">
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "-getOpinionArticlesWithCompletion:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PipeDream/PDNetworkClient.m"
-            timestampString = "451443021.972861"
+            timestampString = "451453335.891344"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135">
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "-getOpinionArticlesWithCompletion:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
