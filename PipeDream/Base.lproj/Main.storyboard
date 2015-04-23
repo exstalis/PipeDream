@@ -495,7 +495,11 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="releaseTitle" destination="4jh-bx-tuZ" id="xz9-uk-jKq"/>
+                                    <outlet property="releaseAuthor" destination="vkL-em-Mwd" id="Vnz-3L-r9k"/>
+                                    <outlet property="releaseDate" destination="jzX-CI-99G" id="m6r-cZ-YAh"/>
+                                    <outlet property="releaseExcerpt" destination="zgz-87-VcT" id="GVE-ki-hrJ"/>
+                                    <outlet property="releaseThumbnail" destination="knW-nG-2qB" id="egI-j2-7XJ"/>
+                                    <outlet property="releaseTitle" destination="4jh-bx-tuZ" id="E5A-G5-C9f"/>
                                     <segue destination="oS1-V1-BNd" kind="show" identifier="" id="hKF-PW-Wdb"/>
                                 </connections>
                             </tableViewCell>

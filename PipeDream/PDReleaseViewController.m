@@ -14,7 +14,7 @@
 #import "AppDelegate.h"
 #import "PDDrawerMenuCell.h"
 #import "PDNavigationController.h"
-
+#import "PDReleaseTableViewCell.h"
 #import "PDNetworkClient.h"
 
 @interface PDReleaseViewController ()
@@ -95,11 +95,20 @@
     
     
     
-    PDFeedTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"releaseCell"];
+    PDReleaseTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"releaseCell" forIndexPath:indexPath];
+    
     if (cell==nil) {
-        cell=[[PDFeedTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"releaseCell"];
+        cell=[[PDReleaseTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"releaseCell"];
         
     }
+    
+    _releaseArticles=[_releaseArticlesArray objectAtIndex:indexPath.row];
+    
+    cell.releaseTitle.text=_releaseArticles.articleTitle;
+    cell.releaseAuthor.text=_releaseArticles.authorName;
+    cell.releaseDate.text=_releaseArticles.articleDate.description;
+    cell.releaseExcerpt.text=_releaseArticles.articleExcerpt;
+    
     
     
     
