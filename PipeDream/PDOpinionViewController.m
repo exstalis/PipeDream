@@ -8,7 +8,7 @@
 
 #import "PDOpinionViewController.h"
 #import "PDOpinionDetailViewController.h"
-#import "PDFeedTableViewCell.h"
+
 #import "AppDelegate.h"
 #import "Article.h"
 #import "PDOpinionTableViewCell.h"

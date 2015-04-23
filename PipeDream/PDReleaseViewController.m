@@ -33,7 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _releaseArticles=[[Article alloc]init];
-    [self loadOpinionArticles];
+    [self loadReleaseArticles];
 
     
 }
@@ -59,7 +59,7 @@
     return self;
 }
 
-- (void)loadOpinionArticles
+- (void)loadReleaseArticles
 {
     PDNetworkClient *manager = [[PDNetworkClient alloc] init];
     [manager getOpinionArticlesWithCompletion:^(NSArray *array, NSError *error) {

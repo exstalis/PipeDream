@@ -8,16 +8,23 @@
 
 #import "PDSportsViewController.h"
 #import "PDSportsDetailViewController.h"
-#import "PDFeedTableViewCell.h"
 #import "JVFloatingDrawerViewController.h"
 #import "JVFloatingDrawerSpringAnimator.h"
 #import "AppDelegate.h"
 #import "PDDrawerMenuCell.h"
-#import "PDNavigationController.h"
+#import "PDNetworkClient.h"
+#import "PDSportsTableViewCell.h"
+#import "Article.h"
+#import "PDNetworkClient.h"
+
 
 @interface PDSportsViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 - (IBAction)showMenu:(UIBarButtonItem *)sender;
+
+@property(nonatomic,strong)Article *sportsArticles;
+
+@property(nonatomic, strong) NSMutableArray *sportsArticlesArray;
 
 @end
 
@@ -26,25 +33,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+
+    [self loadSportsArticles];
+    _sportsArticles=[[Article alloc]init];
+    _sportsArticlesArray=[[NSMutableArray alloc]init];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)loadSportsArticles
 {
-    PDSportsDetailViewController *viewController = (PDSportsDetailViewController *)[segue destinationViewController];
-    NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-    //Article'i yolla
+    PDNetworkClient *manager = [[PDNetworkClient alloc] init];
+    [manager getOpinionArticlesWithCompletion:^(NSArray *array, NSError *error) {
+        if (error == nil) {
+            if (array != nil) {
+                [_sportsArticlesArray removeAllObjects];
+                [_sportsArticlesArray addObjectsFromArray:array];
+                
+                [self.tableView reloadData];
+            }
+        }
+    }];
 }
+
 
 
 
@@ -55,9 +73,13 @@
 }
 
 
+#pragma Menu action method
+
 - (JVFloatingDrawerSpringAnimator *)drawerAnimator {
     return [[AppDelegate globalDelegate] drawerAnimator];
 }
+
+
 
 
 #pragma mark - TableView datasource
@@ -66,22 +88,28 @@
     
 }
 
-
-
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 20;
+    return [_sportsArticlesArray count];
     
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     
     
-    PDFeedTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"sportsCell"];
+    PDSportsTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"sportsCell"];
     if (cell==nil) {
-        cell=[[PDFeedTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"sportsCell"];
+        cell=[[PDSportsTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"sportsCell"];
         
     }
+    
+    _sportsArticles=[_sportsArticlesArray objectAtIndex:indexPath.row];
+    cell.sportsTitle.text=_sportsArticles.articleTitle;
+    cell.sportsExcerpt.text=_sportsArticles.articleExcerpt;
+    cell.sportsAuthor.text=_sportsArticles.authorName;
+    cell.sportsDate.text=_sportsArticles.articleDate.description;
+    
+    
     
 
     return cell;
