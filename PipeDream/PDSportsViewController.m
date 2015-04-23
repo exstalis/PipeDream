@@ -12,31 +12,41 @@
 #import "JVFloatingDrawerSpringAnimator.h"
 #import "AppDelegate.h"
 #import "PDDrawerMenuCell.h"
-#import "PDNavigationController.h"
 #import "PDNetworkClient.h"
+#import "PDSportsTableViewCell.h"
+#import "Article.h"
+#import "PDNetworkClient.h"
+
 
 @interface PDSportsViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 - (IBAction)showMenu:(UIBarButtonItem *)sender;
 
+@property(nonatomic,strong)Article *sportsArticles;
+
 @property(nonatomic, strong) NSMutableArray *sportsArticlesArray;
 
 @end
+
 @implementation PDSportsViewController
 
-
 - (void)viewDidLoad {
+    [super viewDidLoad];
+    
+
     [self loadSportsArticles];
-    [self loadSportsArticles];
+    _sportsArticles=[[Article alloc]init];
+    _sportsArticlesArray=[[NSMutableArray alloc]init];
+    
+
+
+
 }
-- (instancetype)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super initWithCoder:aDecoder];
-    if (self != nil) {
-        _sportsArticlesArray = [[NSMutableArray alloc] init];
-    }
-    return self;
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
 }
+
 
 - (void)loadSportsArticles
 {
@@ -53,13 +63,14 @@
     }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
+
+
+- (IBAction)showMenu:(UIBarButtonItem *)sender {
+    [[AppDelegate globalDelegate] toggleLeftDrawer:self animated:YES];
     
-
+    
+}
 
 
 #pragma Menu action method

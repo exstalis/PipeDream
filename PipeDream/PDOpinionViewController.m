@@ -52,15 +52,6 @@
     [super didReceiveMemoryWarning];
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"OpinionDetailSegue"]) {
-        PDOpinionDetailViewController *viewController = (PDOpinionDetailViewController *)[segue destinationViewController];
-        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-        Article *selectedArticle = [_opinionArticlesArray objectAtIndex:selectedIndexPath.row];
-        viewController.article = selectedArticle;
-    }
-}
 
 
 - (void)loadOpinionArticles
@@ -126,8 +117,6 @@
     
     
     return cell;
-    
-    
     
 }
 
