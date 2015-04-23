@@ -33,7 +33,6 @@
 @property(nonatomic,strong)UIViewController *recentViewController;
 
 
-
 + (AppDelegate *)globalDelegate;
 
 

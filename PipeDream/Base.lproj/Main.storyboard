@@ -5,6 +5,11 @@
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--NewsDetail-->
         <scene sceneID="1pn-z8-VRp">
@@ -697,6 +702,75 @@
             </objects>
             <point key="canvasLocation" x="-1726" y="568"/>
         </scene>
+        <!--Contact-->
+        <scene sceneID="ZfK-1P-gAR">
+            <objects>
+                <viewController id="wdV-hF-c4z" userLabel="Contact" customClass="PDContactViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mdj-Ey-gwU"/>
+                        <viewControllerLayoutGuide type="bottom" id="ecC-De-olA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LoW-E8-JvD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="v9B-Ru-RAX">
+                                <rect key="frame" x="36" y="104" width="303" height="200"/>
+                            </mapView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ag-tA-I7H">
+                                <rect key="frame" x="36" y="324" width="303" height="93"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">The Pipe Dream office is located in Room WB03 of the New University Union, downstairs from the food court. The newsroom is open contingent upon staff schedules.
+
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="v9B-Ru-RAX" secondAttribute="trailing" constant="20" id="7Au-BS-eV9"/>
+                            <constraint firstItem="6Ag-tA-I7H" firstAttribute="leading" secondItem="v9B-Ru-RAX" secondAttribute="leading" id="FkR-Uq-a2L"/>
+                            <constraint firstItem="6Ag-tA-I7H" firstAttribute="top" secondItem="v9B-Ru-RAX" secondAttribute="bottom" constant="20" id="Iuy-Cx-6JO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6Ag-tA-I7H" secondAttribute="trailing" constant="20" id="Noj-1t-AQ5"/>
+                            <constraint firstItem="ecC-De-olA" firstAttribute="top" secondItem="6Ag-tA-I7H" secondAttribute="bottom" constant="250" id="OGn-96-nOV"/>
+                            <constraint firstItem="v9B-Ru-RAX" firstAttribute="centerX" secondItem="LoW-E8-JvD" secondAttribute="centerX" id="Pfj-wl-5jy"/>
+                            <constraint firstAttribute="centerY" secondItem="6Ag-tA-I7H" secondAttribute="centerY" constant="-73" id="bbf-mM-J5z"/>
+                            <constraint firstItem="v9B-Ru-RAX" firstAttribute="top" secondItem="mdj-Ey-gwU" secondAttribute="bottom" constant="40" id="faV-jg-FWV"/>
+                            <constraint firstItem="v9B-Ru-RAX" firstAttribute="leading" secondItem="LoW-E8-JvD" secondAttribute="leadingMargin" constant="20" id="iTK-DS-msS"/>
+                            <constraint firstItem="ecC-De-olA" firstAttribute="top" secondItem="v9B-Ru-RAX" secondAttribute="bottom" constant="363" id="n68-Nd-0ht"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="bbf-mM-J5z"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="jQN-Eb-E0i">
+                        <barButtonItem key="leftBarButtonItem" title="menu" id="fjX-q5-l5D">
+                            <connections>
+                                <action selector="navigateThroughMenu:" destination="wdV-hF-c4z" id="5BV-40-CmG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="menuBarButton" destination="fjX-q5-l5D" id="CMZ-bR-Ud6"/>
+                        <outlet property="pipeDreamOfficeMapView" destination="v9B-Ru-RAX" id="k3d-kp-JPr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kbp-gm-N3v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2207" y="589"/>
+        </scene>
         <!--Drawer-->
         <scene sceneID="Mpq-As-Mkx">
             <objects>
@@ -718,12 +792,12 @@
                                                 <constraint firstAttribute="width" constant="30" id="9Ld-f7-U4a"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vfy-gd-UHo">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vfy-gd-UHo">
                                             <rect key="frame" x="90" y="19" width="222" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="222" id="AU5-YP-4qd"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -752,7 +826,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tkV-fm-Rjd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2708" y="507"/>
+            <point key="canvasLocation" x="-2556" y="1251"/>
         </scene>
         <!--Recent NC-->
         <scene sceneID="2ia-tO-zTq">
@@ -769,6 +843,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zox-CJ-deo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1726" y="-420"/>
+        </scene>
+        <!--Contact NC-->
+        <scene sceneID="nfP-mv-blj">
+            <objects>
+                <navigationController storyboardIdentifier="PDContactViewControllerStoryboardID" title="Contact NC" id="WN5-Xu-vIT" customClass="PDNavigationController" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="izX-iJ-WqF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="wdV-hF-c4z" kind="relationship" relationship="rootViewController" id="zue-I7-NcY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u8h-f4-v1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2198" y="-410"/>
         </scene>
     </scenes>
     <resources>

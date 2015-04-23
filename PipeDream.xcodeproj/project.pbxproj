@@ -34,6 +34,9 @@
 		2D4FC84E1AE870A90044ACEF /* PDReleaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FC84D1AE870A90044ACEF /* PDReleaseTableViewCell.m */; };
 		2D4FC8511AE890970044ACEF /* PDSportsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FC8501AE890970044ACEF /* PDSportsTableViewCell.m */; };
 		2D4FC8541AE8A2430044ACEF /* PDRecentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FC8531AE8A2430044ACEF /* PDRecentViewController.m */; };
+		2D4FC85D1AE8B0FF0044ACEF /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 2D4FC85C1AE8B0FF0044ACEF /* Fonts */; };
+		2D4FC8601AE8B4A20044ACEF /* PDContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FC85F1AE8B4A20044ACEF /* PDContactViewController.m */; };
+		2D4FC8631AE8BB620044ACEF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D4FC8621AE8BB620044ACEF /* MapKit.framework */; };
 		2D5D94081ADCBABC0068DB3E /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5D94071ADCBABC0068DB3E /* Mantle.framework */; };
 		2D5D94151ADCBC620068DB3E /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D940A1ADCBC620068DB3E /* Article.m */; };
 		2D5D94161ADCBC620068DB3E /* ArticleCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D940C1ADCBC620068DB3E /* ArticleCategory.m */; };
@@ -122,6 +125,10 @@
 		2D4FC8501AE890970044ACEF /* PDSportsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDSportsTableViewCell.m; sourceTree = "<group>"; };
 		2D4FC8521AE8A2430044ACEF /* PDRecentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDRecentViewController.h; sourceTree = "<group>"; };
 		2D4FC8531AE8A2430044ACEF /* PDRecentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDRecentViewController.m; sourceTree = "<group>"; };
+		2D4FC85C1AE8B0FF0044ACEF /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
+		2D4FC85E1AE8B4A20044ACEF /* PDContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDContactViewController.h; sourceTree = "<group>"; };
+		2D4FC85F1AE8B4A20044ACEF /* PDContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDContactViewController.m; sourceTree = "<group>"; };
+		2D4FC8621AE8BB620044ACEF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2D5D94071ADCBABC0068DB3E /* Mantle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mantle.framework; path = "Pods/../build/Debug-iphoneos/Pods-PipeDream/Mantle.framework"; sourceTree = "<group>"; };
 		2D5D94091ADCBC620068DB3E /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
 		2D5D940A1ADCBC620068DB3E /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
@@ -167,6 +174,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D4FC8631AE8BB620044ACEF /* MapKit.framework in Frameworks */,
 				2DEED4141ADE0AA2005A56D4 /* UIKit.framework in Frameworks */,
 				2DEED4101ADE0997005A56D4 /* NetworkExtension.framework in Frameworks */,
 				2DEED4111ADE0997005A56D4 /* Twitter.framework in Frameworks */,
@@ -358,6 +366,15 @@
 			name = Recent;
 			sourceTree = "<group>";
 		};
+		2D4FC8611AE8B4AC0044ACEF /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				2D4FC85E1AE8B4A20044ACEF /* PDContactViewController.h */,
+				2D4FC85F1AE8B4A20044ACEF /* PDContactViewController.m */,
+			);
+			name = Contact;
+			sourceTree = "<group>";
+		};
 		2D5D941B1ADCBC6B0068DB3E /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -412,6 +429,7 @@
 				2D29213E1ADA49ED00D622EC /* Release */,
 				2D2921421ADA4C7E00D622EC /* Sports */,
 				2D4FC8551AE8A2510044ACEF /* Recent */,
+				2D4FC8611AE8B4AC0044ACEF /* Contact */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -419,6 +437,7 @@
 		2DC51D171AD4D2D100B9FA1F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2D4FC85C1AE8B0FF0044ACEF /* Fonts */,
 				2D345BFF1AD9E56F00308866 /* detail.png */,
 				2D345C001AD9E56F00308866 /* detail@2x.png */,
 				2DBEBCBE1AD7314000123DB5 /* menu.png */,
@@ -446,6 +465,7 @@
 		794F173DADAE86E716A67057 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2D4FC8621AE8BB620044ACEF /* MapKit.framework */,
 				2DEED4131ADE0AA2005A56D4 /* UIKit.framework */,
 				2DEED40D1ADE0997005A56D4 /* NetworkExtension.framework */,
 				2DEED40E1ADE0997005A56D4 /* Twitter.framework */,
@@ -550,6 +570,7 @@
 				2DC51D3B1AD5B58200B9FA1F /* Front View@2x.png in Resources */,
 				2DC51D3A1AD5B58200B9FA1F /* Front View.png in Resources */,
 				2DC51D3C1AD5B58200B9FA1F /* Front View@3x.png in Resources */,
+				2D4FC85D1AE8B0FF0044ACEF /* Fonts in Resources */,
 				2DC51D391AD5B58200B9FA1F /* Front View Swipe Left@2x.png in Resources */,
 				2DBEBCAE1AD70B7100123DB5 /* BG.png in Resources */,
 				2D345C021AD9E56F00308866 /* detail@2x.png in Resources */,
@@ -638,6 +659,7 @@
 				2D5D94221ADCBEAB0068DB3E /* PDSingleton.m in Sources */,
 				2D5D94151ADCBC620068DB3E /* Article.m in Sources */,
 				2D2921451ADA585100D622EC /* PDReleaseDetailViewController.m in Sources */,
+				2D4FC8601AE8B4A20044ACEF /* PDContactViewController.m in Sources */,
 				2D7A30AB1ADFF4DA00A6055C /* RequestOperationConfig.m in Sources */,
 				2D8DADF71AD8E2E70047AECE /* PDFeedTableViewCell.m in Sources */,
 				2D345C051AD9E5C700308866 /* PDNewsDetailViewController.m in Sources */,

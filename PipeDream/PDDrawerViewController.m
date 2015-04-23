@@ -113,12 +113,12 @@ static NSString * const kPDDrawerCellReuseIdentifier = @"PDDrawerCellReuseIdenti
             //            put an image
             break;
         }
-        case PDMenuViewControllerItemSettings:{
-            cell.sectionTitle=@"Settings";
-    
-            //            put an image
-            break;
-        }
+//        case PDMenuViewControllerItemSettings:{
+//            cell.sectionTitle=@"Settings";
+//    
+//            //            put an image
+//            break;
+//        }
         case PDMenuViewControllerItem_COUNT:
         default:
             return nil;
@@ -154,6 +154,10 @@ static NSString * const kPDDrawerCellReuseIdentifier = @"PDDrawerCellReuseIdenti
     if ((PDMenuViewControllerItem)indexPath.row==PDMenuViewControllerItemRecent) {
          destinationViewController=[[AppDelegate globalDelegate] recentViewController];
     }
+    if ((PDMenuViewControllerItem)indexPath.row==PDMenuViewControllerItemContact) {
+        destinationViewController=[[AppDelegate globalDelegate] contactViewController];
+    }
+    
     
     [[[AppDelegate globalDelegate] drawerViewController] setCenterViewController:destinationViewController];
     [[AppDelegate globalDelegate] toggleLeftDrawer:self animated:YES];

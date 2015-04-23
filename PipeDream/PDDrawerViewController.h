@@ -17,7 +17,7 @@ typedef NS_ENUM (NSInteger, PDMenuViewControllerItem){
     PDMenuViewControllerItemRelease,
     PDMenuViewControllerItemSports,
     PDMenuViewControllerItemContact,
-    PDMenuViewControllerItemSettings,
+//    PDMenuViewControllerItemSettings,
     
     PDMenuViewControllerItem_COUNT,
     

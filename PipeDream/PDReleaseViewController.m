@@ -44,10 +44,6 @@
 }
 
 
-#pragma mark - MenuBar
-- (JVFloatingDrawerSpringAnimator *)drawerAnimator {
-    return [[AppDelegate globalDelegate] drawerAnimator];
-}
 
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
@@ -117,6 +113,11 @@
     
 }
 
+
+#pragma mark - MenuBar
+- (JVFloatingDrawerSpringAnimator *)drawerAnimator {
+    return [[AppDelegate globalDelegate] drawerAnimator];
+}
 
 
 - (IBAction)showMenu:(UIBarButtonItem *)sender {

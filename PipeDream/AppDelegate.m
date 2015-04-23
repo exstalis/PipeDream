@@ -22,6 +22,9 @@ static NSString * const  kPDSportsDrawerStoryboardID=@"PDSportsViewControllerSto
 
 static NSString * const  kPDRecentDrawerStoryboardID=@"PDRecentViewControllerStoryboardID";
 
+
+static NSString * const  kPDContactDrawerStoryboardID=@"PDContactViewControllerStoryboardID";
+
 //static NSString * const kJVRightDrawerStoryboardID = @"JVRightDrawerViewControllerStoryboardID";
 
 //static NSString * const kJVGitHubProjectPageViewControllerStoryboardID = @"JVGitHubProjectPageViewControllerStoryboardID";
@@ -246,6 +249,19 @@ static NSString * const  kPDRecentDrawerStoryboardID=@"PDRecentViewControllerSto
     
 }
 
+
+#pragma contact
+
+
+-(UIViewController *)contactViewController{
+    
+    if (_contactViewController==nil) {
+        _contactViewController=[self.myStoryboard instantiateViewControllerWithIdentifier:kPDContactDrawerStoryboardID];
+        
+    }
+    return _contactViewController;
+    
+}
 
 
 #pragma drawer animation
