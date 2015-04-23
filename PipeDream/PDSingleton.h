@@ -17,7 +17,7 @@
 @property NSMutableDictionary *articleDictionary;
 @property NSArray * opinionArticleArray;
 @property NSArray *newsArticleArray;
-@property NSArray *releaseArticleArray;
+
 
 
 +(PDSingleton*)sharedClient;

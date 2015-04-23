@@ -13,7 +13,7 @@
 +(NSDictionary *) JSONKeyPathsByPropertyKey {
     
     return @{
-            
+             
              @"thumbnailSizeImages" :@"thumbnail.url",
              @"fullSizeImages" :@"full.url",
              @"mediumSizeImages" : @"medium.url",

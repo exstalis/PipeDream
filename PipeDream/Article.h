@@ -33,6 +33,4 @@ typedef enum : NSUInteger {
 @property(copy, nonatomic, readonly) NSNumber *articleCount;
 
 
-
-
 @end

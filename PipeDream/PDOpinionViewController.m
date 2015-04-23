@@ -10,7 +10,7 @@
 #import "PDOpinionDetailViewController.h"
 #import "PDFeedTableViewCell.h"
 #import "AppDelegate.h"
-#import "PDNetworkClient.h"
+#import "Article.h"
 #import "PDOpinionTableViewCell.h"
 
 #import "PDNetworkClient.h"
@@ -19,6 +19,8 @@
 @interface PDOpinionViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 - (IBAction)showMenu:(UIBarButtonItem *)sender;
+
+@property(nonatomic,strong) Article *opinionArticles;
 
 @property(nonatomic, strong) NSMutableArray *opinionArticlesArray;
 
@@ -33,6 +35,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadOpinionArticles];
+    _opinionArticles=[[Article alloc]init];
+    
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
@@ -57,22 +61,6 @@
         viewController.article = selectedArticle;
     }
 }
-
-- (void)loadOpinionArticles
-{
-    PDNetworkClient *manager = [[PDNetworkClient alloc] init];
-    [manager getOpinionArticlesWithCompletion:^(NSArray *array, NSError *error) {
-        if (error == nil) {
-            if (array != nil) {
-                [_opinionArticlesArray removeAllObjects];
-                [_opinionArticlesArray addObjectsFromArray:array];
-                
-                [self.tableView reloadData];
-            }
-        }
-    }];
-}
-
 
 
 - (void)loadOpinionArticles
@@ -119,24 +107,26 @@
     
     
     
-    PDOpinionTableViewCell *opinionCell=[tableView dequeueReusableCellWithIdentifier:@"opinionCell" forIndexPath:indexPath];
-    
-    if (opinionCell==nil) {
-        opinionCell=[[PDOpinionTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"opinionCell"];
+    PDOpinionTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"opinionCell"];
+    if (cell==nil) {
+        cell=[[PDOpinionTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"opinionCell"];
         
     }
+    _opinionArticles=[_opinionArticlesArray objectAtIndex:indexPath.row];
+    cell.opinionTitle.text=_opinionArticles.articleTitle;
+    cell.opinionExcerpt.text=_opinionArticles.articleExcerpt;
+    cell.opinionAuthor.text=_opinionArticles.authorName;
+    cell.opinionDate.text=_opinionArticles.articleDate.description;
     
-    Article *opinionArticle = [_opinionArticlesArray objectAtIndex:indexPath.row];
-    
-    opinionCell.opinionTitleLabel.text = opinionArticle.articleTitle;
-    opinionCell.opinionExercptLabel.text = opinionArticle.articleExcerpt;
-    opinionCell.opinionAuthorLabel.text = opinionArticle.authorName;
-    opinionCell.opinionDateLabel.text = opinionArticle.articleDate.description;
+
+
     
     
     
     
-    return opinionCell;
+    return cell;
+    
+    
     
 }
 

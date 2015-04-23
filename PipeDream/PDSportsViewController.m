@@ -23,14 +23,13 @@
 @property(nonatomic, strong) NSMutableArray *sportsArticlesArray;
 
 @end
-
 @implementation PDSportsViewController
 
+
 - (void)viewDidLoad {
-    [super viewDidLoad];
+    [self loadSportsArticles];
     [self loadSportsArticles];
 }
-
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
@@ -55,36 +54,13 @@
     }];
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"SportsDetailSegue"]) {
-        PDSportsDetailViewController *viewController = (PDSportsDetailViewController *)[segue destinationViewController];
-        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-        Article *selectedArticle = [_sportsArticlesArray objectAtIndex:selectedIndexPath.row];
-        viewController.article = selectedArticle;
-    }
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    PDSportsDetailViewController *viewController = (PDSportsDetailViewController *)[segue destinationViewController];
-    NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-    //Article'i yolla
-}
-
-
-
-- (IBAction)showMenu:(UIBarButtonItem *)sender {
-    [[AppDelegate globalDelegate] toggleLeftDrawer:self animated:YES];
     
-    
-}
+
 
 
 - (JVFloatingDrawerSpringAnimator *)drawerAnimator {

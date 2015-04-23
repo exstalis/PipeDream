@@ -74,7 +74,7 @@
 
 
 //transform attachments with a Attachments object
-+(NSValueTransformer *) articleAttachmentsJSONTransformer {
++(NSValueTransformer *) articleAttachmentsTransformer {
     return [MTLJSONAdapter arrayTransformerWithModelClass:[Attachments class]];
 }
 
@@ -89,6 +89,14 @@
 
 
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionaryValue error:(NSError **)error {
+    self = [super initWithDictionary:dictionaryValue error:error];
+    if (self == nil) return nil;
+    _articleDate = [NSDate date];
+
+    
+    return self;
+}
 
 
 

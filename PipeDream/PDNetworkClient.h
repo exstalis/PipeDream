@@ -38,6 +38,8 @@
 
 
 -(void)getRecentArticleWithCompletion:(ArrayCompletionBlock)completion;
+-(void)getOpinionArticlesWithCompletion:(ArrayCompletionBlock)completion;
+-(void)getReleaseArticlesWithCompletion:(ArrayCompletionBlock)completion;
 
 //-(void)getRecentAttachmentsFromArray:(ArrayCompletionBlock)completion;
 

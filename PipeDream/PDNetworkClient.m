@@ -35,11 +35,6 @@ static NSString * const kPDClientJSONRecentPostString=@"http://www.bupipedream.c
 
 static NSString * const kPDClientJSONOpinionPostsString = @"http://www.bupipedream.com/api/get_category_posts/?slug=opinion/";
 
-static NSString * const kPDClientJSONReleasePostsString = @"http://www.bupipedream.com/api/get_category_posts/?slug=opinion/";
-
-static NSString * const kPDClientJSONSportsPostsString = @"http://www.bupipedream.com/api/get_category_posts/?slug=opinion/";
-
-
 static NSString * const kPDClientJSONReleasePostsString = @"http://www.bupipedream.com/api/get_category_posts/?slug=release/";
 
 static NSString * const kPDClientJSONSportsPostsString = @"http://www.bupipedream.com/api/get_category_posts/?slug=sports/";
@@ -74,6 +69,9 @@ static NSString * const kPDClientJSONSportsPostsString = @"http://www.bupipedrea
     
 }
 
+
+
+
 + (AFHTTPRequestOperation *)createHTTPRequestOperationWithConfiguration:(RequestOperationConfigBlock)configuration
 {
     
@@ -89,8 +87,7 @@ static NSString * const kPDClientJSONSportsPostsString = @"http://www.bupipedrea
     
 }
 
--(void)getRecentArticleWithCompletion:(ArrayCompletionBlock)completion
-{
+-(void)getRecentArticleWithCompletion:(ArrayCompletionBlock)completion{
     
     AFHTTPRequestOperation *operation=[PDNetworkClient createHTTPRequestOperationWithConfiguration:^(RequestOperationConfig *config) {
         config.URL=[NSURL URLWithString:kPDClientJSONRecentPostString];
@@ -102,9 +99,15 @@ static NSString * const kPDClientJSONSportsPostsString = @"http://www.bupipedrea
         if (completion==nil) {
             return;
         }
-   
-        NSArray *recentArticleCollection = [self translateJSONForArticleFromJSONArray:[responseObject objectForKey:@"posts"] withClassName:@"Article"];
-        completion(recentArticleCollection, nil);
+        
+        NSArray * recentarticleColletion=[self translateFromJSONArray:[responseObject objectForKey:@"posts"] withClassName:@"Article"];
+        
+        [PDSingleton sharedClient].newsArticleArray =[recentarticleColletion mutableCopy];
+        
+     
+        
+        completion(recentarticleColletion,nil);
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (completion) {
             completion(nil, error);
@@ -116,35 +119,35 @@ static NSString * const kPDClientJSONSportsPostsString = @"http://www.bupipedrea
 
 }
 
-
-
--(void)getOpinionArticlesWithCompletion:(ArrayCompletionBlock)completion
+- (void)getOpinionArticlesWithCompletion:(ArrayCompletionBlock)completion
 {
-    
     AFHTTPRequestOperation *operation = [PDNetworkClient createHTTPRequestOperationWithConfiguration:^(RequestOperationConfig *config) {
+        
         config.URL = [NSURL URLWithString:kPDClientJSONOpinionPostsString];
         config.responseSerializer = [AFJSONResponseSerializer serializer];
     }];
-    
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         if (completion == nil) {
             return;
         }
         
-        NSArray *recenOpinionArticles = [self translateJSONForArticleFromJSONArray:[responseObject objectForKey:@"posts"] withClassName:@"Article"];
+        NSArray *opinionArticles = [self translateFromJSONArray:[responseObject objectForKey:@"posts"] withClassName:@"Article"];
         
-        completion(recenOpinionArticles, nil);
+
+
         
+        completion(opinionArticles, nil);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (completion) {
             completion(nil, error);
         }
-                                         
+        
     }];
     
     [operation start];
 }
+
 
 -(void)getReleaseArticlesWithCompletion:(ArrayCompletionBlock)completion
 {
@@ -160,7 +163,7 @@ static NSString * const kPDClientJSONSportsPostsString = @"http://www.bupipedrea
             return;
         }
         
-        NSArray *recentReleaseArticles = [self translateJSONForArticleFromJSONArray:[responseObject objectForKey:@"posts"] withClassName:@"Article"];
+        NSArray *recentReleaseArticles = [self translateFromJSONArray:[responseObject objectForKey:@"posts"] withClassName:@"Article"];;
         
         completion(recentReleaseArticles, nil);
         
@@ -181,87 +184,6 @@ static NSString * const kPDClientJSONSportsPostsString = @"http://www.bupipedrea
         config.URL = [NSURL URLWithString:kPDClientJSONSportsPostsString];
         config.responseSerializer = [AFJSONResponseSerializer serializer];
     }];
-    
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        if (completion == nil) {
-            return;
-        }
-        
-        NSArray *recentSportsArticles = [self translateJSONForArticleFromJSONArray:[responseObject objectForKey:@"posts"] withClassName:@"Article"];
-        
-        completion(recentSportsArticles, nil);
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        if (completion) {
-            completion(nil, error);
-        }
-        
-    }];
-    
-    [operation start];
-}
-
-//-(void)getRecentAttachmentsFromArray:(ArrayCompletionBlock)completion{
-//    
-//    
-//    
-//    
-//    [self getRecentArticleWithCompletion:^(NSArray *array, NSError *error) {
-//        
-//        NSArray *imagesArray=[[NSArray alloc]init];
-////        NSDictionary *imagesTempDict=[[NSDictionary alloc]init];
-//        
-//        NSArray *attachmentsArray= [[NSArray alloc]init];
-//        _denemeArray=[[NSMutableArray alloc]init];
-//        
-//        
-//
-//        for (Article *article in array) {
-//            
-//        
-//        
-//            attachmentsArray =  [self translateJSONForArticleFromJSONArray:[article articleAttachments] withClassName:@"Attachments"];
-//           
-//
-//            
-//            [_denemeArray addObjectsFromArray:attachmentsArray];
-//        }
-//        NSLog(@"%@ /n",_denemeArray);
-//        
-//        
-//        
-//        for (Attachments *attachmentsObjects in  attachmentsArray) {
-//        
-//            
-//                
-////              Image   * imagesTempDict=[MTLJSONAdapter modelOfClass:[Image class] fromJSONDictionary:attachmentsObjects.images error:nil];
-//            
-//            
-//    
-//
-//                
-//        
-//        }
-//        
-//            
-//    
-//        
-//        completion(attachmentsArray,nil);
-//
-//        
-//            
-//    }];
-//    
-//    
-//
-//
-//}
-
-        
-    
-    
-    
     
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         

@@ -33,6 +33,17 @@
 
 +(NSValueTransformer *) imagesJSONTransformer {
     return [MTLJSONAdapter dictionaryTransformerWithModelClass:[Image class]];
+
+    
+}
+
+
+-(instancetype)initWithDictionary:(NSDictionary *)dictionaryValue error:(NSError *__autoreleasing *)error{
+    self = [super initWithDictionary:dictionaryValue error:error];
+    if (self == nil) return nil;
+    [MTLValueTransformer mtl_validatingTransformerForClass:[Image class]];
+    
+    
     
     ;
     

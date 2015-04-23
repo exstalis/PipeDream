@@ -349,12 +349,12 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="newsAuthorLabel" destination="Cyo-Mx-VSd" id="m9I-DT-9wg"/>
-                                    <outlet property="newsDateLabel" destination="lZx-xv-BQ9" id="gwQ-pc-9hj"/>
-                                    <outlet property="newsExcerptLabel" destination="rmT-6n-pgm" id="fZa-1m-Z2h"/>
-                                    <outlet property="newsThumbnailImage" destination="uSb-cX-isO" id="u8O-UI-EwT"/>
-                                    <outlet property="newsTitle" destination="BUY-gb-1Dn" id="Mkf-tF-HSj"/>
-                                    <segue destination="C8q-uu-JBC" kind="show" identifier="NewsDetailSegue" id="oob-tp-43Z"/>
+                                    <outlet property="newsAuthorLabel" destination="Cyo-Mx-VSd" id="KOn-Ff-LLF"/>
+                                    <outlet property="newsDateLabel" destination="lZx-xv-BQ9" id="eK3-LA-dT4"/>
+                                    <outlet property="newsExcerptLabel" destination="rmT-6n-pgm" id="7xO-xu-2HH"/>
+                                    <outlet property="newsThumbnailImage" destination="uSb-cX-isO" id="upl-nv-nxQ"/>
+                                    <outlet property="newsTitle" destination="BUY-gb-1Dn" id="ac6-LD-bRx"/>
+                                    <segue destination="C8q-uu-JBC" kind="show" identifier="" id="oob-tp-43Z"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -422,12 +422,12 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="opinionAuthorLabel" destination="4nD-oW-Evk" id="zuh-3d-EYZ"/>
-                                    <outlet property="opinionDateLabel" destination="2gd-hS-87M" id="ZNy-n5-yjh"/>
-                                    <outlet property="opinionExercptLabel" destination="QGL-jU-mt7" id="4IK-DE-QKJ"/>
-                                    <outlet property="opinionThumbnail" destination="qef-SF-EO5" id="8W0-1q-YgX"/>
-                                    <outlet property="opinionTitleLabel" destination="uhr-fD-D5F" id="k17-3d-DuW"/>
-                                    <segue destination="fqw-ft-6jd" kind="show" identifier="OpinionDetailSegue" id="abM-JV-YQL"/>
+                                    <outlet property="opinionAuthor" destination="4nD-oW-Evk" id="V9r-CY-qDZ"/>
+                                    <outlet property="opinionDate" destination="2gd-hS-87M" id="LHB-VY-Zre"/>
+                                    <outlet property="opinionExcerpt" destination="QGL-jU-mt7" id="Ll0-eN-szE"/>
+                                    <outlet property="opinionThumnail" destination="qef-SF-EO5" id="SO5-aL-yA2"/>
+                                    <outlet property="opinionTitle" destination="uhr-fD-D5F" id="jck-Gn-SPJ"/>
+                                    <segue destination="fqw-ft-6jd" kind="show" id="tN6-lE-ICT"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -495,7 +495,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="oS1-V1-BNd" kind="show" identifier="ReleaseDetailSegue" id="hKF-PW-Wdb"/>
+                                    <segue destination="oS1-V1-BNd" kind="show" identifier="ReleaseDetailSgue" id="hKF-PW-Wdb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -563,7 +563,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="dAN-2B-kFa" kind="show" identifier="SportsDetailSegue" id="I3i-1o-l7D"/>
+                                    <segue destination="dAN-2B-kFa" kind="show" id="UH6-oi-1N4"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

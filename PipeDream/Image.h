@@ -7,7 +7,6 @@
 //
 
 #import <Mantle/Mantle.h>
-#import "Attachments.h"
 
 @interface Image : MTLModel <MTLJSONSerializing>
 
