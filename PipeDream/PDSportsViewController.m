@@ -8,7 +8,6 @@
 
 #import "PDSportsViewController.h"
 #import "PDSportsDetailViewController.h"
-#import "PDFeedTableViewCell.h"
 #import "JVFloatingDrawerViewController.h"
 #import "JVFloatingDrawerSpringAnimator.h"
 #import "AppDelegate.h"
@@ -63,9 +62,13 @@
 
 
 
+#pragma Menu action method
+
 - (JVFloatingDrawerSpringAnimator *)drawerAnimator {
     return [[AppDelegate globalDelegate] drawerAnimator];
 }
+
+
 
 
 #pragma mark - TableView datasource
@@ -74,22 +77,28 @@
     
 }
 
-
-
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 20;
+    return [_sportsArticlesArray count];
     
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     
     
-    PDFeedTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"sportsCell"];
+    PDSportsTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"sportsCell"];
     if (cell==nil) {
-        cell=[[PDFeedTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"sportsCell"];
+        cell=[[PDSportsTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"sportsCell"];
         
     }
+    
+    _sportsArticles=[_sportsArticlesArray objectAtIndex:indexPath.row];
+    cell.sportsTitle.text=_sportsArticles.articleTitle;
+    cell.sportsExcerpt.text=_sportsArticles.articleExcerpt;
+    cell.sportsAuthor.text=_sportsArticles.authorName;
+    cell.sportsDate.text=_sportsArticles.articleDate.description;
+    
+    
     
 
     return cell;

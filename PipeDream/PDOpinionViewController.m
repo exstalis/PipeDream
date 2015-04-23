@@ -8,7 +8,7 @@
 
 #import "PDOpinionViewController.h"
 #import "PDOpinionDetailViewController.h"
-#import "PDFeedTableViewCell.h"
+
 #import "AppDelegate.h"
 #import "Article.h"
 #import "PDOpinionTableViewCell.h"
@@ -107,7 +107,8 @@
     
     
     
-    PDOpinionTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"opinionCell"];
+    PDOpinionTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"opinionCell" forIndexPath:indexPath];
+    
     if (cell==nil) {
         cell=[[PDOpinionTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"opinionCell"];
         

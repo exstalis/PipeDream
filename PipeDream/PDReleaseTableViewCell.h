@@ -9,5 +9,11 @@
 #import "PDFeedTableViewCell.h"
 
 @interface PDReleaseTableViewCell : PDFeedTableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *releaseTitle;
+@property (weak, nonatomic) IBOutlet UILabel *releaseExcerpt;
+
+@property (weak, nonatomic) IBOutlet UILabel *releaseDate;
+@property (weak, nonatomic) IBOutlet UILabel *releaseAuthor;
+@property (weak, nonatomic) IBOutlet UIImageView *releaseThumbnail;
 
 @end
