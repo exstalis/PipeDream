@@ -33,13 +33,17 @@ static dispatch_once_t oncePredicate;
 
 
 
-- (id)initWithArticle:(Article *)article
-{
-    if (self = [super init]) {
-        self.articleShared=article ;
-    }
-    return self;
-}
+//- (id)initWithArticle:(Article *)article
+//{
+//    if (self = [super init]) {
+//        self.article=article ;
+//    }
+//    return self;
+//}
+//
+
+
+
 
 -(NSString *)stripHTMLEntities:(NSString *)encodedString
 {
@@ -69,22 +73,23 @@ static dispatch_once_t oncePredicate;
 //}
 //
 //
-//- (void)fetchArticleObjectsFromArray:(NSArray *)articles{
+//- (void)startBackgroundFetchingWithArticle:(NSArray *)articles{
 //    
 //    for (Article *article in articles) {
-//        if (![[self currentArticleOperations] containsObject:article.articleID]) {
-//
+//        if (![[self currentArticleOperations] containsObject:article.title]) {
+//            
 //            PDSingleton *operation = [[PDSingleton alloc] initWithArticle:article];
 //        
 //            
-//            [[self currentArticleOperations] addObject:article.articleID];
+//            [[self currentArticleOperations] addObject:article.title];
 //            
-//
+//            [[self articleOperationQueue] addOperation:operation];
+//            
 //        }
 //    }
 //}
 //
-//
+
 
 
 

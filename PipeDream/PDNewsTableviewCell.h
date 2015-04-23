@@ -7,8 +7,6 @@
 //
 
 #import "PDFeedTableViewCell.h"
-#import <QuartzCore/QuartzCore.h>
-
 
 @interface PDNewsTableviewCell : PDFeedTableViewCell
 

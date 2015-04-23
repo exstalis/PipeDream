@@ -13,6 +13,9 @@
 #import "PDNetworkClient.h"
 #import "PDOpinionTableViewCell.h"
 
+#import "PDNetworkClient.h"
+
+
 @interface PDOpinionViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 - (IBAction)showMenu:(UIBarButtonItem *)sender;
@@ -70,6 +73,22 @@
     }];
 }
 
+
+
+- (void)loadOpinionArticles
+{    
+    PDNetworkClient *manager = [[PDNetworkClient alloc] init];
+    [manager getOpinionArticlesWithCompletion:^(NSArray *array, NSError *error) {
+        if (error == nil) {
+            if (array != nil) {
+                [_opinionArticlesArray removeAllObjects];
+                [_opinionArticlesArray addObjectsFromArray:array];
+                
+                [self.tableView reloadData];
+            }
+        }
+    }];
+}
 
 - (IBAction)showMenu:(UIBarButtonItem *)sender {
     [[AppDelegate globalDelegate] toggleLeftDrawer:self animated:YES];

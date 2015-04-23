@@ -7,14 +7,10 @@
 //
 
 #import "PDNetworkClient.h"
-
-
 #import <QuartzCore/QuartzCore.h>
-
 #import <AFNetworking/AFNetworking.h>
 #import <Mantle/Mantle.h>
 #import "PDSingleton.h"
-#import "Article.h"
 #import "ArticleCategory.h"
 #import "Attachments.h"
 #import "Image.h"
@@ -44,11 +40,19 @@ static NSString * const kPDClientJSONReleasePostsString = @"http://www.bupipedre
 static NSString * const kPDClientJSONSportsPostsString = @"http://www.bupipedream.com/api/get_category_posts/?slug=opinion/";
 
 
+static NSString * const kPDClientJSONReleasePostsString = @"http://www.bupipedream.com/api/get_category_posts/?slug=release/";
 
--(NSArray *) translateJSONForArticleFromJSONDictionary:(NSDictionary *)articleJSON withClassName:(NSString *)className {
+static NSString * const kPDClientJSONSportsPostsString = @"http://www.bupipedream.com/api/get_category_posts/?slug=sports/";
+
+
+-(id) translateFromJSONDictionary:(NSDictionary *)articleJSON withClassName:(NSString*)className{
     
     NSError *error;
     NSArray *articleInfo =[MTLJSONAdapter modelOfClass:NSClassFromString(className) fromJSONDictionary:articleJSON error:&error];
+    
+    
+    
+    
     if (error) {
         NSLog(@"Couldn't convert article JSON to Article Models: %@", error);
         return nil;
@@ -56,11 +60,12 @@ static NSString * const kPDClientJSONSportsPostsString = @"http://www.bupipedrea
     return articleInfo;
 }
 
--(NSArray *)translateJSONForArticleFromJSONArray:(NSArray *)articleJSON withClassName:(NSString *)className {
-    
+-(id)translateFromJSONArray:(NSArray *)articleJSON withClassName:(NSString*)className{
     
     NSError *error=nil;
-    NSArray *articleInfo=[MTLJSONAdapter modelsOfClass:NSClassFromString(className) fromJSONArray:articleJSON error:&error];
+    NSArray *articleInfo=[MTLJSONAdapter modelsOfClass:NSClassFromString(className)fromJSONArray:articleJSON error:&error];
+   
+    
     if (error) {
         NSLog(@"Couldn't convert article JSON to Article Models: %@", error);
         return nil;
@@ -258,9 +263,25 @@ static NSString * const kPDClientJSONSportsPostsString = @"http://www.bupipedrea
     
     
     
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        if (completion == nil) {
+            return;
+        }
+        
+        NSArray *recentSportsArticles = [self translateFromJSONArray:[responseObject objectForKey:@"posts"] withClassName:@"Article"];;
+        
+        completion(recentSportsArticles, nil);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (completion) {
+            completion(nil, error);
+        }
+        
+    }];
     
-
-
+    [operation start];
+}
 
 
 

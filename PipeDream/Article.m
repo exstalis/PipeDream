@@ -12,8 +12,10 @@
 #import "Author.h"
 #import <MapKit/MapKit.h>
 
+#import "ArticleCategory.h"
+#import "Attachments.h"
 
-
+#import "Image.h"
 
 @implementation Article
 
@@ -30,8 +32,9 @@
              @"articleDate" : @"date",
              @"authorName" : @"author.name",
              @"articleCategories": @"categories",
-             @"articleAttachments" :@"attachments"
-         
+             @"articleAttachments" : @"attachments",
+             @"articleCount" : @"count_total"
+             
              };
 }
 //formats the date
@@ -41,6 +44,8 @@
     dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
     return dateFormatter;
 }
+
+
 
 //transforms the URL
 + (NSValueTransformer *) articleURLJSONTransformer {
@@ -59,6 +64,15 @@
     }];
 }
 
+//transform attachments with a ArticleCategory object
++(NSValueTransformer *) articleCategoriesTransformer {
+    return [MTLJSONAdapter arrayTransformerWithModelClass:[ArticleCategory class]];
+    
+    
+    
+}
+
+
 //transform attachments with a Attachments object
 +(NSValueTransformer *) articleAttachmentsJSONTransformer {
     return [MTLJSONAdapter arrayTransformerWithModelClass:[Attachments class]];
@@ -72,6 +86,7 @@
 //+(NSValueTransformer *) authorNameJSONTransformer {
 //    return [MTLJSONAdapter dictionaryTransformerWithModelClass:Author.class];
 //}
+
 
 
 

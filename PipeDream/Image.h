@@ -7,19 +7,15 @@
 //
 
 #import <Mantle/Mantle.h>
+#import "Attachments.h"
 
-@interface Image : MTLModel<MTLJSONSerializing>
+@interface Image : MTLModel <MTLJSONSerializing>
 
-//
-//@property(strong, nonatomic, readonly) NSURL *imageURL;
-//@property(nonatomic, readonly) NSNumber *width;
-//@property(nonatomic, readonly) NSNumber *height;
 
 @property(strong, nonatomic, readonly) NSURL *fullSizeImages;
 @property(strong, nonatomic, readonly) NSURL *thumbnailSizeImages;
 @property(strong, nonatomic, readonly) NSURL *mediumSizeImages;
 @property(strong, nonatomic, readonly) NSURL *largeSizeImages;
-
 
 
 @end

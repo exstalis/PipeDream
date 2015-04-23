@@ -8,22 +8,21 @@
 
 
 #import <Mantle/Mantle.h>
+#import "Article.h"
 #import "Image.h"
 
-@interface Attachments : MTLModel <MTLJSONSerializing>
 
 
-@property(nonatomic, readonly) NSNumber *ID;
-@property(strong, nonatomic, readonly) NSURL *url;
-@property(strong, nonatomic, readonly) NSString *title;
-//@property(strong, nonatomic, readonly) NSString *caption;
-//@property(strong, nonatomic, readonly) NSString *desc;
-//@property(nonatomic, readonly) NSNumber *parent;
-//@property(strong, nonatomic, readonly) NSString *mimeType;
-@property(strong, nonatomic, readonly) NSDictionary *images;
+@interface Attachments :MTLModel <MTLJSONSerializing,MTLTransformerErrorHandling>
 
 
 
+@property(nonatomic, readonly,strong) NSNumber *attachmentID;
+
+@property(strong, nonatomic, readonly) NSString *attachmentTitle;
+@property(strong, nonatomic, readonly) NSDictionary *articleImages;
+
+@property (readonly, nonatomic, assign, getter = isAttachmentForImage) BOOL imageAttachment;
 
 
 @end

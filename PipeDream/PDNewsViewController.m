@@ -26,42 +26,24 @@
 - (IBAction)showMenu:(UIBarButtonItem *)sender;
 
 
-@property (nonatomic) NSMutableDictionary *newsArticleDictionary;
 @property (nonatomic,strong) NSMutableArray *newsArticleArray;
-@property (nonatomic,strong)Article *newsArticleObjects;
 @property(nonatomic,strong)NSMutableArray *newsAttachments;
 
-
-
-
 -(void)loadNewsArticle;
-
 
 @end
 
 
-
 @implementation PDNewsViewController
-
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-
-    _newsArticleObjects=[[Article alloc]init];
     
     [self loadNewsArticle];
     
 //    self.indicator=[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    
-    
-    
-    
 
-    
-
-    
 }
 
 -(instancetype)initWithCoder:(NSCoder *)aDecoder{
@@ -75,7 +57,15 @@
     
 }
 
-
+//-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    if ([[segue identifier] isEqualToString:@"NewsDetailSegue"]) {
+//        PDNewsDetailViewController *viewController = (PDNewsDetailViewController *)[segue destinationViewController];
+//        NSIndexPath *selectedPath = [self.tableView indexPathForSelectedRow];
+//        Article *article = [_newsArticleArray objectAtIndex:selectedPath.row];
+//        viewController.article = article;
+//    }
+//}
 
 -(void)loadNewsArticle{
     
@@ -137,15 +127,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-
 #pragma mark - TableView datasource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
     
 }
-
-
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
@@ -154,21 +140,15 @@
     
     
 }
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-  
-    
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     PDNewsTableviewCell *newsCell=[tableView dequeueReusableCellWithIdentifier:@"newsCell"];
-          if (newsCell==nil) {
+    if (newsCell==nil) {
         newsCell=[[PDNewsTableviewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"newsCell"];
-        
     }
-//
-    
     
     Article *newsArticle=[_newsArticleArray objectAtIndex:indexPath.row];
-//    
 //    NSLog(@"article array : %@",_newsArticleArray);
     
     
@@ -178,7 +158,6 @@
     newsCell.newsDateLabel.text=newsArticle.articleDate.description;
 //    newsCell.newsThumbnailImage.image=newsArticle.articleAttachments;
     
- 
     return newsCell;
     
 }
@@ -186,10 +165,6 @@
 
 
 #pragma mark -Menu Action Delegate
-
-
-
-
 
 - (IBAction)showMenu:(UIBarButtonItem *)sender {
     

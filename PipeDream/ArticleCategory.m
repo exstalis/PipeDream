@@ -14,9 +14,16 @@
     return @{
              @"categoryID" : @"id",
              @"title" : @"title",
-             @"parent" : @"parent",
              @"postCount" : @"post_count"
              };
 }
+
+
++ (NSValueTransformer *) categoryTransformer {
+    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
+}
+
+
+
 
 @end

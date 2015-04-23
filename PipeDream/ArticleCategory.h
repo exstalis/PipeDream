@@ -7,13 +7,13 @@
 //
 
 #import <Mantle/Mantle.h>
+#import "Article.h"
 
-@interface ArticleCategory : MTLModel<MTLJSONSerializing>
+@interface ArticleCategory :MTLModel<MTLJSONSerializing>
 
 
 @property(nonatomic, readonly) NSNumber *categoryID;
 @property(strong, nonatomic, readonly) NSString *title;
-@property(nonatomic, readonly) NSNumber *parent;
 @property(nonatomic, readonly) NSNumber *postCount;
 
 @end

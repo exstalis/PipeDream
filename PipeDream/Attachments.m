@@ -8,28 +8,35 @@
 
 #import "Attachments.h"
 
+
+
 @implementation Attachments
 
 +(NSDictionary *) JSONKeyPathsByPropertyKey {
     return @{
-             @"ID" : @"id",
-             @"url" : @"url",
-             @"title" : @"title",
-             @"images" : @"images"
-             };
+             @"attachmentID" : @"id",
+             @"attachmentTitle" : @"title",
+            @"articleImages": @"images"
+            };
+
+
+
 }
 
-//transforms the URL
 
 
-+ (NSValueTransformer *) urlJSONTransformer {
+
+
++ (NSValueTransformer *) attachmentsTransformer {
     return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
 }
 
 +(NSValueTransformer *) imagesJSONTransformer {
     return [MTLJSONAdapter dictionaryTransformerWithModelClass:[Image class]];
     
+    ;
     
+    return self;
 }
 
 
