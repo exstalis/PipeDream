@@ -133,6 +133,7 @@
 }
 
 
+
 - (JVFloatingDrawerSpringAnimator *)drawerAnimator {
     return [[AppDelegate globalDelegate] drawerAnimator];
 }

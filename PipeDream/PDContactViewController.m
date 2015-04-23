@@ -9,6 +9,7 @@
 #import "PDContactViewController.h"
 
 
+
 static NSString * const kPDTwitterAppURL=@"twitter://user?screen_name=bupipedream";
 static NSString * const kPDTwitterBrowserURL=@"https://twitter.com/bupipedream/";
 
@@ -59,15 +60,12 @@ static NSString * const kPDTwitterBrowserURL=@"https://twitter.com/bupipedream/"
 
 - (IBAction)likeUsOnFacebook:(id)sender {
     
-    
-    
-    
+  
     
     
 }
 
 - (IBAction)followUsOnInstagram:(id)sender {
-
 
 
 
