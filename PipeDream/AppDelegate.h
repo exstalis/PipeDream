@@ -30,6 +30,7 @@
 @property (nonatomic, strong) UIViewController *releaseViewController;
 @property(nonatomic,strong)UIViewController *sportsViewController;
 @property(nonatomic,strong)UIViewController *contactViewController;
+@property(nonatomic,strong)UIViewController *recentViewController;
 
 
 + (AppDelegate *)globalDelegate;

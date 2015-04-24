@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1F3ED5713E1DBF6A357E087D"
-               BuildableName = "FLKAutoLayout.framework"
+               BlueprintIdentifier = "D0585015CF3DA39FED8E5504"
+               BuildableName = "libPods-PipeDream-FLKAutoLayout.a"
                BlueprintName = "Pods-PipeDream-FLKAutoLayout"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
@@ -42,8 +42,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1F3ED5713E1DBF6A357E087D"
-            BuildableName = "FLKAutoLayout.framework"
+            BlueprintIdentifier = "D0585015CF3DA39FED8E5504"
+            BuildableName = "libPods-PipeDream-FLKAutoLayout.a"
             BlueprintName = "Pods-PipeDream-FLKAutoLayout"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
@@ -60,8 +60,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1F3ED5713E1DBF6A357E087D"
-            BuildableName = "FLKAutoLayout.framework"
+            BlueprintIdentifier = "D0585015CF3DA39FED8E5504"
+            BuildableName = "libPods-PipeDream-FLKAutoLayout.a"
             BlueprintName = "Pods-PipeDream-FLKAutoLayout"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>

@@ -33,15 +33,13 @@ static dispatch_once_t oncePredicate;
 
 
 
-
-
-//- (id)initWithArticle:(Article *)article
-//{
-//    if (self = [super init]) {
-//        self.article=article ;
-//    }
-//    return self;
-//}
+- (id)initWithArticle:(Article *)article
+{
+    if (self = [super init]) {
+        self.sharedArticle=article ;
+    }
+    return self;
+}
 -(NSString *)stripHTMLEntities:(NSString *)encodedString
 {
     NSString *strippedString=[[NSString alloc]init];

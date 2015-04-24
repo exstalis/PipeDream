@@ -29,8 +29,7 @@
              @"articleDate" : @"date",
              @"authorName" : @"author.name",
              @"articleCategories": @"categories",
-             @"articleAttachments" : @"attachments",
-             @"articleCount" : @"count_total"
+             @"articleAttachments" : @"attachments"
              
              };
 }

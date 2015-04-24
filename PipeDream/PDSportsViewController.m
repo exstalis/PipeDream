@@ -8,36 +8,45 @@
 
 #import "PDSportsViewController.h"
 #import "PDSportsDetailViewController.h"
-#import "PDFeedTableViewCell.h"
 #import "JVFloatingDrawerViewController.h"
 #import "JVFloatingDrawerSpringAnimator.h"
 #import "AppDelegate.h"
 #import "PDDrawerMenuCell.h"
-#import "PDNavigationController.h"
 #import "PDNetworkClient.h"
+#import "PDSportsTableViewCell.h"
+#import "Article.h"
+#import "PDNetworkClient.h"
+
 
 @interface PDSportsViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 - (IBAction)showMenu:(UIBarButtonItem *)sender;
 
+@property(nonatomic,strong)Article *sportsArticles;
+
 @property(nonatomic, strong) NSMutableArray *sportsArticlesArray;
 
 @end
+
 @implementation PDSportsViewController
 
-
 - (void)viewDidLoad {
+    [super viewDidLoad];
+    
+
     [self loadSportsArticles];
-    [self loadSportsArticles];
+    _sportsArticles=[[Article alloc]init];
+    _sportsArticlesArray=[[NSMutableArray alloc]init];
+    
+
+
+
 }
-- (instancetype)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super initWithCoder:aDecoder];
-    if (self != nil) {
-        _sportsArticlesArray = [[NSMutableArray alloc] init];
-    }
-    return self;
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
 }
+
 
 - (void)loadSportsArticles
 {
@@ -54,18 +63,23 @@
     }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+
+
+- (IBAction)showMenu:(UIBarButtonItem *)sender {
+    [[AppDelegate globalDelegate] toggleLeftDrawer:self animated:YES];
+    
+    
 }
 
-    
 
-
+#pragma Menu action method
 
 - (JVFloatingDrawerSpringAnimator *)drawerAnimator {
     return [[AppDelegate globalDelegate] drawerAnimator];
 }
+
+
 
 
 #pragma mark - TableView datasource
@@ -74,22 +88,28 @@
     
 }
 
-
-
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 20;
+    return [_sportsArticlesArray count];
     
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     
     
-    PDFeedTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"sportsCell"];
+    PDSportsTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"sportsCell"];
     if (cell==nil) {
-        cell=[[PDFeedTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"sportsCell"];
+        cell=[[PDSportsTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"sportsCell"];
         
     }
+    
+    _sportsArticles=[_sportsArticlesArray objectAtIndex:indexPath.row];
+    cell.sportsTitle.text=_sportsArticles.articleTitle;
+    cell.sportsExcerpt.text=_sportsArticles.articleExcerpt;
+    cell.sportsAuthor.text=_sportsArticles.authorName;
+    cell.sportsDate.text=_sportsArticles.articleDate.description;
+    
+    
     
 
     return cell;

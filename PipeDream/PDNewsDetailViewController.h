@@ -13,5 +13,11 @@
 @interface PDNewsDetailViewController : UIViewController
 
 @property(nonatomic, strong) Article *article;
+@property (weak, nonatomic) IBOutlet UILabel *newsArticleTitle;
+@property (weak, nonatomic) IBOutlet UILabel *newsArticleAutor;
+@property (weak, nonatomic) IBOutlet UIImageView *newsArticleImage;
+@property (weak, nonatomic) IBOutlet UITextView *newsArticleBody;
+
+
 
 @end

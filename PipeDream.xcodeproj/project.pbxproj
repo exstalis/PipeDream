@@ -16,7 +16,6 @@
 		2D271A801ABE1AE300A71464 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D271A7E1ABE1AE300A71464 /* LaunchScreen.xib */; };
 		2D271A8C1ABE1AE400A71464 /* PipeDreamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A8B1ABE1AE400A71464 /* PipeDreamTests.m */; };
 		2D271A9D1ABE25C900A71464 /* PDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A9C1ABE25C900A71464 /* PDNavigationController.m */; };
-		2D2921341ADA148A00D622EC /* JVFloatingDrawer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D2921331ADA148A00D622EC /* JVFloatingDrawer.framework */; };
 		2D2921371ADA154500D622EC /* PDDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2921361ADA154500D622EC /* PDDrawerViewController.m */; };
 		2D29213D1ADA49E800D622EC /* PDReleaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D29213C1ADA49E800D622EC /* PDReleaseViewController.m */; };
 		2D2921411ADA4C7100D622EC /* PDSportsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2921401ADA4C7100D622EC /* PDSportsViewController.m */; };
@@ -29,10 +28,14 @@
 		2D3F85EB1ADDF8FC00A040E1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D3F85EA1ADDF8FC00A040E1 /* CoreLocation.framework */; };
 		2D3F85ED1ADDF90800A040E1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D3F85EC1ADDF90800A040E1 /* SystemConfiguration.framework */; };
 		2D3F85F01ADE080900A040E1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D3F85EF1ADE080900A040E1 /* QuartzCore.framework */; };
-		2D3F85F21ADE083400A040E1 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D3F85F11ADE083400A040E1 /* AFNetworking.framework */; };
 		2D4FC84B1AE827950044ACEF /* PDOpinionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FC84A1AE827950044ACEF /* PDOpinionTableViewCell.m */; };
 		2D4FC84E1AE870A90044ACEF /* PDReleaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FC84D1AE870A90044ACEF /* PDReleaseTableViewCell.m */; };
-		2D5D94081ADCBABC0068DB3E /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5D94071ADCBABC0068DB3E /* Mantle.framework */; };
+		2D4FC8511AE890970044ACEF /* PDSportsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FC8501AE890970044ACEF /* PDSportsTableViewCell.m */; };
+		2D4FC8541AE8A2430044ACEF /* PDRecentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FC8531AE8A2430044ACEF /* PDRecentViewController.m */; };
+		2D4FC85D1AE8B0FF0044ACEF /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 2D4FC85C1AE8B0FF0044ACEF /* Fonts */; };
+		2D4FC8601AE8B4A20044ACEF /* PDContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FC85F1AE8B4A20044ACEF /* PDContactViewController.m */; };
+		2D4FC8631AE8BB620044ACEF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D4FC8621AE8BB620044ACEF /* MapKit.framework */; };
+		2D4FC8651AE8C8000044ACEF /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D4FC8641AE8C8000044ACEF /* SafariServices.framework */; };
 		2D5D94151ADCBC620068DB3E /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D940A1ADCBC620068DB3E /* Article.m */; };
 		2D5D94161ADCBC620068DB3E /* ArticleCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D940C1ADCBC620068DB3E /* ArticleCategory.m */; };
 		2D5D94171ADCBC620068DB3E /* Attachments.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D940E1ADCBC620068DB3E /* Attachments.m */; };
@@ -40,8 +43,15 @@
 		2D5D94221ADCBEAB0068DB3E /* PDSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D94211ADCBEAB0068DB3E /* PDSingleton.m */; };
 		2D5E8E211AD9F2AE00FB533F /* PDOpinionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E8E201AD9F2AE00FB533F /* PDOpinionViewController.m */; };
 		2D5E8E241AD9F32500FB533F /* PDOpinionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E8E231AD9F32500FB533F /* PDOpinionDetailViewController.m */; };
+		2D5FDB321AEA1046004187BB /* libPods-PipeDream-FLKAutoLayout.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5FDB2C1AEA1046004187BB /* libPods-PipeDream-FLKAutoLayout.a */; };
+		2D5FDB331AEA1046004187BB /* libPods-PipeDream-FontAwesomeIconFactory.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5FDB2D1AEA1046004187BB /* libPods-PipeDream-FontAwesomeIconFactory.a */; };
+		2D5FDB351AEA1046004187BB /* libPods-PipeDream-Mantle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5FDB2F1AEA1046004187BB /* libPods-PipeDream-Mantle.a */; };
+		2D5FDB361AEA1046004187BB /* libPods-PipeDream-ORStackView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5FDB301AEA1046004187BB /* libPods-PipeDream-ORStackView.a */; };
+		2D5FDB381AEA1230004187BB /* libPods-PipeDream-AFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5FDB371AEA1230004187BB /* libPods-PipeDream-AFNetworking.a */; };
+		2D5FDB3A1AEA1336004187BB /* libPods-PipeDream-JVFloatingDrawer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5FDB391AEA1336004187BB /* libPods-PipeDream-JVFloatingDrawer.a */; };
 		2D7A30A71ADF37B700A6055C /* PDNewsTableviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A30A61ADF37B700A6055C /* PDNewsTableviewCell.m */; };
 		2D7A30AB1ADFF4DA00A6055C /* RequestOperationConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A30AA1ADFF4DA00A6055C /* RequestOperationConfig.m */; };
+		2D85F5121AE8CA0D00A0C832 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D85F5111AE8CA0D00A0C832 /* Accounts.framework */; };
 		2D8DADED1AD8B7440047AECE /* PDDrawerMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8DADEC1AD8B7440047AECE /* PDDrawerMenuCell.m */; };
 		2D8DADF71AD8E2E70047AECE /* PDFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8DADF61AD8E2E70047AECE /* PDFeedTableViewCell.m */; };
 		2DBEBCAE1AD70B7100123DB5 /* BG.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBEBCAD1AD70B7100123DB5 /* BG.png */; };
@@ -57,7 +67,7 @@
 		2DEED4111ADE0997005A56D4 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DEED40E1ADE0997005A56D4 /* Twitter.framework */; };
 		2DEED4121ADE0997005A56D4 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DEED40F1ADE0997005A56D4 /* WebKit.framework */; };
 		2DEED4141ADE0AA2005A56D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DEED4131ADE0AA2005A56D4 /* UIKit.framework */; };
-		D09D8ACBB15D3F7BC0EB2839 /* Pods_PipeDream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B9D5B4C476E3BFECB988FE /* Pods_PipeDream.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		63D8B653419B1EEB0CC8536F /* libPods-PipeDream.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8839B9FA9C4817179CE28D3F /* libPods-PipeDream.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +126,16 @@
 		2D4FC84A1AE827950044ACEF /* PDOpinionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDOpinionTableViewCell.m; sourceTree = "<group>"; };
 		2D4FC84C1AE870A90044ACEF /* PDReleaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDReleaseTableViewCell.h; sourceTree = "<group>"; };
 		2D4FC84D1AE870A90044ACEF /* PDReleaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDReleaseTableViewCell.m; sourceTree = "<group>"; };
+		2D4FC84F1AE890970044ACEF /* PDSportsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDSportsTableViewCell.h; sourceTree = "<group>"; };
+		2D4FC8501AE890970044ACEF /* PDSportsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDSportsTableViewCell.m; sourceTree = "<group>"; };
+		2D4FC8521AE8A2430044ACEF /* PDRecentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDRecentViewController.h; sourceTree = "<group>"; };
+		2D4FC8531AE8A2430044ACEF /* PDRecentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDRecentViewController.m; sourceTree = "<group>"; };
+		2D4FC85C1AE8B0FF0044ACEF /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
+		2D4FC85E1AE8B4A20044ACEF /* PDContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDContactViewController.h; sourceTree = "<group>"; };
+		2D4FC85F1AE8B4A20044ACEF /* PDContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDContactViewController.m; sourceTree = "<group>"; };
+		2D4FC8621AE8BB620044ACEF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		2D4FC8641AE8C8000044ACEF /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		2D4FC8661AE8C8100044ACEF /* Facebook_iOS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Facebook_iOS_SDK.framework; path = "Pods/../build/Debug-iphoneos/Pods-PipeDream/Facebook_iOS_SDK.framework"; sourceTree = "<group>"; };
 		2D5D94071ADCBABC0068DB3E /* Mantle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mantle.framework; path = "Pods/../build/Debug-iphoneos/Pods-PipeDream/Mantle.framework"; sourceTree = "<group>"; };
 		2D5D94091ADCBC620068DB3E /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
 		2D5D940A1ADCBC620068DB3E /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
@@ -131,9 +151,18 @@
 		2D5E8E201AD9F2AE00FB533F /* PDOpinionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDOpinionViewController.m; sourceTree = "<group>"; };
 		2D5E8E221AD9F32500FB533F /* PDOpinionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDOpinionDetailViewController.h; sourceTree = "<group>"; };
 		2D5E8E231AD9F32500FB533F /* PDOpinionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDOpinionDetailViewController.m; sourceTree = "<group>"; };
+		2D5FDB2B1AEA1046004187BB /* libPods-PipeDream-AFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-PipeDream-AFNetworking.a"; path = "Pods/../build/Debug-iphoneos/libPods-PipeDream-AFNetworking.a"; sourceTree = "<group>"; };
+		2D5FDB2C1AEA1046004187BB /* libPods-PipeDream-FLKAutoLayout.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-PipeDream-FLKAutoLayout.a"; path = "Pods/../build/Debug-iphoneos/libPods-PipeDream-FLKAutoLayout.a"; sourceTree = "<group>"; };
+		2D5FDB2D1AEA1046004187BB /* libPods-PipeDream-FontAwesomeIconFactory.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-PipeDream-FontAwesomeIconFactory.a"; path = "Pods/../build/Debug-iphoneos/libPods-PipeDream-FontAwesomeIconFactory.a"; sourceTree = "<group>"; };
+		2D5FDB2E1AEA1046004187BB /* libPods-PipeDream-JVFloatingDrawer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-PipeDream-JVFloatingDrawer.a"; path = "Pods/../build/Debug-iphoneos/libPods-PipeDream-JVFloatingDrawer.a"; sourceTree = "<group>"; };
+		2D5FDB2F1AEA1046004187BB /* libPods-PipeDream-Mantle.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-PipeDream-Mantle.a"; path = "Pods/../build/Debug-iphoneos/libPods-PipeDream-Mantle.a"; sourceTree = "<group>"; };
+		2D5FDB301AEA1046004187BB /* libPods-PipeDream-ORStackView.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-PipeDream-ORStackView.a"; path = "Pods/../build/Debug-iphoneos/libPods-PipeDream-ORStackView.a"; sourceTree = "<group>"; };
+		2D5FDB371AEA1230004187BB /* libPods-PipeDream-AFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-PipeDream-AFNetworking.a"; path = "Pods/../build/Debug-iphoneos/libPods-PipeDream-AFNetworking.a"; sourceTree = "<group>"; };
+		2D5FDB391AEA1336004187BB /* libPods-PipeDream-JVFloatingDrawer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-PipeDream-JVFloatingDrawer.a"; path = "Pods/../build/Debug-iphoneos/libPods-PipeDream-JVFloatingDrawer.a"; sourceTree = "<group>"; };
 		2D7A30A51ADF37B700A6055C /* PDNewsTableviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDNewsTableviewCell.h; sourceTree = "<group>"; };
 		2D7A30A61ADF37B700A6055C /* PDNewsTableviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDNewsTableviewCell.m; sourceTree = "<group>"; };
 		2D7A30AA1ADFF4DA00A6055C /* RequestOperationConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestOperationConfig.m; sourceTree = "<group>"; };
+		2D85F5111AE8CA0D00A0C832 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		2D8DADEB1AD8B7440047AECE /* PDDrawerMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDDrawerMenuCell.h; sourceTree = "<group>"; };
 		2D8DADEC1AD8B7440047AECE /* PDDrawerMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDDrawerMenuCell.m; sourceTree = "<group>"; };
 		2D8DADF51AD8E2E70047AECE /* PDFeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFeedTableViewCell.h; sourceTree = "<group>"; };
@@ -152,8 +181,8 @@
 		2DEED40E1ADE0997005A56D4 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		2DEED40F1ADE0997005A56D4 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		2DEED4131ADE0AA2005A56D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		42B9D5B4C476E3BFECB988FE /* Pods_PipeDream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PipeDream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		774EED6B9BEC8E099AFBF156 /* Pods-PipeDream.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PipeDream.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PipeDream/Pods-PipeDream.debug.xcconfig"; sourceTree = "<group>"; };
+		8839B9FA9C4817179CE28D3F /* libPods-PipeDream.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PipeDream.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,18 +190,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D5FDB3A1AEA1336004187BB /* libPods-PipeDream-JVFloatingDrawer.a in Frameworks */,
+				2D5FDB381AEA1230004187BB /* libPods-PipeDream-AFNetworking.a in Frameworks */,
+				2D5FDB321AEA1046004187BB /* libPods-PipeDream-FLKAutoLayout.a in Frameworks */,
+				2D5FDB331AEA1046004187BB /* libPods-PipeDream-FontAwesomeIconFactory.a in Frameworks */,
+				2D5FDB351AEA1046004187BB /* libPods-PipeDream-Mantle.a in Frameworks */,
+				2D5FDB361AEA1046004187BB /* libPods-PipeDream-ORStackView.a in Frameworks */,
+				2D85F5121AE8CA0D00A0C832 /* Accounts.framework in Frameworks */,
+				2D4FC8651AE8C8000044ACEF /* SafariServices.framework in Frameworks */,
+				2D4FC8631AE8BB620044ACEF /* MapKit.framework in Frameworks */,
 				2DEED4141ADE0AA2005A56D4 /* UIKit.framework in Frameworks */,
 				2DEED4101ADE0997005A56D4 /* NetworkExtension.framework in Frameworks */,
 				2DEED4111ADE0997005A56D4 /* Twitter.framework in Frameworks */,
 				2DEED4121ADE0997005A56D4 /* WebKit.framework in Frameworks */,
 				2D3F85E91ADDF8F300A040E1 /* MobileCoreServices.framework in Frameworks */,
-				2D3F85F21ADE083400A040E1 /* AFNetworking.framework in Frameworks */,
 				2D3F85F01ADE080900A040E1 /* QuartzCore.framework in Frameworks */,
 				2D3F85ED1ADDF90800A040E1 /* SystemConfiguration.framework in Frameworks */,
 				2D3F85EB1ADDF8FC00A040E1 /* CoreLocation.framework in Frameworks */,
-				2D5D94081ADCBABC0068DB3E /* Mantle.framework in Frameworks */,
-				2D2921341ADA148A00D622EC /* JVFloatingDrawer.framework in Frameworks */,
-				D09D8ACBB15D3F7BC0EB2839 /* Pods_PipeDream.framework in Frameworks */,
+				63D8B653419B1EEB0CC8536F /* libPods-PipeDream.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +335,8 @@
 			isa = PBXGroup;
 			children = (
 				2D29213F1ADA4C7100D622EC /* PDSportsViewController.h */,
+				2D4FC84F1AE890970044ACEF /* PDSportsTableViewCell.h */,
+				2D4FC8501AE890970044ACEF /* PDSportsTableViewCell.m */,
 				2D2921401ADA4C7100D622EC /* PDSportsViewController.m */,
 				2D2921461ADA586E00D622EC /* PDSportsDetailViewController.h */,
 				2D2921471ADA586E00D622EC /* PDSportsDetailViewController.m */,
@@ -339,6 +376,24 @@
 				2D46DF721ADE218B0014B98C /* Blocks.h */,
 			);
 			name = Blocks;
+			sourceTree = "<group>";
+		};
+		2D4FC8551AE8A2510044ACEF /* Recent */ = {
+			isa = PBXGroup;
+			children = (
+				2D4FC8521AE8A2430044ACEF /* PDRecentViewController.h */,
+				2D4FC8531AE8A2430044ACEF /* PDRecentViewController.m */,
+			);
+			name = Recent;
+			sourceTree = "<group>";
+		};
+		2D4FC8611AE8B4AC0044ACEF /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				2D4FC85E1AE8B4A20044ACEF /* PDContactViewController.h */,
+				2D4FC85F1AE8B4A20044ACEF /* PDContactViewController.m */,
+			);
+			name = Contact;
 			sourceTree = "<group>";
 		};
 		2D5D941B1ADCBC6B0068DB3E /* Models */ = {
@@ -394,6 +449,8 @@
 				2D345C061AD9E5D300308866 /* Opinion */,
 				2D29213E1ADA49ED00D622EC /* Release */,
 				2D2921421ADA4C7E00D622EC /* Sports */,
+				2D4FC8551AE8A2510044ACEF /* Recent */,
+				2D4FC8611AE8B4AC0044ACEF /* Contact */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -401,6 +458,7 @@
 		2DC51D171AD4D2D100B9FA1F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2D4FC85C1AE8B0FF0044ACEF /* Fonts */,
 				2D345BFF1AD9E56F00308866 /* detail.png */,
 				2D345C001AD9E56F00308866 /* detail@2x.png */,
 				2DBEBCBE1AD7314000123DB5 /* menu.png */,
@@ -428,6 +486,18 @@
 		794F173DADAE86E716A67057 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2D5FDB391AEA1336004187BB /* libPods-PipeDream-JVFloatingDrawer.a */,
+				2D5FDB371AEA1230004187BB /* libPods-PipeDream-AFNetworking.a */,
+				2D5FDB2B1AEA1046004187BB /* libPods-PipeDream-AFNetworking.a */,
+				2D5FDB2C1AEA1046004187BB /* libPods-PipeDream-FLKAutoLayout.a */,
+				2D5FDB2D1AEA1046004187BB /* libPods-PipeDream-FontAwesomeIconFactory.a */,
+				2D5FDB2E1AEA1046004187BB /* libPods-PipeDream-JVFloatingDrawer.a */,
+				2D5FDB2F1AEA1046004187BB /* libPods-PipeDream-Mantle.a */,
+				2D5FDB301AEA1046004187BB /* libPods-PipeDream-ORStackView.a */,
+				2D85F5111AE8CA0D00A0C832 /* Accounts.framework */,
+				2D4FC8661AE8C8100044ACEF /* Facebook_iOS_SDK.framework */,
+				2D4FC8641AE8C8000044ACEF /* SafariServices.framework */,
+				2D4FC8621AE8BB620044ACEF /* MapKit.framework */,
 				2DEED4131ADE0AA2005A56D4 /* UIKit.framework */,
 				2DEED40D1ADE0997005A56D4 /* NetworkExtension.framework */,
 				2DEED40E1ADE0997005A56D4 /* Twitter.framework */,
@@ -439,7 +509,7 @@
 				2D3F85E81ADDF8F300A040E1 /* MobileCoreServices.framework */,
 				2D5D94071ADCBABC0068DB3E /* Mantle.framework */,
 				2D2921331ADA148A00D622EC /* JVFloatingDrawer.framework */,
-				42B9D5B4C476E3BFECB988FE /* Pods_PipeDream.framework */,
+				8839B9FA9C4817179CE28D3F /* libPods-PipeDream.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -455,7 +525,6 @@
 				2D271A651ABE1AE300A71464 /* Sources */,
 				2D271A661ABE1AE300A71464 /* Frameworks */,
 				2D271A671ABE1AE300A71464 /* Resources */,
-				E945EC40D7B6FFF6E411B530 /* Embed Pods Frameworks */,
 				1D350AC411592F23B47CB64B /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -532,6 +601,7 @@
 				2DC51D3B1AD5B58200B9FA1F /* Front View@2x.png in Resources */,
 				2DC51D3A1AD5B58200B9FA1F /* Front View.png in Resources */,
 				2DC51D3C1AD5B58200B9FA1F /* Front View@3x.png in Resources */,
+				2D4FC85D1AE8B0FF0044ACEF /* Fonts in Resources */,
 				2DC51D391AD5B58200B9FA1F /* Front View Swipe Left@2x.png in Resources */,
 				2DBEBCAE1AD70B7100123DB5 /* BG.png in Resources */,
 				2D345C021AD9E56F00308866 /* detail@2x.png in Resources */,
@@ -583,21 +653,6 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		E945EC40D7B6FFF6E411B530 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PipeDream/Pods-PipeDream-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -620,6 +675,7 @@
 				2D5D94221ADCBEAB0068DB3E /* PDSingleton.m in Sources */,
 				2D5D94151ADCBC620068DB3E /* Article.m in Sources */,
 				2D2921451ADA585100D622EC /* PDReleaseDetailViewController.m in Sources */,
+				2D4FC8601AE8B4A20044ACEF /* PDContactViewController.m in Sources */,
 				2D7A30AB1ADFF4DA00A6055C /* RequestOperationConfig.m in Sources */,
 				2D8DADF71AD8E2E70047AECE /* PDFeedTableViewCell.m in Sources */,
 				2D345C051AD9E5C700308866 /* PDNewsDetailViewController.m in Sources */,
@@ -630,6 +686,8 @@
 				2D5D94161ADCBC620068DB3E /* ArticleCategory.m in Sources */,
 				2D271A9D1ABE25C900A71464 /* PDNavigationController.m in Sources */,
 				2D271A6F1ABE1AE300A71464 /* main.m in Sources */,
+				2D4FC8511AE890970044ACEF /* PDSportsTableViewCell.m in Sources */,
+				2D4FC8541AE8A2430044ACEF /* PDRecentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,7 +763,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -742,7 +800,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
@@ -764,9 +822,14 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"\"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include\"",
+					"$(inherited)",
 				);
 				INFOPLIST_FILE = PipeDream/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -784,9 +847,14 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"\"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include\"",
+					"$(inherited)",
 				);
 				INFOPLIST_FILE = PipeDream/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

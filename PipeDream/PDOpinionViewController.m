@@ -8,7 +8,7 @@
 
 #import "PDOpinionViewController.h"
 #import "PDOpinionDetailViewController.h"
-#import "PDFeedTableViewCell.h"
+
 #import "AppDelegate.h"
 #import "Article.h"
 #import "PDOpinionTableViewCell.h"
@@ -52,15 +52,6 @@
     [super didReceiveMemoryWarning];
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"OpinionDetailSegue"]) {
-        PDOpinionDetailViewController *viewController = (PDOpinionDetailViewController *)[segue destinationViewController];
-        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-        Article *selectedArticle = [_opinionArticlesArray objectAtIndex:selectedIndexPath.row];
-        viewController.article = selectedArticle;
-    }
-}
 
 
 - (void)loadOpinionArticles
@@ -107,7 +98,8 @@
     
     
     
-    PDOpinionTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"opinionCell"];
+    PDOpinionTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"opinionCell" forIndexPath:indexPath];
+    
     if (cell==nil) {
         cell=[[PDOpinionTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"opinionCell"];
         
@@ -125,8 +117,6 @@
     
     
     return cell;
-    
-    
     
 }
 

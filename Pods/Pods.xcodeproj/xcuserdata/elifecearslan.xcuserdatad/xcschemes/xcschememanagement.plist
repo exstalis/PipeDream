@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-PipeDream-FontAwesomeIconFactory.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-PipeDream-JVFloatingDrawer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,57 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1A9B039F2FAFA4BBBCB5CBD4</key>
+		<key>370BF5B513B7947E661CD754</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3B5A4E477EE1905F3EF669D2</key>
+		<key>3C81452F4222ABD7DDF81926</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4968B079060266F0B6039B7C</key>
+		<key>763B1B49108E89F350971897</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7D2209476DFDAF349B508080</key>
+		<key>D0585015CF3DA39FED8E5504</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8AB3D059F521B0A1987D7103</key>
+		<key>EDCD366F063A9846B1F26871</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>94D880022C36DA7A542073D1</key>
+		<key>F2AD288C28EFBFF58EEE92F0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E492F75EC3A8C7A044C3AAA5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E86BC20743728DF0E9CF222B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E9676CB5732A57E49AAD9C1C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FF49233314B579BE62E01918</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FF6FCB5705C2B591D8C515F8</key>
+		<key>F7A5116104C62871A8BEC148</key>
 		<dict>
 			<key>primary</key>
 			<true/>

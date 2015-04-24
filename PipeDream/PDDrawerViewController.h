@@ -11,12 +11,13 @@
 
 
 typedef NS_ENUM (NSInteger, PDMenuViewControllerItem){
+    PDMenuViewControllerItemRecent,
     PDMenuViewControllerItemNews,
     PDMenuViewControllerItemOpinion,
     PDMenuViewControllerItemRelease,
     PDMenuViewControllerItemSports,
     PDMenuViewControllerItemContact,
-    PDMenuViewControllerItemSettings,
+//    PDMenuViewControllerItemSettings,
     
     PDMenuViewControllerItem_COUNT,
     

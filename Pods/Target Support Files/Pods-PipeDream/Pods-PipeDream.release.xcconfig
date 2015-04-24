@@ -1,8 +1,6 @@
-FRAMEWORK_SEARCH_PATHS = "$PODS_FRAMEWORK_BUILD_PATH"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$PODS_FRAMEWORK_BUILD_PATH/AFNetworking.framework/Headers" -iquote "$PODS_FRAMEWORK_BUILD_PATH/FLKAutoLayout.framework/Headers" -iquote "$PODS_FRAMEWORK_BUILD_PATH/JVFloatingDrawer.framework/Headers" -iquote "$PODS_FRAMEWORK_BUILD_PATH/Mantle.framework/Headers" -iquote "$PODS_FRAMEWORK_BUILD_PATH/ORStackView.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -ObjC -framework "AFNetworking" -framework "FLKAutoLayout" -framework "JVFloatingDrawer" -framework "Mantle" -framework "ORStackView"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/FLKAutoLayout" "${PODS_ROOT}/Headers/Public/FontAwesomeIconFactory" "${PODS_ROOT}/Headers/Public/JVFloatingDrawer" "${PODS_ROOT}/Headers/Public/Mantle" "${PODS_ROOT}/Headers/Public/ORStackView"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/AFNetworking" -isystem "${PODS_ROOT}/Headers/Public/FLKAutoLayout" -isystem "${PODS_ROOT}/Headers/Public/FontAwesomeIconFactory" -isystem "${PODS_ROOT}/Headers/Public/JVFloatingDrawer" -isystem "${PODS_ROOT}/Headers/Public/Mantle" -isystem "${PODS_ROOT}/Headers/Public/ORStackView"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"Pods-PipeDream-AFNetworking" -l"Pods-PipeDream-FLKAutoLayout" -l"Pods-PipeDream-FontAwesomeIconFactory" -l"Pods-PipeDream-JVFloatingDrawer" -l"Pods-PipeDream-Mantle" -l"Pods-PipeDream-ORStackView" -framework "CoreGraphics" -framework "CoreText" -framework "Foundation" -framework "MobileCoreServices" -framework "Security" -framework "SystemConfiguration"
 OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
-PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-PipeDream
 PODS_ROOT = ${SRCROOT}/Pods

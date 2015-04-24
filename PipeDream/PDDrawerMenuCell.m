@@ -23,8 +23,6 @@
 - (void)awakeFromNib {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
 
-    
-    // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -44,9 +42,10 @@
     if(highlight) {
         tintColor = [UIColor colorWithWhite:1.0 alpha:0.6];
     }
-    
     self.menuItemLabel.textColor = tintColor;
     self.menuCellIcon.tintColor = tintColor;
+    
+    
 }
 
 #pragma mark - Accessors
@@ -55,16 +54,15 @@
 
 - (NSString *)sectionTitle {
     return self.menuItemLabel.text;
+   
+
+    
 }
-
-
 
 
 -(void)setSectionTitle:(NSString *)sectionTitle{
     self.menuItemLabel.text=sectionTitle;
-    
 }
-
 
 
 

@@ -8,7 +8,6 @@
 
 #import "PDNewsViewController.h"
 #import "PDNewsDetailViewController.h"
-#import "PDFeedTableViewCell.h"
 #import "AppDelegate.h"
 #import "PDNewsTableviewCell.h"
 #import "Article.h"
@@ -57,71 +56,28 @@
     
 }
 
-//-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
-//    if ([[segue identifier] isEqualToString:@"NewsDetailSegue"]) {
-//        PDNewsDetailViewController *viewController = (PDNewsDetailViewController *)[segue destinationViewController];
-//        NSIndexPath *selectedPath = [self.tableView indexPathForSelectedRow];
-//        Article *article = [_newsArticleArray objectAtIndex:selectedPath.row];
-//        viewController.article = article;
-//    }
-//}
+
 
 -(void)loadNewsArticle{
     
     PDNetworkClient *manager=[[PDNetworkClient alloc ]init];
-    [manager getRecentArticleWithCompletion:^(NSArray *array, NSError *error) {
-        
-        if (error==nil) {
-            if (array!=nil) {
-                [_newsArticleArray removeAllObjects];
-                [_newsArticleArray addObjectsFromArray:array];
-                
-//                NSLog(@"newsarticle %@",_newsArticleArray);
-                
-                [self.tableView reloadData];
-                
-            }
-        }
-        
-        
-    }];
-
     
-//[manager getRecentAttachmentsFromArray:^(NSArray *array, NSError *error) {
-//    if (error==nil) {
-//        if (array!=nil) {
-//            [_newsAttachments addObjectsFromArray:array];
-//            
-//            
-//            
-//            
-//            
-//            
-//            
-//            
-//            
-//        }
-//    }
-//}];
+        [manager getNewsArticlesWithCompletion:^(NSArray *array, NSError *error) {
+            if (error==nil) {
+                if (array!=nil) {
+                    [_newsArticleArray removeAllObjects];
+                    [_newsArticleArray addObjectsFromArray:array];
+                    [self.tableView reloadData];
+                    
+                }
+            }
+
+        }];
+  
+
 
 }
   
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"OpinionDetailSegue"]) {
-        PDNewsDetailViewController *viewController = (PDNewsDetailViewController *)[segue destinationViewController];
-        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-        Article *selectedArticle = [_newsArticleArray objectAtIndex:selectedIndexPath.row];
-        viewController.article = selectedArticle;
-    }
-}
-    
-
-
-    
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -172,6 +128,7 @@
     
 
 }
+
 
 
 - (JVFloatingDrawerSpringAnimator *)drawerAnimator {

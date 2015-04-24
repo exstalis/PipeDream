@@ -14,7 +14,7 @@
 #import "AppDelegate.h"
 #import "PDDrawerMenuCell.h"
 #import "PDNavigationController.h"
-
+#import "PDReleaseTableViewCell.h"
 #import "PDNetworkClient.h"
 
 @interface PDReleaseViewController ()
@@ -33,7 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _releaseArticles=[[Article alloc]init];
-    [self loadOpinionArticles];
+    [self loadReleaseArticles];
 
     
 }
@@ -44,10 +44,6 @@
 }
 
 
-#pragma mark - MenuBar
-- (JVFloatingDrawerSpringAnimator *)drawerAnimator {
-    return [[AppDelegate globalDelegate] drawerAnimator];
-}
 
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
@@ -59,7 +55,7 @@
     return self;
 }
 
-- (void)loadOpinionArticles
+- (void)loadReleaseArticles
 {
     PDNetworkClient *manager = [[PDNetworkClient alloc] init];
     [manager getOpinionArticlesWithCompletion:^(NSArray *array, NSError *error) {
@@ -95,11 +91,20 @@
     
     
     
-    PDFeedTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"releaseCell"];
+    PDReleaseTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"releaseCell" forIndexPath:indexPath];
+    
     if (cell==nil) {
-        cell=[[PDFeedTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"releaseCell"];
+        cell=[[PDReleaseTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"releaseCell"];
         
     }
+    
+    _releaseArticles=[_releaseArticlesArray objectAtIndex:indexPath.row];
+    
+    cell.releaseTitle.text=_releaseArticles.articleTitle;
+    cell.releaseAuthor.text=_releaseArticles.authorName;
+    cell.releaseDate.text=_releaseArticles.articleDate.description;
+    cell.releaseExcerpt.text=_releaseArticles.articleExcerpt;
+    
     
     
     
@@ -108,6 +113,11 @@
     
 }
 
+
+#pragma mark - MenuBar
+- (JVFloatingDrawerSpringAnimator *)drawerAnimator {
+    return [[AppDelegate globalDelegate] drawerAnimator];
+}
 
 
 - (IBAction)showMenu:(UIBarButtonItem *)sender {
