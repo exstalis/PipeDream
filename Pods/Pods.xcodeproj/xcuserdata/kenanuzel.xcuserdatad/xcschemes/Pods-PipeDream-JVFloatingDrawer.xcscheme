@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "648D3BA3EEE38EC87EE05A52"
-               BuildableName = "JVFloatingDrawer.framework"
+               BlueprintIdentifier = "763B1B49108E89F350971897"
+               BuildableName = "libPods-PipeDream-JVFloatingDrawer.a"
                BlueprintName = "Pods-PipeDream-JVFloatingDrawer"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
@@ -42,8 +42,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "648D3BA3EEE38EC87EE05A52"
-            BuildableName = "JVFloatingDrawer.framework"
+            BlueprintIdentifier = "763B1B49108E89F350971897"
+            BuildableName = "libPods-PipeDream-JVFloatingDrawer.a"
             BlueprintName = "Pods-PipeDream-JVFloatingDrawer"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
@@ -60,8 +60,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "648D3BA3EEE38EC87EE05A52"
-            BuildableName = "JVFloatingDrawer.framework"
+            BlueprintIdentifier = "763B1B49108E89F350971897"
+            BuildableName = "libPods-PipeDream-JVFloatingDrawer.a"
             BlueprintName = "Pods-PipeDream-JVFloatingDrawer"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
