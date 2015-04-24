@@ -23,11 +23,11 @@
     
     
 }
-- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
-    [super setHighlighted:highlighted animated:animated];
-    [self highlightCell:highlighted];
-}
-//
+//- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
+//    [super setHighlighted:highlighted animated:animated];
+//    [self highlightCell:highlighted];
+//}
+////
 //- (void)highlightCell:(BOOL)highlight {
 //    UIColor *tintColor = [UIColor colorWithRed:<#(CGFloat)#> green:<#(CGFloat)#> blue:<#(CGFloat)#> alpha:<#(CGFloat)#>];
 //    if(highlight) {
