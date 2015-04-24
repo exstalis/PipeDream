@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "61B19433C92631F8189954C1"
+               BlueprintIdentifier = "F2AD288C28EFBFF58EEE92F0"
                BuildableName = "libPods-PipeDream-FontAwesomeIconFactory.a"
                BlueprintName = "Pods-PipeDream-FontAwesomeIconFactory"
                ReferencedContainer = "container:Pods.xcodeproj">
