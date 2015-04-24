@@ -67,9 +67,6 @@
                 if (array!=nil) {
                     [_newsArticleArray removeAllObjects];
                     [_newsArticleArray addObjectsFromArray:array];
-                    
-                    //                NSLog(@"newsarticle %@",_newsArticleArray);
-                    
                     [self.tableView reloadData];
                     
                 }
