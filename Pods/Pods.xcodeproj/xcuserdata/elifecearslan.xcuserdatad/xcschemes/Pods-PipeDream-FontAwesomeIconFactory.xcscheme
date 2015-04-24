@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "17EA1519A0EABC01A4925ABD"
-               BuildableName = "libPods-PipeDream-ORStackView.a"
-               BlueprintName = "Pods-PipeDream-ORStackView"
+               BlueprintIdentifier = "61B19433C92631F8189954C1"
+               BuildableName = "libPods-PipeDream-FontAwesomeIconFactory.a"
+               BlueprintName = "Pods-PipeDream-FontAwesomeIconFactory"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

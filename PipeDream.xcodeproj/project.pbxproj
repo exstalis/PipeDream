@@ -64,7 +64,7 @@
 		2DEED4111ADE0997005A56D4 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DEED40E1ADE0997005A56D4 /* Twitter.framework */; };
 		2DEED4121ADE0997005A56D4 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DEED40F1ADE0997005A56D4 /* WebKit.framework */; };
 		2DEED4141ADE0AA2005A56D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DEED4131ADE0AA2005A56D4 /* UIKit.framework */; };
-		D09D8ACBB15D3F7BC0EB2839 /* Pods_PipeDream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B9D5B4C476E3BFECB988FE /* Pods_PipeDream.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		63D8B653419B1EEB0CC8536F /* libPods-PipeDream.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8839B9FA9C4817179CE28D3F /* libPods-PipeDream.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,8 +170,8 @@
 		2DEED40E1ADE0997005A56D4 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		2DEED40F1ADE0997005A56D4 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		2DEED4131ADE0AA2005A56D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		42B9D5B4C476E3BFECB988FE /* Pods_PipeDream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PipeDream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		774EED6B9BEC8E099AFBF156 /* Pods-PipeDream.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PipeDream.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PipeDream/Pods-PipeDream.debug.xcconfig"; sourceTree = "<group>"; };
+		8839B9FA9C4817179CE28D3F /* libPods-PipeDream.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PipeDream.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,7 +193,7 @@
 				2D3F85EB1ADDF8FC00A040E1 /* CoreLocation.framework in Frameworks */,
 				2D5D94081ADCBABC0068DB3E /* Mantle.framework in Frameworks */,
 				2D2921341ADA148A00D622EC /* JVFloatingDrawer.framework in Frameworks */,
-				D09D8ACBB15D3F7BC0EB2839 /* Pods_PipeDream.framework in Frameworks */,
+				63D8B653419B1EEB0CC8536F /* libPods-PipeDream.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,7 +487,7 @@
 				2D3F85E81ADDF8F300A040E1 /* MobileCoreServices.framework */,
 				2D5D94071ADCBABC0068DB3E /* Mantle.framework */,
 				2D2921331ADA148A00D622EC /* JVFloatingDrawer.framework */,
-				42B9D5B4C476E3BFECB988FE /* Pods_PipeDream.framework */,
+				8839B9FA9C4817179CE28D3F /* libPods-PipeDream.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -503,7 +503,6 @@
 				2D271A651ABE1AE300A71464 /* Sources */,
 				2D271A661ABE1AE300A71464 /* Frameworks */,
 				2D271A671ABE1AE300A71464 /* Resources */,
-				E945EC40D7B6FFF6E411B530 /* Embed Pods Frameworks */,
 				1D350AC411592F23B47CB64B /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -630,21 +629,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		E945EC40D7B6FFF6E411B530 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PipeDream/Pods-PipeDream-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

@@ -21,6 +21,7 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - FLKAutoLayout (0.2.1)
+  - FontAwesomeIconFactory (1.4)
   - JVFloatingDrawer (0.1.0)
   - Mantle (2.0):
     - Mantle/extobjc (= 2.0)
@@ -30,6 +31,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5)
+  - FontAwesomeIconFactory
   - JVFloatingDrawer
   - Mantle (~> 2.0)
   - ORStackView (~> 2.0)
@@ -37,8 +39,9 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
   FLKAutoLayout: 9db6b30c2008d230da608e62c607b11c23b942e6
+  FontAwesomeIconFactory: 4b6d0a8d90b2604a2518e34d15bbc100af99f11c
   JVFloatingDrawer: 4782b1df21411aef2c1818f3b346cace02cc2e24
   Mantle: 17de73ef929db2234d76fde2aacfb89ab11c61e8
   ORStackView: 5df6b1b990b0648d8ef6f69f89361ea8648e8f64
 
-COCOAPODS: 0.36.3
+COCOAPODS: 0.37.0.beta.1

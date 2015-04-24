@@ -54,6 +54,12 @@
 #define COCOAPODS_VERSION_MINOR_FLKAutoLayout 2
 #define COCOAPODS_VERSION_PATCH_FLKAutoLayout 1
 
+// FontAwesomeIconFactory
+#define COCOAPODS_POD_AVAILABLE_FontAwesomeIconFactory
+#define COCOAPODS_VERSION_MAJOR_FontAwesomeIconFactory 1
+#define COCOAPODS_VERSION_MINOR_FontAwesomeIconFactory 4
+#define COCOAPODS_VERSION_PATCH_FontAwesomeIconFactory 0
+
 // JVFloatingDrawer
 #define COCOAPODS_POD_AVAILABLE_JVFloatingDrawer
 #define COCOAPODS_VERSION_MAJOR_JVFloatingDrawer 0

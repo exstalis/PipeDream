@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5426E3440ACD0ABE470D503F"
-               BuildableName = "JVFloatingDrawer.framework"
+               BlueprintIdentifier = "16CAD7E41FB9366B6B3DA90D"
+               BuildableName = "libPods-PipeDream-JVFloatingDrawer.a"
                BlueprintName = "Pods-PipeDream-JVFloatingDrawer"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

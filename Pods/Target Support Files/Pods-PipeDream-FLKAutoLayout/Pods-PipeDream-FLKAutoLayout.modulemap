@@ -1,6 +1,0 @@
-framework module FLKAutoLayout {
-  umbrella header "Pods-PipeDream-FLKAutoLayout-umbrella.h"
-
-  export *
-  module * { export * }
-}

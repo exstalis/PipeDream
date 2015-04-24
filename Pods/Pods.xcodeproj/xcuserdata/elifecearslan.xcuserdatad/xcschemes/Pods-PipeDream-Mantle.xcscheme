@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CA2F3F6C8B0808B44BAC8566"
-               BuildableName = "Mantle.framework"
+               BlueprintIdentifier = "206A32FBBBB6699BBC318473"
+               BuildableName = "libPods-PipeDream-Mantle.a"
                BlueprintName = "Pods-PipeDream-Mantle"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
