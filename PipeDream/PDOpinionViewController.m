@@ -106,14 +106,11 @@
     }
     _opinionArticles=[_opinionArticlesArray objectAtIndex:indexPath.row];
     cell.opinionTitle.text=_opinionArticles.articleTitle;
-    cell.opinionExcerpt.text=_opinionArticles.articleExcerpt;
+    cell.opinionExcerptTextview.text=_opinionArticles.articleExcerpt;
     cell.opinionAuthor.text=_opinionArticles.authorName;
     cell.opinionDate.text=_opinionArticles.articleDate.description;
     
 
-
-    
-    
     
     
     return cell;

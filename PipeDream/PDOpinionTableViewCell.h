@@ -13,8 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *opinionTitle;
 
-
-@property (weak, nonatomic) IBOutlet UILabel *opinionExcerpt;
+@property (weak, nonatomic) IBOutlet UITextView *opinionExcerptTextview;
 
 @property (weak, nonatomic) IBOutlet UILabel *opinionAuthor;
 @property (weak, nonatomic) IBOutlet UILabel *opinionDate;

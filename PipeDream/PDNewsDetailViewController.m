@@ -15,6 +15,8 @@
 #import "PDNetworkClient.h"
 #import "RequestOperationConfig.h"
 #import "PDSingleton.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface PDNewsDetailViewController ()
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *backButton;
@@ -33,19 +35,20 @@
     _newsDetailAttachments=[[NSMutableArray alloc]init];
     [self loadNewsArticle ];
     
+//    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+//    loginButton.center = self.view.center;
+//    [self.view addSubview:loginButton];
+//    
+//    
+//    
+//    
     
     
-    
-    
-    
-    
-    
-    // Do any additional setup after loading the view.
-}
+   }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  
 }
 
 

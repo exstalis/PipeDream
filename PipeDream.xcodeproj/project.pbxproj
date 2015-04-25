@@ -49,6 +49,11 @@
 		2D5FDB361AEA1046004187BB /* libPods-PipeDream-ORStackView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5FDB301AEA1046004187BB /* libPods-PipeDream-ORStackView.a */; };
 		2D5FDB381AEA1230004187BB /* libPods-PipeDream-AFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5FDB371AEA1230004187BB /* libPods-PipeDream-AFNetworking.a */; };
 		2D5FDB3A1AEA1336004187BB /* libPods-PipeDream-JVFloatingDrawer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5FDB391AEA1336004187BB /* libPods-PipeDream-JVFloatingDrawer.a */; };
+		2D5FDB431AEAEB68004187BB /* libPods-PipeDream-Bolts.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5FDB411AEAEB68004187BB /* libPods-PipeDream-Bolts.a */; };
+		2D5FDB441AEAEB68004187BB /* libPods-PipeDream-Facebook-iOS-SDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5FDB421AEAEB68004187BB /* libPods-PipeDream-Facebook-iOS-SDK.a */; };
+		2D5FDB461AEB159D004187BB /* libPods-PipeDream-RNBlurModalView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5FDB451AEB159D004187BB /* libPods-PipeDream-RNBlurModalView.a */; };
+		2D5FDB491AEB1769004187BB /* PDShareButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5FDB481AEB1769004187BB /* PDShareButton.m */; };
+		2D5FDB4D1AEB2FFF004187BB /* PDShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5FDB4C1AEB2FFF004187BB /* PDShareView.m */; };
 		2D7A30A71ADF37B700A6055C /* PDNewsTableviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A30A61ADF37B700A6055C /* PDNewsTableviewCell.m */; };
 		2D7A30AB1ADFF4DA00A6055C /* RequestOperationConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A30AA1ADFF4DA00A6055C /* RequestOperationConfig.m */; };
 		2D85F5121AE8CA0D00A0C832 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D85F5111AE8CA0D00A0C832 /* Accounts.framework */; };
@@ -159,6 +164,16 @@
 		2D5FDB301AEA1046004187BB /* libPods-PipeDream-ORStackView.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-PipeDream-ORStackView.a"; path = "Pods/../build/Debug-iphoneos/libPods-PipeDream-ORStackView.a"; sourceTree = "<group>"; };
 		2D5FDB371AEA1230004187BB /* libPods-PipeDream-AFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-PipeDream-AFNetworking.a"; path = "Pods/../build/Debug-iphoneos/libPods-PipeDream-AFNetworking.a"; sourceTree = "<group>"; };
 		2D5FDB391AEA1336004187BB /* libPods-PipeDream-JVFloatingDrawer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-PipeDream-JVFloatingDrawer.a"; path = "Pods/../build/Debug-iphoneos/libPods-PipeDream-JVFloatingDrawer.a"; sourceTree = "<group>"; };
+		2D5FDB3B1AEAE4C5004187BB /* libsandbox.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsandbox.1.dylib; path = usr/lib/libsandbox.1.dylib; sourceTree = SDKROOT; };
+		2D5FDB3C1AEAE4C5004187BB /* libsandbox.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsandbox.dylib; path = usr/lib/libsandbox.dylib; sourceTree = SDKROOT; };
+		2D5FDB3D1AEAE4C5004187BB /* libsystem_sandbox.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsystem_sandbox.dylib; path = usr/lib/system/libsystem_sandbox.dylib; sourceTree = SDKROOT; };
+		2D5FDB411AEAEB68004187BB /* libPods-PipeDream-Bolts.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-PipeDream-Bolts.a"; path = "Pods/../build/Debug-iphoneos/libPods-PipeDream-Bolts.a"; sourceTree = "<group>"; };
+		2D5FDB421AEAEB68004187BB /* libPods-PipeDream-Facebook-iOS-SDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-PipeDream-Facebook-iOS-SDK.a"; path = "Pods/../build/Debug-iphoneos/libPods-PipeDream-Facebook-iOS-SDK.a"; sourceTree = "<group>"; };
+		2D5FDB451AEB159D004187BB /* libPods-PipeDream-RNBlurModalView.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-PipeDream-RNBlurModalView.a"; path = "Pods/../build/Debug-iphoneos/libPods-PipeDream-RNBlurModalView.a"; sourceTree = "<group>"; };
+		2D5FDB471AEB1769004187BB /* PDShareButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDShareButton.h; sourceTree = "<group>"; };
+		2D5FDB481AEB1769004187BB /* PDShareButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDShareButton.m; sourceTree = "<group>"; };
+		2D5FDB4B1AEB2FFF004187BB /* PDShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDShareView.h; sourceTree = "<group>"; };
+		2D5FDB4C1AEB2FFF004187BB /* PDShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDShareView.m; sourceTree = "<group>"; };
 		2D7A30A51ADF37B700A6055C /* PDNewsTableviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDNewsTableviewCell.h; sourceTree = "<group>"; };
 		2D7A30A61ADF37B700A6055C /* PDNewsTableviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDNewsTableviewCell.m; sourceTree = "<group>"; };
 		2D7A30AA1ADFF4DA00A6055C /* RequestOperationConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestOperationConfig.m; sourceTree = "<group>"; };
@@ -190,6 +205,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D5FDB461AEB159D004187BB /* libPods-PipeDream-RNBlurModalView.a in Frameworks */,
+				2D5FDB431AEAEB68004187BB /* libPods-PipeDream-Bolts.a in Frameworks */,
+				2D5FDB441AEAEB68004187BB /* libPods-PipeDream-Facebook-iOS-SDK.a in Frameworks */,
 				2D5FDB3A1AEA1336004187BB /* libPods-PipeDream-JVFloatingDrawer.a in Frameworks */,
 				2D5FDB381AEA1230004187BB /* libPods-PipeDream-AFNetworking.a in Frameworks */,
 				2D5FDB321AEA1046004187BB /* libPods-PipeDream-FLKAutoLayout.a in Frameworks */,
@@ -314,6 +332,7 @@
 				2D271A9C1ABE25C900A71464 /* PDNavigationController.m */,
 				2D8DADE41AD888790047AECE /* Cell */,
 				2DBEBCB21AD70DAC00123DB5 /* Drawer */,
+				2D5FDB4A1AEB2FB8004187BB /* SocialShare */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -422,6 +441,17 @@
 			name = Network;
 			sourceTree = "<group>";
 		};
+		2D5FDB4A1AEB2FB8004187BB /* SocialShare */ = {
+			isa = PBXGroup;
+			children = (
+				2D5FDB471AEB1769004187BB /* PDShareButton.h */,
+				2D5FDB481AEB1769004187BB /* PDShareButton.m */,
+				2D5FDB4B1AEB2FFF004187BB /* PDShareView.h */,
+				2D5FDB4C1AEB2FFF004187BB /* PDShareView.m */,
+			);
+			name = SocialShare;
+			sourceTree = "<group>";
+		};
 		2D8DADE41AD888790047AECE /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -486,6 +516,12 @@
 		794F173DADAE86E716A67057 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2D5FDB451AEB159D004187BB /* libPods-PipeDream-RNBlurModalView.a */,
+				2D5FDB411AEAEB68004187BB /* libPods-PipeDream-Bolts.a */,
+				2D5FDB421AEAEB68004187BB /* libPods-PipeDream-Facebook-iOS-SDK.a */,
+				2D5FDB3B1AEAE4C5004187BB /* libsandbox.1.dylib */,
+				2D5FDB3C1AEAE4C5004187BB /* libsandbox.dylib */,
+				2D5FDB3D1AEAE4C5004187BB /* libsystem_sandbox.dylib */,
 				2D5FDB391AEA1336004187BB /* libPods-PipeDream-JVFloatingDrawer.a */,
 				2D5FDB371AEA1230004187BB /* libPods-PipeDream-AFNetworking.a */,
 				2D5FDB2B1AEA1046004187BB /* libPods-PipeDream-AFNetworking.a */,
@@ -688,6 +724,8 @@
 				2D271A6F1ABE1AE300A71464 /* main.m in Sources */,
 				2D4FC8511AE890970044ACEF /* PDSportsTableViewCell.m in Sources */,
 				2D4FC8541AE8A2430044ACEF /* PDRecentViewController.m in Sources */,
+				2D5FDB4D1AEB2FFF004187BB /* PDShareView.m in Sources */,
+				2D5FDB491AEB1769004187BB /* PDShareButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -829,6 +867,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(SDKROOT)/usr/lib/system",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -854,6 +893,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(SDKROOT)/usr/lib/system",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

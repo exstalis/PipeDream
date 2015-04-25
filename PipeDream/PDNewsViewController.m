@@ -17,6 +17,12 @@
 #import "PDSingleton.h"
 #import "JVFloatingDrawerViewController.h"
 #import "JVFloatingDrawerSpringAnimator.h"
+#import <AFNetworking.h>
+#import <UIKit+AFNetworking.h>
+#import <QuartzCore/QuartzCore.h>
+#import <RNBlurModalView.h>
+#import "PDShareButton.h"
+#import "PDShareView.h"
 
 
 @interface PDNewsViewController ()
@@ -27,6 +33,9 @@
 
 @property (nonatomic,strong) NSMutableArray *newsArticleArray;
 @property(nonatomic,strong)NSMutableArray *newsAttachments;
+//@property(nonatomic)PDShareButton *newsShareOptionButton;
+@property(nonatomic)PDShareView *popUpView;
+
 
 -(void)loadNewsArticle;
 
@@ -37,7 +46,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+ 
     
     [self loadNewsArticle];
     
@@ -109,10 +118,16 @@
     
     
     newsCell.newsTitle.text=newsArticle.articleTitle;
-    newsCell.newsExcerptLabel.text=newsArticle.articleExcerpt;
+    newsCell.newsExcerptTextView.text=newsArticle.articleExcerpt;
     newsCell.newsAuthorLabel.text=newsArticle.authorName;
     newsCell.newsDateLabel.text=newsArticle.articleDate.description;
+    
+    [self.popUpView shareButtoninitWith:newsCell.newsShareButton];
+    
+//    [newsCell.newsShareButton shareButtoninitWith:self.newsShareOptionButton];
+    
 //    newsCell.newsThumbnailImage.image=newsArticle.articleAttachments;
+    
     
     return newsCell;
     
@@ -129,11 +144,21 @@
 
 }
 
-
-
 - (JVFloatingDrawerSpringAnimator *)drawerAnimator {
     return [[AppDelegate globalDelegate] drawerAnimator];
 }
+
+#pragma shareOption
+
+
+- (IBAction)showSharingOptionsPopU:(id)sender {
+    
+    self.popUpView=[[PDShareView alloc]init];
+    [self.popUpView sharingOptions];
+}
+
+
+
 
 
 @end
