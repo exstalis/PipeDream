@@ -7,7 +7,41 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface PDShareUtility : NSObject
+#import <FBSDKShareKit/FBSDKShareKit.h>
+
+
+@protocol PDShareUtilityDelegate;
+
+
+
+
+@interface PDShareUtility : NSObject<FBSDKSharingDelegate>
+
+@property (nonatomic, weak) UIViewController<PDShareUtilityDelegate> *delegate;
+
+- (instancetype)initWithArticleTitle:(NSString *)articleTitle place:(NSString *)place friends:(NSArray *)friends photo:(UIImage *)articleImage;
+
+- (void)start;
+- (FBSDKShareOpenGraphContent *)contentForSharing;
+
+
+@end
+
+
+
+@protocol PDShareUtilityDelegate
+
+
+
+
+
+- (void)shareUtilityWillShare:(PDShareUtility *)shareUtility;
+- (void)shareUtilityDidCompleteShare:(PDShareUtility *)shareUtility;
+- (void)shareUtilityUserShouldLogin:(PDShareUtility *)shareUtility;
+- (void)shareUtility:(PDShareUtility *)shareUtility endWithError:(NSError *)error;
+
+
 
 @end

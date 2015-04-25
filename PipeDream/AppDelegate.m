@@ -8,6 +8,10 @@
 
 #import "AppDelegate.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+
+#import <FBSDKShareKit/FBSDKShareKit.h>
 #import "JVFloatingDrawerViewController.h"
 #import "JVFloatingDrawerSpringAnimator.h"
 

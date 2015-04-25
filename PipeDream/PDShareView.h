@@ -8,13 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "PDShareButton.h"
-#import <RNBlurModalView.h>
+#import "KLCPopup.h"
 
-@interface PDShareView : RNBlurModalView
+
+@interface PDShareView : UIView
 
 
 @property(nonatomic,assign,getter=isPopupViewShowed) BOOL popupViewShowed;
 @property (nonatomic)PDShareButton * shareButton;
+
+@property(nonatomic,assign) BOOL shouldDismissAfterDelay;
 
 -(PDShareButton *)shareButtoninitWith:(PDShareButton *)button;
 

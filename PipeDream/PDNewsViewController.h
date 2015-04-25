@@ -20,6 +20,9 @@
 
 
 
+@property(nonatomic,strong)Article* newsFeedArticle;
+
+
 
 
 

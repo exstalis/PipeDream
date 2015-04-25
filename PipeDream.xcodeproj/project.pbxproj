@@ -51,9 +51,9 @@
 		2D5FDB3A1AEA1336004187BB /* libPods-PipeDream-JVFloatingDrawer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5FDB391AEA1336004187BB /* libPods-PipeDream-JVFloatingDrawer.a */; };
 		2D5FDB431AEAEB68004187BB /* libPods-PipeDream-Bolts.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5FDB411AEAEB68004187BB /* libPods-PipeDream-Bolts.a */; };
 		2D5FDB441AEAEB68004187BB /* libPods-PipeDream-Facebook-iOS-SDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5FDB421AEAEB68004187BB /* libPods-PipeDream-Facebook-iOS-SDK.a */; };
-		2D5FDB461AEB159D004187BB /* libPods-PipeDream-RNBlurModalView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5FDB451AEB159D004187BB /* libPods-PipeDream-RNBlurModalView.a */; };
 		2D5FDB491AEB1769004187BB /* PDShareButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5FDB481AEB1769004187BB /* PDShareButton.m */; };
 		2D5FDB4D1AEB2FFF004187BB /* PDShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5FDB4C1AEB2FFF004187BB /* PDShareView.m */; };
+		2D5FDB5F1AEB6157004187BB /* KLCPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5FDB5E1AEB6157004187BB /* KLCPopup.m */; };
 		2D7A30A71ADF37B700A6055C /* PDNewsTableviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A30A61ADF37B700A6055C /* PDNewsTableviewCell.m */; };
 		2D7A30AB1ADFF4DA00A6055C /* RequestOperationConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A30AA1ADFF4DA00A6055C /* RequestOperationConfig.m */; };
 		2D85F5121AE8CA0D00A0C832 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D85F5111AE8CA0D00A0C832 /* Accounts.framework */; };
@@ -72,6 +72,7 @@
 		2DEED4111ADE0997005A56D4 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DEED40E1ADE0997005A56D4 /* Twitter.framework */; };
 		2DEED4121ADE0997005A56D4 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DEED40F1ADE0997005A56D4 /* WebKit.framework */; };
 		2DEED4141ADE0AA2005A56D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DEED4131ADE0AA2005A56D4 /* UIKit.framework */; };
+		2DF06BF21AEB744600C03D09 /* PDShareUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF06BF11AEB744600C03D09 /* PDShareUtility.m */; };
 		63D8B653419B1EEB0CC8536F /* libPods-PipeDream.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8839B9FA9C4817179CE28D3F /* libPods-PipeDream.a */; };
 /* End PBXBuildFile section */
 
@@ -174,6 +175,9 @@
 		2D5FDB481AEB1769004187BB /* PDShareButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDShareButton.m; sourceTree = "<group>"; };
 		2D5FDB4B1AEB2FFF004187BB /* PDShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDShareView.h; sourceTree = "<group>"; };
 		2D5FDB4C1AEB2FFF004187BB /* PDShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDShareView.m; sourceTree = "<group>"; };
+		2D5FDB581AEB5B22004187BB /* PipeDream-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PipeDream-Prefix.pch"; sourceTree = "<group>"; };
+		2D5FDB5D1AEB6157004187BB /* KLCPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLCPopup.h; sourceTree = "<group>"; };
+		2D5FDB5E1AEB6157004187BB /* KLCPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLCPopup.m; sourceTree = "<group>"; };
 		2D7A30A51ADF37B700A6055C /* PDNewsTableviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDNewsTableviewCell.h; sourceTree = "<group>"; };
 		2D7A30A61ADF37B700A6055C /* PDNewsTableviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDNewsTableviewCell.m; sourceTree = "<group>"; };
 		2D7A30AA1ADFF4DA00A6055C /* RequestOperationConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestOperationConfig.m; sourceTree = "<group>"; };
@@ -196,6 +200,8 @@
 		2DEED40E1ADE0997005A56D4 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		2DEED40F1ADE0997005A56D4 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		2DEED4131ADE0AA2005A56D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2DF06BF01AEB744600C03D09 /* PDShareUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDShareUtility.h; sourceTree = "<group>"; };
+		2DF06BF11AEB744600C03D09 /* PDShareUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDShareUtility.m; sourceTree = "<group>"; };
 		774EED6B9BEC8E099AFBF156 /* Pods-PipeDream.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PipeDream.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PipeDream/Pods-PipeDream.debug.xcconfig"; sourceTree = "<group>"; };
 		8839B9FA9C4817179CE28D3F /* libPods-PipeDream.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PipeDream.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -205,7 +211,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D5FDB461AEB159D004187BB /* libPods-PipeDream-RNBlurModalView.a in Frameworks */,
 				2D5FDB431AEAEB68004187BB /* libPods-PipeDream-Bolts.a in Frameworks */,
 				2D5FDB441AEAEB68004187BB /* libPods-PipeDream-Facebook-iOS-SDK.a in Frameworks */,
 				2D5FDB3A1AEA1336004187BB /* libPods-PipeDream-JVFloatingDrawer.a in Frameworks */,
@@ -291,6 +296,7 @@
 			children = (
 				2D271A6D1ABE1AE300A71464 /* Info.plist */,
 				2D271A6E1ABE1AE300A71464 /* main.m */,
+				2D5FDB581AEB5B22004187BB /* PipeDream-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -328,6 +334,7 @@
 		2D271A9A1ABE1B9400A71464 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				2D5FDB5C1AEB6157004187BB /* KLCPopup */,
 				2D271A9B1ABE25C900A71464 /* PDNavigationController.h */,
 				2D271A9C1ABE25C900A71464 /* PDNavigationController.m */,
 				2D8DADE41AD888790047AECE /* Cell */,
@@ -448,8 +455,19 @@
 				2D5FDB481AEB1769004187BB /* PDShareButton.m */,
 				2D5FDB4B1AEB2FFF004187BB /* PDShareView.h */,
 				2D5FDB4C1AEB2FFF004187BB /* PDShareView.m */,
+				2DF06BF01AEB744600C03D09 /* PDShareUtility.h */,
+				2DF06BF11AEB744600C03D09 /* PDShareUtility.m */,
 			);
 			name = SocialShare;
+			sourceTree = "<group>";
+		};
+		2D5FDB5C1AEB6157004187BB /* KLCPopup */ = {
+			isa = PBXGroup;
+			children = (
+				2D5FDB5D1AEB6157004187BB /* KLCPopup.h */,
+				2D5FDB5E1AEB6157004187BB /* KLCPopup.m */,
+			);
+			path = KLCPopup;
 			sourceTree = "<group>";
 		};
 		2D8DADE41AD888790047AECE /* Cell */ = {
@@ -700,7 +718,9 @@
 				2D4FC84E1AE870A90044ACEF /* PDReleaseTableViewCell.m in Sources */,
 				2D2921411ADA4C7100D622EC /* PDSportsViewController.m in Sources */,
 				2D7A30A71ADF37B700A6055C /* PDNewsTableviewCell.m in Sources */,
+				2D5FDB5F1AEB6157004187BB /* KLCPopup.m in Sources */,
 				2D29213D1ADA49E800D622EC /* PDReleaseViewController.m in Sources */,
+				2DF06BF21AEB744600C03D09 /* PDShareUtility.m in Sources */,
 				2D2921481ADA586E00D622EC /* PDSportsDetailViewController.m in Sources */,
 				2D271A751ABE1AE300A71464 /* PipeDream.xcdatamodeld in Sources */,
 				2D8DADED1AD8B7440047AECE /* PDDrawerMenuCell.m in Sources */,
@@ -856,6 +876,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Pods-PipeDream",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PipeDream/PipeDream-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -882,6 +904,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Pods-PipeDream",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PipeDream/PipeDream-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,

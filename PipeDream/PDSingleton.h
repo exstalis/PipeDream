@@ -17,6 +17,7 @@
 @property NSMutableDictionary *articleDictionary;
 @property NSArray * opinionArticleArray;
 
+@property(nonatomic,assign)BOOL skipLogin;
 
 
 +(PDSingleton*)sharedClient;

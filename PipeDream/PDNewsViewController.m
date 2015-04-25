@@ -46,7 +46,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
- 
+    self.automaticallyAdjustsScrollViewInsets = YES;
+    
+
+    _newsFeedArticle=[[Article alloc]init];
     
     [self loadNewsArticle];
     
@@ -113,14 +116,14 @@
         newsCell=[[PDNewsTableviewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"newsCell"];
     }
     
-    Article *newsArticle=[_newsArticleArray objectAtIndex:indexPath.row];
+    _newsFeedArticle=[_newsArticleArray objectAtIndex:indexPath.row];
 //    NSLog(@"article array : %@",_newsArticleArray);
     
     
-    newsCell.newsTitle.text=newsArticle.articleTitle;
-    newsCell.newsExcerptTextView.text=newsArticle.articleExcerpt;
-    newsCell.newsAuthorLabel.text=newsArticle.authorName;
-    newsCell.newsDateLabel.text=newsArticle.articleDate.description;
+    newsCell.newsTitle.text=_newsFeedArticle.articleTitle;
+    newsCell.newsExcerptTextView.text=_newsFeedArticle.articleExcerpt;
+    newsCell.newsAuthorLabel.text=_newsFeedArticle.authorName;
+    newsCell.newsDateLabel.text=_newsFeedArticle.articleDate.description;
     
     [self.popUpView shareButtoninitWith:newsCell.newsShareButton];
     
