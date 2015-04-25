@@ -7,14 +7,13 @@
 #import <UIKit/UIKit.h>
 
 
-#import "PDShareButton.h"
+
 
 
 
 
 @interface PDFeedTableViewCell : UITableViewCell
 
-@property (nonatomic,assign)PDShareButton *feedShareButton;
 
 
 @end

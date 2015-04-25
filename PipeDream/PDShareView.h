@@ -10,7 +10,7 @@
 #import "PDShareButton.h"
 #import <RNBlurModalView.h>
 
-@interface PDShareView : UIView
+@interface PDShareView : RNBlurModalView
 
 
 @property(nonatomic,assign,getter=isPopupViewShowed) BOOL popupViewShowed;

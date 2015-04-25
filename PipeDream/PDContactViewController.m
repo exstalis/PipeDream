@@ -12,6 +12,11 @@
 
 static NSString * const kPDTwitterAppURL=@"twitter://user?screen_name=bupipedream";
 static NSString * const kPDTwitterBrowserURL=@"https://twitter.com/bupipedream/";
+static NSString * const kPDFacebookAppURL = @"fb://profile/bupipedream";
+static NSString * const kPDFacebookBrowserURL = @"https://www.facebook.com/BUPipeDream";
+static NSString * const kPDInstagramAppURL = @"instagram://user?username=bupipedream";
+static NSString * const kPDInstagramBrowserURL = @"https://instagram.com/bupipedream";
+
 
 
 @interface PDContactViewController ()
@@ -60,6 +65,11 @@ static NSString * const kPDTwitterBrowserURL=@"https://twitter.com/bupipedream/"
 
 - (IBAction)likeUsOnFacebook:(id)sender {
     
+    if(![[UIApplication sharedApplication] openURL:[NSURL URLWithString:kPDFacebookAppURL]]) {
+        if (![[UIApplication sharedApplication] openURL:[NSURL URLWithString:kPDFacebookBrowserURL]]) {
+            NSLog(@"Nothing works");
+        }
+    }
   
     
     
@@ -67,7 +77,12 @@ static NSString * const kPDTwitterBrowserURL=@"https://twitter.com/bupipedream/"
 
 - (IBAction)followUsOnInstagram:(id)sender {
 
-
+    if(![[UIApplication sharedApplication] openURL:[NSURL URLWithString:kPDInstagramAppURL]]) {
+        if (![[UIApplication sharedApplication] openURL:[NSURL URLWithString:kPDInstagramBrowserURL]]) {
+            NSLog(@"Nothing works");
+        }
+    }
+    
 
 }
 
