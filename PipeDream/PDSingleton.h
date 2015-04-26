@@ -22,6 +22,7 @@
 
 +(PDSingleton*)sharedClient;
 
+- (id)initWithArticle:(Article *)article;
 
 @property (nonatomic, strong) NSMutableSet *currentArticleOperations;
 @property (nonatomic, strong) NSOperationQueue *articleOperationQueue;

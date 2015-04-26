@@ -16,24 +16,4 @@
 
 
 
-
-
-//-(PDShareButton *)shareButton{
-//    
-//    
-//    
-//    
-//    
-//    
-//
-////    _shareButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
-////    [ _shareButton setUserInteractionEnabled:YES];
-////    [_shareButton setShowsTouchWhenHighlighted:YES];
-////    [_shareButton setTitleColor:[UIColor grayColor] forState:UIControlStateSelected];
-////    [_shareButton setContentEdgeInsets:UIEdgeInsetsMake(2, 6, 2, 6)];
-////    [_shareButton sizeToFit];
-//    //    [customButton setBackgroundImage:[[UIImage imageNamed:@"ButtonHighlighted.png"]
-//    return _shareButton;
-//}
-
 @end

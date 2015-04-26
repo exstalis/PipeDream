@@ -35,7 +35,7 @@ static NSString *const kSkipLoginKey = @"shouldSkipLogin";
 
 
 
-- (id)initWithArticle:(Article *)article
+- (instancetype)initWithArticle:(Article *)article
 {
     if (self = [super init]) {
         self.sharedArticle=article ;

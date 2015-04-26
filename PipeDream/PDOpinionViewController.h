@@ -8,6 +8,9 @@
 
 #import "PDNavigationController.h"
 #import "PDDrawerMenuCell.h"
+#import "PDSingleton.h"
+
+@class Attachments;
 
 @interface PDOpinionViewController : UITableViewController
 

@@ -12,8 +12,10 @@
 #import "AppDelegate.h"
 #import "Article.h"
 #import "PDOpinionTableViewCell.h"
-
+#import "PDShareButton.h"
+#import "ArticleCategory.h"
 #import "PDNetworkClient.h"
+#import "Attachments.h"
 
 
 @interface PDOpinionViewController ()
@@ -21,7 +23,6 @@
 - (IBAction)showMenu:(UIBarButtonItem *)sender;
 
 @property(nonatomic,strong) Article *opinionArticles;
-
 @property(nonatomic, strong) NSMutableArray *opinionArticlesArray;
 
 @end
@@ -34,8 +35,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    PDSingleton *sharedOpinionArticle=[[PDSingleton alloc]initWithArticle:_opinionArticles];
+
     [self loadOpinionArticles];
-    _opinionArticles=[[Article alloc]init];
+    
+    
+    
+    
     
 }
 
@@ -104,11 +110,11 @@
         cell=[[PDOpinionTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"opinionCell"];
         
     }
-    _opinionArticles=[_opinionArticlesArray objectAtIndex:indexPath.row];
-    cell.opinionTitle.text=_opinionArticles.articleTitle;
-    cell.opinionExcerptTextview.text=_opinionArticles.articleExcerpt;
-    cell.opinionAuthor.text=_opinionArticles.authorName;
-    cell.opinionDate.text=_opinionArticles.articleDate.description;
+    [PDSingleton sharedClient].sharedArticle=[_opinionArticlesArray objectAtIndex:indexPath.row];
+    cell.opinionTitle.text=[PDSingleton sharedClient].sharedArticle.articleTitle;
+    cell.opinionExcerptTextview.text=  [PDSingleton sharedClient].sharedArticle.articleExcerpt;
+    cell.opinionAuthor.text=  [PDSingleton sharedClient].sharedArticle.authorName;
+    cell.opinionDate.text=[PDSingleton sharedClient].sharedArticle.articleDate.description;
     
 
     

@@ -13,88 +13,33 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @implementation PDShareUtility
-{
-    NSString *_articleTitle;
-    FBSDKMessageDialog *_messageDialog;
-    UIImage *_articleImage;
-    int _sendAsMessageButtonIndex;
-    FBSDKShareAPI *_shareAPI;
-    FBSDKShareDialog *_shareDialog;
-    NSArray *_friends;
-    NSString *_place;
-}
+
+//utilitynin icine sadece kendini instance type olarak tanimlanam gerekiyor.. api yi falan sil
 
 
-
--(instancetype)initWithArticleTitle:(NSString *)articleTitle place:(NSString *)place friends:(NSArray *)friends photo:(UIImage *)articleImage{
+-(instancetype)initWithUtility:(PDShareUtility *)utility{
+    
+    
     if (self=[super init]) {
-        _articleTitle=[articleTitle copy];
-        _articleImage=[self _normalizeImage:articleImage];
-        _place=[place copy];
-        _friends=[friends copy];
-        FBSDKShareOpenGraphContent *shareContent = [self contentForSharing];
+     
         
-        _shareAPI = [[FBSDKShareAPI alloc] init];
-        _shareAPI.delegate = self;
-        _shareAPI.shareContent = shareContent;
-        
-        _shareDialog = [[FBSDKShareDialog alloc] init];
-        _shareDialog.delegate = self;
-        _shareDialog.shouldFailOnDataError = YES;
-        _shareDialog.shareContent = shareContent;
-        
-        _messageDialog = [[FBSDKMessageDialog alloc] init];
-        _messageDialog.delegate = self;
-        _messageDialog.shouldFailOnDataError = YES;
-        _messageDialog.shareContent = shareContent;
+        self.shareUtility=utility;
         
         
     }
     return self;
-
+    
 }
+
+
 
 
 
 - (void)dealloc
 {
-    _shareAPI.delegate = nil;
-    _shareDialog.delegate = nil;
-    _messageDialog.delegate = nil;
+    _shareUtility.delegate=nil;
+    
 }
-
-
-
-- (void)_postOpenGraphAction
-{
-    NSString *const publish_actions = @"publish_actions";
-    if ([[FBSDKAccessToken currentAccessToken] hasGranted:publish_actions]) {
-        [self.delegate shareUtilityWillShare:self];
-        [_shareAPI share];
-    } else {
-        [[[FBSDKLoginManager alloc] init]
-         logInWithPublishPermissions:@[publish_actions]
-         handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
-             if ([result.grantedPermissions containsObject:publish_actions]) {
-                 [self.delegate shareUtilityWillShare:self];
-                 [_shareAPI share];
-             } else {
-                 // This would be a nice place to tell the user why publishing
-                 // is valuable.
-                 [_delegate shareUtility:self endWithError:nil];
-             }
-         }];
-    }
-}
-
-- (void)start
-{
-    [self _postOpenGraphAction];
-}
-
-
-
-
 
 
 
@@ -173,6 +118,7 @@
 
 
 - (void)sharer:(id<FBSDKSharing>)sharer didCompleteWithResults:(NSDictionary *)results {
+    
     [_delegate shareUtilityDidCompleteShare:self];
 }
 
@@ -193,6 +139,7 @@
 //contenti cekmek viewlerin icinde
 
 // FBSDKShareDialog *facebookShareDialog = [self getShareDialogWithContentURL:[self _currentPhoto].objectURL];
+
 - (FBSDKShareLinkContent *)getShareLinkContentWithContentURL:(NSURL *)objectURL
 {
     FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];

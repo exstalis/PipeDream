@@ -9,25 +9,17 @@
 
 #import "PDNavigationController.h"
 #import "PDDrawerMenuCell.h"
-
+#import "PDShareUtility.h"
+#import "PDFeedTableViewController.h"
 @class Article;
-@class ArticleCategory;
-@class Attachments;
-@class Attachments;
 
 
-@interface PDNewsViewController: UITableViewController
+@interface PDNewsViewController: PDFeedTableViewController
 
 
+@property(nonatomic,strong)PDShareUtility *newsShareUtility;
 
 @property(nonatomic,strong)Article* newsFeedArticle;
-
-
-
-
-
-
-
 
 @end
 

@@ -20,12 +20,10 @@
 #import <AFNetworking.h>
 #import <UIKit+AFNetworking.h>
 #import <QuartzCore/QuartzCore.h>
-#import <RNBlurModalView.h>
 #import "PDShareButton.h"
-#import "PDShareView.h"
 
 
-@interface PDNewsViewController ()
+@interface PDNewsViewController ()<FBSDKSharingDelegate>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 - (IBAction)showMenu:(UIBarButtonItem *)sender;
@@ -34,7 +32,7 @@
 @property (nonatomic,strong) NSMutableArray *newsArticleArray;
 @property(nonatomic,strong)NSMutableArray *newsAttachments;
 //@property(nonatomic)PDShareButton *newsShareOptionButton;
-@property(nonatomic)PDShareView *popUpView;
+
 
 
 -(void)loadNewsArticle;
@@ -49,8 +47,9 @@
     self.automaticallyAdjustsScrollViewInsets = YES;
     
 
-    _newsFeedArticle=[[Article alloc]init];
+    PDSingleton *sharedNewsArticle=[[PDSingleton alloc]initWithArticle:_newsFeedArticle];
     
+
     [self loadNewsArticle];
     
 //    self.indicator=[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
@@ -68,7 +67,21 @@
     
 }
 
+//sfacebook share lazy instantiation
 
+-(void)setNewsShareUtility:(PDShareUtility *)newsShareUtility{
+    
+    
+    if (![_newsShareUtility isEqual:newsShareUtility]) {
+        _newsShareUtility.delegate=nil;
+        _newsShareUtility=newsShareUtility;
+        
+        
+    }
+    
+}
+
+//fetch articles
 
 -(void)loadNewsArticle{
     
@@ -92,7 +105,6 @@
   
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - TableView datasource
@@ -104,7 +116,7 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
     return [_newsArticleArray count];
-//    buraya ttotal count vrment gerek
+//    buraya ttotal count vement gerek
     
     
 }
@@ -116,21 +128,28 @@
         newsCell=[[PDNewsTableviewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"newsCell"];
     }
     
-    _newsFeedArticle=[_newsArticleArray objectAtIndex:indexPath.row];
-//    NSLog(@"article array : %@",_newsArticleArray);
+    
+    [PDSingleton sharedClient].sharedArticle=[_newsArticleArray objectAtIndex:indexPath.row];
+//    NSLog(@"shared article : %@",[PDSingleton sharedClient].sharedArticle);
     
     
-    newsCell.newsTitle.text=_newsFeedArticle.articleTitle;
-    newsCell.newsExcerptTextView.text=_newsFeedArticle.articleExcerpt;
-    newsCell.newsAuthorLabel.text=_newsFeedArticle.authorName;
-    newsCell.newsDateLabel.text=_newsFeedArticle.articleDate.description;
+    newsCell.newsTitle.text=[PDSingleton sharedClient].sharedArticle.articleTitle;
+    newsCell.newsExcerptTextView.text=[PDSingleton sharedClient].sharedArticle.articleExcerpt;
+    newsCell.newsAuthorLabel.text=[PDSingleton sharedClient].sharedArticle.authorName;
+    newsCell.newsDateLabel.text=[PDSingleton sharedClient].sharedArticle.articleDate.description;
     
-    [self.popUpView shareButtoninitWith:newsCell.newsShareButton];
+
+
+    [self shareButtoninitWith:newsCell.newsShareButton];
     
-//    [newsCell.newsShareButton shareButtoninitWith:self.newsShareOptionButton];
+        if ([self.fbShareButton.titleLabel.text isEqualToString:@"Share on Facebook"] ){
+            FBSDKShareDialog *shareDialog=[_newsShareUtility getShareDialogWithContentURL:[PDSingleton sharedClient].sharedArticle.articleURL];
+            
     
-//    newsCell.newsThumbnailImage.image=newsArticle.articleAttachments;
-    
+              shareDialog.delegate = self;
+            
+              [shareDialog show];
+        }
     
     return newsCell;
     
@@ -155,9 +174,8 @@
 
 
 - (IBAction)showSharingOptionsPopU:(id)sender {
-    
-    self.popUpView=[[PDShareView alloc]init];
-    [self.popUpView sharingOptions];
+
+    [self sharingOptionsButtonAction];
 }
 
 

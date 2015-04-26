@@ -18,13 +18,15 @@
 
 
 @interface PDShareUtility : NSObject<FBSDKSharingDelegate>
-
 @property (nonatomic, weak) UIViewController<PDShareUtilityDelegate> *delegate;
 
-- (instancetype)initWithArticleTitle:(NSString *)articleTitle place:(NSString *)place friends:(NSArray *)friends photo:(UIImage *)articleImage;
+@property(nonatomic,weak)PDShareUtility *shareUtility;
 
-- (void)start;
-- (FBSDKShareOpenGraphContent *)contentForSharing;
+-(instancetype)initWithUtility:(PDShareUtility*)utility;
+
+- (FBSDKShareLinkContent *)getShareLinkContentWithContentURL:(NSURL *)objectURL;
+
+- (FBSDKShareDialog *)getShareDialogWithContentURL:(NSURL *)objectURL;
 
 
 @end
@@ -32,8 +34,6 @@
 
 
 @protocol PDShareUtilityDelegate
-
-
 
 
 
