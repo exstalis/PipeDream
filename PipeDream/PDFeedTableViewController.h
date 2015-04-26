@@ -13,7 +13,7 @@
 #import "KLCPopup.h"
 #import "PDShareUtility.h"
 #import <FBSDKShareKit/FBSDKShareKit.h>
-
+#import "Article.h"
 
 @interface PDFeedTableViewController : UITableViewController<UIPopoverControllerDelegate,PDShareUtilityDelegate,UIScrollViewDelegate>
 

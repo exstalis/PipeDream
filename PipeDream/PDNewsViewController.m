@@ -23,7 +23,7 @@
 #import "PDShareButton.h"
 
 
-@interface PDNewsViewController ()<FBSDKSharingDelegate>
+@interface PDNewsViewController ()
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 - (IBAction)showMenu:(UIBarButtonItem *)sender;
@@ -41,6 +41,7 @@
 
 
 @implementation PDNewsViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -67,18 +68,12 @@
     
 }
 
-//sfacebook share lazy instantiation
 
--(void)setNewsShareUtility:(PDShareUtility *)newsShareUtility{
+
+-(void)dealloc{
     
-    
-    if (![_newsShareUtility isEqual:newsShareUtility]) {
-        _newsShareUtility.delegate=nil;
-        _newsShareUtility=newsShareUtility;
-        
-        
-    }
-    
+    _newsShareUtility.delegate=nil;
+
 }
 
 //fetch articles
@@ -137,16 +132,30 @@
     newsCell.newsExcerptTextView.text=[PDSingleton sharedClient].sharedArticle.articleExcerpt;
     newsCell.newsAuthorLabel.text=[PDSingleton sharedClient].sharedArticle.authorName;
     newsCell.newsDateLabel.text=[PDSingleton sharedClient].sharedArticle.articleDate.description;
-    
 
 
     [self shareButtoninitWith:newsCell.newsShareButton];
     
+    
+    
+    
+    [self.shareUtility setShareUtility:_newsShareUtility];
+
+    
+    
+    
+    
+    
+    
         if ([self.fbShareButton.titleLabel.text isEqualToString:@"Share on Facebook"] ){
             FBSDKShareDialog *shareDialog=[_newsShareUtility getShareDialogWithContentURL:[PDSingleton sharedClient].sharedArticle.articleURL];
             
-    
-              shareDialog.delegate = self;
+            _newsShareUtility.delegate=self;
+            
+        
+//              shareDialog.delegate = self;
+            
+            
             
               [shareDialog show];
         }

@@ -27,7 +27,7 @@
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
         [self.textLabel setTextColor:[UIColor blackColor]];
 
-        [self.textLabel setFont:[UIFont fontWithName:@"Open Sans" size:14.0]];
+        [self.textLabel setFont:[UIFont fontWithName:@"OpenSans-Regular" size:14.0]];
         
         
         

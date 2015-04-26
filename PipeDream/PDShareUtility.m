@@ -13,23 +13,32 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @implementation PDShareUtility
+{
+    
+      FBSDKShareDialog *_shareDialog;
+}
+    
+    
+
+    
+
 
 //utilitynin icine sadece kendini instance type olarak tanimlanam gerekiyor.. api yi falan sil
 
-
--(instancetype)initWithUtility:(PDShareUtility *)utility{
-    
-    
-    if (self=[super init]) {
-     
-        
-        self.shareUtility=utility;
-        
-        
-    }
-    return self;
-    
-}
+//
+//-(instancetype)initWithUtility:(PDShareUtility *)utility{
+//    
+//    
+//    if (self=[super init]) {
+//     
+//        self.shareUtility=utility;
+//        
+//    
+//    }
+//    return self;
+//    
+//}
+//
 
 
 

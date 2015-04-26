@@ -29,7 +29,12 @@
 + (UIColor*)kpdGreenColor;
 @end
 
-@implementation PDFeedTableViewController
+@implementation PDFeedTableViewController{
+    
+    FBSDKShareDialog *_facebookSharedDialog;
+    
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -147,6 +152,24 @@
         [popup showWithLayout:layout];
     }
 }
+
+
+#pragma utility setter
+//facebook share lazy instantiation
+
+
+
+- (void)setShareUtility:(PDShareUtility *)shareUtility
+{
+    if (![_shareUtility isEqual:shareUtility]) {
+        _shareUtility.delegate = nil;
+        _shareUtility = shareUtility;
+    }
+}
+
+
+
+
 #pragma share on facebook action
 
 

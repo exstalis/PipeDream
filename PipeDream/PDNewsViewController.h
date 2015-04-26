@@ -9,9 +9,7 @@
 
 #import "PDNavigationController.h"
 #import "PDDrawerMenuCell.h"
-#import "PDShareUtility.h"
 #import "PDFeedTableViewController.h"
-@class Article;
 
 
 @interface PDNewsViewController: PDFeedTableViewController
