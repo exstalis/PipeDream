@@ -8,12 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
-
+#import <AFNetworking.h>
+#import <UIKit+AFNetworking.h>
+#import <QuartzCore/QuartzCore.h>
 #import "PDShareButton.h"
 #import "KLCPopup.h"
 #import "PDShareUtility.h"
 #import <FBSDKShareKit/FBSDKShareKit.h>
 #import "Article.h"
+#import "Attachments.h"
+#import "PDSingleton.h"
+#import "PDNetworkClient.h"
+
 
 @interface PDFeedTableViewController : UITableViewController<UIPopoverControllerDelegate,PDShareUtilityDelegate,UIScrollViewDelegate>
 
@@ -25,6 +31,9 @@
 @property(nonatomic,assign) BOOL shouldDismissAfterDelay;
 @property (weak, nonatomic) PDShareButton *fbShareButton;
 @property (weak, nonatomic) PDShareButton *cancelButton;
+@property(nonatomic)Attachments *feedAttachments;
+@property(nonatomic,strong)Article *feedArticle;
+@property(nonatomic,strong)NSMutableArray *thumbnailArray;
 
 -(PDShareButton *)shareButtoninitWith:(PDShareButton *)button;
 

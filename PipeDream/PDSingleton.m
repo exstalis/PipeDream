@@ -38,10 +38,39 @@ static NSString *const kSkipLoginKey = @"shouldSkipLogin";
 - (instancetype)initWithArticle:(Article *)article
 {
     if (self = [super init]) {
-        self.sharedArticle=article ;
+//        self.sharedArticle=article ;
+        
+        article=[self.sharedArticle mutableCopy];
+        
     }
     return self;
 }
+
+
+
+
+- (instancetype)initWithArticle:(Article*)article withAttachments:(NSArray *)attachment{
+    
+    
+    if (self=[super init]) {
+      
+    
+
+    
+    }
+        
+        
+        
+    return self;
+    
+}
+    
+
+    
+    
+    
+    
+
 
 -(NSString *)stripHTMLEntities:(NSString *)encodedString
 {

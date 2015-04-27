@@ -8,6 +8,7 @@
 
 #import "PDFeedTableViewCell.h"
 
+
 @interface PDOpinionTableViewCell : PDFeedTableViewCell
 
 
@@ -18,5 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *opinionAuthor;
 @property (weak, nonatomic) IBOutlet UILabel *opinionDate;
 
+@property (weak, nonatomic) IBOutlet PDShareButton *opinionShareButton;
 @property (weak, nonatomic) IBOutlet UIImageView *opinionThumnail;
+
 @end

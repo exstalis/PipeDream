@@ -14,15 +14,19 @@
 
 @interface PDSingleton : NSObject
 @property (nonatomic, retain, readwrite) Article *sharedArticle;
-@property NSMutableDictionary *articleDictionary;
-@property NSArray * opinionArticleArray;
+@property (nonatomic, retain, readwrite) Attachments *sharedAttachments;
+@property(nonatomic,strong)NSArray *sharedImagesArray;
+
+
 
 @property(nonatomic,assign)BOOL skipLogin;
 
 
 +(PDSingleton*)sharedClient;
 
-- (id)initWithArticle:(Article *)article;
+- (instancetype)initWithArticle:(Article *)article;
+- (instancetype)initWithArticle:(Article*)article withAttachments:(NSArray *)attachment;
+
 
 @property (nonatomic, strong) NSMutableSet *currentArticleOperations;
 @property (nonatomic, strong) NSOperationQueue *articleOperationQueue;

@@ -500,6 +500,9 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="showShareOptionsPopup:" destination="2dx-Sz-2Co" eventType="touchUpInside" id="ySN-wv-N6F"/>
+                                            </connections>
                                         </button>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qef-SF-EO5" userLabel="thumbnail">
                                             <rect key="frame" x="267" y="43" width="100" height="100"/>
@@ -510,6 +513,7 @@
                                     <outlet property="opinionAuthor" destination="4nD-oW-Evk" id="V9r-CY-qDZ"/>
                                     <outlet property="opinionDate" destination="2gd-hS-87M" id="LHB-VY-Zre"/>
                                     <outlet property="opinionExcerptTextview" destination="mom-C0-ZNS" id="tFf-so-Ms6"/>
+                                    <outlet property="opinionShareButton" destination="Vom-GD-opq" id="7Cs-te-dpt"/>
                                     <outlet property="opinionThumnail" destination="qef-SF-EO5" id="SO5-aL-yA2"/>
                                     <outlet property="opinionTitle" destination="uhr-fD-D5F" id="jck-Gn-SPJ"/>
                                     <segue destination="fqw-ft-6jd" kind="show" id="tN6-lE-ICT"/>

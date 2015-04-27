@@ -10,9 +10,13 @@
 #import "PDDrawerMenuCell.h"
 #import "PDSingleton.h"
 
+#import "PDFeedTableViewController.h"
+
 @class Attachments;
 
-@interface PDOpinionViewController : UITableViewController
+@interface PDOpinionViewController :PDFeedTableViewController
+
+
 
 
 @end

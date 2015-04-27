@@ -15,9 +15,7 @@
 @interface PDNewsViewController: PDFeedTableViewController
 
 
-@property(nonatomic,strong)PDShareUtility *newsShareUtility;
 
-@property(nonatomic,strong)Article* newsFeedArticle;
 
 @end
 

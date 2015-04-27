@@ -17,9 +17,7 @@
 #import "PDSingleton.h"
 #import "JVFloatingDrawerViewController.h"
 #import "JVFloatingDrawerSpringAnimator.h"
-#import <AFNetworking.h>
-#import <UIKit+AFNetworking.h>
-#import <QuartzCore/QuartzCore.h>
+
 #import "PDShareButton.h"
 
 
@@ -28,9 +26,9 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 - (IBAction)showMenu:(UIBarButtonItem *)sender;
 
+@property(nonatomic,strong)PDShareUtility *newsShareUtility;
 
 @property (nonatomic,strong) NSMutableArray *newsArticleArray;
-@property(nonatomic,strong)NSMutableArray *newsAttachments;
 //@property(nonatomic)PDShareButton *newsShareOptionButton;
 
 
@@ -48,7 +46,8 @@
     self.automaticallyAdjustsScrollViewInsets = YES;
     
 
-    PDSingleton *sharedNewsArticle=[[PDSingleton alloc]initWithArticle:_newsFeedArticle];
+
+    self.newsShareUtility.delegate=self;
     
 
     [self loadNewsArticle];
@@ -56,6 +55,7 @@
 //    self.indicator=[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
 
 }
+
 
 -(instancetype)initWithCoder:(NSCoder *)aDecoder{
     
@@ -72,7 +72,7 @@
 
 -(void)dealloc{
     
-    _newsShareUtility.delegate=nil;
+    self.newsShareUtility.delegate=nil;
 
 }
 
@@ -119,33 +119,37 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     PDNewsTableviewCell *newsCell=[tableView dequeueReusableCellWithIdentifier:@"newsCell"];
-    if (newsCell==nil) {
-        newsCell=[[PDNewsTableviewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"newsCell"];
+    
+    [[PDSingleton sharedClient] initWithArticle:self.feedArticle];
+    
+   self.feedArticle=[_newsArticleArray objectAtIndex:indexPath.row];
+
+
+    newsCell.newsTitle.text= self.feedArticle.articleTitle;
+    newsCell.newsExcerptTextView.text=self.feedArticle.articleExcerpt;
+    newsCell.newsAuthorLabel.text=self.feedArticle.authorName;
+    newsCell.newsDateLabel.text=self.feedArticle.articleDate.description;
+
+    [newsCell.newsThumbnailImage cancelImageRequestOperation];
+
+
+    for (Attachments *att in self.feedArticle.articleAttachments) {
+            self.feedAttachments=att;
+
     }
     
+    NSURL* url=[NSURL URLWithString:self.feedAttachments.thumbnailImage [@"url"]];
+        
+    [newsCell.newsThumbnailImage setImageWithURL:url placeholderImage:[UIImage imageNamed: @"menu.png"]];
     
-    [PDSingleton sharedClient].sharedArticle=[_newsArticleArray objectAtIndex:indexPath.row];
-//    NSLog(@"shared article : %@",[PDSingleton sharedClient].sharedArticle);
     
-    
-    newsCell.newsTitle.text=[PDSingleton sharedClient].sharedArticle.articleTitle;
-    newsCell.newsExcerptTextView.text=[PDSingleton sharedClient].sharedArticle.articleExcerpt;
-    newsCell.newsAuthorLabel.text=[PDSingleton sharedClient].sharedArticle.authorName;
-    newsCell.newsDateLabel.text=[PDSingleton sharedClient].sharedArticle.articleDate.description;
 
 
     [self shareButtoninitWith:newsCell.newsShareButton];
     
-    
-    
-    
+
     [self.shareUtility setShareUtility:_newsShareUtility];
 
-    
-    
-    
-    
-    
     
         if ([self.fbShareButton.titleLabel.text isEqualToString:@"Share on Facebook"] ){
             FBSDKShareDialog *shareDialog=[_newsShareUtility getShareDialogWithContentURL:[PDSingleton sharedClient].sharedArticle.articleURL];
@@ -154,8 +158,6 @@
             
         
 //              shareDialog.delegate = self;
-            
-            
             
               [shareDialog show];
         }

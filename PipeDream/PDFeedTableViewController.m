@@ -36,18 +36,24 @@
     
 }
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = YES;
     self.view.backgroundColor = [UIColor whiteColor];
     _shouldDismissAfterDelay = NO;
+    self.thumbnailArray=[[NSMutableArray alloc]init];
+    
+    
+    
+   
+    
+
 
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-
-
 
 
 }
