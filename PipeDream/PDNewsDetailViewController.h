@@ -7,17 +7,26 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
+
+#import "PDContentViewController.h"
+
 
 @class Article;
 
-@interface PDNewsDetailViewController : UIViewController
-
-@property(nonatomic, strong) Article *article;
-@property (weak, nonatomic) IBOutlet UILabel *newsArticleTitle;
-@property (weak, nonatomic) IBOutlet UILabel *newsArticleAutor;
-@property (weak, nonatomic) IBOutlet UIImageView *newsArticleImage;
-@property (weak, nonatomic) IBOutlet UITextView *newsArticleBody;
+@interface PDNewsDetailViewController :PDContentViewController<MFMailComposeViewControllerDelegate,MFMessageComposeViewControllerDelegate>
+@property (nonatomic,strong) NSMutableArray *newsDetailArticleArray;
+@property(nonatomic,strong)NSMutableArray *newsDetailAttachments;
 
 
+@property (strong, nonatomic) IBOutlet UIScrollView *newsScrollView;
+@property (weak, nonatomic) IBOutlet UILabel *newsDetailTitle;
+@property (weak, nonatomic) IBOutlet UILabel *newsDetailAuthor;
+@property (weak, nonatomic) IBOutlet UITextView *newsDetailsArticle;
+@property (weak, nonatomic) IBOutlet UIImageView *newsDetailImage;
+
+@property(nonatomic,strong,readwrite)Article *contentArticle;
+
+@property(nonatomic,strong)Attachments *contenctAttachment;
 
 @end

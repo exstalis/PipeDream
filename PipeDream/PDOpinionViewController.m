@@ -85,6 +85,8 @@
     
 }
 
+#pragma mark -Menu Action Delegate
+
 - (IBAction)showMenu:(UIBarButtonItem *)sender {
     [[AppDelegate globalDelegate] toggleLeftDrawer:self animated:YES];
     

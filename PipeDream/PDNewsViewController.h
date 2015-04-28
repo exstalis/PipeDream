@@ -15,6 +15,7 @@
 @interface PDNewsViewController: PDFeedTableViewController
 
 
+@property (nonatomic,strong) NSMutableArray *newsArticleArray;
 
 
 @end

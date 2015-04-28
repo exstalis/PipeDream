@@ -58,6 +58,8 @@
 		2D85F5121AE8CA0D00A0C832 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D85F5111AE8CA0D00A0C832 /* Accounts.framework */; };
 		2D8DADED1AD8B7440047AECE /* PDDrawerMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8DADEC1AD8B7440047AECE /* PDDrawerMenuCell.m */; };
 		2D8DADF71AD8E2E70047AECE /* PDFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8DADF61AD8E2E70047AECE /* PDFeedTableViewCell.m */; };
+		2D9ABD461AEDE2B100EA37EB /* PDArticleContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D9ABD451AEDE2B100EA37EB /* PDArticleContentView.m */; };
+		2D9ABD491AEDF33400EA37EB /* PDContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D9ABD481AEDF33400EA37EB /* PDContentViewController.m */; };
 		2DBEBCAE1AD70B7100123DB5 /* BG.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBEBCAD1AD70B7100123DB5 /* BG.png */; };
 		2DBEBCC01AD7314000123DB5 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBEBCBE1AD7314000123DB5 /* menu.png */; };
 		2DBEBCC11AD7314000123DB5 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBEBCBF1AD7314000123DB5 /* menu@2x.png */; };
@@ -67,6 +69,7 @@
 		2DC51D3A1AD5B58200B9FA1F /* Front View.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC51D351AD5B58200B9FA1F /* Front View.png */; };
 		2DC51D3B1AD5B58200B9FA1F /* Front View@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC51D361AD5B58200B9FA1F /* Front View@2x.png */; };
 		2DC51D3C1AD5B58200B9FA1F /* Front View@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC51D371AD5B58200B9FA1F /* Front View@3x.png */; };
+		2DD575961AEDC61D0052CD01 /* PDRecentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD575951AEDC61D0052CD01 /* PDRecentTableViewCell.m */; };
 		2DEED4101ADE0997005A56D4 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DEED40D1ADE0997005A56D4 /* NetworkExtension.framework */; };
 		2DEED4111ADE0997005A56D4 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DEED40E1ADE0997005A56D4 /* Twitter.framework */; };
 		2DEED4121ADE0997005A56D4 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DEED40F1ADE0997005A56D4 /* WebKit.framework */; };
@@ -184,6 +187,10 @@
 		2D8DADEC1AD8B7440047AECE /* PDDrawerMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDDrawerMenuCell.m; sourceTree = "<group>"; };
 		2D8DADF51AD8E2E70047AECE /* PDFeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFeedTableViewCell.h; sourceTree = "<group>"; };
 		2D8DADF61AD8E2E70047AECE /* PDFeedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFeedTableViewCell.m; sourceTree = "<group>"; };
+		2D9ABD441AEDE2B100EA37EB /* PDArticleContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDArticleContentView.h; sourceTree = "<group>"; };
+		2D9ABD451AEDE2B100EA37EB /* PDArticleContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDArticleContentView.m; sourceTree = "<group>"; };
+		2D9ABD471AEDF33400EA37EB /* PDContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDContentViewController.h; sourceTree = "<group>"; };
+		2D9ABD481AEDF33400EA37EB /* PDContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDContentViewController.m; sourceTree = "<group>"; };
 		2DBEBCAD1AD70B7100123DB5 /* BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BG.png; sourceTree = "<group>"; };
 		2DBEBCBE1AD7314000123DB5 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		2DBEBCBF1AD7314000123DB5 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
@@ -194,6 +201,8 @@
 		2DC51D351AD5B58200B9FA1F /* Front View.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Front View.png"; sourceTree = "<group>"; };
 		2DC51D361AD5B58200B9FA1F /* Front View@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Front View@2x.png"; sourceTree = "<group>"; };
 		2DC51D371AD5B58200B9FA1F /* Front View@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Front View@3x.png"; sourceTree = "<group>"; };
+		2DD575941AEDC61D0052CD01 /* PDRecentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDRecentTableViewCell.h; sourceTree = "<group>"; };
+		2DD575951AEDC61D0052CD01 /* PDRecentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDRecentTableViewCell.m; sourceTree = "<group>"; };
 		2DEED40D1ADE0997005A56D4 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		2DEED40E1ADE0997005A56D4 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		2DEED40F1ADE0997005A56D4 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -339,6 +348,10 @@
 				2D271A9C1ABE25C900A71464 /* PDNavigationController.m */,
 				2DF06BF31AECA6DC00C03D09 /* PDFeedTableViewController.h */,
 				2DF06BF41AECA6DC00C03D09 /* PDFeedTableViewController.m */,
+				2D9ABD441AEDE2B100EA37EB /* PDArticleContentView.h */,
+				2D9ABD451AEDE2B100EA37EB /* PDArticleContentView.m */,
+				2D9ABD471AEDF33400EA37EB /* PDContentViewController.h */,
+				2D9ABD481AEDF33400EA37EB /* PDContentViewController.m */,
 				2D8DADE41AD888790047AECE /* Cell */,
 				2DBEBCB21AD70DAC00123DB5 /* Drawer */,
 				2D5FDB4A1AEB2FB8004187BB /* SocialShare */,
@@ -411,6 +424,8 @@
 			children = (
 				2D4FC8521AE8A2430044ACEF /* PDRecentViewController.h */,
 				2D4FC8531AE8A2430044ACEF /* PDRecentViewController.m */,
+				2DD575941AEDC61D0052CD01 /* PDRecentTableViewCell.h */,
+				2DD575951AEDC61D0052CD01 /* PDRecentTableViewCell.m */,
 			);
 			name = Recent;
 			sourceTree = "<group>";
@@ -723,6 +738,7 @@
 				2DF06BF21AEB744600C03D09 /* PDShareUtility.m in Sources */,
 				2D2921481ADA586E00D622EC /* PDSportsDetailViewController.m in Sources */,
 				2D271A751ABE1AE300A71464 /* PipeDream.xcdatamodeld in Sources */,
+				2D9ABD461AEDE2B100EA37EB /* PDArticleContentView.m in Sources */,
 				2D8DADED1AD8B7440047AECE /* PDDrawerMenuCell.m in Sources */,
 				2D5E8E241AD9F32500FB533F /* PDOpinionDetailViewController.m in Sources */,
 				2DC51D261AD4ECA800B9FA1F /* PDNewsViewController.m in Sources */,
@@ -730,7 +746,9 @@
 				2D4FC84B1AE827950044ACEF /* PDOpinionTableViewCell.m in Sources */,
 				2D5D94221ADCBEAB0068DB3E /* PDSingleton.m in Sources */,
 				2D5D94151ADCBC620068DB3E /* Article.m in Sources */,
+				2DD575961AEDC61D0052CD01 /* PDRecentTableViewCell.m in Sources */,
 				2DF06BF51AECA6DC00C03D09 /* PDFeedTableViewController.m in Sources */,
+				2D9ABD491AEDF33400EA37EB /* PDContentViewController.m in Sources */,
 				2D2921451ADA585100D622EC /* PDReleaseDetailViewController.m in Sources */,
 				2D4FC8601AE8B4A20044ACEF /* PDContactViewController.m in Sources */,
 				2D7A30AB1ADFF4DA00A6055C /* RequestOperationConfig.m in Sources */,

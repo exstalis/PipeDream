@@ -13,9 +13,9 @@
 
 
 @interface PDSingleton : NSObject
+
 @property (nonatomic, retain, readwrite) Article *sharedArticle;
 @property (nonatomic, retain, readwrite) Attachments *sharedAttachments;
-@property(nonatomic,strong)NSArray *sharedImagesArray;
 
 
 

@@ -17,8 +17,9 @@
 #import "PDSingleton.h"
 #import "JVFloatingDrawerViewController.h"
 #import "JVFloatingDrawerSpringAnimator.h"
-
+#import "PDNewsDetailViewController.h"
 #import "PDShareButton.h"
+
 
 
 @interface PDNewsViewController ()
@@ -28,7 +29,6 @@
 
 @property(nonatomic,strong)PDShareUtility *newsShareUtility;
 
-@property (nonatomic,strong) NSMutableArray *newsArticleArray;
 //@property(nonatomic)PDShareButton *newsShareOptionButton;
 
 
@@ -44,8 +44,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = YES;
-    
+    [[PDSingleton sharedClient] initWithArticle:self.feedArticle];
 
+    
 
     self.newsShareUtility.delegate=self;
     
@@ -55,7 +56,21 @@
 //    self.indicator=[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
 
 }
-
+//-(BOOL)canBecomeFirstResponder
+//{
+//    return YES;
+//}
+//
+//- (void)viewDidAppear:(BOOL)animated
+//{
+//    [super viewDidAppear:animated];
+//    [self becomeFirstResponder];
+//}
+//
+//-(void)viewWillAppear:(BOOL)animated{
+//    [self resignFirstResponder];
+//    [super viewWillDisappear:animated];
+//}
 
 -(instancetype)initWithCoder:(NSCoder *)aDecoder{
     
@@ -63,11 +78,11 @@
     if (self!=nil) {
         _newsArticleArray=[[NSMutableArray alloc]init];
         
+        
     }
     return self;
     
 }
-
 
 
 -(void)dealloc{
@@ -87,7 +102,10 @@
                 if (array!=nil) {
                     [_newsArticleArray removeAllObjects];
                     [_newsArticleArray addObjectsFromArray:array];
-                    [self.tableView reloadData];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self.tableView reloadData];
+                    });
+                    
                     
                 }
             }
@@ -120,11 +138,12 @@
     
     PDNewsTableviewCell *newsCell=[tableView dequeueReusableCellWithIdentifier:@"newsCell"];
     
-    [[PDSingleton sharedClient] initWithArticle:self.feedArticle];
     
-   self.feedArticle=[_newsArticleArray objectAtIndex:indexPath.row];
+   self.feedArticle=[self.newsArticleArray objectAtIndex:indexPath.row] ;
 
 
+    
+    
     newsCell.newsTitle.text= self.feedArticle.articleTitle;
     newsCell.newsExcerptTextView.text=self.feedArticle.articleExcerpt;
     newsCell.newsAuthorLabel.text=self.feedArticle.authorName;
@@ -143,30 +162,41 @@
     [newsCell.newsThumbnailImage setImageWithURL:url placeholderImage:[UIImage imageNamed: @"menu.png"]];
     
     
-
-
+  
     [self shareButtoninitWith:newsCell.newsShareButton];
     
 
     [self.shareUtility setShareUtility:_newsShareUtility];
 
-    
-        if ([self.fbShareButton.titleLabel.text isEqualToString:@"Share on Facebook"] ){
-            FBSDKShareDialog *shareDialog=[_newsShareUtility getShareDialogWithContentURL:[PDSingleton sharedClient].sharedArticle.articleURL];
-            
-            _newsShareUtility.delegate=self;
-            
+    _newsShareUtility.delegate=self;
+
+    if ([self.fbShareButton.titleLabel.text isEqualToString:@"Share on Facebook"] ){
+            FBSDKShareDialog *shareDialog=[_newsShareUtility getShareDialogWithContentURL:self.feedArticle.articleURL];
         
-//              shareDialog.delegate = self;
-            
+
               [shareDialog show];
         }
     
-    return newsCell;
+    
+        return newsCell;
     
 }
 
 
+#pragma segue to newsdetail
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"NewsDetailSegue"]) {
+        PDNewsDetailViewController *destinationViewController = (PDNewsDetailViewController *)[segue destinationViewController];
+        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+//        Article * article= [self.newsArticleArray objectAtIndex:selectedIndexPath.row];
+        
+        destinationViewController.contentArticle=[self.newsArticleArray objectAtIndex:selectedIndexPath.row];
+    
+        NSLog(@"deatil article objects %@", destinationViewController.contentArticle );
+    }
+}
 
 #pragma mark -Menu Action Delegate
 

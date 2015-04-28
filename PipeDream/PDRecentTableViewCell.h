@@ -9,5 +9,8 @@
 #import "PDFeedTableViewCell.h"
 
 @interface PDRecentTableViewCell : PDFeedTableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *authorLabel;
 @end

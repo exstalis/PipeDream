@@ -13,16 +13,17 @@
 #import "Article.h"
 #import "ArticleCategory.h"
 #import "PDNetworkClient.h"
-#import "RequestOperationConfig.h"
-#import "PDSingleton.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "PDArticleContentView.h"
+#import "PDNewsViewController.h"
 
-@interface PDNewsDetailViewController ()
+@interface PDNewsDetailViewController ()<FBSDKSharingDelegate,FBSDKSharingDialog>
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *backButton;
 
-@property (nonatomic,strong) NSMutableArray *newsDetailArticleArray;
-@property(nonatomic,strong)NSMutableArray *newsDetailAttachments;
+
+@property(nonatomic)PDArticleContentView *articleContents;
+
 
 
 @end
@@ -30,18 +31,19 @@
 @implementation PDNewsDetailViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
-    _newsDetailArticleArray=[[NSMutableArray alloc]init];
-    _newsDetailAttachments=[[NSMutableArray alloc]init];
-    [self loadNewsArticle ];
+    
+    
+    self.contenctAttachment=[[Attachments alloc]init];
+  
+    [self contentView];
+    
     
 //    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
 //    loginButton.center = self.view.center;
 //    [self.view addSubview:loginButton];
-//    
-//    
-//    
-//    
+
     
     
    }
@@ -50,28 +52,40 @@
     [super didReceiveMemoryWarning];
   
 }
-
-
-
--(void)loadNewsArticle{
-    
-    PDNetworkClient *manager=[[PDNetworkClient alloc ]init];
-    
-    [manager getNewsArticlesWithCompletion:^(NSArray *array, NSError *error) {
-        if (error==nil) {
-            if (array!=nil) {
-                [_newsDetailArticleArray removeAllObjects];
-                [_newsDetailArticleArray addObjectsFromArray:array];
-                
-             
-                
-
-            }
-        }
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        self.newsDetailArticleArray= [[NSMutableArray alloc] init];
+        self.newsDetailAttachments=[[NSMutableArray alloc]init];
         
-    }];
+    }
+    return self;
+}
+
+
+
+
+-(void)contentView{
+    
+    
+    
+    
+    [self scrollViewDidChange:self.newsScrollView];
+
+    self.newsDetailTitle.text=self.contentArticle.articleTitle;
+    NSLog(@"%@",self.contentArticle.articleBody);
+    
+    [self textViewDidChange:self.newsDetailsArticle];
+
+    self.newsDetailsArticle.text=self.contentArticle.articleBody;
+
+    
+    
     
     
     
 }
+
+
 @end

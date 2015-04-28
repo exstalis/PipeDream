@@ -27,13 +27,10 @@ static NSString * const  kPDSportsDrawerStoryboardID=@"PDSportsViewControllerSto
 
 static NSString * const  kPDRecentDrawerStoryboardID=@"PDRecentViewControllerStoryboardID";
 
-
 static NSString * const  kPDContactDrawerStoryboardID=@"PDContactViewControllerStoryboardID";
 
-//static NSString * const kJVRightDrawerStoryboardID = @"JVRightDrawerViewControllerStoryboardID";
+static NSString * const  kPDNewsDetailStoryboardID=@"PDNewsDetailStoryboardID";
 
-//static NSString * const kJVGitHubProjectPageViewControllerStoryboardID = @"JVGitHubProjectPageViewControllerStoryboardID";
-//static NSString * const kJVDrawerSettingsViewControllerStoryboardID = @"JVDrawerSettingsViewControllerStoryboardID";
 
 @interface AppDelegate ()
 @property (nonatomic, strong, readonly) UIStoryboard *myStoryboard;
@@ -216,6 +213,18 @@ static NSString * const  kPDContactDrawerStoryboardID=@"PDContactViewControllerS
     
 }
 
+//#pragma newsdetail
+//-(PDNewsDetailViewController *)newsDetailViewController{
+//    
+//    
+//    if (_newsDetailViewController==nil) {
+//        _newsDetailViewController=[self.myStoryboard instantiateViewControllerWithIdentifier:kPDNewsDetailStoryboardID];
+//        
+//    }
+//    return _newsDetailViewController;
+//    
+//}
+
 #pragma opinion
 
 -(UIViewController *)opinionViewController{
@@ -258,6 +267,10 @@ static NSString * const  kPDContactDrawerStoryboardID=@"PDContactViewControllerS
     
     
 }
+
+
+
+
 
 #pragma recent
 
