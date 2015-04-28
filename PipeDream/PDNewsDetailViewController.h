@@ -27,6 +27,6 @@
 
 @property(nonatomic,strong,readwrite)Article *contentArticle;
 
-@property(nonatomic,strong)Attachments *contenctAttachment;
+@property(nonatomic,strong)Attachments *contentAttachment;
 
 @end

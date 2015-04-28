@@ -35,9 +35,8 @@
     [super viewDidLoad];
     
     
-    self.contenctAttachment=[[Attachments alloc]init];
   
-    [self contentView];
+    
     
     
 //    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
@@ -63,29 +62,44 @@
     return self;
 }
 
-
-
-
--(void)contentView{
-    
-    
-    
+-(void)awakeFromNib{
     
     [self scrollViewDidChange:self.newsScrollView];
-
+    
     self.newsDetailTitle.text=self.contentArticle.articleTitle;
-    NSLog(@"%@",self.contentArticle.articleBody);
     
     [self textViewDidChange:self.newsDetailsArticle];
-
+    
     self.newsDetailsArticle.text=self.contentArticle.articleBody;
-
+    
+    NSURL *imageURL=[NSURL URLWithString:self.contentAttachment.fullImage[@"url"]];
+    
+    [self.newsDetailImage setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"Logo.png"]];
+    
     
     
     
     
     
 }
+-(BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self becomeFirstResponder];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self resignFirstResponder];
+    [self awakeFromNib];
+    [super viewWillDisappear:animated];
+}
+
+
 
 
 @end

@@ -44,7 +44,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = YES;
-    [[PDSingleton sharedClient] initWithArticle:self.feedArticle];
 
     
 
@@ -56,21 +55,21 @@
 //    self.indicator=[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
 
 }
-//-(BOOL)canBecomeFirstResponder
-//{
-//    return YES;
-//}
-//
-//- (void)viewDidAppear:(BOOL)animated
-//{
-//    [super viewDidAppear:animated];
-//    [self becomeFirstResponder];
-//}
-//
-//-(void)viewWillAppear:(BOOL)animated{
-//    [self resignFirstResponder];
-//    [super viewWillDisappear:animated];
-//}
+-(BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self becomeFirstResponder];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self resignFirstResponder];
+    [super viewWillDisappear:animated];
+}
 
 -(instancetype)initWithCoder:(NSCoder *)aDecoder{
     
@@ -135,7 +134,8 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    [[PDSingleton sharedClient] initWithArticle:self.feedArticle];
+
     PDNewsTableviewCell *newsCell=[tableView dequeueReusableCellWithIdentifier:@"newsCell"];
     
     
@@ -143,7 +143,7 @@
 
 
     
-    
+
     newsCell.newsTitle.text= self.feedArticle.articleTitle;
     newsCell.newsExcerptTextView.text=self.feedArticle.articleExcerpt;
     newsCell.newsAuthorLabel.text=self.feedArticle.authorName;
@@ -156,6 +156,8 @@
             self.feedAttachments=att;
 
     }
+    
+    
     
     NSURL* url=[NSURL URLWithString:self.feedAttachments.thumbnailImage [@"url"]];
         
@@ -193,8 +195,12 @@
 //        Article * article= [self.newsArticleArray objectAtIndex:selectedIndexPath.row];
         
         destinationViewController.contentArticle=[self.newsArticleArray objectAtIndex:selectedIndexPath.row];
-    
+        destinationViewController.contentAttachment=self.feedAttachments;
+        
+        
+
         NSLog(@"deatil article objects %@", destinationViewController.contentArticle );
+        
     }
 }
 

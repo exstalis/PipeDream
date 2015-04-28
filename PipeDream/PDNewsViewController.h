@@ -16,6 +16,7 @@
 
 
 @property (nonatomic,strong) NSMutableArray *newsArticleArray;
+@property (nonatomic,strong) NSMutableArray *newsArticleImageArray;
 
 
 @end
