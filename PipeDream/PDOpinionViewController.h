@@ -8,8 +8,15 @@
 
 #import "PDNavigationController.h"
 #import "PDDrawerMenuCell.h"
+#import "PDSingleton.h"
 
-@interface PDOpinionViewController : UITableViewController
+#import "PDFeedTableViewController.h"
+
+@class Attachments;
+
+@interface PDOpinionViewController :PDFeedTableViewController
+
+
 
 
 @end

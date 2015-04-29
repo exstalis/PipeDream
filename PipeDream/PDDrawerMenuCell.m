@@ -22,6 +22,7 @@
 
 - (void)awakeFromNib {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
+    [self.menuItemLabel setFont:[UIFont fontWithName:@"OpenSans-Regular" size:4.0]];
 
 }
 

@@ -18,6 +18,8 @@
 
 static PDSingleton *sharedInstance;
 static dispatch_once_t oncePredicate;
+static NSString *const kSkipLoginKey = @"shouldSkipLogin";
+
 
 @implementation PDSingleton
 
@@ -33,13 +35,43 @@ static dispatch_once_t oncePredicate;
 
 
 
-- (id)initWithArticle:(Article *)article
+- (instancetype)initWithArticle:(Article *)article
 {
     if (self = [super init]) {
-        self.sharedArticle=article ;
+//        self.sharedArticle=article ;
+        
+        article=[self.sharedArticle mutableCopy];
+        
     }
     return self;
 }
+
+
+
+
+//- (instancetype)initWithArticle:(Article*)article withAttachments:(NSArray *)attachment{
+//    
+//    
+//    if (self=[super init]) {
+//      
+//    
+//
+//    
+//    }
+//        
+//        
+//        
+//    return self;
+//    
+//}
+//    
+
+    
+    
+    
+    
+
+
 -(NSString *)stripHTMLEntities:(NSString *)encodedString
 {
     NSString *strippedString=[[NSString alloc]init];
@@ -49,6 +81,21 @@ static dispatch_once_t oncePredicate;
     return strippedString;
 }
 
+//skip facebook login
+
+-(BOOL)skipLogin{
+    
+    return [[NSUserDefaults standardUserDefaults] boolForKey:kSkipLoginKey];
+    
+}
+
+-(void)setSkipLogin:(BOOL)skipLogin{
+    
+    NSUserDefaults *userDefaults=[NSUserDefaults standardUserDefaults];
+    [userDefaults setBool:skipLogin forKey:kSkipLoginKey];
+    [userDefaults synchronize];
+    
+}
 
 
 //- (NSMutableSet *)currentArticleOperations

@@ -13,7 +13,6 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
 }
 
 
@@ -27,8 +26,13 @@
         [self setSelectedBackgroundView:nil];
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
         [self.textLabel setTextColor:[UIColor blackColor]];
+
+        [self.textLabel setFont:[UIFont fontWithName:@"OpenSans-Regular" size:14.0]];
         
-        [self.textLabel setFont:[UIFont fontWithName:@"Open Sans" size:14.0]];
+        
+        
+        
+        
 //        [self.headline setFont:[UIFont fontWithName:@"Open-Sans" size:14.0]];;
 //        self.headline.textColor=[UIColor greenColor];
 //        

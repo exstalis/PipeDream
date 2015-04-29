@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F7A5116104C62871A8BEC148"
+               BlueprintIdentifier = "FE5FBEADDEE4CA26D78A9799"
                BuildableName = "libPods-PipeDream-ORStackView.a"
                BlueprintName = "Pods-PipeDream-ORStackView"
                ReferencedContainer = "container:Pods.xcodeproj">

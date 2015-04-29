@@ -13,14 +13,17 @@
 #import "Article.h"
 #import "ArticleCategory.h"
 #import "PDNetworkClient.h"
-#import "RequestOperationConfig.h"
-#import "PDSingleton.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "PDArticleContentView.h"
+#import "PDNewsViewController.h"
 
-@interface PDNewsDetailViewController ()
+@interface PDNewsDetailViewController ()<FBSDKSharingDelegate,FBSDKSharingDialog>
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *backButton;
 
-@property (nonatomic,strong) NSMutableArray *newsDetailArticleArray;
-@property(nonatomic,strong)NSMutableArray *newsDetailAttachments;
+
+@property(nonatomic)PDArticleContentView *articleContents;
+
 
 
 @end
@@ -28,47 +31,77 @@
 @implementation PDNewsDetailViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
-    _newsDetailArticleArray=[[NSMutableArray alloc]init];
-    _newsDetailAttachments=[[NSMutableArray alloc]init];
-    [self loadNewsArticle ];
+    
+    
+  
     
     
     
+//    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+//    loginButton.center = self.view.center;
+//    [self.view addSubview:loginButton];
+
     
     
-    
-    
-    
-    // Do any additional setup after loading the view.
-}
+   }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  
 }
-
-
-
--(void)loadNewsArticle{
-    
-    PDNetworkClient *manager=[[PDNetworkClient alloc ]init];
-    
-    [manager getNewsArticlesWithCompletion:^(NSArray *array, NSError *error) {
-        if (error==nil) {
-            if (array!=nil) {
-                [_newsDetailArticleArray removeAllObjects];
-                [_newsDetailArticleArray addObjectsFromArray:array];
-                
-             
-                
-
-            }
-        }
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        self.newsDetailArticleArray= [[NSMutableArray alloc] init];
+        self.newsDetailAttachments=[[NSMutableArray alloc]init];
         
-    }];
+    }
+    return self;
+}
+
+
+-(void)contentView{
+    
+    [self scrollViewDidChange:self.newsScrollView];
+    
+    self.newsDetailTitle.text=self.contentArticle.articleTitle;
+    
+    [self textViewDidChange:self.newsDetailsArticle];
+    
+    self.newsDetailsArticle.text=self.contentArticle.articleBody;
+    
+    NSURL *imageURL=[NSURL URLWithString:self.contentAttachment.fullImage[@"url"]];
+    
+    [self.newsDetailImage setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"Logo.png"]];
+    
+    
     
     
     
 }
+
+
+-(BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self becomeFirstResponder];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self resignFirstResponder];
+    [self contentView];
+    [super viewWillDisappear:animated];
+}
+
+
+
+
 @end

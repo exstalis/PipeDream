@@ -7,7 +7,14 @@
 //
 
 #import "RequestOperationConfig.h"
+#import <FBSDKShareKit/FBSDKShareKit.h>
+#import "PDShareUtility.h"
 
+
+@class PDShareUtility;
+
+
+typedef void (^ShareOperationCompletionBlock)(PDShareUtility *shareUtility, NSError *error);
 
 typedef void (^CompletionBlock)(NSError *error);
 
@@ -17,7 +24,6 @@ typedef void (^ObjectCompletionBlock)(id object, NSError *error);
 //nsarray'i article yapabilirsin
 
 typedef void (^ArrayCompletionBlock)(NSArray *array, NSError *error);
-typedef void (^ArticleCompletionBlock)(Article *articleObjects, NSError *error);
 
 typedef void (^RequestOperationConfigBlock)(RequestOperationConfig *config);
 typedef void (^DictionaryCompletionBlock)(NSDictionary *dictionary, NSError *error);

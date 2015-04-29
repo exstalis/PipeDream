@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PDFeedTableViewController.h"
 
-@interface PDRecentViewController : UITableViewController
+
+
+@interface PDRecentViewController : PDFeedTableViewController
+
 
 @end

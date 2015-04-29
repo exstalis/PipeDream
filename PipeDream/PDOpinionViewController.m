@@ -10,10 +10,9 @@
 #import "PDOpinionDetailViewController.h"
 
 #import "AppDelegate.h"
-#import "Article.h"
 #import "PDOpinionTableViewCell.h"
-
-#import "PDNetworkClient.h"
+#import "PDShareButton.h"
+#import "ArticleCategory.h"
 
 
 @interface PDOpinionViewController ()
@@ -21,8 +20,11 @@
 - (IBAction)showMenu:(UIBarButtonItem *)sender;
 
 @property(nonatomic,strong) Article *opinionArticles;
-
 @property(nonatomic, strong) NSMutableArray *opinionArticlesArray;
+@property(nonatomic,strong)PDShareUtility *opinionShareUtility;
+
+
+- (IBAction)showShareOptionsPopup:(id)sender;
 
 @end
 
@@ -34,8 +36,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     [self loadOpinionArticles];
-    _opinionArticles=[[Article alloc]init];
+    
+    
+    
+    
     
 }
 
@@ -69,6 +75,18 @@
     }];
 }
 
+
+
+//for facebook sharing set del. nil fix it later
+
+-(void)dealloc{
+    
+    self.opinionShareUtility.delegate=nil;
+    
+}
+
+#pragma mark -Menu Action Delegate
+
 - (IBAction)showMenu:(UIBarButtonItem *)sender {
     [[AppDelegate globalDelegate] toggleLeftDrawer:self animated:YES];
     
@@ -100,20 +118,51 @@
     
     PDOpinionTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"opinionCell" forIndexPath:indexPath];
     
-    if (cell==nil) {
-        cell=[[PDOpinionTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"opinionCell"];
+   
+    [[PDSingleton sharedClient] initWithArticle:self.feedArticle];
+    
+    self.feedArticle=[_opinionArticlesArray objectAtIndex:indexPath.row];
+    cell.opinionTitle.text=self.feedArticle.articleTitle;
+    cell.opinionExcerptTextview.text= self.feedArticle.articleExcerpt;
+    cell.opinionAuthor.text=  self.feedArticle.authorName;
+    cell.opinionDate.text=self.feedArticle.articleDate.description;
+    [cell.opinionThumnail cancelImageRequestOperation];
+    
+    
+    for (Attachments *att in self.feedArticle.articleAttachments) {
+        self.feedAttachments=att;
         
     }
-    _opinionArticles=[_opinionArticlesArray objectAtIndex:indexPath.row];
-    cell.opinionTitle.text=_opinionArticles.articleTitle;
-    cell.opinionExcerpt.text=_opinionArticles.articleExcerpt;
-    cell.opinionAuthor.text=_opinionArticles.authorName;
-    cell.opinionDate.text=_opinionArticles.articleDate.description;
+    
+    
+    NSURL* url=[NSURL URLWithString:self.feedAttachments.thumbnailImage [@"url"]];
+    
+    [cell.opinionThumnail setImageWithURL:url placeholderImage:[UIImage imageNamed: @"menu.png"]];
+    
+    
+    
+        
+    
+    
+    
+    [self shareButtoninitWith:cell.opinionShareButton];
+    
+    
+    [self.shareUtility setShareUtility:self.opinionShareUtility];
+    
+    if ([self.fbShareButton.titleLabel.text isEqualToString:@"Share on Facebook"] ){
+        FBSDKShareDialog *shareDialog=[self.opinionShareUtility getShareDialogWithContentURL:[PDSingleton sharedClient].sharedArticle.articleURL];
+        
+        self.opinionShareUtility.delegate=self;
+        
+        
+        //              shareDialog.delegate = self;
+        
+        [shareDialog show];
+    }
+
     
 
-
-    
-    
     
     
     return cell;
@@ -121,4 +170,10 @@
 }
 
 
+- (IBAction)showShareOptionsPopup:(id)sender {
+    
+    
+    [self sharingOptionsButtonAction];
+    
+}
 @end

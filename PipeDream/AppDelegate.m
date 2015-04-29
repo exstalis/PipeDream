@@ -7,6 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+
+#import <FBSDKShareKit/FBSDKShareKit.h>
 #import "JVFloatingDrawerViewController.h"
 #import "JVFloatingDrawerSpringAnimator.h"
 
@@ -22,13 +27,10 @@ static NSString * const  kPDSportsDrawerStoryboardID=@"PDSportsViewControllerSto
 
 static NSString * const  kPDRecentDrawerStoryboardID=@"PDRecentViewControllerStoryboardID";
 
-
 static NSString * const  kPDContactDrawerStoryboardID=@"PDContactViewControllerStoryboardID";
 
-//static NSString * const kJVRightDrawerStoryboardID = @"JVRightDrawerViewControllerStoryboardID";
+static NSString * const  kPDNewsDetailStoryboardID=@"PDNewsDetailStoryboardID";
 
-//static NSString * const kJVGitHubProjectPageViewControllerStoryboardID = @"JVGitHubProjectPageViewControllerStoryboardID";
-//static NSString * const kJVDrawerSettingsViewControllerStoryboardID = @"JVDrawerSettingsViewControllerStoryboardID";
 
 @interface AppDelegate ()
 @property (nonatomic, strong, readonly) UIStoryboard *myStoryboard;
@@ -38,14 +40,20 @@ static NSString * const  kPDContactDrawerStoryboardID=@"PDContactViewControllerS
 @implementation AppDelegate
 
 
+
+#pragma storyboard
+@synthesize myStoryboard=_myStoryboard;
+
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window.rootViewController = self.drawerViewController;
     [self configureDrawerViewController];
     
     [self.window makeKeyAndVisible];
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                    didFinishLaunchingWithOptions:launchOptions];
     
-
-    return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -54,26 +62,38 @@ static NSString * const  kPDContactDrawerStoryboardID=@"PDContactViewControllerS
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    // Saves changes in the application's managed object context before the application terminates.
+ 
     [self saveContext];
 }
 
 
-@synthesize myStoryboard=_myStoryboard;
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+  }
+
+
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                          openURL:url
+                                                sourceApplication:sourceApplication
+                                                       annotation:annotation];
+}
+
+
+
+
 
 
 #pragma mark - Core Data stack
@@ -193,6 +213,18 @@ static NSString * const  kPDContactDrawerStoryboardID=@"PDContactViewControllerS
     
 }
 
+//#pragma newsdetail
+//-(PDNewsDetailViewController *)newsDetailViewController{
+//    
+//    
+//    if (_newsDetailViewController==nil) {
+//        _newsDetailViewController=[self.myStoryboard instantiateViewControllerWithIdentifier:kPDNewsDetailStoryboardID];
+//        
+//    }
+//    return _newsDetailViewController;
+//    
+//}
+
 #pragma opinion
 
 -(UIViewController *)opinionViewController{
@@ -235,6 +267,10 @@ static NSString * const  kPDContactDrawerStoryboardID=@"PDContactViewControllerS
     
     
 }
+
+
+
+
 
 #pragma recent
 

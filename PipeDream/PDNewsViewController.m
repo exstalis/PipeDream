@@ -17,16 +17,22 @@
 #import "PDSingleton.h"
 #import "JVFloatingDrawerViewController.h"
 #import "JVFloatingDrawerSpringAnimator.h"
+#import "PDNewsDetailViewController.h"
+#import "PDShareButton.h"
 
 
-@interface PDNewsViewController ()
+
+@interface PDNewsViewController ()<MFMailComposeViewControllerDelegate>
+
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 - (IBAction)showMenu:(UIBarButtonItem *)sender;
 
+@property(nonatomic,strong)PDShareUtility *newsShareUtility;
 
-@property (nonatomic,strong) NSMutableArray *newsArticleArray;
-@property(nonatomic,strong)NSMutableArray *newsAttachments;
+//@property(nonatomic)PDShareButton *newsShareOptionButton;
+
+
 
 -(void)loadNewsArticle;
 
@@ -35,14 +41,36 @@
 
 @implementation PDNewsViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.automaticallyAdjustsScrollViewInsets = YES;
+
+    [self.shareUtility setShareUtility:_newsShareUtility];
+
+
+//    self.newsShareUtility.delegate=self;
     
-    
+
     [self loadNewsArticle];
     
 //    self.indicator=[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
 
+}
+-(BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self becomeFirstResponder];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self resignFirstResponder];
+    [super viewWillDisappear:animated];
 }
 
 -(instancetype)initWithCoder:(NSCoder *)aDecoder{
@@ -51,12 +79,20 @@
     if (self!=nil) {
         _newsArticleArray=[[NSMutableArray alloc]init];
         
+        
     }
     return self;
     
 }
 
 
+-(void)dealloc{
+    
+    self.newsShareUtility.delegate=nil;
+
+}
+
+//fetch articles
 
 -(void)loadNewsArticle{
     
@@ -67,7 +103,10 @@
                 if (array!=nil) {
                     [_newsArticleArray removeAllObjects];
                     [_newsArticleArray addObjectsFromArray:array];
-                    [self.tableView reloadData];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self.tableView reloadData];
+                    });
+                    
                     
                 }
             }
@@ -80,7 +119,6 @@
   
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - TableView datasource
@@ -92,33 +130,86 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
     return [_newsArticleArray count];
-//    buraya ttotal count vrment gerek
+//    buraya ttotal count vement gerek
     
     
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+//    [[PDSingleton sharedClient] initWithArticle:self.feedArticle];
+
     PDNewsTableviewCell *newsCell=[tableView dequeueReusableCellWithIdentifier:@"newsCell"];
-    if (newsCell==nil) {
-        newsCell=[[PDNewsTableviewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"newsCell"];
+    
+    
+   self.feedArticle=[self.newsArticleArray objectAtIndex:indexPath.row] ;
+
+
+    
+
+    newsCell.newsTitle.text= self.feedArticle.articleTitle;
+    newsCell.newsExcerptTextView.text=self.feedArticle.articleExcerpt;
+    newsCell.newsAuthorLabel.text=self.feedArticle.authorName;
+    newsCell.newsDateLabel.text=self.feedArticle.articleDate.description;
+
+    [newsCell.newsThumbnailImage cancelImageRequestOperation];
+
+
+    for (Attachments *att in self.feedArticle.articleAttachments) {
+            self.feedAttachments=att;
+
     }
     
-    Article *newsArticle=[_newsArticleArray objectAtIndex:indexPath.row];
-//    NSLog(@"article array : %@",_newsArticleArray);
     
     
-    newsCell.newsTitle.text=newsArticle.articleTitle;
-    newsCell.newsExcerptLabel.text=newsArticle.articleExcerpt;
-    newsCell.newsAuthorLabel.text=newsArticle.authorName;
-    newsCell.newsDateLabel.text=newsArticle.articleDate.description;
-//    newsCell.newsThumbnailImage.image=newsArticle.articleAttachments;
+    NSURL* url=[NSURL URLWithString:self.feedAttachments.thumbnailImage [@"url"]];
+        
+    [newsCell.newsThumbnailImage setImageWithURL:url placeholderImage:[UIImage imageNamed: @"menu.png"]];
     
-    return newsCell;
+    
+  
+
+    _newsShareUtility.delegate=self;
+
+    if ([self.fbShareButton.titleLabel.text isEqualToString:@"Share on Facebook"] ){
+            FBSDKShareDialog *shareDialog=[_newsShareUtility getShareDialogWithContentURL:self.feedArticle.articleURL];
+        
+
+              [shareDialog show];
+        }
+    if ([self.mailButton.titleLabel.text isEqualToString:@"Mail"]) {
+        
+        [self sendwithMail:self.mailButton];
+        
+    
+//        [self sendArticleViaMail:[self.feedArticle.articleURL absoluteString]];
+        
+        
+    }
+    
+    
+        return newsCell;
     
 }
 
 
+#pragma segue to newsdetail
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"NewsDetailSegue"]) {
+        PDNewsDetailViewController *destinationViewController = (PDNewsDetailViewController *)[segue destinationViewController];
+        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+//        Article * article= [self.newsArticleArray objectAtIndex:selectedIndexPath.row];
+        
+        destinationViewController.contentArticle=[self.newsArticleArray objectAtIndex:selectedIndexPath.row];
+        destinationViewController.contentAttachment=self.feedAttachments;
+        
+        
+
+//        NSLog(@"deatil article objects %@", destinationViewController.contentArticle );
+        
+    }
+}
 
 #pragma mark -Menu Action Delegate
 
@@ -129,11 +220,20 @@
 
 }
 
-
-
 - (JVFloatingDrawerSpringAnimator *)drawerAnimator {
     return [[AppDelegate globalDelegate] drawerAnimator];
 }
+
+#pragma shareOption
+
+
+- (IBAction)showSharingOptionsPopU:(id)sender {
+
+    [self sharingOptionsButtonAction];
+}
+
+
+
 
 
 @end
