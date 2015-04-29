@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <FBSDKShareButton.h>
 
-@interface PDShareButton : UIButton
+@interface PDShareButton : UIButton<NSSecureCoding>
 
 
+
+@property (nonatomic)PDShareButton *globalShareButton;
 
 
 

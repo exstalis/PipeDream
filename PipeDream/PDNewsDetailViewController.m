@@ -62,7 +62,8 @@
     return self;
 }
 
--(void)awakeFromNib{
+
+-(void)contentView{
     
     [self scrollViewDidChange:self.newsScrollView];
     
@@ -80,8 +81,9 @@
     
     
     
-    
 }
+
+
 -(BOOL)canBecomeFirstResponder
 {
     return YES;
@@ -95,7 +97,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [self resignFirstResponder];
-    [self awakeFromNib];
+    [self contentView];
     [super viewWillDisappear:animated];
 }
 

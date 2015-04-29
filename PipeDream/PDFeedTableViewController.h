@@ -19,6 +19,7 @@
 #import "Attachments.h"
 #import "PDSingleton.h"
 #import "PDNetworkClient.h"
+#import <objc/runtime.h>
 
 
 @interface PDFeedTableViewController : UITableViewController<UIPopoverControllerDelegate,PDShareUtilityDelegate,UIScrollViewDelegate>
@@ -30,13 +31,19 @@
 @property (nonatomic, strong) PDShareUtility *shareUtility;
 @property(nonatomic,assign) BOOL shouldDismissAfterDelay;
 @property (weak, nonatomic) PDShareButton *fbShareButton;
+@property ( nonatomic,assign)  PDShareButton *mailButton;
 @property (weak, nonatomic) PDShareButton *cancelButton;
 @property(nonatomic)Attachments *feedAttachments;
 @property(nonatomic,strong)Article *feedArticle;
 @property(nonatomic,strong)NSMutableArray *thumbnailArray;
 
 -(PDShareButton *)shareButtoninitWith:(PDShareButton *)button;
+-(void)sendwithMail:(id)sender;
 
 -(void)sharingOptionsButtonAction;
+- (void)sendArticleViaMail:(NSString *)articleURL;
+
+
+
 
 @end

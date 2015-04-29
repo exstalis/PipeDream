@@ -22,7 +22,8 @@
 
 
 
-@interface PDNewsViewController ()
+@interface PDNewsViewController ()<MFMailComposeViewControllerDelegate>
+
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 - (IBAction)showMenu:(UIBarButtonItem *)sender;
@@ -45,9 +46,10 @@
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = YES;
 
-    
+    [self.shareUtility setShareUtility:_newsShareUtility];
 
-    self.newsShareUtility.delegate=self;
+
+//    self.newsShareUtility.delegate=self;
     
 
     [self loadNewsArticle];
@@ -134,7 +136,7 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    [[PDSingleton sharedClient] initWithArticle:self.feedArticle];
+//    [[PDSingleton sharedClient] initWithArticle:self.feedArticle];
 
     PDNewsTableviewCell *newsCell=[tableView dequeueReusableCellWithIdentifier:@"newsCell"];
     
@@ -165,10 +167,6 @@
     
     
   
-    [self shareButtoninitWith:newsCell.newsShareButton];
-    
-
-    [self.shareUtility setShareUtility:_newsShareUtility];
 
     _newsShareUtility.delegate=self;
 
@@ -178,6 +176,15 @@
 
               [shareDialog show];
         }
+    if ([self.mailButton.titleLabel.text isEqualToString:@"Mail"]) {
+        
+        [self sendwithMail:self.mailButton];
+        
+    
+//        [self sendArticleViaMail:[self.feedArticle.articleURL absoluteString]];
+        
+        
+    }
     
     
         return newsCell;
@@ -199,7 +206,7 @@
         
         
 
-        NSLog(@"deatil article objects %@", destinationViewController.contentArticle );
+//        NSLog(@"deatil article objects %@", destinationViewController.contentArticle );
         
     }
 }
