@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2BA09AD91AE833070084C258 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA09AD81AE833070084C258 /* NSString+HTML.m */; };
+		2BE265071AF1A61100CF5009 /* HTMLDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE265061AF1A61100CF5009 /* HTMLDecoder.m */; };
 		2D271A6F1ABE1AE300A71464 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A6E1ABE1AE300A71464 /* main.m */; };
 		2D271A721ABE1AE300A71464 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A711ABE1AE300A71464 /* AppDelegate.m */; };
 		2D271A751ABE1AE300A71464 /* PipeDream.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A731ABE1AE300A71464 /* PipeDream.xcdatamodeld */; };
@@ -87,6 +88,8 @@
 		2BA09AD51AE82F520084C258 /* NSString_stripHtml.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSString_stripHtml.m; sourceTree = "<group>"; };
 		2BA09AD71AE833070084C258 /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
 		2BA09AD81AE833070084C258 /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
+		2BE265051AF1A61100CF5009 /* HTMLDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLDecoder.h; sourceTree = "<group>"; };
+		2BE265061AF1A61100CF5009 /* HTMLDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLDecoder.m; sourceTree = "<group>"; };
 		2D271A691ABE1AE300A71464 /* PipeDream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PipeDream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D271A6D1ABE1AE300A71464 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D271A6E1ABE1AE300A71464 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -244,6 +247,8 @@
 				2BA09AD81AE833070084C258 /* NSString+HTML.m */,
 				2BA09AD41AE82F520084C258 /* NSString_stripHtml.h */,
 				2BA09AD51AE82F520084C258 /* NSString_stripHtml.m */,
+				2BE265051AF1A61100CF5009 /* HTMLDecoder.h */,
+				2BE265061AF1A61100CF5009 /* HTMLDecoder.m */,
 			);
 			name = HTMLDecoder;
 			sourceTree = "<group>";
@@ -728,6 +733,7 @@
 				2D2921371ADA154500D622EC /* PDDrawerViewController.m in Sources */,
 				2D5D94161ADCBC620068DB3E /* ArticleCategory.m in Sources */,
 				2D271A9D1ABE25C900A71464 /* PDNavigationController.m in Sources */,
+				2BE265071AF1A61100CF5009 /* HTMLDecoder.m in Sources */,
 				2D271A6F1ABE1AE300A71464 /* main.m in Sources */,
 				2D4FC8511AE890970044ACEF /* PDSportsTableViewCell.m in Sources */,
 				2D4FC8541AE8A2430044ACEF /* PDRecentViewController.m in Sources */,

@@ -72,14 +72,7 @@ static NSString *const kSkipLoginKey = @"shouldSkipLogin";
     
 
 
--(NSString *)stripHTMLEntities:(NSString *)encodedString
-{
-    NSString *strippedString=[[NSString alloc]init];
-    strippedString = [encodedString stripHtml];
-    strippedString = [strippedString kv_decodeHTMLCharacterEntities];
-    
-    return strippedString;
-}
+
 
 //skip facebook login
 
