@@ -119,7 +119,6 @@
     PDOpinionTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"opinionCell" forIndexPath:indexPath];
     
    
-    [[PDSingleton sharedClient] initWithArticle:self.feedArticle];
     
     self.feedArticle=[_opinionArticlesArray objectAtIndex:indexPath.row];
     cell.opinionTitle.text=self.feedArticle.articleTitle;
@@ -138,17 +137,13 @@
     NSURL* url=[NSURL URLWithString:self.feedAttachments.thumbnailImage [@"url"]];
     
     [cell.opinionThumnail setImageWithURL:url placeholderImage:[UIImage imageNamed: @"menu.png"]];
-    
-    
-    
-        
-    
+
     
     
     [self shareButtoninitWith:cell.opinionShareButton];
     
     
-    [self.shareUtility setShareUtility:self.opinionShareUtility];
+//    [self.shareUtility setShareUtility:self.opinionShareUtility];
     
     if ([self.fbShareButton.titleLabel.text isEqualToString:@"Share on Facebook"] ){
         FBSDKShareDialog *shareDialog=[self.opinionShareUtility getShareDialogWithContentURL:[PDSingleton sharedClient].sharedArticle.articleURL];

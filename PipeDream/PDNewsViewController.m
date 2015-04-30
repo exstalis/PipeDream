@@ -46,7 +46,6 @@
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = YES;
 
-    [self.shareUtility setShareUtility:_newsShareUtility];
 
 
 //    self.newsShareUtility.delegate=self;
@@ -86,11 +85,6 @@
 }
 
 
--(void)dealloc{
-    
-    self.newsShareUtility.delegate=nil;
-
-}
 
 //fetch articles
 
@@ -168,14 +162,13 @@
     
   
 
-    _newsShareUtility.delegate=self;
 
     if ([self.fbShareButton.titleLabel.text isEqualToString:@"Share on Facebook"] ){
-            FBSDKShareDialog *shareDialog=[_newsShareUtility getShareDialogWithContentURL:self.feedArticle.articleURL];
         
 
-              [shareDialog show];
-        }
+        [self facebookShare];
+    
+    }
     if ([self.mailButton.titleLabel.text isEqualToString:@"Mail"]) {
         
         [self sendwithMail:self.mailButton];

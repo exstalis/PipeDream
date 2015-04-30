@@ -35,10 +35,13 @@
 @property (weak, nonatomic) PDShareButton *cancelButton;
 @property(nonatomic)Attachments *feedAttachments;
 @property(nonatomic,strong)Article *feedArticle;
-@property(nonatomic,strong)NSMutableArray *thumbnailArray;
 
+@property(copy, nonatomic) NSURL *selectedURL;
+@property(nonatomic,strong)NSMutableArray *thumbnailArray;
 -(PDShareButton *)shareButtoninitWith:(PDShareButton *)button;
 -(void)sendwithMail:(id)sender;
+-(void)facebookShare;
+
 
 -(void)sharingOptionsButtonAction;
 - (void)sendArticleViaMail:(NSString *)articleURL;
