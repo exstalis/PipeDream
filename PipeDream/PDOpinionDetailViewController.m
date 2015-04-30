@@ -7,8 +7,20 @@
 //
 
 #import "PDOpinionDetailViewController.h"
+#import "AppDelegate.h"
+#import "PDNewsTableviewCell.h"
+#import "Article.h"
+#import "ArticleCategory.h"
+#import "PDNetworkClient.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "PDArticleContentView.h"
+#import "Attachments.h"
+#import <UIKit+AFNetworking.h>
+
 
 @interface PDOpinionDetailViewController ()
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *barBackButton;
 
 @end
 
@@ -16,22 +28,55 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self contentView];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        self.opinionDetailArticleArray= [[NSMutableArray alloc] init];
+        self.opinionDetailAttachments=[[NSMutableArray alloc]init];
+    }
+    return self;
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+-(BOOL)canBecomeFirstResponder
+{
+    return YES;
 }
-*/
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self becomeFirstResponder];
+}
+
+-(void)contentView{
+    
+    [self scrollViewDidChange:self.opinionScrollView];
+    
+    self.titleLabel.text=self.contentArticle.articleTitle;
+    
+    [self textViewDidChange:self.articleBody];
+    
+    self.articleBody.text=self.contentArticle.articleBody;
+
+    NSURL *imageURL=[NSURL URLWithString:self.contentAttachment.fullImage[@"url"]];
+    [self.articleImage setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"Logo.png"]];
+
+    
+    
+    
+    
+    
+}
 
 @end

@@ -15,10 +15,20 @@
 #import "PDSingleton.h"
 #import <FBSDKShareLinkContent.h>
 #import <MessageUI/MessageUI.h>
-
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "PDShareUtility.h"
 #import "Article.h"
 
+
+typedef NS_ENUM(NSInteger,PopupLabel) {
+   
+    PopupLabelSucces=1,
+    PopupLabelFail=2,
+    PopupLabelItem_COUNT,
+    
+    
+    
+};
 
 @class NSCoder;
 
@@ -58,6 +68,15 @@
 }
 
 
+-(void)setMailButton:(PDShareButton *)mailButton{
+    
+    
+    if (![_mailButton isEqual:mailButton]) {
+        _mailButton =mailButton;
+        
+    }
+}
+
 
 
 - (void)didReceiveMemoryWarning {
@@ -68,6 +87,55 @@
 
 
 
+-(void)notifyUserShareDidCompletePopUp{
+    
+    UIView *sharedPopUpView=[[UIView alloc]init];
+    sharedPopUpView.translatesAutoresizingMaskIntoConstraints=NO;
+    sharedPopUpView.backgroundColor=[UIColor grayColor];
+    //    burasini sonra duzel renkleri
+    sharedPopUpView.layer.cornerRadius=5.0;
+    UILabel *popUpSharedLabel=[[UILabel alloc]init];
+    
+    [popUpSharedLabel setTag:1];
+    [popUpSharedLabel setText:@"Shared on Facebook"];
+    
+    popUpSharedLabel.translatesAutoresizingMaskIntoConstraints=NO;
+    popUpSharedLabel.backgroundColor=[UIColor clearColor];
+    popUpSharedLabel.textColor=[UIColor whiteColor];
+    popUpSharedLabel.font=[UIFont fontWithName:@"Lato-Semibold" size:28.0];
+    
+    
+    [sharedPopUpView addSubview:popUpSharedLabel];
+    
+    
+    NSDictionary* views = NSDictionaryOfVariableBindings(sharedPopUpView,popUpSharedLabel);
+    
+    [sharedPopUpView addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(10)-[popUpSharedLabel]-(10)-|"
+                                             options:NSLayoutFormatAlignAllCenterX
+                                             metrics:nil
+                                               views:views]];
+    
+    [sharedPopUpView addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(10)-[popUpSharedLabel]-(10)-|"
+                                             options:0
+                                             metrics:nil
+                                               views:views]];
+    KLCPopupLayout layout =KLCPopupLayoutMake(KLCPopupHorizontalLayoutCenter , KLCPopupVerticalLayoutCenter);
+    KLCPopup * popupSuccess=[KLCPopup popupWithContentView:sharedPopUpView showType:KLCPopupShowTypeSlideInFromRight dismissType:KLCPopupDismissTypeSlideOutToTop maskType:KLCPopupMaskTypeDimmed dismissOnBackgroundTouch:YES dismissOnContentTouch:YES];
+    
+    if (_shouldDismissAfterDelay) {
+        [popupSuccess showWithLayout:layout duration:0.5];
+    } else {
+        [popupSuccess showWithLayout:layout];
+    }
+    
+    
+}
+
+
+
+
 
 
 
@@ -75,7 +143,6 @@
     
     
     [PDShareButton supportsSecureCoding];
-    
     
     UIView *popUpView=[[UIView alloc]init];
     popUpView.translatesAutoresizingMaskIntoConstraints=NO;
@@ -102,7 +169,6 @@
     
     
     
-    
     _cancelButton.backgroundColor = [UIColor purpleColor];
     //    renkleri duzelt
     [_cancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -110,7 +176,6 @@
     _cancelButton.titleLabel.font = [UIFont fontWithName:@"Lato-Semibold" size:20.0];
     [_cancelButton setTitle:@"cancel" forState:UIControlStateNormal];
     _cancelButton.layer.cornerRadius = 6.0;
-    
     
     
     [_cancelButton addTarget:self action:@selector(cancelButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
@@ -127,8 +192,6 @@
     _fbShareButton.layer.cornerRadius = 6.0;
     
     [_fbShareButton addTarget:self action:@selector(shareOnFaceBook:) forControlEvents:UIControlEventTouchUpInside];
-    
-    
     
     _mailButton = [PDShareButton buttonWithType:UIButtonTypeCustom];
     
@@ -177,6 +240,11 @@
 }
 
 
+
+
+
+#pragma mark update and delete
+
 #pragma utility setter
 //facebook share lazy instantiation
 
@@ -193,38 +261,49 @@
 
 
 
-#pragma share on facebook action
+#pragma  mark - share on facebook action
+
+
 
 
 - (void)shareOnFaceBook:(id)sender{
+
+    if ([sender isKindOfClass:[PDShareButton class]]) {
+        [self facebookShare];
+
+        [(UIView*)sender dismissPresentingPopup];
+
+    }
     
-    PDShareUtility *utility=[[PDShareUtility alloc]init];
-//    lan salak singleton'a niye button yolluyon
     
-    PDSingleton *fbsharedArticle=[[PDSingleton alloc]initWithArticle:[PDSingleton sharedClient].sharedArticle];
+}
+
+-(void)facebookShare{
     
-    FBSDKShareDialog *facebookShareDialog=[utility getShareDialogWithContentURL:fbsharedArticle.sharedArticle.articleURL];
+    
+    PDShareUtility *utility=[[PDShareUtility alloc]initWithArticleURL:self.feedArticle.articleURL];
+    
+    //    FBSDKShareDialog *facebookShareDialog=[utility getShareDialogWithContentURL:fbsharedArticle.sharedArticle.articleURL];
     //    facebookShareDialog.delegate=self;
     
     self.shareUtility=utility;
     utility.delegate=self;
-    facebookShareDialog.delegate=self;
+    [utility startSharing];
     
-    [facebookShareDialog show];
-    
-    
-    
+
+
     
 }
 
 
 
-#pragma mail
+#pragma mark - mail
+
+
 -(void)sendwithMail:(id)sender{
 //    
     if ([sender isKindOfClass:[PDShareButton class]]) {
         [(PDShareButton*)sender dismissPresentingPopup];
-        
     }
     [self sendArticleViaMail:[self.feedArticle.articleURL absoluteString]];
     
@@ -291,15 +370,70 @@
 
 
 
-#pragma mark - Categories
+#pragma mark - PDShare Delegate
+
+
+-(void)shareUtilityDidCompleteShareOnFacebook{
+    
+
+    [self notifyUserShareDidCompletePopUp];
+    
+
+    
+    
+}
 
 
 
 
 
+-(void)shareUtilityEndWithError{
 
+    
+    UIView *alertView=[[UIView alloc]init];
+    UILabel *alertLabel=[[UILabel alloc]init];
+    
+    
+    [alertLabel setText:@"canceled sharing"];
+    
+    [alertView addSubview:alertLabel];
+    
+    NSDictionary* views = NSDictionaryOfVariableBindings(alertView,alertLabel);
+    
+    [alertView addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(10)-[alertLabel]-(10)|"
+                                             options:NSLayoutFormatAlignAllCenterX
+                                             metrics:nil
+                                               views:views]];
+    [alertView addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(10)-[alertLabel]-(10)-|"
+                                             options:0
+                                             metrics:nil
+                                               views:views]];
 
+    KLCPopupLayout layout =KLCPopupLayoutMake(KLCPopupHorizontalLayoutCenter , KLCPopupVerticalLayoutCenter);
+    KLCPopup *alertPopup=[KLCPopup popupWithContentView:alertView showType:KLCPopupShowTypeBounceInFromTop dismissType:KLCPopupDismissTypeBounceOutToBottom maskType:KLCPopupMaskTypeDimmed dismissOnBackgroundTouch:YES dismissOnContentTouch:YES];
+    
+    
+    
+    if (_shouldDismissAfterDelay) {
+        [alertPopup showWithLayout:layout duration:2.0];
+    } else {
+        [alertPopup showWithLayout:layout];
+    }
+    
+   
+}
 
+-(void)shareUtilityDidFailShareOnFacebook:(NSError *)error{
+    
+    
+    NSLog(@"Unexpected error when sharing : %@", error);
+    
+    
+    
+    
+}
 
 @end
 

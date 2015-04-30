@@ -13,10 +13,7 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @implementation PDShareUtility
-{
-    
-      FBSDKShareDialog *_shareDialog;
-}
+
     
     
 
@@ -26,19 +23,28 @@
 //utilitynin icine sadece kendini instance type olarak tanimlanam gerekiyor.. api yi falan sil
 
 //
-//-(instancetype)initWithUtility:(PDShareUtility *)utility{
-//    
-//    
-//    if (self=[super init]) {
-//     
-//        self.shareUtility=utility;
-//        
-//    
-//    }
-//    return self;
-//    
-//}
-//
+
+-(instancetype)initWithArticleURL:(NSURL *)articleURL{
+    
+    
+    if (self=[super init]) {
+
+        
+        
+        _url=[[NSURL alloc]init];
+        _url=articleURL;
+        
+              
+        _shareDialog = [[FBSDKShareDialog alloc] init];
+        _shareDialog.delegate = self;
+        _shareDialog.shouldFailOnDataError = YES;
+        
+    
+
+    }
+    return self;
+    
+}
 
 
 
@@ -46,108 +52,84 @@
 
 - (void)dealloc
 {
-    _shareUtility.delegate=nil;
+    _shareDialog.delegate=nil;
+    
     
 }
 
 
 
+-(void) startSharing{
+    
+    
+    NSString *const publish_actions = @"publish_actions";
+    if ([[FBSDKAccessToken currentAccessToken] hasGranted:publish_actions]) {
 
+        
+        [self getShareDialogWithContentURL:_url];
+        _shareDialog.delegate = self;
 
-- (UIImage *)_normalizeImage:(UIImage *)image
-{
-    if (!image) {
-        return nil;
+        [_shareDialog show];
+    
+    } else {
+        [[[FBSDKLoginManager alloc] init]
+         logInWithPublishPermissions:@[publish_actions]
+         handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+             if ([result.grantedPermissions containsObject:publish_actions]) {
+
+                 [self getShareDialogWithContentURL:_url];
+                 _shareDialog.delegate = self;
+
+                 [_shareDialog show];
+                 
+                 
+                 
+                 
+             } else {
+                 
+                 
+
+                 [_delegate shareUtilityDidFailShareOnFacebook:error];
+                 
+                 
+                 
+             }
+         }];
     }
-    
-    CGImageRef imgRef = image.CGImage;
-    CGFloat width = CGImageGetWidth(imgRef);
-    CGFloat height = CGImageGetHeight(imgRef);
-    CGAffineTransform transform = CGAffineTransformIdentity;
-    CGRect bounds = CGRectMake(0, 0, width, height);
-    CGSize imageSize = bounds.size;
-    CGFloat boundHeight;
-    UIImageOrientation orient = image.imageOrientation;
-    
-    switch (orient) {
-        case UIImageOrientationUp: //EXIF = 1
-            transform = CGAffineTransformIdentity;
-            break;
-            
-        case UIImageOrientationDown: //EXIF = 3
-            transform = CGAffineTransformMakeTranslation(imageSize.width, imageSize.height);
-            transform = CGAffineTransformRotate(transform, M_PI);
-            break;
-            
-        case UIImageOrientationLeft: //EXIF = 6
-            boundHeight = bounds.size.height;
-            bounds.size.height = bounds.size.width;
-            bounds.size.width = boundHeight;
-            transform = CGAffineTransformMakeTranslation(imageSize.height, imageSize.width);
-            transform = CGAffineTransformScale(transform, -1.0, 1.0);
-            transform = CGAffineTransformRotate(transform, 3.0 * M_PI / 2.0);
-            break;
-            
-        case UIImageOrientationRight: //EXIF = 8
-            boundHeight = bounds.size.height;
-            bounds.size.height = bounds.size.width;
-            bounds.size.width = boundHeight;
-            transform = CGAffineTransformMakeTranslation(0.0, imageSize.width);
-            transform = CGAffineTransformRotate(transform, 3.0 * M_PI / 2.0);
-            break;
-            
-        default:
-            // image is not auto-rotated by the photo picker, so whatever the user
-            // sees is what they expect to get. No modification necessary
-            transform = CGAffineTransformIdentity;
-            break;
-    }
-    
-    UIGraphicsBeginImageContext(bounds.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    if ((image.imageOrientation == UIImageOrientationDown) ||
-        (image.imageOrientation == UIImageOrientationRight) ||
-        (image.imageOrientation == UIImageOrientationUp)) {
-        // flip the coordinate space upside down
-        CGContextScaleCTM(context, 1, -1);
-        CGContextTranslateCTM(context, 0, -height);
-    }
-    
-    CGContextConcatCTM(context, transform);
-    CGContextDrawImage(UIGraphicsGetCurrentContext(), CGRectMake(0, 0, width, height), imgRef);
-    UIImage *imageCopy = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return imageCopy;
+
 }
-                       
                        
 #pragma mark - FBSDKSharingDelegate
 
 
 - (void)sharer:(id<FBSDKSharing>)sharer didCompleteWithResults:(NSDictionary *)results {
     
-    [_delegate shareUtilityDidCompleteShare:self];
+
+    [_delegate shareUtilityDidCompleteShareOnFacebook];
+
+
 }
 
+
 - (void)sharer:(id<FBSDKSharing>)sharer didFailWithError:(NSError *)error {
-    [_delegate shareUtility:self endWithError:error];
+    
+    NSLog(@"Unexpected error when sharing : %@", error);
+    [_delegate shareUtilityDidFailShareOnFacebook:error];
+    
+    
+    
 }
 
 - (void)sharerDidCancel:(id<FBSDKSharing>)sharer {
-    [_delegate shareUtility:self endWithError:nil];
+    
+    [_delegate shareUtilityEndWithError];
+    
+
 }
 
 
 
 
-
-//boyle olacak
-
-//contenti cekmek viewlerin icinde
-
-// FBSDKShareDialog *facebookShareDialog = [self getShareDialogWithContentURL:[self _currentPhoto].objectURL];
 
 - (FBSDKShareLinkContent *)getShareLinkContentWithContentURL:(NSURL *)objectURL
 {
@@ -160,6 +142,8 @@
 {
     FBSDKShareDialog *shareDialog = [[FBSDKShareDialog alloc] init];
     shareDialog.shareContent = [self getShareLinkContentWithContentURL:objectURL];
+    _shareDialog.shareContent=shareDialog.shareContent;
+    
     return shareDialog;
 }
 
