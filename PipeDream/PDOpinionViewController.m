@@ -130,11 +130,6 @@
     NSURL* url=[NSURL URLWithString:self.feedAttachments.thumbnailImage [@"url"]];
     
     [cell.opinionThumnail setImageWithURL:url placeholderImage:[UIImage imageNamed: @"menu.png"]];
-
-    
-    
-    [self shareButtoninitWith:cell.opinionShareButton];
-    
     
     
     if ([self.fbShareButton.titleLabel.text isEqualToString:@"Share on Facebook"] ){
