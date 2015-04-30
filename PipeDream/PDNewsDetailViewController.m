@@ -17,6 +17,7 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "PDArticleContentView.h"
 #import "PDNewsViewController.h"
+#import "NSString+HTMLDecoder.h"
 
 @interface PDNewsDetailViewController ()<FBSDKSharingDelegate,FBSDKSharingDialog>
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *backButton;
@@ -67,11 +68,11 @@
     
     [self scrollViewDidChange:self.newsScrollView];
     
-    self.newsDetailTitle.text=self.contentArticle.articleTitle;
+    self.newsDetailTitle.text = [self.contentArticle.articleTitle decodeHTML];
     
     [self textViewDidChange:self.newsDetailsArticle];
     
-    self.newsDetailsArticle.text=self.contentArticle.articleBody;
+    self.newsDetailsArticle.text = [self.contentArticle.articleBody decodeHTML];
     
     NSURL *imageURL=[NSURL URLWithString:self.contentAttachment.fullImage[@"url"]];
     

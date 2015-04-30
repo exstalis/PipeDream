@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2BA09AD91AE833070084C258 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA09AD81AE833070084C258 /* NSString+HTML.m */; };
-		2BE265071AF1A61100CF5009 /* HTMLDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE265061AF1A61100CF5009 /* HTMLDecoder.m */; };
+		2BE265101AF1B56F00CF5009 /* NSString+HTMLDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE2650F1AF1B56F00CF5009 /* NSString+HTMLDecoder.m */; };
+		2BE265131AF1C4C300CF5009 /* NSString_stripHtml.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE265121AF1C4C300CF5009 /* NSString_stripHtml.m */; };
 		2D271A6F1ABE1AE300A71464 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A6E1ABE1AE300A71464 /* main.m */; };
 		2D271A721ABE1AE300A71464 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A711ABE1AE300A71464 /* AppDelegate.m */; };
 		2D271A751ABE1AE300A71464 /* PipeDream.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A731ABE1AE300A71464 /* PipeDream.xcdatamodeld */; };
@@ -84,12 +85,12 @@
 
 /* Begin PBXFileReference section */
 		1DBB73B3EFDBCEBB106DF89E /* Pods-PipeDream.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PipeDream.release.xcconfig"; path = "Pods/Target Support Files/Pods-PipeDream/Pods-PipeDream.release.xcconfig"; sourceTree = "<group>"; };
-		2BA09AD41AE82F520084C258 /* NSString_stripHtml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSString_stripHtml.h; sourceTree = "<group>"; };
-		2BA09AD51AE82F520084C258 /* NSString_stripHtml.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSString_stripHtml.m; sourceTree = "<group>"; };
 		2BA09AD71AE833070084C258 /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
 		2BA09AD81AE833070084C258 /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
-		2BE265051AF1A61100CF5009 /* HTMLDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLDecoder.h; sourceTree = "<group>"; };
-		2BE265061AF1A61100CF5009 /* HTMLDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLDecoder.m; sourceTree = "<group>"; };
+		2BE2650E1AF1B56F00CF5009 /* NSString+HTMLDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTMLDecoder.h"; sourceTree = "<group>"; };
+		2BE2650F1AF1B56F00CF5009 /* NSString+HTMLDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTMLDecoder.m"; sourceTree = "<group>"; };
+		2BE265111AF1C4C300CF5009 /* NSString_stripHtml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSString_stripHtml.h; sourceTree = "<group>"; };
+		2BE265121AF1C4C300CF5009 /* NSString_stripHtml.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSString_stripHtml.m; sourceTree = "<group>"; };
 		2D271A691ABE1AE300A71464 /* PipeDream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PipeDream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D271A6D1ABE1AE300A71464 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D271A6E1ABE1AE300A71464 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -243,12 +244,12 @@
 		2BA09AD31AE82ECF0084C258 /* HTMLDecoder */ = {
 			isa = PBXGroup;
 			children = (
+				2BE265111AF1C4C300CF5009 /* NSString_stripHtml.h */,
+				2BE265121AF1C4C300CF5009 /* NSString_stripHtml.m */,
 				2BA09AD71AE833070084C258 /* NSString+HTML.h */,
 				2BA09AD81AE833070084C258 /* NSString+HTML.m */,
-				2BA09AD41AE82F520084C258 /* NSString_stripHtml.h */,
-				2BA09AD51AE82F520084C258 /* NSString_stripHtml.m */,
-				2BE265051AF1A61100CF5009 /* HTMLDecoder.h */,
-				2BE265061AF1A61100CF5009 /* HTMLDecoder.m */,
+				2BE2650E1AF1B56F00CF5009 /* NSString+HTMLDecoder.h */,
+				2BE2650F1AF1B56F00CF5009 /* NSString+HTMLDecoder.m */,
 			);
 			name = HTMLDecoder;
 			sourceTree = "<group>";
@@ -709,6 +710,7 @@
 				2D5FDB5F1AEB6157004187BB /* KLCPopup.m in Sources */,
 				2D29213D1ADA49E800D622EC /* PDReleaseViewController.m in Sources */,
 				2DF06BF21AEB744600C03D09 /* PDShareUtility.m in Sources */,
+				2BE265101AF1B56F00CF5009 /* NSString+HTMLDecoder.m in Sources */,
 				2D2921481ADA586E00D622EC /* PDSportsDetailViewController.m in Sources */,
 				2D271A751ABE1AE300A71464 /* PipeDream.xcdatamodeld in Sources */,
 				2D9ABD461AEDE2B100EA37EB /* PDArticleContentView.m in Sources */,
@@ -728,12 +730,12 @@
 				2D8DADF71AD8E2E70047AECE /* PDFeedTableViewCell.m in Sources */,
 				2D345C051AD9E5C700308866 /* PDNewsDetailViewController.m in Sources */,
 				2D5E8E211AD9F2AE00FB533F /* PDOpinionViewController.m in Sources */,
+				2BE265131AF1C4C300CF5009 /* NSString_stripHtml.m in Sources */,
 				2D5D941F1ADCBD7E0068DB3E /* PDNetworkClient.m in Sources */,
 				2BA09AD91AE833070084C258 /* NSString+HTML.m in Sources */,
 				2D2921371ADA154500D622EC /* PDDrawerViewController.m in Sources */,
 				2D5D94161ADCBC620068DB3E /* ArticleCategory.m in Sources */,
 				2D271A9D1ABE25C900A71464 /* PDNavigationController.m in Sources */,
-				2BE265071AF1A61100CF5009 /* HTMLDecoder.m in Sources */,
 				2D271A6F1ABE1AE300A71464 /* main.m in Sources */,
 				2D4FC8511AE890970044ACEF /* PDSportsTableViewCell.m in Sources */,
 				2D4FC8541AE8A2430044ACEF /* PDRecentViewController.m in Sources */,
@@ -883,6 +885,53 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 					"$(SDKROOT)/usr/lib/system",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"Pods-PipeDream-AFNetworking\"",
+					"-l\"Pods-PipeDream-Bolts\"",
+					"-l\"Pods-PipeDream-FLKAutoLayout\"",
+					"-l\"Pods-PipeDream-Facebook-iOS-SDK\"",
+					"-l\"Pods-PipeDream-FontAwesomeIconFactory\"",
+					"-l\"Pods-PipeDream-JVFloatingDrawer\"",
+					"-l\"Pods-PipeDream-Mantle\"",
+					"-l\"Pods-PipeDream-ORStackView\"",
+					"-l\"Pods-PipeDream-RNBlurModalView\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-weak_framework",
+					"\"Accounts\"",
+					"-weak_framework",
+					"\"AudioToolbox\"",
+					"-weak_framework",
+					"\"CoreGraphics\"",
+					"-weak_framework",
+					"\"CoreLocation\"",
+					"-weak_framework",
+					"\"Foundation\"",
+					"-weak_framework",
+					"\"QuartzCore\"",
+					"-weak_framework",
+					"\"Security\"",
+					"-weak_framework",
+					"\"Social\"",
+					"-weak_framework",
+					"\"UIKit\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -910,6 +959,53 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 					"$(SDKROOT)/usr/lib/system",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"Pods-PipeDream-AFNetworking\"",
+					"-l\"Pods-PipeDream-Bolts\"",
+					"-l\"Pods-PipeDream-FLKAutoLayout\"",
+					"-l\"Pods-PipeDream-Facebook-iOS-SDK\"",
+					"-l\"Pods-PipeDream-FontAwesomeIconFactory\"",
+					"-l\"Pods-PipeDream-JVFloatingDrawer\"",
+					"-l\"Pods-PipeDream-Mantle\"",
+					"-l\"Pods-PipeDream-ORStackView\"",
+					"-l\"Pods-PipeDream-RNBlurModalView\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-weak_framework",
+					"\"Accounts\"",
+					"-weak_framework",
+					"\"AudioToolbox\"",
+					"-weak_framework",
+					"\"CoreGraphics\"",
+					"-weak_framework",
+					"\"CoreLocation\"",
+					"-weak_framework",
+					"\"Foundation\"",
+					"-weak_framework",
+					"\"QuartzCore\"",
+					"-weak_framework",
+					"\"Security\"",
+					"-weak_framework",
+					"\"Social\"",
+					"-weak_framework",
+					"\"UIKit\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

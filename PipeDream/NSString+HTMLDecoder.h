@@ -1,5 +1,5 @@
 //
-//  HTMLDecoder.h
+//  NSString+HTMLDecoder.h
 //  PipeDream
 //
 //  Created by Kenan Uzel on 4/29/15.
@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface HTMLDecoder : NSObject
+@interface NSString (HTMLDecoder)
 
-- (NSString *)decodeHTMLEntities:(NSString *)decodedString;
+-(NSString *)decodeHTML;
+
 @end
