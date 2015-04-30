@@ -20,7 +20,6 @@
 - (IBAction)showMenu:(UIBarButtonItem *)sender;
 
 @property(nonatomic,strong) Article *opinionArticles;
-@property(nonatomic, strong) NSMutableArray *opinionArticlesArray;
 @property(nonatomic,strong)PDShareUtility *opinionShareUtility;
 
 
@@ -77,13 +76,7 @@
 
 
 
-//for facebook sharing set del. nil fix it later
 
--(void)dealloc{
-    
-    self.opinionShareUtility.delegate=nil;
-    
-}
 
 #pragma mark -Menu Action Delegate
 
@@ -143,32 +136,53 @@
     [self shareButtoninitWith:cell.opinionShareButton];
     
     
-//    [self.shareUtility setShareUtility:self.opinionShareUtility];
     
     if ([self.fbShareButton.titleLabel.text isEqualToString:@"Share on Facebook"] ){
-        FBSDKShareDialog *shareDialog=[self.opinionShareUtility getShareDialogWithContentURL:[PDSingleton sharedClient].sharedArticle.articleURL];
-        
-        self.opinionShareUtility.delegate=self;
         
         
-        //              shareDialog.delegate = self;
+        [self facebookShare];
         
-        [shareDialog show];
+        
     }
 
     
 
+    if ([self.mailButton.titleLabel.text isEqualToString:@"Mail"]) {
+        
+        [self sendwithMail:self.mailButton];
+        
+        
+        
+        
+    }
     
     
     return cell;
     
 }
 
+#pragma share option button action
 
 - (IBAction)showShareOptionsPopup:(id)sender {
     
     
     [self sharingOptionsButtonAction];
     
+}
+
+#pragma segue to opinion detail
+
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"OpinionDetailSegue"]) {
+        
+        PDOpinionDetailViewController *destinationViewController = (PDOpinionDetailViewController *)[segue destinationViewController];
+        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+             destinationViewController.contentArticle=[self.opinionArticlesArray objectAtIndex:selectedIndexPath.row];
+        destinationViewController.contentAttachment=self.feedAttachments;
+   
+    }
 }
 @end

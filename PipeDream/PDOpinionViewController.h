@@ -16,7 +16,9 @@
 
 @interface PDOpinionViewController :PDFeedTableViewController
 
+@property(nonatomic, strong) NSMutableArray *opinionArticlesArray;
 
+@property(nonatomic, strong) NSMutableArray *opinionArticlesImagesArray;
 
 
 @end

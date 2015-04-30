@@ -68,6 +68,15 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
 }
 
 
+-(void)setMailButton:(PDShareButton *)mailButton{
+    
+    
+    if (![_mailButton isEqual:mailButton]) {
+        _mailButton =mailButton;
+        
+    }
+}
+
 
 
 - (void)didReceiveMemoryWarning {

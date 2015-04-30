@@ -174,7 +174,6 @@
         [self sendwithMail:self.mailButton];
         
     
-//        [self sendArticleViaMail:[self.feedArticle.articleURL absoluteString]];
         
         
     }

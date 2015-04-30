@@ -7,11 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
+#import "PDContentViewController.h"
 
 @class Article;
+@class Attachments;
 
-@interface PDOpinionDetailViewController : UIViewController
 
-@property(nonatomic, strong) Article *article;
+
+
+@interface PDOpinionDetailViewController : PDContentViewController<MFMailComposeViewControllerDelegate,MFMessageComposeViewControllerDelegate>
+
+@property(nonatomic,strong,readwrite)Article *contentArticle;
+
+@property(nonatomic,strong)Attachments *contentAttachment;
 
 @end
