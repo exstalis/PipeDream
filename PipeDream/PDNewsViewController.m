@@ -144,7 +144,7 @@
     newsCell.newsTitle.text = [self.feedArticle.articleTitle decodeHTML];
     newsCell.newsExcerptTextView.text = [self.feedArticle.articleExcerpt decodeHTML];
     newsCell.newsAuthorLabel.text = self.feedArticle.authorName;
-    newsCell.newsDateLabel.text = self.feedArticle.articleDate.description;
+    newsCell.newsDateLabel.text = self.feedArticle.date.description;
 
     [newsCell.newsThumbnailImage cancelImageRequestOperation];
 

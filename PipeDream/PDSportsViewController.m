@@ -109,7 +109,7 @@
     cell.sportsTitle.text = [_sportsArticles.articleTitle decodeHTML];
     cell.sportsExcerpt.text = [_sportsArticles.articleExcerpt decodeHTML];
     cell.sportsAuthor.text=_sportsArticles.authorName;
-    cell.sportsDate.text=_sportsArticles.articleDate.description;
+    cell.sportsDate.text=_sportsArticles.date.description;
     
     
     

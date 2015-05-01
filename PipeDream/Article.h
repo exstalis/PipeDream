@@ -26,7 +26,7 @@ typedef enum : NSUInteger {
 @property(copy, nonatomic, readonly) NSString *articleExcerpt;
 @property(copy, nonatomic, readonly) NSString *articleBody;
 @property(copy, nonatomic, readonly) NSURL *articleURL;
-@property(copy, nonatomic, readonly) NSDate *articleDate;
+@property(copy, nonatomic, readonly) NSString *date;
 @property(copy, nonatomic, readonly) NSString *authorName;
 @property(copy, nonatomic, readonly) NSArray *articleCategories;
 @property(copy, nonatomic) NSArray *articleAttachments;

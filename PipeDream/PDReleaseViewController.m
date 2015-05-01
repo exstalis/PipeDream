@@ -103,7 +103,7 @@
     
     cell.releaseTitle.text = [_releaseArticles.articleTitle decodeHTML];
     cell.releaseAuthor.text = _releaseArticles.authorName;
-    cell.releaseDate.text = _releaseArticles.articleDate.description;
+    cell.releaseDate.text = _releaseArticles.date.description;
     cell.releaseExcerpt.text= [_releaseArticles.articleExcerpt decodeHTML];
     
     

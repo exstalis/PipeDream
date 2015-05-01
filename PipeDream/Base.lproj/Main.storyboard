@@ -113,7 +113,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backButton" destination="lqz-5l-z7F" id="ObE-RQ-lal"/>
-                        <outlet property="heightConstraint" destination="KDf-AU-Dtl" id="Vlu-7N-sGI"/>
                         <outlet property="newsDetailAuthor" destination="IRV-M9-WA4" id="d5K-Us-S7c"/>
                         <outlet property="newsDetailImage" destination="LoR-j8-7Qh" id="leU-Rj-6jU"/>
                         <outlet property="newsDetailTitle" destination="Bwr-Oy-dpG" id="vxu-4L-5mQ"/>
@@ -208,7 +207,6 @@
                         <outlet property="articleImage" destination="r07-bM-WKj" id="hmc-gn-GUx"/>
                         <outlet property="authorLabel" destination="svN-aR-6iy" id="ZiQ-42-D0x"/>
                         <outlet property="barBackButton" destination="yXm-5s-eoO" id="483-TJ-rtM"/>
-                        <outlet property="heightConstraint" destination="BcX-pM-9iI" id="yAa-jE-aDe"/>
                         <outlet property="opinionScrollView" destination="0yQ-60-uuJ" id="cae-mm-GFc"/>
                         <outlet property="titleLabel" destination="mAt-a6-3S6" id="WgZ-zy-0vI"/>
                     </connections>
@@ -488,6 +486,12 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gd-hS-87M" userLabel="date">
+                                            <rect key="frame" x="187" y="170" width="70" height="20"/>
+                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vom-GD-opq" customClass="PDShareButton">
                                             <rect key="frame" x="267" y="161" width="100" height="29"/>
                                             <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -503,12 +507,6 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qef-SF-EO5" userLabel="thumbnail">
                                             <rect key="frame" x="267" y="43" width="100" height="100"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gd-hS-87M" userLabel="date">
-                                            <rect key="frame" x="116" y="170" width="113" height="20"/>
-                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>

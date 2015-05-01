@@ -26,7 +26,7 @@
              @"articleExcerpt" : @"excerpt",
              @"articleBody":@"content",
              @"articleURL" : @"url",
-             @"articleDate" : @"date",
+             @"date" : @"date",
              @"authorName" : @"author.name",
              @"articleCategories": @"categories",
              @"articleAttachments" : @"attachments"
@@ -34,29 +34,24 @@
              };
 }
 //formats the date
-+ (NSDateFormatter *) dateFormatter {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
-    dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
-    return dateFormatter;
++ (NSDateFormatter *) inputFormatter {
+    NSDateFormatter *inputFormatter = [[NSDateFormatter alloc] init];
+    [inputFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+    
+    return inputFormatter;
 }
 
-
++(NSDateFormatter *) outputFormatter {
+    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
+    [outputFormatter setDateStyle:NSDateFormatterShortStyle];
+    [outputFormatter setTimeStyle:NSDateFormatterNoStyle];
+    
+    return outputFormatter;
+}
 
 //transforms the URL
 + (NSValueTransformer *) articleURLJSONTransformer {
     return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
-}
-
-
-//transforms the date
-+ (NSValueTransformer *) aricleDateJSONTransformer {
-    
-    return [MTLValueTransformer transformerUsingForwardBlock:^(NSString *str, BOOL *success, NSError **error) {
-        return [self.dateFormatter dateFromString:str];
-    } reverseBlock:^(NSDate *date, BOOL *success, NSError **error) {
-        return [self.dateFormatter stringFromDate:date];
-    }];
 }
 
 //transform attachments with a Attachments object
@@ -67,6 +62,17 @@
 //transform attachments with a ArticleCategory object
 +(NSValueTransformer *) articleCategoriesJSONTransformer {
     return [MTLJSONAdapter arrayTransformerWithModelClass:[ArticleCategory class]];
+}
+
+//transforms the date
++ (NSValueTransformer *) dateJSONTransformer {
+    
+    return [MTLValueTransformer transformerUsingForwardBlock:^(NSString *str, BOOL *success, NSError **error) {
+        NSDate *date = [self.inputFormatter dateFromString:str];
+        return [self.outputFormatter stringFromDate:date];
+    } reverseBlock:^(NSDate *date, BOOL *success, NSError **error) {
+        return date;
+    }];
 }
 
 @end

@@ -119,7 +119,7 @@
     cell.opinionTitle.text = [self.feedArticle.articleTitle decodeHTML];
     cell.opinionExcerptTextview.text = [self.feedArticle.articleExcerpt decodeHTML];
     cell.opinionAuthor.text = self.feedArticle.authorName;
-    cell.opinionDate.text = self.feedArticle.articleDate.description;
+    cell.opinionDate.text = self.feedArticle.date.description;
     [cell.opinionThumnail cancelImageRequestOperation];
     
     

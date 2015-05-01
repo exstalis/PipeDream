@@ -91,7 +91,7 @@
     
     cell.titleLabel.text = [self.feedArticle.articleTitle decodeHTML];
     cell.authorLabel.text=  self.feedArticle.authorName;
-    cell.dateLabel.text=self.feedArticle.articleDate.description;
+    cell.dateLabel.text=self.feedArticle.date.description;
     [cell.imageView cancelImageRequestOperation];
 
     
