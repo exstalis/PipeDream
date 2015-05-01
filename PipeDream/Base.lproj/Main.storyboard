@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Gdb-mp-nHA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="c4g-js-GUE">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -113,6 +114,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backButton" destination="lqz-5l-z7F" id="ObE-RQ-lal"/>
+                        <outlet property="heightConstraint" destination="KDf-AU-Dtl" id="uma-Sg-tZX"/>
                         <outlet property="newsDetailAuthor" destination="IRV-M9-WA4" id="d5K-Us-S7c"/>
                         <outlet property="newsDetailImage" destination="LoR-j8-7Qh" id="leU-Rj-6jU"/>
                         <outlet property="newsDetailTitle" destination="Bwr-Oy-dpG" id="vxu-4L-5mQ"/>
@@ -207,6 +209,7 @@
                         <outlet property="articleImage" destination="r07-bM-WKj" id="hmc-gn-GUx"/>
                         <outlet property="authorLabel" destination="svN-aR-6iy" id="ZiQ-42-D0x"/>
                         <outlet property="barBackButton" destination="yXm-5s-eoO" id="483-TJ-rtM"/>
+                        <outlet property="heightConstraint" destination="BcX-pM-9iI" id="vhf-bF-Zc7"/>
                         <outlet property="opinionScrollView" destination="0yQ-60-uuJ" id="cae-mm-GFc"/>
                         <outlet property="titleLabel" destination="mAt-a6-3S6" id="WgZ-zy-0vI"/>
                     </connections>
@@ -760,6 +763,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" showsCancelButton="YES" id="xXg-iG-cgf">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="recentCell" rowHeight="100" id="QKQ-kx-eA2" customClass="PDRecentTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -804,10 +812,17 @@
                                 <action selector="showMenu:" destination="b3X-Zn-y1r" id="ZW1-eb-uEO"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Search" id="ZZK-xg-kjD">
+                            <connections>
+                                <action selector="displaySearch:" destination="b3X-Zn-y1r" id="6qO-ah-VmQ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="menuBarButton" destination="ub2-vu-6Et" id="ThA-J5-EZh"/>
+                        <outlet property="searchBar" destination="xXg-iG-cgf" id="Ygl-Cp-Icb"/>
+                        <outlet property="searchButtonClicked" destination="ZZK-xg-kjD" id="Iiu-Hd-IQN"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h6M-F3-5U4" userLabel="First Responder" sceneMemberID="firstResponder"/>

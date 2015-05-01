@@ -19,8 +19,14 @@
 @interface PDRecentViewController ()
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuBarButton;
+@property IBOutlet UISearchBar *searchBar;
 - (IBAction)showMenu:(id)sender;
+-(IBAction)displaySearch:(id)sender;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *searchButtonClicked;
+
+@property(strong, nonatomic) UISearchDisplayController *searchController;
 @property(nonatomic, strong) NSMutableArray *recentArticlesArray;
+@property(strong, nonatomic) NSMutableArray *filteredArticleArray;
 
 - (void)loadRecentArticles;
 
@@ -32,8 +38,11 @@
     [super viewDidLoad];
     [self loadRecentArticles];
     
-    
-
+    self.searchController = [[UISearchDisplayController alloc] initWithSearchBar:self.searchBar contentsController:self];
+    self.searchController.delegate = self;
+    self.searchController.searchResultsDataSource = self;
+//    self.searchController.searchResultsDelegate = self;
+    [self.searchController setActive:NO animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -76,7 +85,12 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return [self.filteredArticleArray count];
+    }
+    else {
     return [_recentArticlesArray count];
+    }
 }
 
 
@@ -84,20 +98,70 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PDRecentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"recentCell" forIndexPath:indexPath];
 
+    if (cell == nil) {
+        cell = [[PDRecentTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"recentCell"];
+    }
     
-    [[PDSingleton sharedClient] initWithArticle:self.feedArticle];
-    
-    self.feedArticle=[_recentArticlesArray objectAtIndex:indexPath.row];
-    
-    cell.titleLabel.text = [self.feedArticle.articleTitle decodeHTML];
-    cell.authorLabel.text=  self.feedArticle.authorName;
-    cell.dateLabel.text=self.feedArticle.date.description;
-    [cell.imageView cancelImageRequestOperation];
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        self.feedArticle = [_filteredArticleArray objectAtIndex:indexPath.row];
+        
+        cell.titleLabel.text = [self.feedArticle.articleTitle decodeHTML];
+        cell.authorLabel.text = self.feedArticle.authorName;
+        cell.dateLabel.text = self.feedArticle.date.description;
+        
+    } else {
+        self.feedArticle = [_recentArticlesArray objectAtIndex:indexPath.row];
+        
+        cell.titleLabel.text = [self.feedArticle.articleTitle decodeHTML];
+        cell.authorLabel.text = self.feedArticle.authorName;
+        cell.dateLabel.text = self.feedArticle.date.description;
+    }
 
     
     return cell;
 }
 
+-(void) getFilteredContent:(NSString *)filter {
+    PDNetworkClient *manager = [[PDNetworkClient alloc] init];
+    [manager getOpinionArticlesWithCompletion:^(NSArray *array, NSError *error) {
+        if (error == nil) {
+            if (array != nil) {
+                [_filteredArticleArray removeAllObjects];
+                [_filteredArticleArray addObjectsFromArray:array];
+                
+                [self.tableView reloadData];
+            }
+        }
+    }];
+        
+}
+
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
+    [self getFilteredContent:searchString];
+    
+    return YES;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+   
+    CGRect newBounds = self.tableView.bounds;
+    if (self.tableView.bounds.origin.y < 44) {
+        newBounds.origin.y = newBounds.origin.y + self.searchBar.bounds.size.height;
+        self.tableView.bounds = newBounds;
+    }
+    
+}
+
+
+-(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
+    [self.searchDisplayController setActive:YES];
+}
+
+
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    [self viewDidAppear:NO];
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -138,6 +202,9 @@
 
 - (JVFloatingDrawerSpringAnimator *)drawerAnimator {
     return [[AppDelegate globalDelegate] drawerAnimator];
+}
+- (IBAction)displaySearch:(id)sender {
+    [self.searchBar becomeFirstResponder];
 }
 
 

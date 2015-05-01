@@ -709,7 +709,6 @@
 				2D7A30A71ADF37B700A6055C /* PDNewsTableviewCell.m in Sources */,
 				2D5FDB5F1AEB6157004187BB /* KLCPopup.m in Sources */,
 				2D29213D1ADA49E800D622EC /* PDReleaseViewController.m in Sources */,
-				2DF06BF21AEB744600C03D09 /* PDShareUtility.m in Sources */,
 				2BE265101AF1B56F00CF5009 /* NSString+HTMLDecoder.m in Sources */,
 				2D2921481ADA586E00D622EC /* PDSportsDetailViewController.m in Sources */,
 				2D271A751ABE1AE300A71464 /* PipeDream.xcdatamodeld in Sources */,
@@ -880,6 +879,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = PipeDream/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -934,6 +934,7 @@
 					"\"UIKit\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -955,6 +956,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = PipeDream/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1009,6 +1011,7 @@
 					"\"UIKit\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

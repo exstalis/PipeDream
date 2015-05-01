@@ -22,6 +22,7 @@
 
 @interface PDOpinionDetailViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *barBackButton;
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
 
 @end
