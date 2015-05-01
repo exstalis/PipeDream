@@ -1,20 +1,26 @@
 dependencies: \
   /Users/elifecearslan/Developer/PipeDream/PipeDream/PDReleaseViewController.m \
   /Users/elifecearslan/Developer/PipeDream/PipeDream/PDReleaseViewController.h \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDReleaseDetailViewController.h \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDFeedTableViewCell.h \
+  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDNavigationController.h \
+  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDFeedTableViewController.h \
   /Users/elifecearslan/Developer/PipeDream/PipeDream/PDShareButton.h \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/AppDelegate.h \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDNewsDetailViewController.h \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDContentViewController.h \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDDrawerViewController.h \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDSingleton.h \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDArticleContentView.h \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDNetworkClient.h \
+  /Users/elifecearslan/Developer/PipeDream/PipeDream/KLCPopup/KLCPopup.h \
+  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDShareUtility.h \
   /Users/elifecearslan/Developer/PipeDream/PipeDream/Article.h \
+  /Users/elifecearslan/Developer/PipeDream/PipeDream/Attachments.h \
+  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDSingleton.h \
+  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDNetworkClient.h \
   /Users/elifecearslan/Developer/PipeDream/PipeDream/Blocks.h \
   /Users/elifecearslan/Developer/PipeDream/PipeDream/RequestOperationConfig.h \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDShareUtility.h \
+  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDReleaseDetailViewController.h \
+  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDContentViewController.h \
+  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDDrawerViewController.h \
+  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDArticleContentView.h \
+  /Users/elifecearslan/Developer/PipeDream/PipeDream/ArticleCategory.h \
+  /Users/elifecearslan/Developer/PipeDream/PipeDream/NSString+HTMLDecoder.h \
+  /Users/elifecearslan/Developer/PipeDream/PipeDream/AppDelegate.h \
+  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDNewsDetailViewController.h \
   /Users/elifecearslan/Developer/PipeDream/PipeDream/PDDrawerMenuCell.h \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDNavigationController.h \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDReleaseTableViewCell.h
+  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDReleaseTableViewCell.h \
+  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDFeedTableViewCell.h \
+  /Users/elifecearslan/Developer/PipeDream/PipeDream/NSString_stripHtml.h

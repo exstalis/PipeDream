@@ -20,9 +20,9 @@
 
 @property (nonatomic,strong) NSMutableArray *opinionDetailArticleArray;
 @property(nonatomic,strong)NSMutableArray *opinionDetailAttachments;
-@property(nonatomic,strong,readwrite)Article *contentArticle;
-
-@property(nonatomic,strong)Attachments *contentAttachment;
+//@property(nonatomic,strong,readwrite)Article *contentArticle;
+//
+//@property(nonatomic,strong)Attachments *contentAttachment;
 
 
 @property (weak, nonatomic) IBOutlet UIScrollView *opinionScrollView;

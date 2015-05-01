@@ -9,15 +9,7 @@
 #import "PDOpinionDetailViewController.h"
 #import "AppDelegate.h"
 #import "PDNewsTableviewCell.h"
-#import "Article.h"
-#import "ArticleCategory.h"
-#import "PDNetworkClient.h"
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
-#import "PDArticleContentView.h"
-#import "Attachments.h"
-#import <UIKit+AFNetworking.h>
-#import "NSString+HTMLDecoder.h"
+
 
 
 @interface PDOpinionDetailViewController ()
@@ -59,7 +51,6 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self becomeFirstResponder];
 }
 
 -(void)contentView{

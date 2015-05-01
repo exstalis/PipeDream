@@ -54,16 +54,16 @@
     [super didReceiveMemoryWarning];
   
 }
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        self.newsDetailArticleArray= [[NSMutableArray alloc] init];
-        self.newsDetailAttachments=[[NSMutableArray alloc]init];
-        
-    }
-    return self;
-}
+//- (id)initWithCoder:(NSCoder *)aDecoder
+//{
+//    self = [super initWithCoder:aDecoder];
+//    if (self) {
+//        self.newsDetailArticleArray= [[NSMutableArray alloc] init];
+//        self.newsDetailAttachments=[[NSMutableArray alloc]init];
+//        
+//    }
+//    return self;
+//}
 
 
 -(void)contentView{

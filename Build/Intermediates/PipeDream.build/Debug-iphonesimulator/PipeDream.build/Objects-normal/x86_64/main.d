@@ -10,4 +10,7 @@ dependencies: /Users/elifecearslan/Developer/PipeDream/PipeDream/main.m \
   /Users/elifecearslan/Developer/PipeDream/PipeDream/Article.h \
   /Users/elifecearslan/Developer/PipeDream/PipeDream/Blocks.h \
   /Users/elifecearslan/Developer/PipeDream/PipeDream/RequestOperationConfig.h \
-  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDShareUtility.h
+  /Users/elifecearslan/Developer/PipeDream/PipeDream/PDShareUtility.h \
+  /Users/elifecearslan/Developer/PipeDream/PipeDream/ArticleCategory.h \
+  /Users/elifecearslan/Developer/PipeDream/PipeDream/Attachments.h \
+  /Users/elifecearslan/Developer/PipeDream/PipeDream/NSString+HTMLDecoder.h

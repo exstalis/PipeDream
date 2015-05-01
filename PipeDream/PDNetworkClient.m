@@ -145,6 +145,7 @@ static NSString * const kPDClientJSONSearchPostsString = @"http://www.bupipedrea
 }
 
 
+
 -(void)getReleaseArticlesWithCompletion:(ArrayCompletionBlock)completion
 {
     

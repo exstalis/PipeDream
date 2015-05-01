@@ -29,26 +29,22 @@
 }
 
 
-
-
-
-
--(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
+-(id)initWithCoder:(NSCoder *)aDecoder {
     
+    if ( !(self = [super initWithCoder:aDecoder]) ) return nil;
+    self.contentView.backgroundColor=[UIColor whiteColor];
+    self.contentView.contentMode=UIViewContentModeRedraw;
+    _newsTitle.translatesAutoresizingMaskIntoConstraints=NO;
+    _newsTitle.font=[UIFont fontWithName:@"Lato-Regular" size:14.0];
+    _newsTitle.numberOfLines=1;
+    _newsTitle.backgroundColor=[UIColor whiteColor];
     
-    if (self=[super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        self.contentView.backgroundColor=[UIColor whiteColor];
-        self.contentView.contentMode=UIViewContentModeRedraw;
-        _newsTitle.translatesAutoresizingMaskIntoConstraints=NO;
-        _newsTitle.font=[UIFont fontWithName:@"Lato-Regular" size:14.0];
-        _newsTitle.numberOfLines=1;
-        _newsTitle.backgroundColor=[UIColor whiteColor];
-        
-        
-    }
+
+
     return self;
-    
 }
+
+
 
 
 

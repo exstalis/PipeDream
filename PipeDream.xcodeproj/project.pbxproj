@@ -14,7 +14,6 @@
 		2D271A721ABE1AE300A71464 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A711ABE1AE300A71464 /* AppDelegate.m */; };
 		2D271A751ABE1AE300A71464 /* PipeDream.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A731ABE1AE300A71464 /* PipeDream.xcdatamodeld */; };
 		2D271A7B1ABE1AE300A71464 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D271A791ABE1AE300A71464 /* Main.storyboard */; };
-		2D271A7D1ABE1AE300A71464 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D271A7C1ABE1AE300A71464 /* Images.xcassets */; };
 		2D271A801ABE1AE300A71464 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D271A7E1ABE1AE300A71464 /* LaunchScreen.xib */; };
 		2D271A8C1ABE1AE400A71464 /* PipeDreamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A8B1ABE1AE400A71464 /* PipeDreamTests.m */; };
 		2D271A9D1ABE25C900A71464 /* PDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D271A9C1ABE25C900A71464 /* PDNavigationController.m */; };
@@ -45,7 +44,6 @@
 		2D5D94221ADCBEAB0068DB3E /* PDSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D94211ADCBEAB0068DB3E /* PDSingleton.m */; };
 		2D5E8E211AD9F2AE00FB533F /* PDOpinionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E8E201AD9F2AE00FB533F /* PDOpinionViewController.m */; };
 		2D5E8E241AD9F32500FB533F /* PDOpinionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E8E231AD9F32500FB533F /* PDOpinionDetailViewController.m */; };
-		2D5FDB321AEA1046004187BB /* libPods-PipeDream-FLKAutoLayout.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5FDB2C1AEA1046004187BB /* libPods-PipeDream-FLKAutoLayout.a */; };
 		2D5FDB331AEA1046004187BB /* libPods-PipeDream-FontAwesomeIconFactory.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5FDB2D1AEA1046004187BB /* libPods-PipeDream-FontAwesomeIconFactory.a */; };
 		2D5FDB351AEA1046004187BB /* libPods-PipeDream-Mantle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5FDB2F1AEA1046004187BB /* libPods-PipeDream-Mantle.a */; };
 		2D5FDB361AEA1046004187BB /* libPods-PipeDream-ORStackView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5FDB301AEA1046004187BB /* libPods-PipeDream-ORStackView.a */; };
@@ -55,6 +53,7 @@
 		2D5FDB441AEAEB68004187BB /* libPods-PipeDream-Facebook-iOS-SDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5FDB421AEAEB68004187BB /* libPods-PipeDream-Facebook-iOS-SDK.a */; };
 		2D5FDB491AEB1769004187BB /* PDShareButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5FDB481AEB1769004187BB /* PDShareButton.m */; };
 		2D5FDB5F1AEB6157004187BB /* KLCPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5FDB5E1AEB6157004187BB /* KLCPopup.m */; };
+		2D634A4C1AE66F5200D905A0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D634A4B1AE66F5200D905A0 /* Images.xcassets */; };
 		2D6EDC171AF1A6CE00391E42 /* PDShareUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6EDC161AF1A6CE00391E42 /* PDShareUtility.m */; };
 		2D7A30A71ADF37B700A6055C /* PDNewsTableviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A30A61ADF37B700A6055C /* PDNewsTableviewCell.m */; };
 		2D7A30AB1ADFF4DA00A6055C /* RequestOperationConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A30AA1ADFF4DA00A6055C /* RequestOperationConfig.m */; };
@@ -98,7 +97,6 @@
 		2D271A711ABE1AE300A71464 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2D271A741ABE1AE300A71464 /* PipeDream.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PipeDream.xcdatamodel; sourceTree = "<group>"; };
 		2D271A7A1ABE1AE300A71464 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2D271A7C1ABE1AE300A71464 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2D271A7F1ABE1AE300A71464 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		2D271A851ABE1AE400A71464 /* PipeDreamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PipeDreamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D271A8A1ABE1AE400A71464 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -175,6 +173,7 @@
 		2D5FDB581AEB5B22004187BB /* PipeDream-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PipeDream-Prefix.pch"; sourceTree = "<group>"; };
 		2D5FDB5D1AEB6157004187BB /* KLCPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLCPopup.h; sourceTree = "<group>"; };
 		2D5FDB5E1AEB6157004187BB /* KLCPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLCPopup.m; sourceTree = "<group>"; };
+		2D634A4B1AE66F5200D905A0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = PipeDream/Images.xcassets; sourceTree = "<group>"; };
 		2D6EDC161AF1A6CE00391E42 /* PDShareUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDShareUtility.m; sourceTree = "<group>"; };
 		2D7A30A51ADF37B700A6055C /* PDNewsTableviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDNewsTableviewCell.h; sourceTree = "<group>"; };
 		2D7A30A61ADF37B700A6055C /* PDNewsTableviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDNewsTableviewCell.m; sourceTree = "<group>"; };
@@ -212,7 +211,6 @@
 				2D5FDB441AEAEB68004187BB /* libPods-PipeDream-Facebook-iOS-SDK.a in Frameworks */,
 				2D5FDB3A1AEA1336004187BB /* libPods-PipeDream-JVFloatingDrawer.a in Frameworks */,
 				2D5FDB381AEA1230004187BB /* libPods-PipeDream-AFNetworking.a in Frameworks */,
-				2D5FDB321AEA1046004187BB /* libPods-PipeDream-FLKAutoLayout.a in Frameworks */,
 				2D5FDB331AEA1046004187BB /* libPods-PipeDream-FontAwesomeIconFactory.a in Frameworks */,
 				2D5FDB351AEA1046004187BB /* libPods-PipeDream-Mantle.a in Frameworks */,
 				2D5FDB361AEA1046004187BB /* libPods-PipeDream-ORStackView.a in Frameworks */,
@@ -281,7 +279,6 @@
 				2D271A711ABE1AE300A71464 /* AppDelegate.m */,
 				2D271A981ABE1B6A00A71464 /* Classes */,
 				2D271A791ABE1AE300A71464 /* Main.storyboard */,
-				2D271A7C1ABE1AE300A71464 /* Images.xcassets */,
 				2D271A7E1ABE1AE300A71464 /* LaunchScreen.xib */,
 				2D271A731ABE1AE300A71464 /* PipeDream.xcdatamodeld */,
 				2DC51D171AD4D2D100B9FA1F /* Resources */,
@@ -353,9 +350,9 @@
 			isa = PBXGroup;
 			children = (
 				2D29213B1ADA49E800D622EC /* PDReleaseViewController.h */,
+				2D29213C1ADA49E800D622EC /* PDReleaseViewController.m */,
 				2D4FC84C1AE870A90044ACEF /* PDReleaseTableViewCell.h */,
 				2D4FC84D1AE870A90044ACEF /* PDReleaseTableViewCell.m */,
-				2D29213C1ADA49E800D622EC /* PDReleaseViewController.m */,
 				2D2921431ADA585100D622EC /* PDReleaseDetailViewController.h */,
 				2D2921441ADA585100D622EC /* PDReleaseDetailViewController.m */,
 			);
@@ -511,6 +508,7 @@
 		2DC51D171AD4D2D100B9FA1F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2D634A4B1AE66F5200D905A0 /* Images.xcassets */,
 				2D4FC85C1AE8B0FF0044ACEF /* Fonts */,
 				2D345BFF1AD9E56F00308866 /* detail.png */,
 				2D345C001AD9E56F00308866 /* detail@2x.png */,
@@ -649,10 +647,10 @@
 			files = (
 				2D271A7B1ABE1AE300A71464 /* Main.storyboard in Resources */,
 				2D4FC85D1AE8B0FF0044ACEF /* Fonts in Resources */,
+				2D634A4C1AE66F5200D905A0 /* Images.xcassets in Resources */,
 				2D345C021AD9E56F00308866 /* detail@2x.png in Resources */,
 				2D345C011AD9E56F00308866 /* detail.png in Resources */,
 				2D271A801ABE1AE300A71464 /* LaunchScreen.xib in Resources */,
-				2D271A7D1ABE1AE300A71464 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

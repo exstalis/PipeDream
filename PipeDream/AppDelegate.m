@@ -329,8 +329,7 @@ static NSString * const  kPDNewsDetailStoryboardID=@"PDNewsDetailStoryboardID";
     self.drawerViewController.leftViewController = self.leftDrawerViewController;
     self.drawerViewController.centerViewController = self.newsViewController;
     self.drawerViewController.animator = self.drawerAnimator;
-    
-    self.drawerViewController.backgroundImage = [UIImage imageNamed:@"BG"];
+    self.drawerViewController.backgroundImage = [UIImage imageNamed:@"DrawerMenu"];
 }
 
 

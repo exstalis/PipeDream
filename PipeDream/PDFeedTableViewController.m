@@ -48,6 +48,8 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
     
     FBSDKShareDialog *_facebookSharedDialog;
     
+
+    
     
 }
 
@@ -136,97 +138,110 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
 
 
 
+#pragma mark- share popup view
 
 
 
--(void)sharingOptionsButtonAction{
+-(void)sharePopupView{
     
     
     [PDShareButton supportsSecureCoding];
     
     UIView *popUpView=[[UIView alloc]init];
     popUpView.translatesAutoresizingMaskIntoConstraints=NO;
-    popUpView.backgroundColor=[UIColor grayColor];
-    //    burasini sonra duzel renkleri
-    popUpView.layer.cornerRadius=5.0;
-    UILabel *popUpTitleLabel=[[UILabel alloc]init];
-    popUpTitleLabel.translatesAutoresizingMaskIntoConstraints=NO;
-    popUpTitleLabel.backgroundColor=[UIColor clearColor];
-    popUpTitleLabel.textColor=[UIColor whiteColor];
-    //    burdaki title labeli icin duzenlemeler yap..
+    popUpView.backgroundColor=[UIColor clearColor];
+
+
+    UIImageView *popupImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Popup"]];
+
     
-    popUpTitleLabel.font=[UIFont fontWithName:@"Lato-Semibold" size:24.0];
-    popUpTitleLabel.text=@"Share this article";
-    //    facebook button koyman gerekibilir
-    
-    //    UIButton* cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [popupImageView setContentMode:UIViewContentModeScaleAspectFill];
+    [popupImageView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    popupImageView.contentMode = UIViewContentModeRedraw;
+
     _cancelButton=[PDShareButton buttonWithType:UIButtonTypeCustom];
-    
-    
-    
+
     _cancelButton.translatesAutoresizingMaskIntoConstraints = NO;
-    _cancelButton.contentEdgeInsets =UIEdgeInsetsMake(10, 100, 10, 100);
-    
-    
-    
-    _cancelButton.backgroundColor = [UIColor purpleColor];
-    //    renkleri duzelt
-    [_cancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_cancelButton setTitleColor:[[_cancelButton titleColorForState:UIControlStateNormal] colorWithAlphaComponent:0.5] forState:UIControlStateHighlighted];
-    _cancelButton.titleLabel.font = [UIFont fontWithName:@"Lato-Semibold" size:20.0];
-    [_cancelButton setTitle:@"cancel" forState:UIControlStateNormal];
-    _cancelButton.layer.cornerRadius = 6.0;
+    _cancelButton.contentEdgeInsets =UIEdgeInsetsMake(10, 50, 10, 50);
+
+    _cancelButton.backgroundColor = [UIColor clearColor];
+    [_cancelButton setTitleColor:[UIColor clearColor] forState:UIControlStateNormal];
+//    [_cancelButton setTitleColor:[[_cancelButton titleColorForState:UIControlStateNormal] colorWithAlphaComponent:0.5] forState:UIControlStateHighlighted];
+//    _cancelButton.titleLabel.font = [UIFont fontWithName:@"Lato-Semibold" size:16.0];
+//    [_cancelButton setTitle:@"cancel" forState:UIControlStateNormal];
+//    _cancelButton.layer.cornerRadius = 6.0;
     
     
     [_cancelButton addTarget:self action:@selector(cancelButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    //    iste bu islemler icin share buttonin attributelarini orda belirle
     
+    _twitterShareButton = [PDShareButton buttonWithType:UIButtonTypeCustom];
+    _twitterShareButton.translatesAutoresizingMaskIntoConstraints = NO;
+    _twitterShareButton.contentEdgeInsets =UIEdgeInsetsMake(10, 20, 10, 20);
+    _twitterShareButton.backgroundColor = [UIColor clearColor];
+//    [_twitterShareButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    [_twitterShareButton setTitleColor:[[_twitterShareButton titleColorForState:UIControlStateNormal] colorWithAlphaComponent:0.5] forState:UIControlStateHighlighted];
+//    _twitterShareButton.titleLabel.font = [UIFont fontWithName:@"Lato-Semibold" size:16.0];
+//    [_twitterShareButton setTitle:@"twitter" forState:UIControlStateNormal];
+//    _twitterShareButton.layer.cornerRadius = 6.0;
+    
+    
+    [_fbShareButton addTarget:self action:@selector(shareOnFaceBook:) forControlEvents:UIControlEventTouchUpInside];
     _fbShareButton = [PDShareButton buttonWithType:UIButtonTypeCustom];
     _fbShareButton.translatesAutoresizingMaskIntoConstraints = NO;
-    _fbShareButton.contentEdgeInsets =UIEdgeInsetsMake(10, 50, 10, 50);
-    _fbShareButton.backgroundColor = [UIColor blueColor];
-    [_fbShareButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    _fbShareButton.contentEdgeInsets =UIEdgeInsetsMake(10, 25, 10, 20);
+    _fbShareButton.backgroundColor = [UIColor clearColor];
+//    [_fbShareButton setTitleColor:[UIColor clearColor] forState:UIControlStateNormal];
     [_fbShareButton setTitleColor:[[_fbShareButton titleColorForState:UIControlStateNormal] colorWithAlphaComponent:0.5] forState:UIControlStateHighlighted];
-    _fbShareButton.titleLabel.font = [UIFont fontWithName:@"Lato-Semibold" size:20.0];
-    [_fbShareButton setTitle:@"Share on Facebook" forState:UIControlStateNormal];
-    _fbShareButton.layer.cornerRadius = 6.0;
-    
+//    _fbShareButton.titleLabel.font = [UIFont fontWithName:@"Lato-Semibold" size:16.0];
+//    [_fbShareButton setTitle:@"Share on Facebook" forState:UIControlStateNormal];
+//    _fbShareButton.layer.cornerRadius = 6.0;
     [_fbShareButton addTarget:self action:@selector(shareOnFaceBook:) forControlEvents:UIControlEventTouchUpInside];
     
     _mailButton = [PDShareButton buttonWithType:UIButtonTypeCustom];
     
     _mailButton.translatesAutoresizingMaskIntoConstraints = NO;
-    _mailButton.contentEdgeInsets =UIEdgeInsetsMake(10, 50, 10, 50);
-    _mailButton.backgroundColor = [UIColor blueColor];
-    [_mailButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    _mailButton.contentEdgeInsets =UIEdgeInsetsMake(10, 30, 10, 30);
+    _mailButton.backgroundColor = [UIColor clearColor];
+    [_mailButton setTitleColor:[UIColor clearColor] forState:UIControlStateNormal];
     [_mailButton setTitleColor:[[_mailButton titleColorForState:UIControlStateNormal] colorWithAlphaComponent:0.5] forState:UIControlStateHighlighted];
-    _mailButton.titleLabel.font = [UIFont fontWithName:@"Lato-Semibold" size:20.0];
-    [_mailButton setTitle:@"Mail" forState:UIControlStateNormal];
-    _mailButton.layer.cornerRadius = 6.0;
-    
+//    _mailButton.titleLabel.font = [UIFont fontWithName:@"Lato-Semibold" size:16.0];
+//    [_mailButton setTitle:@"Mail" forState:UIControlStateNormal];
+//    _mailButton.layer.cornerRadius = 6.0;
     [_mailButton addTarget:self action:@selector(sendwithMail:) forControlEvents:UIControlEventTouchUpInside];
     
     //    facebook share targeti ekle
     
-    
 
-    [popUpView addSubview:popUpTitleLabel];
-    [popUpView addSubview:_mailButton];
-    [popUpView addSubview:_fbShareButton];
-    [popUpView addSubview:_cancelButton];
-    NSDictionary* views = NSDictionaryOfVariableBindings(popUpView,_mailButton, _cancelButton, popUpTitleLabel,_fbShareButton);
+    [popUpView insertSubview:_mailButton aboveSubview:popupImageView];
+    [popUpView insertSubview:_fbShareButton aboveSubview:popupImageView];
+    [popUpView insertSubview:_cancelButton aboveSubview:popupImageView];
     
+    [popUpView insertSubview:_twitterShareButton aboveSubview:popupImageView];
+    [popUpView addSubview:popupImageView];
+    
+    
+    NSDictionary* views = NSDictionaryOfVariableBindings(popUpView,_mailButton, _cancelButton,_fbShareButton
+                                                         ,_twitterShareButton);
+
     [popUpView addConstraints:
-     [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(5)-[popUpTitleLabel]-(10)-[_fbShareButton]-(10)-[_mailButton]-(10)-[_cancelButton]-(24)-|"
+     [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[_twitterShareButton]-(5)-[_fbShareButton]-(5)-[_mailButton]-(5)-[_cancelButton]-|"
                                              options:NSLayoutFormatAlignAllCenterX
                                              metrics:nil
                                                views:views]];
     
     [popUpView addConstraints:
-     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(5)-[popUpTitleLabel]-(5)-|"
-                                             options:0
+     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(5)-[_twitterShareButton]-(5)-|"
+                                             options:NSLayoutFormatAlignAllCenterY
                                              metrics:nil
                                                views:views]];
+   
+    
+ 
+    
+    [popUpView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[popupImageView]|" options:NSLayoutFormatAlignAllCenterX metrics:nil views:@{@"popupImageView":popupImageView}]];
+    [popUpView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[popupImageView]|" options:NSLayoutFormatAlignAllCenterY metrics:nil views:@{@"popupImageView":popupImageView}]];
+    [popUpView layoutSubviews];
+    
     // Show in popup
     // Show in popup
     KLCPopupLayout layout =KLCPopupLayoutMake(KLCPopupHorizontalLayoutCenter , KLCPopupVerticalLayoutCenter);
@@ -371,7 +386,6 @@ typedef NS_ENUM(NSInteger,PopupLabel) {
 
 
 #pragma mark - PDShare Delegate
-
 
 -(void)shareUtilityDidCompleteShareOnFacebook{
     
