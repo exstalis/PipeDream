@@ -128,7 +128,10 @@
     
     PDOpinionTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"opinionCell" forIndexPath:indexPath];
     
-   
+    for(UIView * cellSubviews in cell.subviews)
+    {
+        cellSubviews.userInteractionEnabled = NO;
+    }
     
     self.feedArticle=[_opinionArticlesArray objectAtIndex:indexPath.row];
     
