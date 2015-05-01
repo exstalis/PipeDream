@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4B41F8433E7C7998B1794817"
-               BuildableName = "AFNetworking.framework"
+               BlueprintIdentifier = "3C81452F4222ABD7DDF81926"
+               BuildableName = "libPods-PipeDream-AFNetworking.a"
                BlueprintName = "Pods-PipeDream-AFNetworking"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
@@ -42,8 +42,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4B41F8433E7C7998B1794817"
-            BuildableName = "AFNetworking.framework"
+            BlueprintIdentifier = "3C81452F4222ABD7DDF81926"
+            BuildableName = "libPods-PipeDream-AFNetworking.a"
             BlueprintName = "Pods-PipeDream-AFNetworking"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
@@ -60,8 +60,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4B41F8433E7C7998B1794817"
-            BuildableName = "AFNetworking.framework"
+            BlueprintIdentifier = "3C81452F4222ABD7DDF81926"
+            BuildableName = "libPods-PipeDream-AFNetworking.a"
             BlueprintName = "Pods-PipeDream-AFNetworking"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>

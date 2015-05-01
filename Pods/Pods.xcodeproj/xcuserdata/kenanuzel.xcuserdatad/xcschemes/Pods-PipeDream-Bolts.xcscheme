@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F7A5116104C62871A8BEC148"
-               BuildableName = "libPods-PipeDream-ORStackView.a"
-               BlueprintName = "Pods-PipeDream-ORStackView"
+               BlueprintIdentifier = "C7CAF8B05653C4DCC5E211E2"
+               BuildableName = "libPods-PipeDream-Bolts.a"
+               BlueprintName = "Pods-PipeDream-Bolts"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F7A5116104C62871A8BEC148"
-            BuildableName = "libPods-PipeDream-ORStackView.a"
-            BlueprintName = "Pods-PipeDream-ORStackView"
+            BlueprintIdentifier = "C7CAF8B05653C4DCC5E211E2"
+            BuildableName = "libPods-PipeDream-Bolts.a"
+            BlueprintName = "Pods-PipeDream-Bolts"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -60,9 +60,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F7A5116104C62871A8BEC148"
-            BuildableName = "libPods-PipeDream-ORStackView.a"
-            BlueprintName = "Pods-PipeDream-ORStackView"
+            BlueprintIdentifier = "C7CAF8B05653C4DCC5E211E2"
+            BuildableName = "libPods-PipeDream-Bolts.a"
+            BlueprintName = "Pods-PipeDream-Bolts"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

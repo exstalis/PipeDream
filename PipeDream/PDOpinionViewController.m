@@ -13,6 +13,7 @@
 #import "PDOpinionTableViewCell.h"
 #import "PDShareButton.h"
 #import "ArticleCategory.h"
+#import "NSString+HTMLDecoder.h"
 
 
 @interface PDOpinionViewController ()
@@ -114,10 +115,11 @@
    
     
     self.feedArticle=[_opinionArticlesArray objectAtIndex:indexPath.row];
-    cell.opinionTitle.text=self.feedArticle.articleTitle;
-    cell.opinionExcerptTextview.text= self.feedArticle.articleExcerpt;
-    cell.opinionAuthor.text=  self.feedArticle.authorName;
-    cell.opinionDate.text=self.feedArticle.articleDate.description;
+    
+    cell.opinionTitle.text = [self.feedArticle.articleTitle decodeHTML];
+    cell.opinionExcerptTextview.text = [self.feedArticle.articleExcerpt decodeHTML];
+    cell.opinionAuthor.text = self.feedArticle.authorName;
+    cell.opinionDate.text = self.feedArticle.date.description;
     [cell.opinionThumnail cancelImageRequestOperation];
     
     

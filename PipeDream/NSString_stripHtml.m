@@ -56,8 +56,8 @@
     NSString* strippedString = [parsee getCharsFound];
     
     // clean up
-//    [parser release];
-//    [parsee release];
+    //[parser release];
+    //[parsee release];
     
     // get the raw text out of the parsee after parsing, and return it
     return strippedString;

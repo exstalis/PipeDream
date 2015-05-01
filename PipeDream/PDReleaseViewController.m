@@ -16,6 +16,7 @@
 #import "PDNavigationController.h"
 #import "PDReleaseTableViewCell.h"
 #import "PDNetworkClient.h"
+#import "NSString+HTMLDecoder.h"
 
 @interface PDReleaseViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
@@ -100,10 +101,10 @@
     
     _releaseArticles=[_releaseArticlesArray objectAtIndex:indexPath.row];
     
-    cell.releaseTitle.text=_releaseArticles.articleTitle;
-    cell.releaseAuthor.text=_releaseArticles.authorName;
-    cell.releaseDate.text=_releaseArticles.articleDate.description;
-    cell.releaseExcerpt.text=_releaseArticles.articleExcerpt;
+    cell.releaseTitle.text = [_releaseArticles.articleTitle decodeHTML];
+    cell.releaseAuthor.text = _releaseArticles.authorName;
+    cell.releaseDate.text = _releaseArticles.date.description;
+    cell.releaseExcerpt.text= [_releaseArticles.articleExcerpt decodeHTML];
     
     
     

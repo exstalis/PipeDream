@@ -14,6 +14,7 @@
 #import "JVFloatingDrawerSpringAnimator.h"
 #import "PDRecentViewController.h"
 #import "PDRecentTableViewCell.h"
+#import "NSString+HTMLDecoder.h"
 
 @interface PDRecentViewController ()
 
@@ -87,9 +88,10 @@
     [[PDSingleton sharedClient] initWithArticle:self.feedArticle];
     
     self.feedArticle=[_recentArticlesArray objectAtIndex:indexPath.row];
-    cell.titleLabel.text=self.feedArticle.articleTitle;
+    
+    cell.titleLabel.text = [self.feedArticle.articleTitle decodeHTML];
     cell.authorLabel.text=  self.feedArticle.authorName;
-    cell.dateLabel.text=self.feedArticle.articleDate.description;
+    cell.dateLabel.text=self.feedArticle.date.description;
     [cell.imageView cancelImageRequestOperation];
 
     

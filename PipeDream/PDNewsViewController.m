@@ -19,6 +19,8 @@
 #import "JVFloatingDrawerSpringAnimator.h"
 #import "PDNewsDetailViewController.h"
 #import "PDShareButton.h"
+#import "NSString+HTMLDecoder.h"
+#import "NSString_stripHtml.h"
 
 
 
@@ -137,13 +139,12 @@
     
    self.feedArticle=[self.newsArticleArray objectAtIndex:indexPath.row] ;
 
-
     
 
-    newsCell.newsTitle.text= self.feedArticle.articleTitle;
-    newsCell.newsExcerptTextView.text=self.feedArticle.articleExcerpt;
-    newsCell.newsAuthorLabel.text=self.feedArticle.authorName;
-    newsCell.newsDateLabel.text=self.feedArticle.articleDate.description;
+    newsCell.newsTitle.text = [self.feedArticle.articleTitle decodeHTML];
+    newsCell.newsExcerptTextView.text = [self.feedArticle.articleExcerpt decodeHTML];
+    newsCell.newsAuthorLabel.text = self.feedArticle.authorName;
+    newsCell.newsDateLabel.text = self.feedArticle.date.description;
 
     [newsCell.newsThumbnailImage cancelImageRequestOperation];
 

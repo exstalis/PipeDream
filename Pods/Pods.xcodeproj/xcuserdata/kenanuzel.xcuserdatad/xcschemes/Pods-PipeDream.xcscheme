@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FF6FCB5705C2B591D8C515F8"
-               BuildableName = "Pods_PipeDream.framework"
+               BlueprintIdentifier = "EDCD366F063A9846B1F26871"
+               BuildableName = "libPods-PipeDream.a"
                BlueprintName = "Pods-PipeDream"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
@@ -70,8 +70,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FF6FCB5705C2B591D8C515F8"
-            BuildableName = "Pods_PipeDream.framework"
+            BlueprintIdentifier = "EDCD366F063A9846B1F26871"
+            BuildableName = "libPods-PipeDream.a"
             BlueprintName = "Pods-PipeDream"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>

@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ACAF5EEF09C77BC915C0E43C"
-               BuildableName = "Mantle.framework"
+               BlueprintIdentifier = "370BF5B513B7947E661CD754"
+               BuildableName = "libPods-PipeDream-Mantle.a"
                BlueprintName = "Pods-PipeDream-Mantle"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
@@ -42,8 +42,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ACAF5EEF09C77BC915C0E43C"
-            BuildableName = "Mantle.framework"
+            BlueprintIdentifier = "370BF5B513B7947E661CD754"
+            BuildableName = "libPods-PipeDream-Mantle.a"
             BlueprintName = "Pods-PipeDream-Mantle"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
@@ -60,8 +60,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ACAF5EEF09C77BC915C0E43C"
-            BuildableName = "Mantle.framework"
+            BlueprintIdentifier = "370BF5B513B7947E661CD754"
+            BuildableName = "libPods-PipeDream-Mantle.a"
             BlueprintName = "Pods-PipeDream-Mantle"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>

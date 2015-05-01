@@ -16,6 +16,7 @@
 #import "PDSportsTableViewCell.h"
 #import "Article.h"
 #import "PDNetworkClient.h"
+#import "NSString+HTMLDecoder.h"
 
 
 @interface PDSportsViewController ()
@@ -104,10 +105,11 @@
     }
     
     _sportsArticles=[_sportsArticlesArray objectAtIndex:indexPath.row];
-    cell.sportsTitle.text=_sportsArticles.articleTitle;
-    cell.sportsExcerpt.text=_sportsArticles.articleExcerpt;
+    
+    cell.sportsTitle.text = [_sportsArticles.articleTitle decodeHTML];
+    cell.sportsExcerpt.text = [_sportsArticles.articleExcerpt decodeHTML];
     cell.sportsAuthor.text=_sportsArticles.authorName;
-    cell.sportsDate.text=_sportsArticles.articleDate.description;
+    cell.sportsDate.text=_sportsArticles.date.description;
     
     
     
