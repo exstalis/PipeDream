@@ -327,7 +327,7 @@ static NSString * const  kPDNewsDetailStoryboardID=@"PDNewsDetailStoryboardID";
 
 - (void)configureDrawerViewController {
     self.drawerViewController.leftViewController = self.leftDrawerViewController;
-    self.drawerViewController.centerViewController = self.newsViewController;
+    self.drawerViewController.centerViewController = self.recentViewController;
     self.drawerViewController.animator = self.drawerAnimator;
     self.drawerViewController.backgroundImage = [UIImage imageNamed:@"DrawerMenu"];
 }
