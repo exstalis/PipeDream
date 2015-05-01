@@ -21,6 +21,7 @@
 
 @interface PDNewsDetailViewController ()<FBSDKSharingDelegate,FBSDKSharingDialog>
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *backButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
 
 
 @property(nonatomic)PDArticleContentView *articleContents;
@@ -70,9 +71,10 @@
     
     self.newsDetailTitle.text = [self.contentArticle.articleTitle decodeHTML];
     
-    [self textViewDidChange:self.newsDetailsArticle];
-    
     self.newsDetailsArticle.text = [self.contentArticle.articleBody decodeHTML];
+    
+    CGSize sizeThatShouldFitTheContent = [self.newsDetailsArticle sizeThatFits:self.newsDetailsArticle.frame.size];
+    _heightConstraint.constant = sizeThatShouldFitTheContent.height;
     
     NSURL *imageURL=[NSURL URLWithString:self.contentAttachment.fullImage[@"url"]];
     
