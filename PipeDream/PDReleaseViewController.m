@@ -111,7 +111,13 @@
     
     PDReleaseTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"releaseCell"];
   
-  self.feedArticle=[_releaseArticleArray objectAtIndex:indexPath.row];
+    self.feedArticle=[_releaseArticleArray objectAtIndex:indexPath.row];
+    
+    for(UIView * cellSubviews in cell.subviews)
+    {
+        cellSubviews.userInteractionEnabled = NO;
+    }
+    
     cell.releaseTitle.text = [self.feedArticle.articleTitle decodeHTML];
     cell.releaseAuthor.text = self.feedArticle.authorName;
     cell.releaseDate.text = self.feedArticle.date.description;

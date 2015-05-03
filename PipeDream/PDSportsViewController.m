@@ -106,6 +106,11 @@
     
     _sportsArticles=[_sportsArticlesArray objectAtIndex:indexPath.row];
     
+    for(UIView * cellSubviews in cell.subviews)
+    {
+        cellSubviews.userInteractionEnabled = NO;
+    }
+    
     cell.sportsTitle.text = [_sportsArticles.articleTitle decodeHTML];
     cell.sportsExcerpt.text = [_sportsArticles.articleExcerpt decodeHTML];
     cell.sportsAuthor.text=_sportsArticles.authorName;

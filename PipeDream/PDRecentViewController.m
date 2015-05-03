@@ -102,12 +102,29 @@
         cell = [[PDRecentTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"recentCell"];
     }
     
+    for(UIView * cellSubviews in cell.subviews)
+    {
+        cellSubviews.userInteractionEnabled = NO;
+    }
+    
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         self.feedArticle = [_filteredArticleArray objectAtIndex:indexPath.row];
         
         cell.titleLabel.text = [self.feedArticle.articleTitle decodeHTML];
         cell.authorLabel.text = self.feedArticle.authorName;
         cell.dateLabel.text = self.feedArticle.date.description;
+        cell.excerptLabel.text = self.feedArticle.articleExcerpt;
+        
+        [cell.recentThumbnail cancelImageRequestOperation];
+        
+        
+        NSURL* url=[NSURL URLWithString:self.feedAttachments.thumbnailImage [@"url"]];
+        for (Attachments *att in self.feedArticle.articleAttachments) {
+            self.feedAttachments=att;
+            
+        }
+        
+        [cell.recentThumbnail setImageWithURL:url placeholderImage:[UIImage imageNamed: @"menu.png"]];
         
     } else {
         self.feedArticle = [_recentArticlesArray objectAtIndex:indexPath.row];
@@ -115,6 +132,18 @@
         cell.titleLabel.text = [self.feedArticle.articleTitle decodeHTML];
         cell.authorLabel.text = self.feedArticle.authorName;
         cell.dateLabel.text = self.feedArticle.date.description;
+        cell.excerptLabel.text = [self.feedArticle.articleExcerpt decodeHTML];
+        
+        [cell.recentThumbnail cancelImageRequestOperation];
+        
+        
+        NSURL* url=[NSURL URLWithString:self.feedAttachments.thumbnailImage [@"url"]];
+        for (Attachments *att in self.feedArticle.articleAttachments) {
+            self.feedAttachments=att;
+            
+        }
+        
+        [cell.recentThumbnail setImageWithURL:url placeholderImage:[UIImage imageNamed: @"menu.png"]];
     }
 
     
