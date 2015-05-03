@@ -50,6 +50,7 @@ typedef NS_ENUM (NSInteger, PDShareButtonItem){
 @property (weak, nonatomic) PDShareButton *cancelButton;
 @property(nonatomic)Attachments *feedAttachments;
 @property(nonatomic,strong)Article *feedArticle;
+@property(nonatomic,strong)KLCPopup *sharepopup;
 
 @property(copy, nonatomic) NSURL *selectedURL;
 @property(nonatomic,strong)NSMutableArray *thumbnailArray;
@@ -57,6 +58,8 @@ typedef NS_ENUM (NSInteger, PDShareButtonItem){
 -(void)sendwithMail:(id)sender;
 -(void)facebookShare;
 -(void)sharePopupView;
+
+- (void)shareOnFaceBook:(id)sender;
 
 
 -(void)sharingOptionsButtonAction;
