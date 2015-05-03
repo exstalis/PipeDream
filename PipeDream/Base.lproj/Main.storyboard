@@ -1228,7 +1228,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="PDDrawerViewControllerStoryboardID" title="Drawer" id="m7T-T2-hCt" customClass="PDDrawerViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="60" sectionHeaderHeight="10" sectionFooterHeight="10" id="oHI-vG-4fQ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -1238,26 +1238,26 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cqo-OE-0W6">
-                                            <rect key="frame" x="40" y="15" width="30" height="30"/>
+                                            <rect key="frame" x="65" y="15" width="30" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="3Zk-vX-OCg"/>
                                                 <constraint firstAttribute="width" constant="30" id="9Ld-f7-U4a"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vfy-gd-UHo">
-                                            <rect key="frame" x="90" y="19" width="222" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vfy-gd-UHo">
+                                            <rect key="frame" x="125" y="19" width="222" height="22"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="222" id="AU5-YP-4qd"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
+                                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="20"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="cqo-OE-0W6" firstAttribute="leading" secondItem="3dV-Fs-MAz" secondAttribute="leadingMargin" constant="32" id="U0N-5X-zAn"/>
+                                        <constraint firstItem="cqo-OE-0W6" firstAttribute="leading" secondItem="3dV-Fs-MAz" secondAttribute="leadingMargin" constant="57" id="U0N-5X-zAn"/>
                                         <constraint firstItem="Vfy-gd-UHo" firstAttribute="centerY" secondItem="cqo-OE-0W6" secondAttribute="centerY" id="XUL-rH-oEe"/>
-                                        <constraint firstItem="Vfy-gd-UHo" firstAttribute="leading" secondItem="cqo-OE-0W6" secondAttribute="trailing" constant="20" id="cXM-Av-cen"/>
+                                        <constraint firstItem="Vfy-gd-UHo" firstAttribute="leading" secondItem="cqo-OE-0W6" secondAttribute="trailing" constant="30" id="cXM-Av-cen"/>
                                         <constraint firstAttribute="centerY" secondItem="cqo-OE-0W6" secondAttribute="centerY" id="d46-MN-pxN"/>
                                         <constraint firstItem="Vfy-gd-UHo" firstAttribute="top" secondItem="3dV-Fs-MAz" secondAttribute="topMargin" constant="11" id="dJW-4d-a2i"/>
                                     </constraints>
@@ -1275,6 +1275,7 @@
                             <outlet property="delegate" destination="m7T-T2-hCt" id="Ocn-pH-81N"/>
                         </connections>
                     </tableView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tkV-fm-Rjd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="JNL-4g-lPP">

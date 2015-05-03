@@ -22,7 +22,6 @@
 
 - (void)awakeFromNib {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    [self.menuItemLabel setFont:[UIFont fontWithName:@"OpenSans-Regular" size:4.0]];
 
 }
 
@@ -49,14 +48,10 @@
     
 }
 
-#pragma mark - Accessors
 
-#pragma Title
 
 - (NSString *)sectionTitle {
     return self.menuItemLabel.text;
-   
-
     
 }
 
@@ -65,9 +60,6 @@
     self.menuItemLabel.text=sectionTitle;
 }
 
-
-
-#pragma Icon
 
 - (UIImage *)iconImage {
     return self.menuCellIcon.image;
