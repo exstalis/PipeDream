@@ -9,7 +9,9 @@
 #import "PDReleaseDetailViewController.h"
 
 @interface PDReleaseDetailViewController ()
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bodyHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleHeightConstraint;
 
 @end
 
@@ -26,12 +28,8 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     
-    
     [super viewWillAppear:YES];
     
-    
-    
-
     
 }
 
@@ -59,16 +57,28 @@
     [self scrollViewDidChange:self.releaseScrollView];
     
     self.releaseTitle.text = [self.contentArticle.articleTitle decodeHTML];
+    [self setTextFieldHeight:_titleHeightConstraint forView:self.releaseTitle];
+    
     self.releaseArticle.text = [self.contentArticle.articleBody decodeHTML];
+    [self setTextFieldHeight:_bodyHeightConstraint forView:self.releaseArticle];
     
-    CGSize sizeThatShouldFitTheContent = [self.releaseArticle sizeThatFits:self.releaseArticle.frame.size];
+    self.releaseAuthor.text = self.contentArticle.authorName;
     
-    _heightConstraint.constant = sizeThatShouldFitTheContent.height;
+    self.releaseDate.text = self.contentArticle.date;
+    
+
     
     NSURL *imageURL=[NSURL URLWithString:self.contentAttachment.fullImage[@"url"]];
 
     [self.releaseImage setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"Logo.png"]];
     
+    
+}
+
+-(void)setTextFieldHeight:(NSLayoutConstraint *)constraint forView:(UITextView *)textView {
+    CGSize sizeThatShouldFitTheContent = [textView sizeThatFits:textView.frame.size];
+    
+    constraint.constant = sizeThatShouldFitTheContent.height;
     
 }
 

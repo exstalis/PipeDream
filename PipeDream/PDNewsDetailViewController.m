@@ -78,10 +78,10 @@
     [self scrollViewDidChange:self.newsScrollView];
     
     self.newsDetailTitle.text = [self.contentArticle.articleTitle decodeHTML];
-    [self setHeight:_titleHeightConstraint forView:self.newsDetailTitle];
+    [self setTextFieldHeight:_titleHeightConstraint forView:self.newsDetailTitle];
     
     self.newsDetailsArticle.text = [self.contentArticle.articleBody decodeHTML];
-    [self setHeight:_heightConstraint forView:self.newsDetailsArticle];
+    [self setTextFieldHeight:_heightConstraint forView:self.newsDetailsArticle];
     
     self.newsDetailAuthor.text = self.contentArticle.authorName;
     self.newsDetailDate.text = self.contentArticle.date;
@@ -91,12 +91,9 @@
     [self.newsDetailImage setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"Logo.png"]];
     
     
-    
-    
-    
 }
 
--(void)setHeight:(NSLayoutConstraint *)constraint forView:(UITextView *)textView {
+-(void)setTextFieldHeight:(NSLayoutConstraint *)constraint forView:(UITextView *)textView {
     CGSize sizeThatShouldFitTheContent = [textView sizeThatFits:textView.frame.size];
     
     constraint.constant = sizeThatShouldFitTheContent.height;

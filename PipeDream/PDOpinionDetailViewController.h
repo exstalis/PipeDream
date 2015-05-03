@@ -30,5 +30,6 @@
 @property (weak, nonatomic) IBOutlet UITextView *titleLabel;
 @property (weak, nonatomic) IBOutlet UITextView *articleBody;
 @property (weak, nonatomic) IBOutlet UIImageView *articleImage;
+@property (weak, nonatomic) IBOutlet UILabel *articleDate;
 
 @end
