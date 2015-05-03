@@ -23,7 +23,11 @@
 
 @interface PDNewsDetailViewController ()<FBSDKSharingDelegate,FBSDKSharingDialog>
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *backButton;
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleHeightConstraint;
+
 
 
 
@@ -74,11 +78,13 @@
     [self scrollViewDidChange:self.newsScrollView];
     
     self.newsDetailTitle.text = [self.contentArticle.articleTitle decodeHTML];
+    [self setHeight:_titleHeightConstraint forView:self.newsDetailTitle];
     
     self.newsDetailsArticle.text = [self.contentArticle.articleBody decodeHTML];
+    [self setHeight:_heightConstraint forView:self.newsDetailsArticle];
     
-    CGSize sizeThatShouldFitTheContent = [self.newsDetailsArticle sizeThatFits:self.newsDetailsArticle.frame.size];
-    _heightConstraint.constant = sizeThatShouldFitTheContent.height;
+    self.newsDetailAuthor.text = self.contentArticle.authorName;
+    self.newsDetailDate.text = self.contentArticle.date;
     
     NSURL *imageURL=[NSURL URLWithString:self.contentAttachment.fullImage[@"url"]];
     
@@ -90,6 +96,12 @@
     
 }
 
+-(void)setHeight:(NSLayoutConstraint *)constraint forView:(UITextView *)textView {
+    CGSize sizeThatShouldFitTheContent = [textView sizeThatFits:textView.frame.size];
+    
+    constraint.constant = sizeThatShouldFitTheContent.height;
+    
+}
 
 -(BOOL)canBecomeFirstResponder
 {

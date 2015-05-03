@@ -17,6 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
 
+
 @end
 
 @implementation PDOpinionDetailViewController
@@ -62,6 +63,8 @@
     
     CGSize sizeThatShouldFitTheContent = [self.articleBody sizeThatFits:self.articleBody.frame.size];
     _heightConstraint.constant = sizeThatShouldFitTheContent.height;
+    
+    self.authorLabel.text = self.contentArticle.authorName;
 
     NSURL *imageURL=[NSURL URLWithString:self.contentAttachment.fullImage[@"url"]];
     [self.articleImage setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"Logo.png"]];
