@@ -24,7 +24,7 @@
 - (IBAction)showMenu:(UIBarButtonItem *)sender;
 
 @property(nonatomic,strong)Article *sportsArticles;
-
+@property(nonatomic)Attachments *feedAttachments;
 @property(nonatomic, strong) NSMutableArray *sportsArticlesArray;
 
 @end
@@ -52,7 +52,7 @@
 - (void)loadSportsArticles
 {
     PDNetworkClient *manager = [[PDNetworkClient alloc] init];
-    [manager getOpinionArticlesWithCompletion:^(NSArray *array, NSError *error) {
+    [manager getSportsArticlesWithCompletion:^(NSArray *array, NSError *error) {
         if (error == nil) {
             if (array != nil) {
                 [_sportsArticlesArray removeAllObjects];
@@ -111,9 +111,17 @@
     cell.sportsAuthor.text=_sportsArticles.authorName;
     cell.sportsDate.text=_sportsArticles.date.description;
     
+    [cell.sportsThumbnail cancelImageRequestOperation];
+    
+    NSURL* url=[NSURL URLWithString:self.feedAttachments.thumbnailImage [@"url"]];
+    for (Attachments *att in self.sportsArticles.articleAttachments) {
+        self.feedAttachments=att;
+        
+    }
+    
+    [cell.sportsThumbnail setImageWithURL:url placeholderImage:[UIImage imageNamed: @"menu.png"]];
     
     
-
     return cell;
     
 }

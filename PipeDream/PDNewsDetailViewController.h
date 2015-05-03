@@ -15,8 +15,6 @@
 @class Article;
 
 @interface PDNewsDetailViewController :PDContentViewController<MFMailComposeViewControllerDelegate,MFMessageComposeViewControllerDelegate>
-@property (nonatomic,strong) NSMutableArray *newsDetailArticleArray;
-@property(nonatomic,strong)NSMutableArray *newsDetailAttachments;
 
 
 @property (strong, nonatomic) IBOutlet UIScrollView *newsScrollView;
