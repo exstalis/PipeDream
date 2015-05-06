@@ -29,15 +29,15 @@
 
 static NSString * const kPDClientAPIBaseURLString = @"http://wwww.bupipedream.com/api/";
 
-static NSString * const kPDClientJSONRecentPostString=@"http://www.bupipedream.com/api/get_recent_posts/";
+static NSString * const kPDClientJSONRecentPostString=@"http://www.bupipedream.com/api/get_recent_posts/?count=50";
 
-static NSString * const kPDClientJSONOpinionPostsString = @"http://www.bupipedream.com/api/get_category_posts/?slug=opinion/";
+static NSString * const kPDClientJSONOpinionPostsString = @"http://www.bupipedream.com/api/get_category_posts/?slug=opinion&count=30";
 
-static NSString * const kPDClientJSONReleasePostsString = @"http://www.bupipedream.com/api/get_category_posts/?slug=release/";
+static NSString * const kPDClientJSONReleasePostsString = @"http://www.bupipedream.com/api/get_category_posts/?slug=release&count=30";
 
-static NSString * const kPDClientJSONSportsPostsString = @"http://www.bupipedream.com/api/get_category_posts/?slug=sports/";
+static NSString * const kPDClientJSONSportsPostsString = @"http://www.bupipedream.com/api/get_category_posts/?slug=sports&count=30";
 
-static NSString * const kPDClientJSONNewsPostsString = @"http://www.bupipedream.com/api/get_category_posts/?slug=news/";
+static NSString * const kPDClientJSONNewsPostsString = @"http://www.bupipedream.com/api/get_category_posts/?slug=news&count=30";
 
 static NSString * const kPDClientJSONSearchPostsString = @"http://www.bupipedream.com/api/get_search_results/?search='binghamton'";
 
