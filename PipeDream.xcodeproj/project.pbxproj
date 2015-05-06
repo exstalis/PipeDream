@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B9FA00F1AF9860A00B9D54A /* PDRecentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FA00E1AF9860A00B9D54A /* PDRecentDetailViewController.m */; };
 		2BA09AD91AE833070084C258 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA09AD81AE833070084C258 /* NSString+HTML.m */; };
 		2BE265101AF1B56F00CF5009 /* NSString+HTMLDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE2650F1AF1B56F00CF5009 /* NSString+HTMLDecoder.m */; };
 		2BE265131AF1C4C300CF5009 /* NSString_stripHtml.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE265121AF1C4C300CF5009 /* NSString_stripHtml.m */; };
@@ -84,6 +85,8 @@
 
 /* Begin PBXFileReference section */
 		1DBB73B3EFDBCEBB106DF89E /* Pods-PipeDream.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PipeDream.release.xcconfig"; path = "Pods/Target Support Files/Pods-PipeDream/Pods-PipeDream.release.xcconfig"; sourceTree = "<group>"; };
+		2B9FA00D1AF9860A00B9D54A /* PDRecentDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDRecentDetailViewController.h; sourceTree = "<group>"; };
+		2B9FA00E1AF9860A00B9D54A /* PDRecentDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDRecentDetailViewController.m; sourceTree = "<group>"; };
 		2BA09AD71AE833070084C258 /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
 		2BA09AD81AE833070084C258 /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
 		2BE2650E1AF1B56F00CF5009 /* NSString+HTMLDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTMLDecoder.h"; sourceTree = "<group>"; };
@@ -413,6 +416,8 @@
 				2D4FC8531AE8A2430044ACEF /* PDRecentViewController.m */,
 				2DD575941AEDC61D0052CD01 /* PDRecentTableViewCell.h */,
 				2DD575951AEDC61D0052CD01 /* PDRecentTableViewCell.m */,
+				2B9FA00D1AF9860A00B9D54A /* PDRecentDetailViewController.h */,
+				2B9FA00E1AF9860A00B9D54A /* PDRecentDetailViewController.m */,
 			);
 			name = Recent;
 			sourceTree = "<group>";
@@ -727,6 +732,7 @@
 				2D7A30AB1ADFF4DA00A6055C /* RequestOperationConfig.m in Sources */,
 				2D8DADF71AD8E2E70047AECE /* PDFeedTableViewCell.m in Sources */,
 				2D345C051AD9E5C700308866 /* PDNewsDetailViewController.m in Sources */,
+				2B9FA00F1AF9860A00B9D54A /* PDRecentDetailViewController.m in Sources */,
 				2D5E8E211AD9F2AE00FB533F /* PDOpinionViewController.m in Sources */,
 				2BE265131AF1C4C300CF5009 /* NSString_stripHtml.m in Sources */,
 				2D5D941F1ADCBD7E0068DB3E /* PDNetworkClient.m in Sources */,
