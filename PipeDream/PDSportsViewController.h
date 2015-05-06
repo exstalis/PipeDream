@@ -11,4 +11,7 @@
 
 @interface PDSportsViewController : PDFeedTableViewController
 
+@property(nonatomic,strong)Article *sportsArticles;
+@property(nonatomic, strong) NSMutableArray *sportsArticlesArray;
+
 @end

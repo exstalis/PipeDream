@@ -24,8 +24,7 @@
 - (IBAction)showMenu:(UIBarButtonItem *)sender;
 - (IBAction)showSharePopupView:(id)sender;
 
-@property(nonatomic,strong)Article *sportsArticles;
-@property(nonatomic, strong) NSMutableArray *sportsArticlesArray;
+-(void)loadSportsArticles;
 
 @end
 
@@ -67,7 +66,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"OpinionDetailSegue"]) {
+    if ([[segue identifier] isEqualToString:@"SportsDetailSegue"]) {
         
         PDSportsDetailViewController *destinationViewController = (PDSportsDetailViewController *)[segue destinationViewController];
         NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
