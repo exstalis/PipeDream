@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B3B84E91AFA6C28005424F1 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B3B84E81AFA6C28005424F1 /* OpenSans-Regular.ttf */; };
+		2B3B84EB1AFA71C5005424F1 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B3B84EA1AFA71C5005424F1 /* OpenSans-Bold.ttf */; };
 		2B9FA00F1AF9860A00B9D54A /* PDRecentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FA00E1AF9860A00B9D54A /* PDRecentDetailViewController.m */; };
 		2BA09AD91AE833070084C258 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA09AD81AE833070084C258 /* NSString+HTML.m */; };
 		2BE265101AF1B56F00CF5009 /* NSString+HTMLDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE2650F1AF1B56F00CF5009 /* NSString+HTMLDecoder.m */; };
@@ -85,6 +87,8 @@
 
 /* Begin PBXFileReference section */
 		1DBB73B3EFDBCEBB106DF89E /* Pods-PipeDream.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PipeDream.release.xcconfig"; path = "Pods/Target Support Files/Pods-PipeDream/Pods-PipeDream.release.xcconfig"; sourceTree = "<group>"; };
+		2B3B84E81AFA6C28005424F1 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Regular.ttf"; path = "Fonts/OpenSans/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		2B3B84EA1AFA71C5005424F1 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Bold.ttf"; path = "Fonts/OpenSans/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		2B9FA00D1AF9860A00B9D54A /* PDRecentDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDRecentDetailViewController.h; sourceTree = "<group>"; };
 		2B9FA00E1AF9860A00B9D54A /* PDRecentDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDRecentDetailViewController.m; sourceTree = "<group>"; };
 		2BA09AD71AE833070084C258 /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
@@ -514,6 +518,8 @@
 			isa = PBXGroup;
 			children = (
 				2D634A4B1AE66F5200D905A0 /* Images.xcassets */,
+				2B3B84E81AFA6C28005424F1 /* OpenSans-Regular.ttf */,
+				2B3B84EA1AFA71C5005424F1 /* OpenSans-Bold.ttf */,
 				2D4FC85C1AE8B0FF0044ACEF /* Fonts */,
 				2D345BFF1AD9E56F00308866 /* detail.png */,
 				2D345C001AD9E56F00308866 /* detail@2x.png */,
@@ -652,7 +658,9 @@
 			files = (
 				2D271A7B1ABE1AE300A71464 /* Main.storyboard in Resources */,
 				2D4FC85D1AE8B0FF0044ACEF /* Fonts in Resources */,
+				2B3B84EB1AFA71C5005424F1 /* OpenSans-Bold.ttf in Resources */,
 				2D634A4C1AE66F5200D905A0 /* Images.xcassets in Resources */,
+				2B3B84E91AFA6C28005424F1 /* OpenSans-Regular.ttf in Resources */,
 				2D345C021AD9E56F00308866 /* detail@2x.png in Resources */,
 				2D345C011AD9E56F00308866 /* detail.png in Resources */,
 				2D271A801ABE1AE300A71464 /* LaunchScreen.xib in Resources */,

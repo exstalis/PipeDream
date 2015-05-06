@@ -13,6 +13,7 @@
 @interface PDSportsDetailViewController ()
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bodyHeightConstraint;
+@property(nonatomic, assign) int currentFontSize;
 
 @end
 
@@ -20,8 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self contentView];
+    _currentFontSize = 12;
     
 }
 
@@ -66,6 +67,18 @@
     
     constraint.constant = sizeThatShouldFitTheContent.height;
     
+}
+- (IBAction)increaseFontSize:(id)sender {
+    _currentFontSize += 1;
+    [_sportsBody setFont:[UIFont fontWithName:@"OpenSans-Bold" size:_currentFontSize]];
+    [self setTextFieldHeight:_bodyHeightConstraint forView:self.sportsBody];
+}
+
+- (IBAction)decreaseFontSize:(id)sender {
+    
+    _currentFontSize -= 1;
+    [_sportsBody setFont:[UIFont fontWithName:@"OpenSans-Bold" size:_currentFontSize]];
+    [self setTextFieldHeight:_bodyHeightConstraint forView:self.sportsBody];
 }
 
 -(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {

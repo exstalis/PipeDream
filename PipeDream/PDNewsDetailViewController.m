@@ -38,7 +38,7 @@
     
     [super viewDidLoad];
     [self contentView];
-    _currentFontSize = 14;
+    _currentFontSize = 12;
    }
 
 - (void)didReceiveMemoryWarning {
@@ -93,13 +93,13 @@
 
 - (IBAction)increaseFontSize:(id)sender {
     _currentFontSize += 1;
-    [_newsDetailsArticle setFont:[UIFont boldSystemFontOfSize:_currentFontSize]];
+    [_newsDetailsArticle setFont:[UIFont fontWithName:@"OpenSans-Bold" size:_currentFontSize]];
     [self setTextFieldHeight:_heightConstraint forView:self.newsDetailsArticle];
 }
 - (IBAction)decreaseFontSize:(id)sender {
     
     _currentFontSize -= 1;
-    [_newsDetailsArticle setFont:[UIFont boldSystemFontOfSize:_currentFontSize]];
+    [_newsDetailsArticle setFont:[UIFont fontWithName:@"OpenSans-Bold" size:_currentFontSize]];
     [self setTextFieldHeight:_heightConstraint forView:self.newsDetailsArticle];
 }
 

@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bodyHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleHeightConstraint;
+@property(nonatomic, assign) int currentFontSize;
 
 @end
 
@@ -20,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self contentView];
+    _currentFontSize = 12;
     
 }
 
@@ -61,6 +63,18 @@
     [self.releaseImage setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"Logo.png"]];
     
     
+}
+
+- (IBAction)increaseFontSize:(id)sender {
+    _currentFontSize += 1;
+    [_releaseArticle setFont:[UIFont fontWithName:@"OpenSans-Bold" size:_currentFontSize]];
+    [self setTextFieldHeight:_bodyHeightConstraint forView:self.releaseArticle];
+}
+
+- (IBAction)decreaseFontSize:(id)sender {
+    _currentFontSize -= 1;
+    [_releaseArticle setFont:[UIFont fontWithName:@"OpenSans-Bold" size:_currentFontSize]];
+    [self setTextFieldHeight:_bodyHeightConstraint forView:self.releaseArticle];
 }
 
 -(void)setTextFieldHeight:(NSLayoutConstraint *)constraint forView:(UITextView *)textView {

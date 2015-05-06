@@ -2,19 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>FacebookAppID</key>
-	<string>959139897444102</string>
-	<key>FacebookDisplayName</key>
-	<string>PipeDream</string>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>fb959139897444102</string>
-			</array>
-		</dict>
-	</array>
 	<key>ATSApplicationFontsPath</key>
 	<string>/Users/elifecearslan/Developer/PipeDream/Fonts</string>
 	<key>CFBundleDevelopmentRegion</key>
@@ -33,10 +20,28 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb959139897444102</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>FacebookAppID</key>
+	<string>959139897444102</string>
+	<key>FacebookDisplayName</key>
+	<string>PipeDream</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>OpenSans-Bold.ttf</string>
+		<string>OpenSans-Regular.ttf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -50,12 +55,6 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Lato/Magra-Bold.ttf</string>
-		<string>Lato/Magra-Regular.ttf</string>
-		<string></string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

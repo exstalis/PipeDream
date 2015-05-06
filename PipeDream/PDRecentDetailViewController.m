@@ -13,6 +13,7 @@
 @interface PDRecentDetailViewController ()
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bodyHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleHeightConstraint;
+@property(nonatomic, assign) int currentFontSize;
 
 @end
 
@@ -20,8 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self contentView];
+    _currentFontSize = 12;
     
 }
 
@@ -54,6 +55,17 @@
     
     constraint.constant = sizeThatShouldFitTheContent.height;
     
+}
+- (IBAction)increaseFontSize:(id)sender {
+    _currentFontSize += 1;
+    [_recentDetailBody setFont:[UIFont fontWithName:@"OpenSans-Bold" size:_currentFontSize]];
+    [self setTextFieldHeight:_bodyHeightConstraint forView:self.recentDetailBody];
+}
+
+- (IBAction)decreaseFontSize:(id)sender {
+    _currentFontSize -= 1;
+    [_recentDetailBody setFont:[UIFont fontWithName:@"OpenSans-Bold" size:_currentFontSize]];
+    [self setTextFieldHeight:_bodyHeightConstraint forView:self.recentDetailBody];
 }
 
 -(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
