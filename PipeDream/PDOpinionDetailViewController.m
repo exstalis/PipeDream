@@ -56,6 +56,7 @@
     [self setTextFieldHeight:_bodyHeightConstraint forView:self.articleBody];
     
     self.authorLabel.text = self.contentArticle.authorName;
+    self.articleDate.text = self.contentArticle.date;
     
 
     NSURL *imageURL=[NSURL URLWithString:self.contentAttachment.fullImage[@"url"]];
