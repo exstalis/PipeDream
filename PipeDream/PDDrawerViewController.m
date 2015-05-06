@@ -234,7 +234,11 @@ static NSString * const kPDDrawerCellReuseIdentifier = @"PDDrawerCellReuseIdenti
     
 }
 - (IBAction)followPDOnInstagram:(id)sender {
-    
+    if(![[UIApplication sharedApplication]openURL:[NSURL URLWithString:kPDInstagramAppURL]]) {
+        if(![[UIApplication sharedApplication] openURL:[NSURL URLWithString:kPDInstagramBrowserURL]]) {
+            NSLog(@"Nothing works.");
+        }
+    }
     
     
     
