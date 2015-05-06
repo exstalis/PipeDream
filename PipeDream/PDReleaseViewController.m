@@ -63,12 +63,17 @@
 
 
 -(void)viewWillAppear:(BOOL)animated{
-    [self loadReleaseArticles];
 
     [super viewWillDisappear:animated];
 
 
     
+}
+
+
+-(void)awakeFromNib{
+    [self loadReleaseArticles];
+
 }
 
 - (void)loadReleaseArticles
@@ -133,7 +138,7 @@
         
     }
     
-    [cell.releaseThumbnail setImageWithURL:url placeholderImage:[UIImage imageNamed: @"menu.png"]];
+    [cell.releaseThumbnail setImageWithURL:url placeholderImage:[UIImage imageNamed: @"placeholder"]];
     
     [cell.releaseShareButton addTarget:self action:@selector(showShareOptions:) forControlEvents:UIControlEventTouchUpInside];
     
