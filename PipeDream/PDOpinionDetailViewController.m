@@ -27,6 +27,7 @@
     
     [self contentView];
     
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,6 +69,17 @@
     
     constraint.constant = sizeThatShouldFitTheContent.height;
     
+}
+
+-(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    
+    [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+        [self setTextFieldHeight:_bodyHeightConstraint forView:self.articleBody];
+    } completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+        
+    }];
 }
 
 @end
