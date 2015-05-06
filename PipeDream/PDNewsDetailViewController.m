@@ -28,7 +28,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleHeightConstraint;
 
 @property(nonatomic)PDArticleContentView *articleContents;
-
+@property(nonatomic, assign) int currentFontSize;
 
 @end
 
@@ -38,7 +38,7 @@
     
     [super viewDidLoad];
     [self contentView];
-    
+    _currentFontSize = 14;
    }
 
 - (void)didReceiveMemoryWarning {
@@ -91,6 +91,17 @@
     [super viewWillDisappear:animated];
 }
 
+- (IBAction)increaseFontSize:(id)sender {
+    _currentFontSize += 1;
+    [_newsDetailsArticle setFont:[UIFont boldSystemFontOfSize:_currentFontSize]];
+    [self setTextFieldHeight:_heightConstraint forView:self.newsDetailsArticle];
+}
+- (IBAction)decreaseFontSize:(id)sender {
+    
+    _currentFontSize -= 1;
+    [_newsDetailsArticle setFont:[UIFont boldSystemFontOfSize:_currentFontSize]];
+    [self setTextFieldHeight:_heightConstraint forView:self.newsDetailsArticle];
+}
 
 -(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
     
