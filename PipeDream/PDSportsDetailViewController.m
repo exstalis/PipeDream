@@ -7,8 +7,12 @@
 //
 
 #import "PDSportsDetailViewController.h"
+#import "AppDelegate.h"
+#import "PDNewsTableviewCell.h"
 
 @interface PDSportsDetailViewController ()
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bodyHeightConstraint;
 
 @end
 
@@ -16,22 +20,52 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self contentView];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(BOOL)canBecomeFirstResponder
+{
+    return YES;
 }
-*/
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
+-(void)contentView{
+    
+    [self scrollViewDidChange:self.scrollView];
+    
+    self.sportsTitle.text = [self.contentArticle.articleTitle decodeHTML];
+    [self setTextFieldHeight:_titleHeightConstraint forView:self.sportsTitle];
+    
+    self.sportsBody.text = [self.contentArticle.articleBody decodeHTML];
+    [self setTextFieldHeight:_bodyHeightConstraint forView:self.sportsBody];
+    
+    self.sportsAuthor.text = self.contentArticle.authorName;
+    
+    self.sportsDate.text = self.contentArticle.date;
+    
+    
+    NSURL *imageURL=[NSURL URLWithString:self.contentAttachment.fullImage[@"url"]];
+    [self.sportsImage setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"Logo.png"]];
+    
+    
+}
+
+-(void)setTextFieldHeight:(NSLayoutConstraint *)constraint forView:(UITextView *)textView {
+    CGSize sizeThatShouldFitTheContent = [textView sizeThatFits:textView.frame.size];
+    
+    constraint.constant = sizeThatShouldFitTheContent.height;
+    
+}
 
 @end

@@ -394,13 +394,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="bodyHeightConstraint" destination="EDA-Pj-g3q" id="Uc0-5L-Voc"/>
+                        <outlet property="bodyHeightConstraint" destination="EDA-Pj-g3q" id="c1t-hk-IAB"/>
                         <outlet property="releaseArticle" destination="aWy-rE-g3f" id="Gd7-3d-Cit"/>
                         <outlet property="releaseAuthor" destination="E9a-2M-RP0" id="M87-vz-5pC"/>
                         <outlet property="releaseDate" destination="zgk-6k-2KB" id="c2C-2w-TMO"/>
                         <outlet property="releaseImage" destination="l1L-8Y-t8B" id="zaK-TT-nNa"/>
                         <outlet property="releaseScrollView" destination="mfF-QP-ddU" id="abI-Tz-VR2"/>
                         <outlet property="releaseTitle" destination="2X7-FP-pxn" id="gaH-0e-wJw"/>
+                        <outlet property="titleHeightConstraint" destination="mA4-g8-XlO" id="xr6-kI-wHR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xgs-73-UMi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -410,7 +411,7 @@
         <!--Sports Detail-->
         <scene sceneID="6wE-RS-aoe">
             <objects>
-                <viewController title="Sports Detail" id="dAN-2B-kFa" customClass="PDReleaseDetailViewController" sceneMemberID="viewController">
+                <viewController title="Sports Detail" id="dAN-2B-kFa" customClass="PDSportsDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dqn-EZ-nQA"/>
                         <viewControllerLayoutGuide type="bottom" id="cWo-A9-lzI"/>
@@ -508,6 +509,16 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="bodyHeightConstraint" destination="BHu-Tn-32A" id="MZx-SY-64v"/>
+                        <outlet property="scrollView" destination="soL-vi-wWi" id="nLV-DD-GlX"/>
+                        <outlet property="sportsAuthor" destination="Jww-bl-at1" id="M72-gD-b41"/>
+                        <outlet property="sportsBody" destination="pXb-f7-mS2" id="7Nf-tK-4Eu"/>
+                        <outlet property="sportsDate" destination="6XA-sK-u5N" id="ke5-Ne-G8V"/>
+                        <outlet property="sportsImage" destination="r5p-7Y-pwc" id="Yps-mX-uY4"/>
+                        <outlet property="sportsTitle" destination="uRf-nl-Amg" id="3Au-0Z-Oed"/>
+                        <outlet property="titleHeightConstraint" destination="8gt-HR-Xny" id="bTq-VD-dZw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bVD-Y3-dbd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

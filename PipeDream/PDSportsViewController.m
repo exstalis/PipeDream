@@ -25,7 +25,6 @@
 - (IBAction)showSharePopupView:(id)sender;
 
 @property(nonatomic,strong)Article *sportsArticles;
-@property(nonatomic)Attachments *feedAttachments;
 @property(nonatomic, strong) NSMutableArray *sportsArticlesArray;
 
 @end
@@ -66,7 +65,17 @@
 }
 
 
-
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"OpinionDetailSegue"]) {
+        
+        PDSportsDetailViewController *destinationViewController = (PDSportsDetailViewController *)[segue destinationViewController];
+        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+        destinationViewController.contentArticle=[self.sportsArticlesArray objectAtIndex:selectedIndexPath.row];
+        destinationViewController.contentAttachment=self.feedAttachments;
+        
+    }
+}
 
 - (IBAction)showMenu:(UIBarButtonItem *)sender {
     [[AppDelegate globalDelegate] toggleLeftDrawer:self animated:YES];

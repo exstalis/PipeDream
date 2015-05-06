@@ -7,11 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
+#import "PDContentViewController.h"
 
 @class Article;
 
-@interface PDSportsDetailViewController : UIViewController
+@interface PDSportsDetailViewController : PDContentViewController<MFMailComposeViewControllerDelegate,MFMessageComposeViewControllerDelegate>
 
-@property(nonatomic, strong) Article *article;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UITextView *sportsTitle;
+@property (weak, nonatomic) IBOutlet UIImageView *sportsImage;
+@property (weak, nonatomic) IBOutlet UILabel *sportsAuthor;
+@property (weak, nonatomic) IBOutlet UILabel *sportsDate;
+@property (weak, nonatomic) IBOutlet UITextView *sportsBody;
 
 @end
