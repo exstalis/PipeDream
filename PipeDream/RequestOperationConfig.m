@@ -1,9 +1,9 @@
 //
 //  RequestOperationConfig.m
-//  WeatherApp
+//  PipeDream
 //
-//  Created by Renzo Crisóstomo on 1/15/14.
-//  Copyright (c) 2014 Ruenzuo. All rights reserved.
+//  Created by elif ece arslan on 4/13/15.
+//  Copyright (c) 2015 elif ece arslan. All rights reserved.
 //
 
 #import "RequestOperationConfig.h"
